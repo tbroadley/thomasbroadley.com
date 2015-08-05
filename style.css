@@ -1,0 +1,65 @@
+body {
+  /* The 50px border applies to the left and right sides of the body. */
+  margin: auto 50px;
+
+  background-color: #F8F8F8;
+}
+
+#main {
+  /* The main element will be centered horizontally. */
+  margin: auto;
+
+  width: 50%;
+  min-width: 550px;
+
+  color: #222222;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section:last-child {
+  /* The last section does not have padding. */
+  margin: 0;
+}
+
+.subsection {
+  padding-left: 10px;
+  border-left: #BBBBBB 1px solid;
+
+  margin-bottom: 20px;
+}
+
+/* Displays two elements side by side in a two-column format. */
+.firstcol, .secondcol {
+  width: 50%;
+  float: left;
+  margin-top: 0;
+}
+
+.secondcol {
+  text-align: right;
+}
+
+/* This prevents the second column element from pushing other elements to
+the right. */
+.secondcol + * {
+  clear: both;
+}
+
+.date {
+  font-style: italic;
+}
+
+h4 {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cambria", serif;
+}
+
+p, li {
+  font-family: "Calibri", sans-serif;
+}
