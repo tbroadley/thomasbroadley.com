@@ -12,14 +12,6 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
 
     <style>
-      head, body {
-        width: 100%;
-        margin: 0px;
-
-        font-family: Lato, Helvetica, Arial, sans-serif;
-        font-size: 0.8vw;
-      }
-
       article {
         margin-top: 40px;
         margin-bottom: 40px;
@@ -37,6 +29,38 @@
         /* Center paragraphs on page. */
         width: 50%;
         margin: 15px auto;
+      }
+
+      article a {
+        display: block;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        width: 60%;
+
+        text-align: center;
+
+        font-size: 1.5em;
+        color: black;
+        text-decoration: none;
+
+        margin-top: 20px;
+        padding: 15px;
+
+        border: 3px solid;
+
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+      }
+
+      head, body {
+        width: 100%;
+        margin: 0px;
+
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        font-size: 0.8vw;
       }
 
       footer {
@@ -209,7 +233,6 @@
         box-shadow: inset 0 1px 3px #ddd;
         border-radius: 4px;
       }
-
       .picture-bar {
         display: flex;
         flex-direction: row;
@@ -369,93 +392,97 @@
 
         font-size: 2em;
       }
+    </style>
 
-      only screen and (max-width: 800px) {
-        /* Header */
+    <style media="screen and (max-width: 800px)">
+      /* Header */
 
-        .social {
-          display: none;
-        }
+      .social {
+        display: none;
+      }
 
-        .header-inside {
-          height: 50px;
-          width: 100%;
-        }
+      .header-inside {
+        height: 50px;
+        width: 100%;
+      }
 
-        .header-inside ul {
-          display: none;
-        }
+      .header-inside ul {
+        display: none;
+      }
 
-        /* Slideshow */
+      /* Slideshow */
 
-        .slideshow {
-          flex-flow: column;
+      .slideshow {
+        flex-flow: column;
 
-          /* Space for header at top of page. */
-          margin-top: 50px;
-        }
+        /* Space for header at top of page. */
+        margin-top: 50px;
+      }
 
-        .slide-text h1 {
-          font-size: 9em;
+      .slide-text h1 {
+        font-size: 9em;
 
-          text-align: center;
-        }
+        text-align: center;
+      }
 
-        .slide-text p {
-          font-size: 6em;
+      .slide-text p {
+        font-size: 6em;
 
-          text-align: center;
-        }
+        text-align: center;
+      }
 
-        /* Article */
+      /* Article */
 
-        article {
-          margin-top: 20px;
-          margin-bottom: 40px;
-        }
+      article {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
 
-        article h1 {
-          font-size: 7em;
+      article h1 {
+        font-size: 7em;
 
-          text-align: center;
-        }
+        text-align: center;
+      }
 
-        article p {
-          font-size: 4em;
+      article p {
+        font-size: 4em;
 
-          width: 90%;
-          margin: 10px auto;
-        }
+        width: 90%;
+        margin: 10px auto;
+      }
 
-        /* Picture bar */
+      article a {
+        width: 90%;
+      }
 
-        .picture-bar {
-          flex-direction: column;
-        }
+      /* Picture bar */
 
-        .picture-bar a {
-          width: 100%;
-        }
+      .picture-bar {
+        flex-direction: column;
+      }
 
-        .picture-bar p {
-          font-size: 9em;
+      .picture-bar a {
+        width: 100%;
+      }
 
-          top: 35%;
-        }
+      .picture-bar p {
+        font-size: 9em;
 
-        /* Footer */
+        top: 35%;
+      }
 
-        footer {
-          height: 40px;
-        }
+      /* Footer */
 
-        footer p {
-          width: 100%;
+      footer {
+        height: 40px;
+      }
 
-          font-size: 2.5em;
+      footer p {
+        width: 100%;
 
-          line-height: 40px;
-        }
+        font-size: 2.5em;
+
+        line-height: 40px;
       }
     </style>
   </head>
@@ -569,17 +596,26 @@
       <h1>Who are we? What do we do?</h1>
       <p>
         Established in 1988 as a specialty store for imported vinyl records,
-        DMR has made a presence in the Japanese music retail industry.
+        DMR has made an impact on the Japanese music retail industry.
       </p>
       <p>
-        Within the past 25 years, this entrepreneurial business has adapted to
-        the ever-changing situation and in 2011, switched its core merchandise
+        Over the past 25 years,
+        this entrepreneurial business has adapted continuously to the changing
+        economic environment. In 2011, it switched its core business
         from records to music equipment.
       </p>
       <p>
-        Now, DMR continues to evolve not only as a distributor of premium audio
+        DMR continues to evolve not only as a distributor of premium audio
         brands, but also as a provider of innovative web services and mobile
         applications.
+      </p>
+      <p>
+        As an intern at DMR, you will gain experience
+        in all aspects of business and see firsthand how a small,
+        entrepreneurial company can thrive in a competitive industry.
+      </p>
+      <p>
+        <a href="https://company.dmr.co.jp/en/apply/">Apply for an internship now!</a>
       </p>
     </article>
     <div class="picture-bar">
