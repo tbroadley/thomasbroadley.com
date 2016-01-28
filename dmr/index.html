@@ -10,8 +10,454 @@
     <link rel="icon" href="https://company.dmr.co.jp/en/wp-content/uploads/2015/06/dmr%E3%83%AD%E3%82%B4favicon.png" type="image/png">
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
-    
-    <link rel="stylesheet" href="index.css" />
+
+    <style>
+      head, body {
+        width: 100%;
+        margin: 0px;
+
+        font-family: Lato, Helvetica, Arial, sans-serif;
+        font-size: 0.8vw;
+      }
+
+      article {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      article h1 {
+        font-size: 3em;
+
+        text-align: center;
+      }
+
+      article p {
+        font-size: 1.75em;
+
+        /* Center paragraphs on page. */
+        width: 50%;
+        margin: 15px auto;
+      }
+
+      footer {
+        height: 54px;
+
+        background-color: rgb(51, 51, 51);
+
+        font-size: 1.25em;
+      }
+
+      footer p {
+        color: white;
+
+        line-height: 54px;
+
+        text-align: center;
+
+        width: 65.7%;
+        margin: auto;
+      }
+
+      footer p a {
+        color: white;
+      }
+
+      @media screen and (min-width: 800px) and (max-width: 1300px) {
+        .header-inside li {
+          font-size: 1.5vw !important;
+        }
+
+        .header-inside li:not(:last-child) {
+          margin-right: 1.5vw !important;
+        }
+      }
+
+      header {
+        /* Fix header to the top of the screen. */
+        position: fixed;
+        top: 0px;
+
+        width: 100%;
+
+        background-color: rgb(78, 202, 194);
+
+        z-index: 1;
+      }
+
+      .header-inside {
+        height: 75px;
+        width: 80%;
+
+        margin: auto;
+      }
+
+      .header-inside img {
+        height: 100%;
+      }
+
+      .header-inside > ul, .social-inside > ul {
+        height: 100%;
+        margin: 0px;
+
+        float: right;
+      }
+
+      .header-inside > ul > li, .social-inside > ul > li {
+        /* Display menu items horizontally. */
+        display: inline;
+      }
+
+      .header-inside > ul > li {
+        /* Center menu items vertically in the header. */
+        line-height: 75px;
+
+        font-size: 20px;
+        color: white;
+      }
+
+      header li a {
+        color: white;
+
+        text-decoration: none;
+      }
+
+      .header-inside > ul > li:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      .social {
+        height: 30px;
+
+        background-color: rgb(56, 181, 173);
+      }
+
+      .social-inside {
+        width: 80%;
+
+        margin: auto;
+      }
+
+      .social-inside li {
+        /* Center menu items vertically in the header. */
+        line-height: 30px;
+
+        font-size: 12px;
+      }
+
+      .social-inside li:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      /* Dropdown menus */
+
+      .dropdown {
+        position: relative;
+
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: block;
+        width: 100%;
+        min-width: 10vw;
+
+        visibility: hidden;
+        opacity: 0;
+
+        transition: all 0.2s ease-in-out;
+
+        position: absolute;
+        left: 0;
+
+        padding: 0;
+
+        list-style-type: none;
+
+        background-color: rgb(78, 202, 194);
+      }
+
+      .dropdown:hover .dropdown-content {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      .dropdown-content li {
+        font-size: 0.7em;
+
+        line-height: normal;
+
+        margin: 0;
+        padding: 15px;
+
+        transition: all 0.2s ease-in-out;
+      }
+
+      .dropdown-content li:hover {
+        background-color: rgb(56, 181, 173);
+      }
+
+      .dropdown-content form {
+        line-height: normal;
+
+        margin: 15px;
+      }
+
+      .dropdown-content input[type="text"] {
+        width: 100%;
+
+        border: 1px solid #ccc;
+        box-shadow: inset 0 1px 3px #ddd;
+        border-radius: 4px;
+      }
+
+      .picture-bar {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .picture-bar a {
+        width: 25%;
+
+        position: relative;
+
+        /* Hide overflow from scale animation. */
+        overflow: hidden;
+      }
+
+      .picture-bar img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+      }
+
+      .picture-bar a:hover img {
+        -webkit-transform: scale(1.05); /* Safari */
+        -ms-transform: scale(1.05); /* IE 9 */
+        transform: scale(1.05);
+      }
+
+      .picture-bar p {
+        position: absolute;
+        top: 35%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        text-align: center;
+
+        color: white;
+        font-size: 2.25em;
+
+        transition: all 0.5s ease-out;
+      }
+
+      .picture-bar a:hover p {
+        opacity: 0;
+      }
+
+      .picture-bar .image-filter {
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in-out;
+      }
+
+      .picture-bar a:hover .image-filter {
+        /* Important to override inline color specification. */
+        background-color: transparent !important;
+      }
+
+      .slideshow {
+        display: flex;
+        flex-flow: row;
+
+        /* Space for header at top of page. */
+        margin-top: 105px;
+      }
+
+      .slide {
+        display: block;
+
+        z-index: 0;
+
+        position: relative;
+
+        /* Hide overflow from scale animation. */
+        overflow: hidden;
+      }
+
+      .slide img {
+        width: 100% ;
+
+        /* Remove small padding under img. */
+        display: block;
+
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+      }
+
+      a.slide:hover img {
+
+        -webkit-transform: scale(1.05); /* Safari */
+        -ms-transform: scale(1.05); /* IE 9 */
+        transform: scale(1.05);
+      }
+
+      .image-filter {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+      }
+
+      a.slide:hover .image-filter {
+        /* Important to override inline color specification. */
+        background-color: transparent !important;
+      }
+
+      .slide-text {
+        position: absolute;
+
+        top: 0;
+        bottom: 0;
+
+        width: 100%;
+
+        color: white;
+
+        text-align: center;
+
+        transition-property: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+      }
+
+      a.slide:hover .slide-text {
+        opacity: 0;
+      }
+
+      .slide-text h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+        margin-left: 1vw;
+        margin-right: 1vw;
+
+        font-size: 3.5em;
+      }
+
+      .slide-text p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        margin-left: 1vw;
+        margin-right: 1vw;
+
+        font-size: 2em;
+      }
+
+      only screen and (max-width: 800px) {
+        /* Header */
+
+        .social {
+          display: none;
+        }
+
+        .header-inside {
+          height: 50px;
+          width: 100%;
+        }
+
+        .header-inside ul {
+          display: none;
+        }
+
+        /* Slideshow */
+
+        .slideshow {
+          flex-flow: column;
+
+          /* Space for header at top of page. */
+          margin-top: 50px;
+        }
+
+        .slide-text h1 {
+          font-size: 9em;
+
+          text-align: center;
+        }
+
+        .slide-text p {
+          font-size: 6em;
+
+          text-align: center;
+        }
+
+        /* Article */
+
+        article {
+          margin-top: 20px;
+          margin-bottom: 40px;
+        }
+
+        article h1 {
+          font-size: 7em;
+
+          text-align: center;
+        }
+
+        article p {
+          font-size: 4em;
+
+          width: 90%;
+          margin: 10px auto;
+        }
+
+        /* Picture bar */
+
+        .picture-bar {
+          flex-direction: column;
+        }
+
+        .picture-bar a {
+          width: 100%;
+        }
+
+        .picture-bar p {
+          font-size: 9em;
+
+          top: 35%;
+        }
+
+        /* Footer */
+
+        footer {
+          height: 40px;
+        }
+
+        footer p {
+          width: 100%;
+
+          font-size: 2.5em;
+
+          line-height: 40px;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
