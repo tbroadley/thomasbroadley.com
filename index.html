@@ -18,7 +18,7 @@
         }
       }
 
-      body > div:not(:last-child) {
+      body > header, body > section:not(:last-child) {
         border-bottom: 1px solid #888888;
       }
 
@@ -32,15 +32,15 @@
     </style>
   </head>
   <body>
-    <h1>Thomas Broadley</h1>
-    <div>
+    <header>
+      <h1>Thomas Broadley</h1>
       <p>I'm still working on this website.
         <a href="https://github.com/tbroadley/tbroadley.github.io">
           See my progress on GitHub.
         </a>
       </p>
-    </div>
-    <div id="contact">
+    </header>
+    <section id="contact">
       <h2>Contact me</h2>
       <ul>
         <li>
@@ -59,17 +59,15 @@
           </a>
         </li>
       </ul>
-    </div>
-    <div id="about">
+    </section>
+    <section id="about">
       <h2>About me</h2>
-      <div>
-        <p>I am a second-year Computer Science student at the University of Waterloo in Waterloo, Canada.</p>
-        <p>I am currently working at <a href="http://www.boltmade.com/">Boltmade</a>.</p>
-      </div>
-    </div>
-    <div id="projects">
+      <p>I am a second-year Computer Science student at the University of Waterloo in Waterloo, Canada.</p>
+      <p>I am currently working at <a href="http://www.boltmade.com/">Boltmade</a>.</p>
+    </section>
+    <section id="projects">
       <h2>My projects</h2>
-      <div>
+      <section>
         <h3>Paneless</h3>
         <p>An online HTML / CSS / JS editor with a few tricks up its sleeve.</p>
         <ul>
@@ -79,8 +77,8 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div>
+      </section>
+      <section>
         <h3>Releaf</h3>
         <p>
           An Android application that provides simple daily challenges to boost your energy and health.
@@ -92,8 +90,8 @@
             </a>
           </li>
         </ul>
-      </div>
-      <div>
+      </section>
+      <section>
         <h3>LOL Status</h3>
         <p>
           An Android application for tracking the status of League of Legends servers.
@@ -110,7 +108,7 @@
             </a>
           </li>
         </ul>
-      </div>
-    </div>
+      </section>
+    </section>
   </body>
 </html>
