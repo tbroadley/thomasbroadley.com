@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Twitch Chat Reader</title>
+
+    <script src="http://www.tmijs.org/js/0.0.29/tmi.js"></script>
+    <script src="mespeak/mespeak.js"></script>
+
+    <script type="text/javascript">
+      meSpeak.loadConfig("mespeak/mespeak_config.json");
+      meSpeak.loadVoice("mespeak/voices/en/en.json");
+    </script>
+
+    <link rel="stylesheet" href="index.css" media="screen" charset="utf-8">
+  </head>
+  <body>
+    <form aria-labelledby="form_label">
+      <h1 id="form_label">Twitch Chat Reader</h1>
+
+      <section aria-labelledby="form_label">
+        <label for="channel">
+          Channel name:
+          <input id="channel" type="text" name="channel">
+        </label>
+      </section>
+
+      <section aria-labelledby="voice_controls">
+        <h2 id="voice_controls">Voice Controls</h2>
+
+        <label for="volume">
+          Volume:
+          <input id="volume" type="range" name="volume" min="0" max="1" step="0.1" value="0.5">
+        </label>
+      </section>
+
+      <section aria-labelledby="user_filters">
+        <h2 id="user_filters">User Filters</h2>
+
+        <label for="subscriber">
+          <input id="subscriber" type="checkbox">
+          Only read messages from subscribers
+        </label>
+
+        <label for="user_list">
+          <span>Filter out messages from the following users:</span>
+          <textarea id="user_list"
+                    placeholder="Enter a list of usernames with one username on each line."
+                    rows="10"
+                    cols="80"></textarea>
+        </label>
+      </section>
+
+      <section aria-labelledby="message_filters">
+        <h2 id="message_filters">Message Filters</h2>
+
+        <label for="exclamation">
+          <input id="exclamation" type="checkbox" checked>
+          Filter out chat commands (messages that start with '!')
+        </label>
+
+        <label for="word_list">
+          <span>Only read messages that contain one of the following words:</span>
+          <textarea id="word_list"
+                    placeholder="Enter a list of words with one word on each line."
+                    rows="10"
+                    cols="80"></textarea>
+        </label>
+      </section>
+    </form>
+
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>
