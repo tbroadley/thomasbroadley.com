@@ -27,10 +27,10 @@ function containsWord(string, filterBy) {
   return intersection(wordArray, filterBy).length > 0;
 }
 
-addChangeListener('channel', function(e) {
+function updateChannel(channelName) {
   if (client) client.disconnect();
   client = new irc.client({
-    channels: [e.target.value]
+    channels: [channelName]
   });
 
   messageQueue = [];
@@ -45,6 +45,29 @@ addChangeListener('channel', function(e) {
   });
 
   client.connect();
+}
+
+function getQueryParameters() {
+  var queryString = window.location.search.substring(1);
+  var queryPairs = queryString.split('&').map(function(string) {
+    return string.split('=');
+  });
+
+  var result = {};
+  queryPairs.forEach(function(pair) {
+    result[pair[0]] = pair[1];
+  });
+  return result;
+}
+
+var channel = getQueryParameters().channel;
+if (channel) {
+  updateChannel(channel)
+  document.getElementById('channel').value = channel;
+};
+
+addChangeListener('channel', function(e) {
+  updateChannel(e.target.value);
 });
 
 addChangeListener('subscriber', function(e) {
