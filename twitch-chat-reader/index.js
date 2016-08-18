@@ -41,7 +41,7 @@ function updateChannel(channelName) {
     if (filterChatCommands && message.substring(0, 1) === '!') return;
     if (usersToFilterBy.indexOf(user.username) !== -1) return;
 
-    messageQueue.unshift(message);
+    messageQueue.push(message);
   });
 
   client.connect();
@@ -87,28 +87,32 @@ addChangeListener('user_list', function(e) {
 });
 
 addChangeListener('volume', function(e) {
-  meSpeak.setVolume(e.target.value);
+  volume = e.target.value();
 });
 
 function pollForMessages() {
   timerId = setInterval(function() {
     if (messageQueue.length > 0) {
       clearInterval(timerId);
-      readMessage();
+      readMessages();
     }
   }, 1000);
 }
 
-function readMessage() {
-  var message = messageQueue.pop();
+function readMessages() {
+  for (var i = 0; i < messageQueue.length; i++) {
+    var message = messageQueue[i];
+    var utterance = new SpeechSynthesisUtterance(message);
+    utterance.volume = volume;
+    console.log(volume);
+    utterance.rate = 0.5;
 
-  meSpeak.speak(message, undefined, function() {
-    if (messageQueue.length > 0) {
-      readMessage();
-    } else {
-      pollForMessages();
-    }
-  });
+    window.speechSynthesis.speak(utterance);
+  }
+
+  messageQueue = [];
+
+  pollForMessages();
 }
 
 pollForMessages();
