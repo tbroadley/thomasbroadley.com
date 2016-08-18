@@ -87,7 +87,7 @@ addChangeListener('user_list', function(e) {
 });
 
 addChangeListener('volume', function(e) {
-  volume = e.target.value();
+  volume = e.target.value;
 });
 
 function pollForMessages() {
