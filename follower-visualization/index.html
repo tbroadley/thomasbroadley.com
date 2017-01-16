@@ -182,8 +182,7 @@
       $.get('scraped.json').then(res => {
         var index = 0;
         var toLoad = 100;
-        console.log(res);
-        var json = _(JSON.parse(res))
+        var json = _(res)
           .map((val, key) => _.set(val, 'username', key))
           // .orderBy('username')
           .shuffle()
