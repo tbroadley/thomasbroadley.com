@@ -104,7 +104,6 @@ function readMessages() {
     var message = messageQueue[i];
     var utterance = new SpeechSynthesisUtterance(message);
     utterance.volume = volume;
-    console.log(volume);
     utterance.rate = 0.5;
 
     window.speechSynthesis.speak(utterance);
