@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 500px;
+
+  text-align: center;
+}
+
+#text {
+  width: 100%;
+
+  font-size: 1.5rem;
+}
+
+#output {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+#button, #url-button {
+  display: none;
+}

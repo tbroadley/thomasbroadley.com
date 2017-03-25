@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Gatekeepify</title>
+
+    <link rel="stylesheet" href="/index.css">
+
+    <script>
+      window.onload = function() {
+        textInput = document.getElementById('text');
+        textInput.focus();
+        textInput.addEventListener('input', function(event) {
+          document.getElementById('button').style.display = 'inline';
+          document.getElementById('url-button').style.display = 'inline';
+
+          var input = event.target.value;
+          var trimmedInput = input.trim();
+          var allCapsInput = trimmedInput.toUpperCase();
+          var splitInput = allCapsInput.split(' ');
+          var joinedInput = splitInput.join(' 👏 ')
+
+          document.getElementById('output').textContent = joinedInput;
+        });
+
+        function getParameterByName(name, url) {
+          if (!url) {
+            url = window.location.href;
+          }
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var queryParameter = getParameterByName('text');
+        if (queryParameter) {
+          textInput.value = queryParameter;
+          textInput.dispatchEvent(new Event('input'));
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <textarea id="text" rows="8" cols="80"></textarea>
+      <p id="output"></p>
+      <button type="button" id="button" data-clipboard-target="#output">Copy result</button>
+      <button type="button" id="url-button">Copy URL</button>
+    </div>
+
+    <script src="/clipboard.min.js" charset="utf-8"></script>
+    <script>
+      function focusInput() {
+        document.getElementById('text').focus();
+
+      }
+
+      var clipboard = new Clipboard('#button');
+      clipboard.on('success', focusInput);
+      clipboard.on('error', focusInput);
+
+      var urlClipboard = new Clipboard('#url-button', {
+        text: function() {
+          var text = encodeURIComponent(document.getElementById('text').value.trim());
+          return window.location.href.split('?')[0] + '?text=' + text;
+        },
+      });
+      urlClipboard.on('success', focusInput);
+      urlClipboard.on('error', focusInput);
+    </script>
+  </body>
+</html>
