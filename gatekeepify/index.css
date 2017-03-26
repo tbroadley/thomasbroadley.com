@@ -39,7 +39,7 @@ body {
   font-family: sans-serif;
 }
 
-#snort, #snort-label, #button, #url-button, #button-copied, #url-button-copied {
+#snort, #snort-label, #button, #url-button, #button-copied, #url-button-copied, #edit-button {
   display: none;
 }
 
