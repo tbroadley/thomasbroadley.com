@@ -36,6 +36,13 @@
 
         document.getElementById('snort').addEventListener('change', render);
 
+        var editButton = document.getElementById('edit-button');
+        editButton.addEventListener('click', function() {
+          document.getElementById('editor').style.display = 'block';
+          document.getElementById('text').focus();
+          editButton.style.display = 'none';
+        });
+
         function getParameterByName(name, url) {
           if (!url) {
             url = window.location.href;
@@ -53,6 +60,8 @@
         if (text) {
           textInput.value = text;
           document.getElementById('snort').checked = snortChecked === 'true';
+          document.getElementById('editor').style.display = 'none';
+          editButton.focus();
           render();
         }
       };
@@ -60,20 +69,23 @@
   </head>
   <body>
     <div id="app">
-      <textarea id="text" rows="8" cols="80"></textarea>
       <p id="output"></p>
-      <div id="snort-div">
-        <input type="checkbox" id="snort">
-        <label for="snort" id="snort-label">😤</label>
-      </div>
-      <div id="buttons">
-        <div class="button-container">
-          <button type="button" id="button" data-clipboard-target="#output">Copy result</button>
-          <span id="button-copied" aria-role="presentation">Copied!</span>
+      <button type="button" id="edit-button">Edit</button>
+      <div id="editor">
+        <textarea id="text" rows="8" cols="80"></textarea>
+        <div id="snort-div">
+          <input type="checkbox" id="snort">
+          <label for="snort" id="snort-label">😤</label>
         </div>
-        <div class="button-container">
-          <button type="button" id="url-button">Copy URL</button>
-          <span id="url-button-copied" aria-role="presentation">Copied!</span>
+        <div id="buttons">
+          <div class="button-container">
+            <button type="button" id="button" data-clipboard-target="#output">Copy result</button>
+            <span id="button-copied" aria-role="presentation">Copied!</span>
+          </div>
+          <div class="button-container">
+            <button type="button" id="url-button">Copy URL</button>
+            <span id="url-button-copied" aria-role="presentation">Copied!</span>
+          </div>
         </div>
       </div>
     </div>

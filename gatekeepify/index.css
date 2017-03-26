@@ -19,6 +19,10 @@ body {
   text-align: center;
 }
 
+#editor {
+  margin-top: 1rem;
+}
+
 #snort-div {
   margin-bottom: 0.5rem;
 }
