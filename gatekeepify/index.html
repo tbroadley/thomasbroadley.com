@@ -35,6 +35,10 @@
         textInput.addEventListener('input', render);
 
         document.getElementById('snort').addEventListener('change', render);
+        document.getElementById('update-image').addEventListener('click', function() {
+          var imageSrc = document.getElementById('image-url').value;
+          document.getElementById('image').src = imageSrc;
+        });
 
         var editButton = document.getElementById('edit-button');
         editButton.addEventListener('click', function() {
@@ -57,11 +61,18 @@
 
         var text = getParameterByName('text');
         var snortChecked = getParameterByName('snort');
+        var imageSrc = getParameterByName('image');
         if (text) {
           textInput.value = text;
+          var imageSrc = document.getElementById('image-url').value = imageSrc;
           document.getElementById('snort').checked = snortChecked === 'true';
           document.getElementById('editor').style.display = 'none';
           document.getElementById('edit-button').style.display = 'inline';
+
+          if (imageSrc) {
+            document.getElementById('image').src = imageSrc;
+          }
+
           editButton.focus();
           render();
         }
@@ -71,54 +82,70 @@
   <body>
     <div id="app">
       <p id="output"></p>
-      <button type="button" id="edit-button">Edit</button>
+      <img id="image">
+      <div>
+        <button type="button" id="edit-button">Edit</button>
+      </div>
       <div id="editor">
-        <textarea id="text" rows="8" cols="80"></textarea>
-        <div id="snort-div">
+        <div>
+          <textarea id="text" rows="8" cols="80"></textarea>
+        </div>
+        <div>
           <input type="checkbox" id="snort">
           <label for="snort" id="snort-label">😤</label>
         </div>
-        <div id="buttons">
-          <div class="button-container">
-            <button type="button" id="button" data-clipboard-target="#output">Copy result</button>
-            <span id="button-copied" aria-role="presentation">Copied!</span>
-          </div>
-          <div class="button-container">
-            <button type="button" id="url-button">Copy URL</button>
-            <span id="url-button-copied" aria-role="presentation">Copied!</span>
-          </div>
+        <div>
+          <input type="text" id="image-url" placeholder="Image URL">
+          <button type="button" id="update-image">Update</button>
+        </div>
+      </div>
+      <div id="buttons">
+        <div class="button-container">
+          <button type="button" id="button" data-clipboard-target="#output">Copy text</button>
+          <span id="button-copied" aria-role="presentation">Copied!</span>
+        </div>
+        <div class="button-container">
+          <button type="button" id="url-button">Copy URL</button>
+          <span id="url-button-copied" aria-role="presentation">Copied!</span>
         </div>
       </div>
     </div>
 
     <script src="clipboard.min.js" charset="utf-8"></script>
     <script>
-      function focusInput() {
-        document.getElementById('text').focus();
+      function focus(event) {
+        window.getSelection().removeAllRanges();
+        if (document.getElementById('editor').style.display === 'none') {
+          event.trigger.focus();
+        } else {
+          document.getElementById('text').focus();
+        }
       }
 
       var clipboard = new Clipboard('#button');
-      clipboard.on('success', function() {
-        focusInput();
+      clipboard.on('success', function(event) {
+        focus(event);
         document.getElementById('button-copied').style.display = 'block';
         document.getElementById('url-button-copied').style.display = 'none';
       });
-      clipboard.on('error', focusInput);
+      clipboard.on('error', focus);
 
       var urlClipboard = new Clipboard('#url-button', {
         text: function() {
           var text = encodeURIComponent(document.getElementById('text').value.trim());
+          var imageUrl = encodeURIComponent(document.getElementById('image-url').value.trim());
           return window.location.href.split('?')[0]
             + '?text=' + text
-            + '&snort=' + document.getElementById('snort').checked;
+            + '&snort=' + document.getElementById('snort').checked
+            + (imageUrl === '' ? '' : ('&image=' + imageUrl));
         },
       });
-      urlClipboard.on('success', function() {
-        focusInput();
+      urlClipboard.on('success', function(event) {
+        focus(event);
         document.getElementById('button-copied').style.display = 'none';
         document.getElementById('url-button-copied').style.display = 'block';
       });
-      urlClipboard.on('error', focusInput);
+      urlClipboard.on('error', focus);
     </script>
   </body>
 </html>

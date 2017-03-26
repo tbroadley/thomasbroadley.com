@@ -1,10 +1,3 @@
-html, body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   display: flex;
   flex-direction: row;
@@ -19,11 +12,7 @@ body {
   text-align: center;
 }
 
-#editor {
-  margin-top: 1rem;
-}
-
-#snort-div {
+#editor > div:not(:last-child) {
   margin-bottom: 0.5rem;
 }
 
@@ -34,9 +23,18 @@ body {
   font-size: 1.5rem;
 }
 
+#output, #image {
+  margin-bottom: 1rem;
+}
+
 #output {
   font-size: 2rem;
   font-family: sans-serif;
+}
+
+#image {
+  width: 100%;
+  max-width: 800px;
 }
 
 #snort, #snort-label, #button, #url-button, #button-copied, #url-button-copied, #edit-button {
@@ -47,6 +45,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 1rem 0 2rem;
 }
 
 .button-container {
