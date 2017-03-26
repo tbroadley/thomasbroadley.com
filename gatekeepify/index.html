@@ -7,21 +7,34 @@
     <link rel="stylesheet" href="index.css">
 
     <script>
+      function render() {
+        document.getElementById('button').style.display = 'inline';
+        document.getElementById('url-button').style.display = 'inline';
+        document.getElementById('snort').style.display = 'inline-block';
+        document.getElementById('snort-label').style.display = 'inline';
+
+        document.getElementById('button-copied').style.display = 'none';
+        document.getElementById('url-button-copied').style.display = 'none';
+
+        var input = document.getElementById('text').value;
+        var trimmedInput = input.trim();
+        var allCapsInput = trimmedInput.toUpperCase();
+        var splitInput = allCapsInput.split(' ');
+        var output = splitInput.join(' 👏 ')
+
+        if (document.getElementById('snort').checked && output !== '') {
+          output += ' 😤';
+        }
+
+        document.getElementById('output').textContent = output;
+      }
+
       window.onload = function() {
         textInput = document.getElementById('text');
         textInput.focus();
-        textInput.addEventListener('input', function(event) {
-          document.getElementById('button').style.display = 'inline';
-          document.getElementById('url-button').style.display = 'inline';
+        textInput.addEventListener('input', render);
 
-          var input = event.target.value;
-          var trimmedInput = input.trim();
-          var allCapsInput = trimmedInput.toUpperCase();
-          var splitInput = allCapsInput.split(' ');
-          var joinedInput = splitInput.join(' 👏 ')
-
-          document.getElementById('output').textContent = joinedInput;
-        });
+        document.getElementById('snort').addEventListener('change', render);
 
         function getParameterByName(name, url) {
           if (!url) {
@@ -35,10 +48,12 @@
           return decodeURIComponent(results[2].replace(/\+/g, " "));
         }
 
-        var queryParameter = getParameterByName('text');
-        if (queryParameter) {
-          textInput.value = queryParameter;
-          textInput.dispatchEvent(new Event('input'));
+        var text = getParameterByName('text');
+        var snortChecked = getParameterByName('snort');
+        if (text) {
+          textInput.value = text;
+          document.getElementById('snort').checked = snortChecked === 'true';
+          render();
         }
       };
     </script>
@@ -47,28 +62,49 @@
     <div id="app">
       <textarea id="text" rows="8" cols="80"></textarea>
       <p id="output"></p>
-      <button type="button" id="button" data-clipboard-target="#output">Copy result</button>
-      <button type="button" id="url-button">Copy URL</button>
+      <div id="snort-div">
+        <input type="checkbox" id="snort">
+        <label for="snort" id="snort-label">😤</label>
+      </div>
+      <div id="buttons">
+        <div class="button-container">
+          <button type="button" id="button" data-clipboard-target="#output">Copy result</button>
+          <span id="button-copied" aria-role="presentation">Copied!</span>
+        </div>
+        <div class="button-container">
+          <button type="button" id="url-button">Copy URL</button>
+          <span id="url-button-copied" aria-role="presentation">Copied!</span>
+        </div>
+      </div>
     </div>
 
     <script src="clipboard.min.js" charset="utf-8"></script>
     <script>
       function focusInput() {
         document.getElementById('text').focus();
-
       }
 
       var clipboard = new Clipboard('#button');
-      clipboard.on('success', focusInput);
+      clipboard.on('success', function() {
+        focusInput();
+        document.getElementById('button-copied').style.display = 'block';
+        document.getElementById('url-button-copied').style.display = 'none';
+      });
       clipboard.on('error', focusInput);
 
       var urlClipboard = new Clipboard('#url-button', {
         text: function() {
           var text = encodeURIComponent(document.getElementById('text').value.trim());
-          return window.location.href.split('?')[0] + '?text=' + text;
+          return window.location.href.split('?')[0]
+            + '?text=' + text
+            + '&snort=' + document.getElementById('snort').checked;
         },
       });
-      urlClipboard.on('success', focusInput);
+      urlClipboard.on('success', function() {
+        focusInput();
+        document.getElementById('button-copied').style.display = 'none';
+        document.getElementById('url-button-copied').style.display = 'block';
+      });
       urlClipboard.on('error', focusInput);
     </script>
   </body>

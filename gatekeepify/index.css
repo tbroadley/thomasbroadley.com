@@ -19,6 +19,10 @@ body {
   text-align: center;
 }
 
+#snort-div {
+  margin-bottom: 0.5rem;
+}
+
 #text {
   width: 100%;
   max-width: 500px;
@@ -31,6 +35,34 @@ body {
   font-family: sans-serif;
 }
 
-#button, #url-button {
+#snort, #snort-label, #button, #url-button, #button-copied, #url-button-copied {
   display: none;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+#button-copied, #url-button-copied {
+  width: 100%;
+  position: absolute;
+  top: 1.66rem;
+  background-color: white;
+  border: 1px solid black;
+  padding: 0.25rem;
+  font-size: 0.83rem;
+  font-family: sans-serif;
 }
