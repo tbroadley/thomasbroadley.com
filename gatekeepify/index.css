@@ -37,7 +37,7 @@ body {
   max-width: 800px;
 }
 
-#snort, #snort-label, #button, #url-button, #button-copied, #url-button-copied, #edit-button {
+#snort, #snort-label, #button, #url-button, #button-copied, #url-button-copied, #edit-button, #image-url, #update-image {
   display: none;
 }
 
