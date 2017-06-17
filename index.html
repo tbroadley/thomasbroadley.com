@@ -18,13 +18,35 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="fontello/css/fontello.css">
+    <link rel="stylesheet" href="reset.css">
     <style>
+      body {
+        margin: 1rem;
+      }
+
       p, ul {
         font-family: Verdana, Geneva, sans-serif;
       }
 
       h1, h2, th {
         font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+      }
+
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 1rem 0 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin: 2rem 0 1.5rem;
+      }
+
+      p {
+        line-height: 1.25;
+        margin-bottom: 1rem;
       }
 
       code {
@@ -56,8 +78,13 @@
       }
 
       td:nth-last-child(2) > p, td:nth-last-child(1) > p {
-        margin: 1rem 0;
+        margin: 1rem 0 2rem;
         font-size: 2rem;
+      }
+
+      tr:last-child > td:nth-last-child(2) > p,
+      tr:last-child > td:nth-last-child(1) > p {
+        margin-bottom: 0;
       }
 
       td:first-child > p {
