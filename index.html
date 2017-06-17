@@ -104,8 +104,20 @@
       }
 
       @media (min-width: 600px) {
+        table p {
+          margin-bottom: 0;
+        }
+
         th {
           padding-bottom: 1rem;
+        }
+
+        tr:not(:last-child) > td {
+          padding-bottom: 1rem;
+        }
+
+        th:not(:last-child), td:not(:last-child) {
+          padding-right: 1rem;
         }
 
         th:nth-child(1), th:nth-child(2) {
@@ -114,14 +126,6 @@
 
         td:nth-last-child(2), td:nth-last-child(1) {
           text-align: center;
-        }
-
-        th:not(:last-child), td:not(:last-child) {
-          padding-right: 1rem;
-        }
-
-        tr:last-child > td > p {
-          margin-bottom: 0;
         }
       }
 
