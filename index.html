@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="reset.css">
     <style>
       body {
-        margin: 1rem;
+        margin: 1rem 1rem 0 1rem;
+        padding-bottom: 1rem;
       }
 
       p, ul {
@@ -46,59 +47,86 @@
 
       p {
         line-height: 1.25;
-        margin-bottom: 1rem;
+        margin: 1rem 0;
       }
 
       code {
         font-family: monospace, monospace;
         font-size: 1em;
       }
-    </style>
-    <style>
-      table {
-        border-collapse: collapse;
-      }
-
-      thead {
-        display: none;
-      }
-
-      td {
-        display: block;
-        padding: 0;
-      }
-
-      tr:first-child > td:first-child > p {
-        margin-top: 0;
-      }
-
-      td:nth-last-child(2), td:nth-last-child(1) {
-        float: left;
-        width: 50%;
-      }
-
-      td:nth-last-child(2) > p, td:nth-last-child(1) > p {
-        margin: 1rem 0 2rem;
-        font-size: 2rem;
-      }
-
-      tr:last-child > td:nth-last-child(2) > p,
-      tr:last-child > td:nth-last-child(1) > p {
-        margin-bottom: 0;
-      }
-
-      td:first-child > p {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 1.17em;
-        font-weight: bold;
-      }
-
-      td:nth-child(2) > p {
-        margin-bottom: 0;
-      }
 
       [class^="icon-"]:before, [class*=" icon-"]:before {
         margin: 0;
+      }
+
+      @media (max-width: 599px) {
+        table {
+          border-collapse: collapse;
+        }
+
+        thead {
+          display: none;
+        }
+
+        td {
+          display: block;
+          padding: 0;
+        }
+
+        tr:first-child > td:first-child > p {
+          margin-top: 0;
+        }
+
+        td:nth-last-child(2), td:nth-last-child(1) {
+          float: left;
+          width: 50%;
+        }
+
+        td:nth-last-child(2) > p, td:nth-last-child(1) > p {
+          margin: 1rem 0 2rem;
+          font-size: 2rem;
+        }
+
+        tr:last-child > td:nth-last-child(2) > p,
+        tr:last-child > td:nth-last-child(1) > p {
+          margin-bottom: 0;
+        }
+
+        td:first-child > p {
+          font-family: "Times New Roman", Times, serif;
+          font-size: 1.17em;
+          font-weight: bold;
+        }
+
+        td:nth-child(2) > p {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (min-width: 600px) {
+        th:nth-child(1), th:nth-child(2) {
+          text-align: left;
+        }
+
+        td:nth-last-child(2), td:nth-last-child(1) {
+          text-align: center;
+        }
+
+        th:not(:last-child), td:not(:last-child) {
+          padding-right: 1rem;
+        }
+      }
+
+      @media (min-width: 850px) {
+        body {
+          margin: 0 125px;
+        }
+      }
+
+      @media (min-width: 1300px) {
+        html {
+          font-size: 20px;
+        }
       }
     </style>
   </head>
