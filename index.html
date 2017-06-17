@@ -55,7 +55,7 @@
 
       p {
         line-height: 1.25;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
       }
 
       code {
@@ -108,12 +108,8 @@
           margin-bottom: 0;
         }
 
-        th {
-          padding-bottom: 1rem;
-        }
-
-        tr:not(:last-child) > td {
-          padding-bottom: 1rem;
+        th, tr:not(:last-child) > td {
+          padding-bottom: 1.25rem;
         }
 
         th:not(:last-child), td:not(:last-child) {
@@ -131,13 +127,12 @@
 
       @media (min-width: 850px) {
         body {
-          margin: 0 125px;
+          margin: 2rem 2rem 0 2rem;
+          padding-bottom: 2rem;
         }
-      }
 
-      @media (min-width: 1300px) {
-        html {
-          font-size: 20px;
+        section:not(:last-child) {
+          margin-bottom: 3rem;
         }
       }
     </style>
