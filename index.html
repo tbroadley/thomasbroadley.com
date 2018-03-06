@@ -101,16 +101,18 @@
           display: none;
         }
 
-        td:nth-last-child(2) > p::after {
+        td:nth-last-child(2) > p > a::after, td:nth-last-child(1) > p > a::after {
+          margin-left: 0.3rem;
           font-size: 1rem;
           vertical-align: middle;
-          content: " Github";
         }
 
-        td:nth-last-child(1) > p::after {
-          font-size: 1rem;
-          vertical-align: middle;
-          content: " Website";
+        td:nth-last-child(2) > p > a::after {
+          content: "Github";
+        }
+
+        td:nth-last-child(1) > p > a::after {
+          content: "Website";
         }
 
         tr:last-child > td:nth-last-child(2) > p,
