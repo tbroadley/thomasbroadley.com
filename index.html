@@ -25,145 +25,28 @@
     </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="reset.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/boba@1/dist/boba.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,600|Roboto|Source+Code+Pro" rel="stylesheet">
     <style>
       body {
-        margin: 1rem 1rem 0 1rem;
-        padding-bottom: 1rem;
-      }
-
-      section:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-
-      section:last-child {
-        margin-bottom: 0;
-      }
-
-      p, ul {
         font-family: Roboto, Verdana, Geneva, sans-serif;
       }
 
-      h1, h2, th {
+      h1, h2, h3, h4, h5, h6,
+      .h1, .h2, .h3, .h4, .h5, .h6 {
         font-family: "Roboto Slab", "Times New Roman", Times, serif;
       }
 
-      h1 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      p {
-        line-height: 1.25;
-        margin-bottom: 1.25rem;
-      }
-
       code {
-        font-family: "Source Code Pro";
+        font-family: "Source Code Pro", monospace;
       }
 
-      #side-projects table a img {
-        height: 1rem;
-        margin-bottom: 1px;
-      }
-
-      @media (max-width: 599px) {
-        table {
-          border-collapse: collapse;
-        }
-
-        thead {
-          display: none;
-        }
-
-        td {
-          display: block;
-          padding: 0;
-        }
-
-        td:nth-child(2) > p {
-          margin-bottom: 0.5rem;
-        }
-
-        td:nth-last-child(2), td:nth-last-child(1) {
-          float: left;
-          width: 50%;
-        }
-
-        td:nth-last-child(2) > p, td:nth-last-child(1) > p {
-          margin-bottom: 2rem;
-          font-size: 2rem;
-        }
-
-        td:nth-last-child(2) > span, td:nth-last-child(1) > span {
-          display: none;
-        }
-
-        td:nth-last-child(2) > p > a::after, td:nth-last-child(1) > p > a::after {
-          margin-left: 0.3rem;
-          font-size: 1rem;
-          vertical-align: middle;
-        }
-
-        td:nth-last-child(2) > p > a::after {
-          content: "Github";
-        }
-
-        td:nth-last-child(1) > p > a::after {
-          content: "Website";
-        }
-
-        tr:last-child > td:nth-last-child(2) > p,
-        tr:last-child > td:nth-last-child(1) > p {
-          margin-bottom: 0;
-        }
-
-        td:first-child > p {
-          font-family: "Roboto Slab", "Times New Roman", Times, serif;
-          font-size: 1.17em;
-        }
-      }
-
-      @media (min-width: 600px) {
-        table p {
-          margin-bottom: 0;
-        }
-
-        th, tr:not(:last-child) > td {
-          padding-bottom: 1.25rem;
-        }
-
-        th:not(:last-child), td:not(:last-child) {
-          padding-right: 1rem;
-        }
-
-        th:nth-child(1), th:nth-child(2) {
-          text-align: left;
-        }
-
-        td:nth-last-child(2), td:nth-last-child(1) {
-          text-align: center;
-        }
-      }
-
-      @media (min-width: 850px) {
-        body {
-          margin: 2rem 2rem 0 2rem;
-          padding-bottom: 2rem;
-        }
-
-        section:not(:last-child) {
-          margin-bottom: 3rem;
-        }
+      .section {
+        margin: 2.5em 1.5em;
+        padding: 0;
       }
     </style>
   </head>
-
-  <body><header><h1>Thomas Broadley</h1></header><section id="about"><h2>About me</h2><p>I am a fourth-year Computer Science student at the University of Waterloo in Waterloo, Canada.</p><p>I&#x27;ve worked at <a href="https://zeitspace.com/">Zeitspace</a>, <a href="https://www.shopify.ca/plus">Shopify Plus</a>, and <a href="http://old.boltmade.com/">Boltmade</a> (since acquired by Shopify).</p><p>I&#x27;m working at <a href="https://datadoghq.com">Datadog</a> in New York City this summer.</p></section><section id="side-projects"><h2>Side projects</h2><table><thead><tr><th>Name</th><th>Description</th><th>GitHub</th><th>Website</th></tr></thead><tbody><tr><td><p>CS 452 project</p></td><td><p>A microkernel and userland programs, written in C, that run on a microcontroller and control a model train set.</p></td><td><span>–</span></td><td><p><a href="/trains.webm"><img src="/assets/external-link-symbol.svg" alt="CS 452 project website"/></a></p></td></tr><tr><td><p>GitHub Spellcheck CLI</p></td><td><p>A tool for checking GitHub repositories for spelling errors and submitting PRs to fix them. So far, I&#x27;ve used it to fix typos in over 130 repos.</p></td><td><p><a href="https://github.com/tbroadley/github-spellcheck-cli"><img src="/assets/github-logo.svg" alt="GitHub Spellcheck CLI GitHub"/></a></p></td><td><span>–</span></td></tr><tr><td><p>Rock-Paper-Scissors Kik Bot</p></td><td><p><span>A bot for the Kik messaging app that plays rock-paper-scissors. Built as part of <a href="https://medium.com/boltmades-31-days-of-bots-in-may">Boltmade&#x27;s 31 Days of Bots in May</a>.</span></p></td><td><p><a href="https://github.com/tbroadley/bot-paper-scissors"><img src="/assets/github-logo.svg" alt="Rock-Paper-Scissors Kik Bot GitHub"/></a></p></td><td><p><a href="https://bots.kik.com/#/bot_paper_scissors"><img src="/assets/external-link-symbol.svg" alt="Rock-Paper-Scissors Kik Bot website"/></a></p></td></tr><tr><td><p><code>lodash-fp-migrate</code></p></td><td><p><span>A tool for migrating code that uses <a href="https://github.com/lodash/lodash"><code>lodash</code></a> to <a href="https://github.com/lodash/lodash/wiki/FP-Guide"><code>lodash/fp</code></a>.</span></p></td><td><p><a href="https://github.com/tbroadley/lodash-fp-migrate"><img src="/assets/github-logo.svg" alt="lodash-fp-migrate GitHub"/></a></p></td><td><p><a href="https://www.npmjs.com/package/lodash-fp-migrate"><img src="/assets/external-link-symbol.svg" alt="lodash-fp-migrate website"/></a></p></td></tr><tr><td><p>Gatekeepify</p></td><td><p><span>YOU 👏 DON&#x27;T 👏 GET 👏 TO 👏 GATEKEEP 👏 IF 👏 YOU&#x27;RE 👏 NOT 👏 USING 👏 GATEKEEPIFY 😤. Built for <a href="https://terriblehack6.devpost.com/">TerribleHack the 6ix</a>.</span></p></td><td><p><a href="https://github.com/tbroadley/tbroadley.github.io/tree/master/gatekeepify"><img src="/assets/github-logo.svg" alt="Gatekeepify GitHub"/></a></p></td><td><p><a href="/gatekeepify"><img src="/assets/external-link-symbol.svg" alt="Gatekeepify website"/></a></p></td></tr></tbody></table></section><section id="music"><h2>Music</h2><p>I make music and post it on <a href="https://soundcloud.com/newwworld">SoundCloud</a>.</p></section><section id="contact"><h2>Contact me</h2><ul><li><a href="mailto:buriedunderbooks@hotmail.com">Email</a></li></ul></section></body>
+  <body><header class="banner bg-green"><div class="banner-body"><div class="container"><h1 class="header">Thomas Broadley</h1></div></div></header><section class="section"><div class="container"><div class="row"><div class="col xs-12"><h2 class="subheader thin">About me</h2></div><div class="col xs-12"><p>I am a fourth-year Computer Science student at the University of Waterloo in Waterloo, Canada.</p></div><div class="col xs-12"><p>I&#x27;ve worked at <a href="https://zeitspace.com/">Zeitspace</a>, <a href="https://www.shopify.ca/plus">Shopify Plus</a>, and <a href="http://old.boltmade.com/">Boltmade</a> (since acquired by Shopify).</p></div><div class="col xs-12"><p>I&#x27;m working at <a href="https://datadoghq.com">Datadog</a> in New York City this summer.</p></div></div></div></section><section class="section"><div class="container"><div class="row"><div class="col xs-12"><h2 class="subheader thin">Side projects</h2></div><div class="col xs-12 sm-6 md-4"><div class="card shadow-2"><div class="card-header bg-light"><div class="card-header-title">CS 452 project</div></div><p class="card-content">A microkernel and userland programs, written in C, that run on a microcontroller and control a model train set.</p><div class="card-footer"><div class="card-footer-item"><a href="/trains.webm">Website</a></div></div></div></div><div class="col xs-12 sm-6 md-4"><div class="card shadow-2"><div class="card-header bg-light"><div class="card-header-title">GitHub Spellcheck CLI</div></div><p class="card-content">A tool for checking GitHub repositories for spelling errors and submitting PRs to fix them. So far, I&#x27;ve used it to fix typos in over 130 repos.</p><div class="card-footer"><div class="card-footer-item"><a href="tbroadley/github-spellcheck-cli">GitHub</a></div></div></div></div><div class="col xs-12 sm-6 md-4"><div class="card shadow-2"><div class="card-header bg-light"><div class="card-header-title">Rock-Paper-Scissors Kik Bot</div></div><p class="card-content"><span>A bot for the Kik messaging app that plays rock-paper-scissors. Built as part of <a href="https://medium.com/boltmades-31-days-of-bots-in-may">Boltmade&#x27;s 31 Days of Bots in May</a>.</span></p><div class="card-footer"><div class="card-footer-item"><a href="tbroadley/bot-paper-scissors">GitHub</a></div><div class="card-footer-item"><a href="https://bots.kik.com/#/bot_paper_scissors">Website</a></div></div></div></div><div class="col xs-12 sm-6 md-4"><div class="card shadow-2"><div class="card-header bg-light"><div class="card-header-title"><code class="inline">lodash-fp-migrate</code></div></div><p class="card-content"><span>A tool for migrating code that uses <a href="https://github.com/lodash/lodash"><code class="inline">lodash</code></a> to <a href="https://github.com/lodash/lodash/wiki/FP-Guide"><code class="inline">lodash/fp</code></a>.</span></p><div class="card-footer"><div class="card-footer-item"><a href="tbroadley/lodash-fp-migrate">GitHub</a></div><div class="card-footer-item"><a href="https://www.npmjs.com/package/lodash-fp-migrate">Website</a></div></div></div></div><div class="col xs-12 sm-6 md-4"><div class="card shadow-2"><div class="card-header bg-light"><div class="card-header-title">Gatekeepify</div></div><p class="card-content"><span>YOU 👏 DON&#x27;T 👏 GET 👏 TO 👏 GATEKEEP 👏 IF 👏 YOU&#x27;RE 👏 NOT 👏 USING 👏 GATEKEEPIFY 😤. Built for <a href="https://terriblehack6.devpost.com/">TerribleHack the 6ix</a>.</span></p><div class="card-footer"><div class="card-footer-item"><a href="tbroadley/tbroadley.github.io/tree/master/gatekeepify">GitHub</a></div><div class="card-footer-item"><a href="/gatekeepify">Website</a></div></div></div></div></div></div></section><section class="section"><div class="container"><div class="row"><div class="col xs-12"><h2 class="subheader thin">Music</h2></div><div class="col xs-12"><p>I make music and post it on <a href="https://soundcloud.com/newwworld">SoundCloud</a>.</p></div></div></div></section><section class="section"><div class="container"><div class="row"><div class="col xs-12"><h2 class="subheader thin">Contact me</h2></div><div class="col xs-12"><a href="mailto:buriedunderbooks@hotmail.com">Email</a></div></div></div></section><section class="w-100 p-2 border-box display-flex align-content-center text-center bg-teal"><div class="container"><div class="row"><div class="col xs-12">Built with <a href="https://www.buildwithboba.com">boba</a>.</div></div></div></section></body>
 </html>
