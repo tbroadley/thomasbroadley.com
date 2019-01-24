@@ -27,7 +27,7 @@ input.addEventListener("paste", function (e) {
   // Get the clipboard data
   var clipboardData = e.clipboardData || window.clipboardData;
   var paste;
-  if (e.clipboardData.types.includes('text/html')) {
+  if (clipboardData.types.includes('text/html')) {
     var element = document.createElement('html');
     element.innerHTML = clipboardData.getData('text/html');
     paste = element.querySelector('body').innerHTML;
