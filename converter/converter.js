@@ -4,7 +4,8 @@ var input = document.getElementById("input");
 var output = document.getElementById("output");
 
 function transform(inputValue) {
-  return START_STRING + inputValue.replace(/\r?\n/g, "<br>\n")
+  return START_STRING + inputValue.replace(/\u00a0/g, "&nbsp;")
+                                  .replace(/\r?\n/g, "<br>\n")
                                   .replace(/  /g, "&nbsp;&nbsp;")
                                   .replace(/&nbsp; /g, "&nbsp;&nbsp;");
 }
