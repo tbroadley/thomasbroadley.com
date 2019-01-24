@@ -9,11 +9,11 @@ function transform(inputValue) {
                                   .replace(/&nbsp; /g, "&nbsp;&nbsp;");
 }
 
-function listener(e) {
-  output.value = transform(e.target.value);
+function listener() {
+  output.value = transform(input.value);
 }
 
-listener({ target: { value: "" } });
+listener();
 
 input.addEventListener("input", listener);
 
