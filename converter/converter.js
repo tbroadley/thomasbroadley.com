@@ -25,14 +25,14 @@ input.addEventListener("paste", function (e) {
   e.stopPropagation();
 
   // Get the clipboard data
-  var clipboardData = e.clipboardData || window.clipboardData;
+  var clipboardData = window.clipboardData || e.clipboardData;
   var paste;
-  if (clipboardData.types.includes('text/html')) {
+  if (clipboardData.types && clipboardData.types.includes('text/html')) {
     var element = document.createElement('html');
     element.innerHTML = clipboardData.getData('text/html');
     paste = element.querySelector('body').innerHTML;
   } else {
-    paste = clipboardData.getData('text/plain');
+    paste = clipboardData.getData('text');
   }
 
   var newInputValue = input.value.split('');
