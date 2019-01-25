@@ -37,34 +37,6 @@
 
     input.addEventListener("input", listener);
 
-    input.addEventListener("paste", function (e) {
-      // https://developer.mozilla.org/en-US/docs/Web/Events/paste#JavaScript_2
-      // Prevent the default pasting event and stop bubbling
-      e.preventDefault();
-      e.stopPropagation();
-
-      // Get the clipboard data
-      var clipboardData = window.clipboardData || e.clipboardData;
-      var paste;
-      if (clipboardData.types && clipboardData.types.includes('text/html')) {
-        var element = document.createElement('html');
-        element.innerHTML = clipboardData.getData('text/html');
-        paste = element.querySelector('body').innerHTML;
-      } else {
-        paste = clipboardData.getData('text');
-      }
-
-      var newInputValue = input.value.split('');
-      var start = input.selectionStart;
-      var end = input.selectionEnd;
-
-      Array.prototype.splice.apply(newInputValue, [start, end - start].concat(paste.split('')));
-      input.value = newInputValue.join('');
-      input.selectionStart = input.selectionEnd = start + paste.length;
-
-      listener();
-    });
-
     new ClipboardJS('#copy');
   </script>
 </body>
