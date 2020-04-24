@@ -27,3 +27,7 @@ h2 {
 code {
   font-family: "Source Code Pro", monospace;
 }
+
+.timestamp {
+  font-style: italic;
+}
