@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>What would we do if we didn't do code review?—Thomas Broadley</title>
@@ -37,7 +36,7 @@
     <article>
       <header>
         <h1>What would we do if we didn't do code review?</h1>
-        <p class="timestamp">April 24, 2020 (last modified April 25, 2020)</p>
+        <p class="timestamp">April 24, 2020 (last modified May 9, 2020)</p>
       </header>
 
       <section>
@@ -50,15 +49,15 @@
         </p>
 
         <p>
-          The second category includes reasoning about the code that only a human can do. Conventions that require nuanced judgement to enforce fall into this category. Reviewers also check that a pull request satisfies the requirements of the feature it implements, that the code is well-tested, and that the tests correctly describe the expected behaviour. Reviewers may manually validate that the pull request works as intended, provide feedback on comments and documentation, and ask the author to rewrite or comment unclear code. It’s also the reviewer’s responsibility to push back on pull requests that are large or complex, or that mix refactoring and functional changes. Finally, I’ve seen reviewers question whether it makes sense to implement the proposed change at all. If possible, we should give this feedback during planning, before the pull request is even written.
+          The second category includes conventions and checks that require human reasoning. Reviewers check that a pull request satisfies the requirements of the feature it implements, that the code is well-tested, and that the tests correctly describe the expected behaviour. Reviewers also provide feedback on comments and documentation, and ask the author to rewrite or comment unclear code. Finally, I’ve seen reviewers question whether it makes sense to implement the proposed change at all.
         </p>
 
         <p>
-          The third category contains the fuzzy benefits of having more than one person look at each pull request. Developers feel ownership for the code they review and responsibility for bugs that it introduces. Code review is a great way to share knowledge, both from reviewer to reviewee and vice versa. It also means that at least two people should be familiar with every line of code in the codebase, reducing the team’s bus factor. Finally, to build a sense of solidarity, it’s important for developers on the same team to work together on a daily basis.
+          The third category contains the harder-to-quantify benefits of having more than one person look at each pull request. Developers feel ownership for the code they review and responsibility for bugs that it introduces. Code review is a great way to share knowledge, both from reviewer to reviewee and vice versa. It also means that at least two people should be familiar with every line of code in the codebase, reducing the team’s bus factor. Finally, to build a sense of solidarity, it’s important for developers on the same team to work together on a daily basis.
         </p>
 
         <p>
-          Looking at the benefits in the second and third categories, I see a common thread: They’re also the benefits of pair programming. While pairing, the observer can give the same kinds of second-category feedback that a reviewer does. Even better, the driver gets this feedback as they’re writing the code, making it easier to integrate into the pull request. And pairing might be a better way to achieve the fuzzy goals in the third category, since developers collaborate in-person or over a voice or video call rather than through text.
+          Looking at the benefits in the second and third categories, I see a common thread: They’re also the benefits of pair programming. While pairing, the observer can give the same kinds of feedback on code quality and functionality that a reviewer does. Even better, the driver gets this feedback as they’re writing the code, making it easier to integrate into the pull request. And pairing might be a better way to achieve the fuzzy goals in the third category, since developers collaborate in-person or over a voice or video call rather than through text.
         </p>
 
         <p>
