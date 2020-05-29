@@ -31,3 +31,9 @@ code {
 .timestamp {
   font-style: italic;
 }
+
+pre {
+  margin: 0;
+  padding: 1rem;
+  background-color: #EEE;
+}

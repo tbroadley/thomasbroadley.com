@@ -1,0 +1,105 @@
+<html lang="en">
+  <head>
+    <title>Unlocking SSH keys using pass—Thomas Broadley</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="My setup for automatically unlocking SSH keys with passwords stored in pass, the standard Unix password manager.">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96230441-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro" rel="stylesheet">
+    <link href="/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>Unlocking SSH keys using <code>pass</code></h1>
+        <p class="timestamp">2020-05-29</p>
+      </header>
+
+      <section>
+        <p>
+        I use <a href="https://www.passwordstore.org/"><code>pass</code></a> as my password manager. It stores passwords and other secrets as GPG-encrypted files in a Git repository. I host that repo on GitHub and have clones of it on my work and personal computers. I store nearly all of my personal passwords in <code>pass</code>, including passwords for my GitHub SSH keys. I’ve gone through three ways of unlocking these SSH keys.
+        </p>
+
+        <p>
+          I started by running <code>pass -c SSH/Ubuntu</code> to copy my SSH key’s password to the keyboard, running a Git command like <code>git push</code>, then pasting my password into the prompt. I wasn’t satisfied with how much typing this process required. Plus, sometimes I’d forget to copy the password to my clipboard before running the Git command. I’d have to Ctrl+C that command and rerun it after copying the password. Even though I used <code>ssh-agent</code> and wasn’t unlocking my SSH key that often, I decided to automate this process.
+        </p>
+
+        <p>
+          My second method used a script I called <code>sshpass</code>. Here it is in its entirety:
+        </p>
+
+        <pre><code>#!/usr/bin/expect -f
+set password [exec pass SSH/Ubuntu]
+
+spawn ssh-add
+expect "passphrase"
+send -- "$password\r"
+interact</code></pre>
+
+        <p>
+        This is an <code>expect</code> script. According to <a href="https://linux.die.net/man/1/expect">its man page</a>, <code>expect</code> is “a program that ‘talks’ to other interactive programs according to a script”. In this case, the script instructs <code>expect</code> to store the output of <code>pass SSH/Ubuntu</code> in the variable <code>password</code>, then run <code>ssh-add</code>, wait for it to prompt for a password, and write the password to <code>ssh-add</code>’s stdin. For reasons I don’t totally understand, the <code>interact</code> command, which attaches the terminal’s standard streams to <code>ssh-add</code>’s, is necessary to let <code>ssh-add</code> finish running.
+        </p>
+
+        <p>
+        Now, all I had to do was run <code>sshpass</code> before running a Git command, but I’d still sometimes forget to run <code>sshpass</code>. Finally, this week, I came across a third solution that addresses this issue on Linux, mainly based on <a href="https://blog.ona.io/technology/2020/03/02/using-password-manager-with-ssh.html">this blog post</a>.
+        </p>
+
+        <p>
+          First, I added <code>AddKeysToAgent yes</code> to my SSH configuration at <code>~/.ssh/config</code>. This causes <code>ssh</code> to add keys to <code>ssh-agent</code> when they’re unlocked. This is important because we’ll no longer be explicitly calling <code>ssh-add</code>.
+        </p>
+
+        <p>
+          Then, I added the following to my <code>.zshrc</code>:
+        </p>
+
+        <pre><code>eval $(ssh-agent) > /dev/null
+export SSH_ASKPASS=~/ssh-pass-passphrase.bash
+alias ssh="setsid -w ssh"
+alias git="setsid -w git"</code></pre>
+
+        <p>
+          This starts an instance of <code>ssh-agent</code>, then sets the <code>SSH_ASKPASS</code> environment variable. If this variable is set, when <code>ssh</code> needs a password to unlock an SSH key, it runs the script pointed at by the variable and uses the output as the password. Note that this only works if <code>ssh</code> isn’t run in a terminal. That’s the purpose of the aliases for <code>ssh</code> and <code>git</code>: <code>setsid</code> runs these programs in a new shell session that isn’t associated with the terminal in which I’m running <code>ssh</code> or <code>git</code>. The <code>-w</code> flag causes <code>setsid</code> to wait until <code>ssh</code> or <code>git</code> exits before exiting.
+        </p>
+
+        <p>
+          <code>~/ssh-pass-passphrase.bash</code> is a script that writes my SSH key’s password to stdout:
+        </p>
+
+        <pre><code>#!/bin/bash
+pass SSH/Ubuntu</code></pre>
+
+        <p>
+          Now, I can run Git commands without worrying if my SSH key is unlocked beforehand. If it isn’t, <code>ssh</code> automatically calls <code>pass</code> to get my SSH key’s password and unlocks the key before Git runs the command.
+        </p>
+
+        <p>
+          So far, this setup only works on Ubuntu on my personal computer. My next step is to get it working on Mac OS, so I can use it on my work computer too. After that, I’d like to look into ways to avoid spawning an instance of <code>ssh-agent</code> in every terminal I run this command in.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>
