@@ -36,7 +36,7 @@
     <article>
       <header>
         <h1>Rate-limit right before allocating</h1>
-        <p class="timestamp">2020-05-26</p>
+        <p class="timestamp">2020-05-26 (last modified 2020-05-30)</p>
       </header>
 
       <section>
@@ -58,6 +58,14 @@
 
         <p>
           These problems point to a general principle. Rate-limiting prevents one user from using too much of a shared resource, e.g. database space or CPU. The principle is this: Rate-limit right before allocating part of that shared resource to a request. If you check the rate limit too late, the rate-limiting won’t effectively protect the resource. If you check it too early, you’ll end up rate-limiting requests that wouldn’t have consumed the resource anyway, which might be a poor experience for users.
+        </p>
+
+        <p>
+          Edit (2020-05-30): A couple of my coworkers pointed out that this principle has tradeoffs. In the first example in this article, I added a direct call to a rate-limiter method to the endpoint. We wouldn't want to do that for every endpoint that adds rows to the database. Instead, we could implement a configurable database rate-limiting system that allows you to specify different rate limits for insertions to different tables. We might want to implement a similar system for each shared resource. Contrast this with a single system that only allows you to rate-limit the number of requests per endpoint. The former allows you to limit bad behaviour more aggressively without compromising user experience, but it might not be worth the extra complexity.
+        </p>
+
+        <p>
+          A coworker also mentioned a second use for rate-limiting: preventing dictionary attacks, both on sensitive information, like passwords, and less sensitive information, like tokens that refer to database objects. I think it's possible to treat this as a special case of protecting shared resources by considering the search space as a shared resource, but I haven't fully worked out this metaphor yet.
         </p>
       </section>
     </article>
