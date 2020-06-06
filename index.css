@@ -37,3 +37,7 @@ pre {
   padding: 1rem;
   background-color: #EEE;
 }
+
+section > img {
+  width: 100%;
+}
