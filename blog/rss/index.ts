@@ -24,7 +24,11 @@ for (const post of posts) {
   let title = undefined;
   let inTitle = false;
 
+  let timestamp = undefined;
+  let inTimestamp = false;
+
   let content = "TODO";
+  let inContent = false;
 
   const parser = new Parser(
     {
@@ -32,15 +36,30 @@ for (const post of posts) {
         if (name === "title") {
           inTitle = true;
         }
+        if (name === "p" && attributes.class === "timestamp") {
+          inTimestamp = true;
+        }
+        if (name === "section") {
+          inContent = true;
+        }
       },
       ontext(text) {
         if (inTitle) {
           title = text.replace(/—Thomas Broadley$/, "");
         }
+        if (inTimestamp) {
+          timestamp = text.substring(0, "yyyy-mm-dd".length);
+        }
       },
       onclosetag(name) {
         if (name === "title") {
           inTitle = false;
+        }
+        if (name === "p") {
+          inTimestamp = false;
+        }
+        if (name === "section") {
+          inContent = false;
         }
       },
     },
@@ -50,13 +69,13 @@ for (const post of posts) {
   parser.write(postBody);
   parser.end();
 
-  if (title && content) {
+  if (title && timestamp && content) {
     feed.item({
       title,
       description: content,
       url: `https://thomasbroadley.com/blog/${post}/`,
       guid: post,
-      date: new Date(), // TODO
+      date: new Date(`${timestamp} 00:00-0500`),
     });
   }
 }
