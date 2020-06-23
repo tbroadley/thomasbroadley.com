@@ -36,6 +36,10 @@ for (const post of posts) {
       ontext(text) {
         if (inTitle) {
           title = text.replace(/—Thomas Broadley$/, "");
+        }
+      },
+      onclosetag(name) {
+        if (name === "title") {
           inTitle = false;
         }
       },
