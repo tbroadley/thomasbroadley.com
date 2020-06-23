@@ -4,6 +4,10 @@ import * as RSS from "rss";
 
 const feed = new RSS({
   title: "Thomas Broadley",
+  managingEditor: "Thomas Broadley",
+  webMaster: "Thomas Broadley",
+  copyright: "2020 Thomas Broadley",
+  language: "en",
   description: "Blog posts by Thomas Broadley.",
   feed_url: "https://thomasbroadley.com/blog/rss.xml",
   site_url: "https://thomasbroadley.com",
