@@ -4,6 +4,7 @@ import * as RSS from "rss";
 
 const feed = new RSS({
   title: "Thomas Broadley",
+  description: "Blog posts by Thomas Broadley.",
   feed_url: "https://thomasbroadley.com/blog/rss.xml",
   site_url: "https://thomasbroadley.com",
 });
@@ -12,18 +13,44 @@ const posts = readdirSync("..").filter(
   (post) => !["rss", "rss.xml", "index.html"].includes(post)
 );
 
-const postInformation = posts.map((post) => {
+for (const post of posts) {
   const postBody = readFileSync(`../${post}/index.html`, "utf8");
+
+  let title = undefined;
+  let inTitle = false;
+
+  let content = "TODO";
+
   const parser = new Parser(
     {
       onopentag(name, attributes) {
-        console.log(name, attributes);
+        if (name === "title") {
+          inTitle = true;
+        }
+      },
+      ontext(text) {
+        if (inTitle) {
+          title = text.replace(/—Thomas Broadley$/, "");
+          inTitle = false;
+        }
       },
     },
     { decodeEntities: true }
   );
+
   parser.write(postBody);
-});
+  parser.end();
+
+  if (title && content) {
+    feed.item({
+      title,
+      description: content,
+      url: `https://thomasbroadley.com/blog/${post}/`,
+      guid: post,
+      date: new Date(), // TODO
+    });
+  }
+}
 
 const xml = feed.xml({ indent: true });
 writeFileSync("../rss.xml", xml);
