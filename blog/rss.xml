@@ -1,52 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title><![CDATA[Thomas Broadley]]></title>
-        <description><![CDATA[Thomas Broadley]]></description>
+        <description><![CDATA[Blog posts by Thomas Broadley.]]></description>
         <link>https://thomasbroadley.com</link>
+        <image>
+            <url>https://thomasbroadley.com/blog/rss.png</url>
+            <title>Thomas Broadley</title>
+            <link>https://thomasbroadley.com</link>
+        </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 23 Jun 2020 13:12:30 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Jun 2020 13:21:11 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[A small mindfulness win]]></title>
             <description><![CDATA[TODO]]></description>
             <link>https://thomasbroadley.com/blog/a-small-mindfulness-win/</link>
             <guid isPermaLink="false">a-small-mindfulness-win</guid>
-            <pubDate>Tue, 23 Jun 2020 13:12:30 GMT</pubDate>
+            <pubDate>Tue, 23 Jun 2020 13:21:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Learning Workman]]></title>
             <description><![CDATA[TODO]]></description>
             <link>https://thomasbroadley.com/blog/learning-workman/</link>
             <guid isPermaLink="false">learning-workman</guid>
-            <pubDate>Tue, 23 Jun 2020 13:12:30 GMT</pubDate>
+            <pubDate>Tue, 23 Jun 2020 13:21:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Project retrospective: EDM Scraper]]></title>
             <description><![CDATA[TODO]]></description>
             <link>https://thomasbroadley.com/blog/project-retrospective-edm-scraper/</link>
             <guid isPermaLink="false">project-retrospective-edm-scraper</guid>
-            <pubDate>Tue, 23 Jun 2020 13:12:30 GMT</pubDate>
+            <pubDate>Tue, 23 Jun 2020 13:21:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Rate-limit right before allocating]]></title>
             <description><![CDATA[TODO]]></description>
             <link>https://thomasbroadley.com/blog/rate-limit-right-before-allocating/</link>
             <guid isPermaLink="false">rate-limit-right-before-allocating</guid>
-            <pubDate>Tue, 23 Jun 2020 13:12:30 GMT</pubDate>
+            <pubDate>Tue, 23 Jun 2020 13:21:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Unlocking SSH keys using pass]]></title>
             <description><![CDATA[TODO]]></description>
             <link>https://thomasbroadley.com/blog/unlocking-ssh-keys-using-pass/</link>
             <guid isPermaLink="false">unlocking-ssh-keys-using-pass</guid>
-            <pubDate>Tue, 23 Jun 2020 13:12:30 GMT</pubDate>
+            <pubDate>Tue, 23 Jun 2020 13:21:11 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What would we do if we didn't do code review?]]></title>
             <description><![CDATA[TODO]]></description>
             <link>https://thomasbroadley.com/blog/what-would-we-do-if-we-didnt-do-code-review/</link>
             <guid isPermaLink="false">what-would-we-do-if-we-didnt-do-code-review</guid>
-            <pubDate>Tue, 23 Jun 2020 13:12:30 GMT</pubDate>
+            <pubDate>Tue, 23 Jun 2020 13:21:11 GMT</pubDate>
         </item>
     </channel>
 </rss>

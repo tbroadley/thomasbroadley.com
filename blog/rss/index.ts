@@ -7,10 +7,11 @@ const feed = new RSS({
   description: "Blog posts by Thomas Broadley.",
   feed_url: "https://thomasbroadley.com/blog/rss.xml",
   site_url: "https://thomasbroadley.com",
+  image_url: "https://thomasbroadley.com/blog/rss.png",
 });
 
 const posts = readdirSync("..").filter(
-  (post) => !["rss", "rss.xml", "index.html"].includes(post)
+  (post) => !["rss", "rss.png", "rss.xml", "index.html"].includes(post)
 );
 
 for (const post of posts) {
