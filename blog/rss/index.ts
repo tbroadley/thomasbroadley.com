@@ -27,7 +27,7 @@ for (const post of posts) {
   let timestamp = undefined;
   let inTimestamp = false;
 
-  let content = "TODO";
+  let content = "";
   let inContent = false;
 
   const parser = new Parser(
@@ -41,6 +41,16 @@ for (const post of posts) {
         }
         if (name === "section") {
           inContent = true;
+        } else if (inContent) {
+          const attributesString =
+            Object.keys(attributes).length === 0
+              ? ""
+              : " " +
+                Object.keys(attributes)
+                  .map((key) => `${key}="${attributes[key]}"`)
+                  .join(" ");
+          const closingTag = ["hr", "img"].includes(name) ? "" : ">";
+          content += `<${name}${attributesString}${closingTag}`;
         }
       },
       ontext(text) {
@@ -49,6 +59,9 @@ for (const post of posts) {
         }
         if (inTimestamp) {
           timestamp = text.substring(0, "yyyy-mm-dd".length);
+        }
+        if (inContent) {
+          content += text;
         }
       },
       onclosetag(name) {
@@ -60,6 +73,9 @@ for (const post of posts) {
         }
         if (name === "section") {
           inContent = false;
+        }
+        if (inContent) {
+          content += ["hr", "img"].includes(name) ? " />" : `</${name}>`;
         }
       },
     },
