@@ -106,6 +106,8 @@ for (const post of posts) {
       guid: post,
       date: new Date(`${timestamp} 00:00-0500`),
     });
+  } else {
+    throw new Error(`Couldn't parse post ${post}`);
   }
 }
 
