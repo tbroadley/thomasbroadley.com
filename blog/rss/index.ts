@@ -2,27 +2,7 @@ import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { Parser } from "htmlparser2";
 import * as RSS from "rss";
 
-const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
-
-const feed = new RSS({
-  title: "Thomas Broadley",
-  managingEditor: "Thomas Broadley",
-  webMaster: "Thomas Broadley",
-  copyright: "2020 Thomas Broadley",
-  language: "en",
-  description: "Blog posts by Thomas Broadley.",
-  feed_url: "https://thomasbroadley.com/blog/rss.xml",
-  site_url: "https://thomasbroadley.com",
-  image_url: "https://thomasbroadley.com/blog/rss.png",
-});
-
-const posts = readdirSync("..").filter(
-  (post) => !["rss", "rss.png", "rss.xml", "index.html"].includes(post)
-);
-
-for (const post of posts) {
-  const postBody = readFileSync(`../${post}/index.html`, "utf8");
-
+function parsePost(postBody) {
   let title = undefined;
   let inTitle = false;
 
@@ -90,6 +70,31 @@ for (const post of posts) {
 
   parser.write(postBody);
   parser.end();
+
+  return { title, timestamp, content };
+}
+
+const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
+
+const feed = new RSS({
+  title: "Thomas Broadley",
+  managingEditor: "Thomas Broadley",
+  webMaster: "Thomas Broadley",
+  copyright: "2020 Thomas Broadley",
+  language: "en",
+  description: "Blog posts by Thomas Broadley.",
+  feed_url: "https://thomasbroadley.com/blog/rss.xml",
+  site_url: "https://thomasbroadley.com",
+  image_url: "https://thomasbroadley.com/blog/rss.png",
+});
+
+const posts = readdirSync("..").filter(
+  (post) => !["rss", "rss.png", "rss.xml", "index.html"].includes(post)
+);
+
+for (const post of posts) {
+  const postBody = readFileSync(`../${post}/index.html`, "utf8");
+  const { title, timestamp, content } = parsePost(postBody);
 
   if (title && timestamp && content) {
     feed.item({
