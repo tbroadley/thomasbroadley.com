@@ -2,6 +2,8 @@ import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { Parser } from "htmlparser2";
 import * as RSS from "rss";
 
+const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
+
 const feed = new RSS({
   title: "Thomas Broadley",
   managingEditor: "Thomas Broadley",
@@ -49,7 +51,7 @@ for (const post of posts) {
                 Object.keys(attributes)
                   .map((key) => `${key}="${attributes[key]}"`)
                   .join(" ");
-          const closingTag = ["hr", "img"].includes(name) ? "" : ">";
+          const closingTag = SELF_CLOSING_TAG_NAMES.includes(name) ? "" : ">";
           content += `<${name}${attributesString}${closingTag}`;
         }
       },
@@ -75,7 +77,9 @@ for (const post of posts) {
           inContent = false;
         }
         if (inContent) {
-          content += ["hr", "img"].includes(name) ? " />" : `</${name}>`;
+          content += SELF_CLOSING_TAG_NAMES.includes(name)
+            ? " />"
+            : `</${name}>`;
         }
       },
     },
