@@ -34,7 +34,9 @@ function parsePost(postBody) {
             Object.keys(attributes)
               .map((key) => `${key}="${attributes[key]}"`)
               .join(" ");
-      const closingBracket = SELF_CLOSING_TAG_NAMES.includes(name) ? "" : ">";
+      const closingBracket = SELF_CLOSING_TAG_NAMES.includes(name)
+        ? " />"
+        : ">";
       content += `<${name}${attributesString}${closingBracket}`;
     }
   }
@@ -62,7 +64,9 @@ function parsePost(postBody) {
       inContent = false;
     }
     if (inContent) {
-      content += SELF_CLOSING_TAG_NAMES.includes(name) ? " />" : `</${name}>`;
+      if (!SELF_CLOSING_TAG_NAMES.includes(name)) {
+        content += `</${name}>`;
+      }
     }
   }
 
