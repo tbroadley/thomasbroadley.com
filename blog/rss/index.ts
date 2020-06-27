@@ -51,8 +51,10 @@ for (const post of posts) {
                 Object.keys(attributes)
                   .map((key) => `${key}="${attributes[key]}"`)
                   .join(" ");
-          const closingTag = SELF_CLOSING_TAG_NAMES.includes(name) ? "" : ">";
-          content += `<${name}${attributesString}${closingTag}`;
+          const closingBracket = SELF_CLOSING_TAG_NAMES.includes(name)
+            ? ""
+            : ">";
+          content += `<${name}${attributesString}${closingBracket}`;
         }
       },
       ontext(text) {
