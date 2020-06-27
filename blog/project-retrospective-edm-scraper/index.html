@@ -2,35 +2,57 @@
   <head>
     <title>Project retrospective: EDM Scraper—Thomas Broadley</title>
 
-    <meta charset="utf-8">
-    <meta name="description" content="Looking back on EDM Scraper, a service that sends me a daily email of nearby concerts.">
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Looking back on EDM Scraper, a service that sends me a daily email of nearby concerts."
+    />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
 
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
 
-      ga('create', 'UA-96230441-1', 'auto');
-      ga('send', 'pageview');
-
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
     </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro" rel="stylesheet">
-    <link href="/index.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
   </head>
   <body>
     <nav>
       <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
     </nav>
 
     <article>
@@ -41,35 +63,98 @@
 
       <section>
         <p>
-        In 2016, I got into live music seriously for the first time. At first I found concerts by looking through long lists of ones in Toronto for artists I recognized. At the start of 2017 I decided to automate this process. Thus was born <a href="https://github.com/tbroadley/edm-scraper">EDM Scraper</a>: a service that sends mea daily email containing new concert listings near me.
+          In 2016, I got into live music seriously for the first time. At first
+          I found concerts by looking through long lists of ones in Toronto for
+          artists I recognized. At the start of 2017 I decided to automate this
+          process. Thus was born
+          <a href="https://github.com/tbroadley/edm-scraper">EDM Scraper</a>: a
+          service that sends mea daily email containing new concert listings
+          near me.
         </p>
 
         <p>
-          The project is a collection of Ruby scripts that scrape different webpages. To do the scraping, these scripts use the headless browser PhantomJS; the Capybara library, which can simulate interactions with many different browsers and is often used for Rails acceptance testing; and Poltergeist, a library that allows Capybara to interact with PhantomJS. Each script stores the scraped concert listings in a database. Finally, another script reads the database and sends me a digest of new and interesting concerts using the PostageApp email-sending service.
+          The project is a collection of Ruby scripts that scrape different
+          webpages. To do the scraping, these scripts use the headless browser
+          PhantomJS; the Capybara library, which can simulate interactions with
+          many different browsers and is often used for Rails acceptance
+          testing; and Poltergeist, a library that allows Capybara to interact
+          with PhantomJS. Each script stores the scraped concert listings in a
+          database. Finally, another script reads the database and sends me a
+          digest of new and interesting concerts using the PostageApp
+          email-sending service.
         </p>
 
         <p>
-          My definition of “interesting” was nuanced, which was one reason I wasn’t satisfied with using Spotify or another service that lets you know about concerts for artists you follow. I particularly enjoy EDM shows, even when I don’t know the DJ well. I decided I wanted the service to email me whenever it found a new EDM concert. However, I also wanted an email when specific artists that I really liked, not limited to EDM producers, came to town. I created one scraper for a website with a comprehensive list of EDM shows in Toronto. I then added a second scraper for a website listing all Toronto concerts. This scraper only saves listings for concerts that match a list of artist names I’ve put together by hand.
+          My definition of “interesting” was nuanced, which was one reason I
+          wasn’t satisfied with using Spotify or another service that lets you
+          know about concerts for artists you follow. I particularly enjoy EDM
+          shows, even when I don’t know the DJ well. I decided I wanted the
+          service to email me whenever it found a new EDM concert. However, I
+          also wanted an email when specific artists that I really liked, not
+          limited to EDM producers, came to town. I created one scraper for a
+          website with a comprehensive list of EDM shows in Toronto. I then
+          added a second scraper for a website listing all Toronto concerts.
+          This scraper only saves listings for concerts that match a list of
+          artist names I’ve put together by hand.
         </p>
 
         <p>
-          I decided to build EDM Scraper using Ruby because I’d previously used Capybara for end-to-end testing and scraping. I originally decided not to use Rails because I didn’t expect to use most of Rails’s functionality, but I now regret that decision. I did want to store concert listings in a database. I used ActiveRecord for this and found it more difficult than expected to integrate the library into the project. Instead, I should have let Rails handle the integration with ActiveRecord. I was also worried that setting up a Rails application would make it slower to start the project. In retrospect, this doesn’t make sense: the Rails CLI makes it easy to set up new projects.
+          I decided to build EDM Scraper using Ruby because I’d previously used
+          Capybara for end-to-end testing and scraping. I originally decided not
+          to use Rails because I didn’t expect to use most of Rails’s
+          functionality, but I now regret that decision. I did want to store
+          concert listings in a database. I used ActiveRecord for this and found
+          it more difficult than expected to integrate the library into the
+          project. Instead, I should have let Rails handle the integration with
+          ActiveRecord. I was also worried that setting up a Rails application
+          would make it slower to start the project. In retrospect, this doesn’t
+          make sense: the Rails CLI makes it easy to set up new projects.
         </p>
 
         <p>
-          So far, I’ve only written tests for the logic-heavy parts of the project: parsing concert dates, deciding which artists to include in the email, and building the email itself. The scripts that scrape the web pages and send the emails don’t have automated tests. I found it easy enough to test those by running them on my computer. I set up the scripts so that they could either connect to the production PostgreSQL database, a local PostgreSQL database for development, or an instance of NullDB for automated testing. In fact, I often use the NullDB mode when manually testing scripts too. The database logic is centralized in an ActiveRecord model, so I don’t worry about bugs in how a specific script persists concerts.
+          So far, I’ve only written tests for the logic-heavy parts of the
+          project: parsing concert dates, deciding which artists to include in
+          the email, and building the email itself. The scripts that scrape the
+          web pages and send the emails don’t have automated tests. I found it
+          easy enough to test those by running them on my computer. I set up the
+          scripts so that they could either connect to the production PostgreSQL
+          database, a local PostgreSQL database for development, or an instance
+          of NullDB for automated testing. In fact, I often use the NullDB mode
+          when manually testing scripts too. The database logic is centralized
+          in an ActiveRecord model, so I don’t worry about bugs in how a
+          specific script persists concerts.
         </p>
 
         <p>
-          The nature of the project means that, if a script fails, the only symptom is not receiving an email, which I might not notice for a while. To remedy this, I wrapped each script in a function that would run the block passed to it, catching any exceptions thrown by the block and sending me an email if it did catch one. Of course, if the scripts can't email me, I still wouldn’t know that anything had gone wrong, but so far that hasn’t been a problem.
+          The nature of the project means that, if a script fails, the only
+          symptom is not receiving an email, which I might not notice for a
+          while. To remedy this, I wrapped each script in a function that would
+          run the block passed to it, catching any exceptions thrown by the
+          block and sending me an email if it did catch one. Of course, if the
+          scripts can't email me, I still wouldn’t know that anything had gone
+          wrong, but so far that hasn’t been a problem.
         </p>
 
         <p>
-        Currently EDM Scraper runs on Heroku’s free tier. The free tier makes a lot of sense for this project because it’s mostly implemented using scheduled tasks with soft deadlines. It doesn’t matter if it takes an extra ten seconds for a free dyno to spin up. Eventually I did create <a href="http://edm-scraper.herokuapp.com">a simple webpage</a> that lists all future concert listings , but I don’t access it often enough to be bothered by the ten seconds I have to wait for the page to load.
+          Currently EDM Scraper runs on Heroku’s free tier. The free tier makes
+          a lot of sense for this project because it’s mostly implemented using
+          scheduled tasks with soft deadlines. It doesn’t matter if it takes an
+          extra ten seconds for a free dyno to spin up. Eventually I did create
+          <a href="http://edm-scraper.herokuapp.com">a simple webpage</a> that
+          lists all future concert listings , but I don’t access it often enough
+          to be bothered by the ten seconds I have to wait for the page to load.
         </p>
 
         <p>
-          So far, I haven’t needed to put much effort into maintaining the project. A few times, one of my scrapers has balked at some new formatting on the page and I’ve had to adjust it slightly. I also added scrapers for shows in New York when I lived there in the summer of 2018, and more recently a scraper for virtual festivals occurring during the pandemic. Many of the commits in the project’s Git history are just adding more artists to my list. My next step for the project might be to fetch a list of artists I follow from Spotify, instead of maintaining the list by hand.
+          So far, I haven’t needed to put much effort into maintaining the
+          project. A few times, one of my scrapers has balked at some new
+          formatting on the page and I’ve had to adjust it slightly. I also
+          added scrapers for shows in New York when I lived there in the summer
+          of 2018, and more recently a scraper for virtual festivals occurring
+          during the pandemic. Many of the commits in the project’s Git history
+          are just adding more artists to my list. My next step for the project
+          might be to fetch a list of artists I follow from Spotify, instead of
+          maintaining the list by hand.
         </p>
       </section>
     </article>
