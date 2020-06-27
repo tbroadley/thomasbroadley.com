@@ -2,6 +2,9 @@ import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { Parser } from "htmlparser2";
 import * as RSS from "rss";
 
+const WEBSITE_URL = "https://thomasbroadley.com";
+const BLOG_URL = `${WEBSITE_URL}/blog`;
+
 const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
 
 function parsePost(postBody) {
@@ -85,9 +88,9 @@ const feed = new RSS({
   copyright: "2020 Thomas Broadley",
   language: "en",
   description: "Blog posts by Thomas Broadley.",
-  feed_url: "https://thomasbroadley.com/blog/rss.xml",
-  site_url: "https://thomasbroadley.com",
-  image_url: "https://thomasbroadley.com/blog/rss.png",
+  feed_url: `${BLOG_URL}/rss.xml`,
+  site_url: WEBSITE_URL,
+  image_url: `${BLOG_URL}/rss.png`,
 });
 
 const posts = readdirSync("..").filter(
@@ -102,7 +105,7 @@ for (const post of posts) {
     feed.item({
       title,
       description: content,
-      url: `https://thomasbroadley.com/blog/${post}/`,
+      url: `${BLOG_URL}/${post}/`,
       guid: post,
       date: new Date(`${timestamp} 00:00-0500`),
     });
