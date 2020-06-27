@@ -88,12 +88,14 @@
           generate the RSS feed from the contents.
         </p>
 
+        <h2>The right tool for the job</h2>
+
         <p>
           I soon realized <code>htmlparser2</code> wasn’t the easiest tool to
-          use for this job. The library uses a callback interface: It lets you
-          provide functions that it then calls when it encounters opening and
-          closing tags, text nodes, and other document features. It’s up to the
-          code using the library to track its location in the parse tree.
+          use. The library uses a callback interface: It lets you provide
+          functions that it then calls when it encounters opening and closing
+          tags, text nodes, and other document features. It’s up to the code
+          using the library to track its location in the parse tree.
         </p>
 
         <p>
@@ -109,6 +111,8 @@
           <a href="https://www.npmjs.com/package/jsdom"><code>jsdom</code></a
           >.
         </p>
+
+        <h2>Parsing the posts</h2>
 
         <p>
           In any case, solving this problem with <code>htmlparser2</code> was a
@@ -144,8 +148,10 @@
           inside it.
         </p>
 
+        <h2>Getting the post contents</h2>
+
         <p>
-          Extracting the contents of the post was more difficult. The body of
+          Extracting the contents of each post was more difficult. The body of
           each blog post lives in a <code>section</code> tag. It can contain
           HTML itself—so far I’ve mainly used <code>a</code> and
           <code>code</code> tags. However, <code>htmlparser2</code> doesn’t let
@@ -173,13 +179,17 @@
           the original post.
         </p>
 
+        <h2>Generating the RSS feed</h2>
+
         <p>
-          Generating the RSS feed is simpler. Each post lives in its own folder,
-          so the script gets a list of those folders, reads and parses each
-          post, adds an item to the feed for each parsed post, and writes the
-          feed to an XML file. After running the script, I commit the updated
-          file to my website’s Git repository and push to publish.
+          Generating the feed was simpler. Each post lives in its own folder, so
+          the script gets a list of those folders, reads and parses each post,
+          adds an item to the feed for each parsed post, and writes the feed to
+          an XML file. After running the script, I commit the updated file to my
+          website’s Git repository and push to publish.
         </p>
+
+        <h2>Why TypeScript?</h2>
 
         <p>
           I wrote this script in TypeScript but didn’t benefit much from doing
@@ -196,6 +206,8 @@
           those features, TS would have been an improvement over JS.
         </p>
 
+        <h2>Why RSS?</h2>
+
         <p>
           So why RSS? I’m a big consumer of RSS feeds myself and I know I’m not
           alone, even if they’re not as popular as they used to be. RSS is a
@@ -210,18 +222,20 @@
           paid newsletter to avoid integrating with a payment processor.
         </p>
 
+        <h2>P.S.: Why not an SSG or a CMS?</h2>
+
         <p>
-          P.S.: It’s also worth examining why I don’t use a static site
-          generator or a CMS for my blog. I certainly could have built it more
-          quickly using one of those tools. Well, again, I like having full
-          control over my website, both its appearance and its code. A tool like
-          Wordpress doesn’t give you that control without a lot of
-          customization. I also appreciate that my website’s code is simple and
-          human-readable. Finally, I enjoy solving problems and writing
-          software. I don’t see the time spent working on projects like this one
-          as wasted. I even enjoy the process of turning each post into an HTML
-          document. It’s a good Vim exercise and the process somehow makes me
-          feel more proud of my posts.
+          It’s also worth examining why I don’t use a static site generator or a
+          CMS for my blog. I certainly could have built it more quickly using
+          one of those tools. Well, again, I like having full control over my
+          website, both its appearance and its code. A tool like Wordpress
+          doesn’t give you that control without a lot of customization. I also
+          appreciate that my website’s code is simple and human-readable.
+          Finally, I enjoy solving problems and writing software. I don’t see
+          the time spent working on projects like this one as wasted. I even
+          enjoy the process of turning each post into an HTML document. It’s a
+          good Vim exercise and the process somehow makes me feel more proud of
+          my posts.
         </p>
       </section>
     </article>
