@@ -2,6 +2,8 @@ import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { Parser } from "htmlparser2";
 import * as RSS from "rss";
 
+const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
+
 function parsePost(postBody) {
   let title = undefined;
   let inTitle = false;
@@ -75,8 +77,6 @@ function parsePost(postBody) {
 
   return { title, timestamp, content };
 }
-
-const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
 
 const feed = new RSS({
   title: "Thomas Broadley",
