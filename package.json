@@ -19,7 +19,8 @@
   },
   "scripts": {
     "serve": "http-server docs",
-    "build": "yarn build:posts && yarn build:blog-index && yarn build:rss",
+    "build": "yarn build:index && yarn build:posts && yarn build:blog-index && yarn build:rss",
+    "build:index": "ts-node src/build-index.ts",
     "build:posts": "ts-node src/build-posts.ts",
     "build:blog-index": "ts-node src/build-blog-index.ts",
     "build:rss": "ts-node src/build-rss.ts"
