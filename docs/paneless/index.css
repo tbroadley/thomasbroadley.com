@@ -1,0 +1,150 @@
+html,
+body,
+#root,
+.paneless {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.pane-container {
+  height: calc(100% - 80px);
+
+  display: flex;
+  flex-direction: column;
+
+  /* Padding to match 10px top and left margins on panes. */
+  /* The bottom spacing is included in the footer.  */
+  padding-right: 10px;
+}
+
+.footer {
+  height: 70px;
+
+  display: flex;
+  flex-flow: row;
+
+  /* Padding to match 10px top and left margins on panes. */
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.pane-row {
+  /* All rows (except column-adder row) will have the same height. */
+  flex: 1 1 auto;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.pane-row.adder {
+  flex: 28px 0 0;
+}
+
+.pane {
+  /* All panes (except row-adder panes) will have the same width. */
+  flex: 1 1 auto;
+
+  width: 100%;
+
+  display: flex;
+  flex-flow: column;
+
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.pane.adder.row {
+  flex-flow: row;
+}
+
+.pane.adder.col {
+  flex: 31px 0 0;
+}
+
+.pane.inactive {
+  background: transparent
+    repeating-linear-gradient(45deg, #fff, #fff 17px, #aaa 17px, #aaa 20px)
+    repeat scroll 0% 0%;
+  background-clip: content-box;
+}
+
+.pane .header {
+  flex: 0 0 auto;
+
+  margin-bottom: 5px;
+
+  border-collapse: collapse;
+}
+
+.pane .header select {
+  margin-right: 5px;
+}
+
+.pane .header td:last-child {
+  width: 100%;
+}
+
+.pane .content {
+  /* The content will expand to take up all the space left by the header. */
+  flex: 1 1 auto;
+
+  border: none;
+  box-shadow: inset 0 1px 3px #444444;
+}
+
+.pane textarea.content {
+  font-family: "Lucida Console", "Courier New", Courier, monospace;
+
+  overflow-y: scroll;
+  /* Preserve whitespace and only wrap on line breaks. */
+  white-space: pre;
+  resize: none;
+}
+
+button {
+  display: block;
+
+  font-size: 10px;
+}
+
+button.hidden {
+  visibility: hidden;
+}
+
+button.large {
+  font-size: 15px;
+}
+
+.flex {
+  flex: 1 1 auto;
+  display: flex;
+}
+
+.center-x {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-y {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.top {
+  margin-bottom: auto;
+}
+
+.bottom {
+  margin-top: auto;
+}

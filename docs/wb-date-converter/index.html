@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Warriors Band Date Converter</title>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"
+      charset="utf-8"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"
+      charset="utf-8"
+    ></script>
+    <script src="./convert.js" charset="utf-8"></script>
+
+    <style>
+      #error {
+        color: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Warriors Band Date Converter</h1>
+
+    <p>
+      See
+      <a
+        href="https://warriorsband.uwaterloo.ca/wiki/Date_format"
+        target="_blank"
+        >the Warriors Band wiki</a
+      >
+      for more information about our date format.
+    </p>
+    <p>
+      <label for="dateInput">Date:</label>
+      <input type="date" id="dateInput" />
+    </p>
+    <p>
+      <label for="textInput">Warriors Band date:</label>
+      <input type="text" id="textInput" />
+    </p>
+    <p>
+      <span id="error"></span>
+    </p>
+
+    <script>
+      var dateInput = document.getElementById("dateInput");
+      var textInput = document.getElementById("textInput");
+      var errorSpan = document.getElementById("error");
+
+      dateInput.addEventListener("input", function (e) {
+        try {
+          textInput.value = toWarriorsBandDate(e.target.value);
+          errorSpan.innerHTML = "";
+        } catch (e) {
+          textInput.value = "";
+          errorSpan.innerHTML = e;
+        }
+      });
+
+      textInput.addEventListener("input", function (e) {
+        try {
+          dateInput.value = moment(fromWarriorsBandDate(e.target.value)).format(
+            "YYYY-MM-DD"
+          );
+          errorSpan.innerHTML = "";
+        } catch (e) {
+          dateInput.value = "";
+          errorSpan.innerHTML = e;
+        }
+      });
+
+      dateInput.value = moment().format("YYYY-MM-DD");
+      dateInput.dispatchEvent(new Event("input"));
+    </script>
+  </body>
+</html>

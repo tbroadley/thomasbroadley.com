@@ -1,0 +1,27 @@
+{
+  "name": "thomas-broadley-rss",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {
+    "@types/htmlparser2": "^3.10.1",
+    "@types/node": "^14.0.13",
+    "@types/rss": "^0.0.28",
+    "htmlparser2": "^4.1.0",
+    "rss": "^1.2.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "scripts": {
+    "build": "ts-node index.ts"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}

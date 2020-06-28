@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Gatekeepify</title>
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <link rel="stylesheet" href="index.css" />
+
+    <script>
+      function render() {
+        document.getElementById("button").style.display = "inline";
+        document.getElementById("url-button").style.display = "inline";
+        document.getElementById("snort").style.display = "inline-block";
+        document.getElementById("snort-label").style.display = "inline";
+
+        document.getElementById("image-url").style.display = "inline";
+        document.getElementById("update-image").style.display = "inline";
+
+        document.getElementById("button-copied").style.display = "none";
+        document.getElementById("url-button-copied").style.display = "none";
+
+        var input = document.getElementById("text").value;
+        var trimmedInput = input.trim();
+        var allCapsInput = trimmedInput.toUpperCase();
+        var splitInput = allCapsInput.split(" ");
+        var output = splitInput.join(" 👏 ");
+
+        if (document.getElementById("snort").checked && output !== "") {
+          output += " 😤";
+        }
+
+        document.getElementById("output").textContent = output;
+      }
+
+      window.onload = function () {
+        textInput = document.getElementById("text");
+        textInput.focus();
+        textInput.addEventListener("input", render);
+
+        document.getElementById("snort").addEventListener("change", render);
+        document
+          .getElementById("update-image")
+          .addEventListener("click", function () {
+            var imageSrc = document.getElementById("image-url").value;
+            document.getElementById("image").src = imageSrc;
+          });
+
+        var editButton = document.getElementById("edit-button");
+        editButton.addEventListener("click", function () {
+          document.getElementById("editor").style.display = "block";
+          document.getElementById("text").focus();
+          editButton.style.display = "none";
+        });
+
+        function getParameterByName(name, url) {
+          if (!url) {
+            url = window.location.href;
+          }
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return "";
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var text = getParameterByName("text");
+        var snortChecked = getParameterByName("snort");
+        var imageSrc = getParameterByName("image");
+        if (text) {
+          textInput.value = text;
+          var imageSrc = (document.getElementById(
+            "image-url"
+          ).value = imageSrc);
+          document.getElementById("snort").checked = snortChecked === "true";
+          document.getElementById("editor").style.display = "none";
+          document.getElementById("edit-button").style.display = "inline";
+
+          if (imageSrc) {
+            document.getElementById("image").src = imageSrc;
+          }
+
+          editButton.focus();
+          render();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <p id="output"></p>
+      <img id="image" />
+      <div>
+        <button type="button" id="edit-button">Edit</button>
+      </div>
+      <div id="editor">
+        <div>
+          <textarea
+            id="text"
+            rows="8"
+            cols="80"
+            placeholder="TYPE 👏 SOMETHING 👏 IN 👏 HERE"
+          ></textarea>
+        </div>
+        <div>
+          <input type="checkbox" id="snort" />
+          <label for="snort" id="snort-label">😤</label>
+        </div>
+        <div>
+          <input type="text" id="image-url" placeholder="Image URL" />
+          <button type="button" id="update-image">Update</button>
+        </div>
+      </div>
+      <div id="buttons">
+        <div class="button-container">
+          <button type="button" id="button" data-clipboard-target="#output">
+            Copy text
+          </button>
+          <span id="button-copied" aria-role="presentation">Copied!</span>
+        </div>
+        <div class="button-container">
+          <button type="button" id="url-button">Copy URL</button>
+          <span id="url-button-copied" aria-role="presentation">Copied!</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="clipboard.min.js" charset="utf-8"></script>
+    <script>
+      function focus(event) {
+        window.getSelection().removeAllRanges();
+        if (document.getElementById("editor").style.display === "none") {
+          event.trigger.focus();
+        } else {
+          document.getElementById("text").focus();
+        }
+      }
+
+      var clipboard = new Clipboard("#button");
+      clipboard.on("success", function (event) {
+        focus(event);
+        document.getElementById("button-copied").style.display = "block";
+        document.getElementById("url-button-copied").style.display = "none";
+      });
+      clipboard.on("error", focus);
+
+      var urlClipboard = new Clipboard("#url-button", {
+        text: function () {
+          var text = encodeURIComponent(
+            document.getElementById("text").value.trim()
+          );
+          var imageUrl = encodeURIComponent(
+            document.getElementById("image-url").value.trim()
+          );
+          return (
+            window.location.href.split("?")[0] +
+            "?text=" +
+            text +
+            "&snort=" +
+            document.getElementById("snort").checked +
+            (imageUrl === "" ? "" : "&image=" + imageUrl)
+          );
+        },
+      });
+      urlClipboard.on("success", function (event) {
+        focus(event);
+        document.getElementById("button-copied").style.display = "none";
+        document.getElementById("url-button-copied").style.display = "block";
+      });
+      urlClipboard.on("error", focus);
+    </script>
+  </body>
+</html>
