@@ -18,10 +18,12 @@
     "yaml": "^1.10.0"
   },
   "scripts": {
+    "serve": "http-server docs",
     "build:rss": "ts-node src/build-rss.ts",
     "build:posts": "ts-node src/build-posts.ts"
   },
   "devDependencies": {
+    "http-server": "^0.12.3",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
