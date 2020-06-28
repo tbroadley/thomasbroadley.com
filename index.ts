@@ -5,6 +5,8 @@ import * as RSS from "rss";
 const WEBSITE_URL = "https://thomasbroadley.com";
 const BLOG_URL = `${WEBSITE_URL}/blog`;
 
+const BLOG_PATH = "docs/blog";
+
 const SELF_CLOSING_TAG_NAMES = ["hr", "img"];
 
 function parsePost(postBody) {
@@ -97,12 +99,12 @@ const feed = new RSS({
   image_url: `${BLOG_URL}/rss.png`,
 });
 
-const posts = readdirSync("..").filter(
+const posts = readdirSync(BLOG_PATH).filter(
   (post) => !["rss", "rss.png", "rss.xml", "index.html"].includes(post)
 );
 
 for (const post of posts) {
-  const postBody = readFileSync(`../${post}/index.html`, "utf8");
+  const postBody = readFileSync(`${BLOG_PATH}/${post}/index.html`, "utf8");
   const { title, timestamp, content } = parsePost(postBody);
 
   if (title && timestamp && content) {
@@ -119,4 +121,4 @@ for (const post of posts) {
 }
 
 const xml = feed.xml({ indent: true });
-writeFileSync("../rss.xml", xml);
+writeFileSync(`${BLOG_PATH}/rss.xml`, xml);
