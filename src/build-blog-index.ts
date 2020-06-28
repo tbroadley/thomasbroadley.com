@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from "fs";
-import { render } from "mustache";
 
 import { getPostData } from "./post-data";
+import { render } from "./render";
 
 const blogIndexData = { posts: getPostData() };
 

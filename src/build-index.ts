@@ -1,5 +1,6 @@
 import { readFileSync, writeFileSync } from "fs";
-import { render } from "mustache";
+
+import { render } from "./render";
 
 const template = readFileSync("templates/index.html", "utf8");
 const renderedIndex = render(template, {});

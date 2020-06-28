@@ -1,9 +1,9 @@
 import { copyFileSync, readFileSync, writeFileSync } from "fs";
 import * as globby from "globby";
-import { render } from "mustache";
 import { basename } from "path";
 
 import { getPostData } from "./post-data";
+import { render } from "./render";
 
 const posts = getPostData();
 const template = readFileSync("templates/post.html", "utf8");
