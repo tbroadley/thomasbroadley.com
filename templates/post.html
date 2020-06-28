@@ -54,7 +54,10 @@
 
     <article>
       <header>
-        <h1>{{title}}</h1>
+        <h1>
+          {{#titleHtml}} {{{titleHtml}}} {{/titleHtml}} {{^titleHtml}} {{title}}
+          {{/titleHtml}}
+        </h1>
         <p class="timestamp">
           {{created}} {{#lastModified}}(last modified
           {{lastModified}}){{/lastModified}}

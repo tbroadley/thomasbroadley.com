@@ -1,4 +1,5 @@
 title: Unlocking SSH keys using pass
+titleHtml: Unlocking SSH keys using <code>pass</code>
 description: My setup for automatically unlocking SSH keys with passwords stored in pass, the standard Unix password manager.
 createdAt: 2020-05-29
 body: |

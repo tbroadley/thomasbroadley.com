@@ -86,7 +86,8 @@
             <tr>
               <td>
                 <a href="{{path}}">
-                  {{title}}
+                  {{#titleHtml}} {{{titleHtml}}} {{/titleHtml}} {{^titleHtml}}
+                  {{title}} {{/titleHtml}}
                 </a>
               </td>
               <td>
