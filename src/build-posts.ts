@@ -10,7 +10,7 @@ const posts = globby
 const template = readFileSync("blog/template.html", "utf8");
 
 for (const post of posts) {
-  const dataYaml = readFileSync(`blog/${post}`, "utf8");
+  const dataYaml = readFileSync(`blog/${post}/index.yml`, "utf8");
   const data = YAML.parse(dataYaml);
   const renderedPost = render(template, data);
 
