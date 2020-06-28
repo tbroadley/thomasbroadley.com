@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jun 2020 18:00:36 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 28 Jun 2020 20:46:49 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -191,6 +191,19 @@
   enjoy the process of turning each post into an HTML document. It’s a
   good Vim exercise and the process somehow makes me feel more proud of
   my posts.
+</p>
+
+<hr>
+
+<p>
+  Edit: The day after publishing this blog post, I decided to move my
+  posts into YAML files and generate both the HTML for them and my blog's
+  RSS feed from those files. Each post shares a lot of code and it's
+  painful to change something in all of them (e.g. adding a link to the header).
+  Now that each post is based on a template HTML file, it's easy to make these
+  kinds of changes. It's also a lot easier to parse YAML than HTML. And I still
+  get to hand-edit each post's HTML! (Although I might look into generating them
+  from Markdown instead.)
 </p>
 ]]></description>
             <link>https://thomasbroadley.com/blog/this-blog-has-an-rss-feed/</link>
