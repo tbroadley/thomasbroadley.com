@@ -3,16 +3,23 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
+    "@types/globby": "^9.1.0",
     "@types/htmlparser2": "^3.10.1",
+    "@types/mustache": "^4.0.1",
     "@types/node": "^14.0.13",
     "@types/rss": "^0.0.28",
+    "@types/yaml": "^1.9.7",
+    "globby": "^11.0.1",
     "htmlparser2": "^4.1.0",
+    "mustache": "^4.0.1",
     "rss": "^1.2.2",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "yaml": "^1.10.0"
   },
   "scripts": {
-    "build:rss": "ts-node src/build-rss.ts"
+    "build:rss": "ts-node src/build-rss.ts",
+    "build:posts": "ts-node src/build-posts.ts"
   },
   "devDependencies": {
     "husky": "^4.2.5",
