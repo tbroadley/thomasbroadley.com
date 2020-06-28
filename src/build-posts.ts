@@ -9,7 +9,7 @@ const posts = globby
   .map((post) => post.replace(/^blog\//, ""))
   .map((post) => post.replace(/\/index\.yml$/, ""));
 
-const template = readFileSync("blog/template.html", "utf8");
+const template = readFileSync("templates/post.html", "utf8");
 
 for (const post of posts) {
   const dataYaml = readFileSync(`blog/${post}/index.yml`, "utf8");
