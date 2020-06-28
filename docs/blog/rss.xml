@@ -9,599 +9,478 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 28 Jun 2020 14:32:36 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 28 Jun 2020 15:47:06 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
         <item>
-            <title><![CDATA[A small mindfulness win]]></title>
-            <description><![CDATA[
-        <p>
-          Yesterday I participated in a discussion group over voice chat. It was
-          the first time in a couple of months that I’d had a real conversation
-          with people I hadn’t met before. Making more friends is a goal of
-          mine, but I often feel prevented from achieving that goal by social
-          anxiety. Yesterday was no exception. When I woke up in the morning, I
-          was already thinking about bailing on the discussion group.
-        </p>
-
-        <p>
-          In the past, I’ve found that doing fulfilling solo activities helps me
-          counteract this anxiety. So yesterday morning I did yoga, meditated,
-          went on a bike ride to a park, cooked lunch, and sang. Even after all
-          that, I was still feeling anxious about ten minutes before the
-          meeting. As the meeting started, I saw the list of people in the voice
-          chat room and felt intimidated by its size. I nearly let myself bail
-          on the discussion group.
-        </p>
-
-        <p>
-          Luckily, I took the opportunity to practice mindfulness. I took some
-          deep breaths, closed my eyes, and focused on how I was feeling
-          physically. I immediately noticed that my anxiety had manifested as a
-          pit in my stomach. I focused on that sensation as well as I could and
-          after a couple of minutes it mostly went away. I felt much calmer and,
-          after a couple more minutes, I was able to join the voice chat room.
-          I’m so glad I did. The discussion group was the highlight of my week.
-        </p>
-
-        <p>
-          I hope I’ll remember to use this technique more in the future. I think
-          I can apply it not just to social anxiety but also my tendency to
-          procrastinate.
-        </p>
-      ]]></description>
-            <link>https://thomasbroadley.com/blog/a-small-mindfulness-win/</link>
-            <guid isPermaLink="false">a-small-mindfulness-win</guid>
-            <pubDate>Mon, 25 May 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Learning Workman]]></title>
-            <description><![CDATA[
-        <p>
-          Recently I’ve been learning how to type using the
-          <a href="https://workmanlayout.org/">Workman keyboard layout</a>. I’ve
-          heard many times that QWERTY isn’t very ergonomic. I decided to learn
-          a new keyboard layout to see how it’d affect my typing speed,
-          accuracy, and comfort, and because it seemed like an interesting
-          challenge. I must admit I didn’t do much research into the other
-          alternative layouts. Basically, Workman’s excellent website convinced
-          me to try it.
-        </p>
-
-        <p>
-          I’ve been practicing around 15 minutes a day for the past two weeks.
-          I’ve considered practicing more, but honestly I don’t find the process
-          that fun. Plus, I already spend a lot of time typing, using my phone,
-          and playing the piano and bass, so I don’t want to put too much more
-          strain on my hands.
-        </p>
-
-        <p>
-          I’m using <a href="https://keybr.com">Keybr</a> to learn Workman. It
-          teaches you to type using many short lessons, 20 or 25 words each by
-          default, composed of a randomly-generated mix of real and fake words.
-          The fake words are either short, English-like sequences of letters or
-          portmanteaus of two real words. You learn one letter at a time, only
-          moving onto the next letter once you’ve mastered the current one.
-        </p>
-
-        <p>
-          I started using Keybr to improve my QWERTY typing but found it
-          annoying to use. I think that’s because I have word-level muscle
-          memory for that keyboard layout. The fake words threw me off because
-          they didn't exist in my muscle memory.
-        </p>
-
-        <p>
-          Keybr works well for learning a new keyboard layout, though. Because
-          of the fake words, the lessons don’t force you to type any one word
-          too often, but are still full of common sequences of two to four keys
-          containing the letter you’re currently learning. My hypothesis is that
-          word-level muscle memory is built on top of muscle memory for these
-          sequences. While learning a new key, I first gain muscle memory for
-          the sequences enabled by introducing that key. For example, I learned
-          I and N before learning G, so the lessons only included words ending
-          in “ing” once I started learning G. Besides these sequences, I also
-          build muscle memory for words of four letters or fewer that contain
-          the new key. I then develop muscle memory for longer words. I looked
-          for studies on motor learning that agreed or disagreed with this
-          observation but couldn’t find any.
-        </p>
-
-        <p>
-          I noticed a couple of factors that made a given key easier or more
-          difficult to learn. It’s easy to analyze them using this graph from my
-          Keybr profile:
-        </p>
-
-        <img alt="A graph from my Keybr profile. The x-axis is the typing lesson number, from 1 to 307. Each key has a row on the y-axis, sorted vertically by the lesson I started learning it. Each intersection of a lesson and a key contains a small rectangle, ranging from red for low speed and accuracy to green for high speed and accuracy (or white if I didn't practice that key in that lesson)." src="./keybr-graph.png" />
-
-        <p>
-          The graph’s x-axis is the typing lesson number. You can see I’ve done
-          307 Workman lessons so far. Red sections represent lessons with lower
-          speed and accuracy for that key, while green indicates higher speed
-          and accuracy.
-        </p>
-
-        <p>
-          I found it easy to learn letters that Workman and QWERTY assigned to
-          the same key. Unfortunately, only three of the letter keys I've
-          learned so far are in the same location: A, S, and G. The graph above
-          demonstrates that I quickly learned A and S and haven’t lost that
-          proficiency since. G has been more challenging, perhaps because it
-          doesn’t appear in every lesson.
-        </p>
-        <p>
-          It was also easier to learn letters that only showed up in short
-          words. For example, in my first lessons for K, the letter appeared
-          almost exclusively in three- or four-letter words like “take” and
-          “ack”. According to the graph, it only took me a few lessons to learn
-          K initially. However, when a later lesson reintroduced it in a longer
-          word, I struggled to remember it.
-        </p>
-
-        <p>
-          Finally, learning certain keys completely threw off my muscle memory
-          for the keys I’d already learned. It was like my brain had to break
-          down and restructure my existing muscle memory to take into account
-          the new key.
-        </p>
-
-        <p>
-          Take the R key as an example. It was one of the first six keys I
-          learned. It only took me a few lessons to master it. However, my speed
-          and accuracy for R have fallen several times while learning other keys
-          (e.g. A and M). I’ve gone through a similar process of gaining and
-          losing muscle memory with other keys, most dramatically D, H, and B.
-        </p>
-
-        <p>
-          It’s frustrating to get less proficient at a key. I wonder whether it
-          would have been faster to learn how to type all the keys at once
-          instead of one at a time. I think I would have abandoned the process
-          because of the steeper learning curve, though.
-        </p>
-
-        <p>
-          So far, I’ve learned all the letter keys except for Z, X, Q, and J.
-          After learning those, to help me build word-level muscle memory, I
-          might switch from Keybr to a different typing practice tool that
-          emphasizes typing real words and sentences. I might practice with
-          <a href="https://github.com/tbroadley/gpt-2-github">a tool</a> I
-          developed that uses GPT-2 to generate typing lessons based on a GitHub
-          user’s PR comments. The goal of this project is to let me practice
-          typing text that’s as similar to the text I’m typing on a daily basis
-          as possible.
-        </p>
-
-        <p>
-          I’ll also try out Workman at work and in my personal life. I found it
-          easy to install the layout on Mac OS by following the instructions
-          <a href="https://github.com/workman-layout/Workman/tree/master/mac">here</a>. Ubuntu is more challenging. The GitHub repository I just linked to
-          contains instructions for four different ways to enable Workman on
-          Ubuntu. I don’t run <code>xfree86</code>, so that method isn’t an
-          option. The <code>linux_console</code> and
-          <code>xorg</code> approaches don’t work on my computer—I think they
-          might only work on an older version of Ubuntu. The
-          <code>xmodmap</code> approach enables Workman in Firefox but not in my
-          terminal. I’ll have to keep investigating.
-        </p>
-
-        <p>
-          I’ll write another post once I’ve determined if Workman helps me type
-          faster, more accurately, or with less effort. Even if I go back to
-          QWERTY, learning Workman has already paid dividends: The process has
-          improved my QWERTY typing. I’ve started using the “correct” fingers on
-          more distant keys. For example, I now use my right ring finger to type
-          O and P, instead of my middle finger. I’m not sure how to quantify the
-          impact of this, but I think it’ll slightly reduce the strain of
-          typing.
-        </p>
-      ]]></description>
-            <link>https://thomasbroadley.com/blog/learning-workman/</link>
-            <guid isPermaLink="false">learning-workman</guid>
-            <pubDate>Sat, 06 Jun 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Project retrospective: EDM Scraper]]></title>
-            <description><![CDATA[
-        <p>
-          In 2016, I got into live music seriously for the first time. At first
-          I found concerts by looking through long lists of ones in Toronto for
-          artists I recognized. At the start of 2017 I decided to automate this
-          process. Thus was born
-          <a href="https://github.com/tbroadley/edm-scraper">EDM Scraper</a>: a
-          service that sends mea daily email containing new concert listings
-          near me.
-        </p>
-
-        <p>
-          The project is a collection of Ruby scripts that scrape different
-          webpages. To do the scraping, these scripts use the headless browser
-          PhantomJS; the Capybara library, which can simulate interactions with
-          many different browsers and is often used for Rails acceptance
-          testing; and Poltergeist, a library that allows Capybara to interact
-          with PhantomJS. Each script stores the scraped concert listings in a
-          database. Finally, another script reads the database and sends me a
-          digest of new and interesting concerts using the PostageApp
-          email-sending service.
-        </p>
-
-        <p>
-          My definition of “interesting” was nuanced, which was one reason I
-          wasn’t satisfied with using Spotify or another service that lets you
-          know about concerts for artists you follow. I particularly enjoy EDM
-          shows, even when I don’t know the DJ well. I decided I wanted the
-          service to email me whenever it found a new EDM concert. However, I
-          also wanted an email when specific artists that I really liked, not
-          limited to EDM producers, came to town. I created one scraper for a
-          website with a comprehensive list of EDM shows in Toronto. I then
-          added a second scraper for a website listing all Toronto concerts.
-          This scraper only saves listings for concerts that match a list of
-          artist names I’ve put together by hand.
-        </p>
-
-        <p>
-          I decided to build EDM Scraper using Ruby because I’d previously used
-          Capybara for end-to-end testing and scraping. I originally decided not
-          to use Rails because I didn’t expect to use most of Rails’s
-          functionality, but I now regret that decision. I did want to store
-          concert listings in a database. I used ActiveRecord for this and found
-          it more difficult than expected to integrate the library into the
-          project. Instead, I should have let Rails handle the integration with
-          ActiveRecord. I was also worried that setting up a Rails application
-          would make it slower to start the project. In retrospect, this doesn’t
-          make sense: the Rails CLI makes it easy to set up new projects.
-        </p>
-
-        <p>
-          So far, I’ve only written tests for the logic-heavy parts of the
-          project: parsing concert dates, deciding which artists to include in
-          the email, and building the email itself. The scripts that scrape the
-          web pages and send the emails don’t have automated tests. I found it
-          easy enough to test those by running them on my computer. I set up the
-          scripts so that they could either connect to the production PostgreSQL
-          database, a local PostgreSQL database for development, or an instance
-          of NullDB for automated testing. In fact, I often use the NullDB mode
-          when manually testing scripts too. The database logic is centralized
-          in an ActiveRecord model, so I don’t worry about bugs in how a
-          specific script persists concerts.
-        </p>
-
-        <p>
-          The nature of the project means that, if a script fails, the only
-          symptom is not receiving an email, which I might not notice for a
-          while. To remedy this, I wrapped each script in a function that would
-          run the block passed to it, catching any exceptions thrown by the
-          block and sending me an email if it did catch one. Of course, if the
-          scripts can't email me, I still wouldn’t know that anything had gone
-          wrong, but so far that hasn’t been a problem.
-        </p>
-
-        <p>
-          Currently EDM Scraper runs on Heroku’s free tier. The free tier makes
-          a lot of sense for this project because it’s mostly implemented using
-          scheduled tasks with soft deadlines. It doesn’t matter if it takes an
-          extra ten seconds for a free dyno to spin up. Eventually I did create
-          <a href="http://edm-scraper.herokuapp.com">a simple webpage</a> that
-          lists all future concert listings , but I don’t access it often enough
-          to be bothered by the ten seconds I have to wait for the page to load.
-        </p>
-
-        <p>
-          So far, I haven’t needed to put much effort into maintaining the
-          project. A few times, one of my scrapers has balked at some new
-          formatting on the page and I’ve had to adjust it slightly. I also
-          added scrapers for shows in New York when I lived there in the summer
-          of 2018, and more recently a scraper for virtual festivals occurring
-          during the pandemic. Many of the commits in the project’s Git history
-          are just adding more artists to my list. My next step for the project
-          might be to fetch a list of artists I follow from Spotify, instead of
-          maintaining the list by hand.
-        </p>
-      ]]></description>
-            <link>https://thomasbroadley.com/blog/project-retrospective-edm-scraper/</link>
-            <guid isPermaLink="false">project-retrospective-edm-scraper</guid>
-            <pubDate>Sat, 13 Jun 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Rate-limit right before allocating]]></title>
-            <description><![CDATA[
-        <p>
-          At work last week, I built an API endpoint that allowed logged-out
-          visitors to our website to create rows in a database table. I wanted
-          to prevent bad actors from adding a bunch of nonsense data to the
-          table, so I added rate-limiting based on the user’s IP address. I
-          implemented the endpoint as follows: First, it checked the rate limit
-          and responded with a 429 if the user had surpassed it. If not, it
-          validated the user-provided request data and responded with a 400 if
-          it found invalid data. If both checks were successful, it saved the
-          valid data to the database.
-        </p>
-
-        <p>
-          It was only by filling out the HTML form connected to this endpoint
-          that I discovered a design flaw. When I submitted invalid data for the
-          first time, I’d receive a 400. However, after quickly fixing the
-          invalid data and resubmitting it, I’d receive a 429 and wouldn’t be
-          able to submit the now-valid data until the rate limit expired. From a
-          user’s perspective, this was a terrible experience: If they made an
-          error while filling out the form, they’d have to wait several seconds
-          each time they tried to correct it.
-        </p>
-
-        <p>
-          I realized that I wanted to limit the number of requests per user that
-          would actually create rows in the database, not the total number of
-          requests. Therefore, I changed the endpoint to validate the request
-          data, <i>then</i> check the rate limit. This way, the endpoint only
-          rate-limits valid requests. Now users can submit many invalid requests
-          in a short period of time while trying different ways to fix the
-          invalid data.
-        </p>
-
-        <p>
-          This problem has a mirror image. Suppose you were implementing an
-          endpoint with a high CPU cost and wanted to prevent each user from
-          making too many requests in a short period of time. Further, suppose
-          you implemented the API endpoint to first construct a response to the
-          user’s request, then check the rate limit. In this case, the rate
-          limit has no effect: A user can still make a large number of requests
-          to the endpoint and consume a lot of CPU, even though they receive
-          429s for most of the requests. The solution is to rate-limit before
-          performing the CPU-intensive operation.
-        </p>
-
-        <p>
-          These problems point to a general principle. Rate-limiting prevents
-          one user from using too much of a shared resource, e.g. database space
-          or CPU. The principle is this: Rate-limit right before allocating part
-          of that shared resource to a request. If you check the rate limit too
-          late, the rate-limiting won’t effectively protect the resource. If you
-          check it too early, you’ll end up rate-limiting requests that wouldn’t
-          have consumed the resource anyway, which might be a poor experience
-          for users.
-        </p>
-
-        <p>
-          Edit (2020-05-30): A couple of my coworkers pointed out that this
-          principle has tradeoffs. In the first example in this article, I added
-          a direct call to a rate-limiter method to the endpoint. We wouldn't
-          want to do that for every endpoint that adds rows to the database.
-          Instead, we could implement a configurable database rate-limiting
-          system that allows you to specify different rate limits for insertions
-          to different tables. We might want to implement a similar system for
-          each shared resource. Contrast this with a single system that only
-          allows you to rate-limit the number of requests per endpoint. The
-          former allows you to limit bad behaviour more aggressively without
-          compromising user experience, but it might not be worth the extra
-          complexity.
-        </p>
-
-        <p>
-          A coworker also mentioned a second use for rate-limiting: preventing
-          dictionary attacks, both on sensitive information, like passwords, and
-          less sensitive information, like tokens that refer to database
-          objects. I think it's possible to treat this as a special case of
-          protecting shared resources by considering the search space as a
-          shared resource, but I haven't fully worked out this metaphor yet.
-        </p>
-      ]]></description>
-            <link>https://thomasbroadley.com/blog/rate-limit-right-before-allocating/</link>
-            <guid isPermaLink="false">rate-limit-right-before-allocating</guid>
-            <pubDate>Tue, 26 May 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[This blog has an RSS feed]]></title>
-            <description><![CDATA[
-        <p>
-          I recently added an
-          <a href="https://thomasbroadley.com/blog/rss.xml">RSS feed</a> to my
-          blog, prompted by a friend asking if I had one. I write these posts in
-          HTML. I don’t use a static site generator. So I assumed I wouldn’t be
-          able to generate a feed using existing software. (Later, I realized
-          there exist tools that build an RSS feed from a given webpage. I
-          looked at one and saw the feed it built didn’t have anywhere near the
-          format I wanted.)
-        </p>
+            <description><![CDATA[<p>
+  I recently added an
+  <a href="https://thomasbroadley.com/blog/rss.xml">RSS feed</a> to my
+  blog, prompted by a friend asking if I had one. I write these posts in
+  HTML. I don’t use a static site generator. So I assumed I wouldn’t be
+  able to generate a feed using existing software. (Later, I realized
+  there exist tools that build an RSS feed from a given webpage. I
+  looked at one and saw the feed it built didn’t have anywhere near the
+  format I wanted.)
+</p>
 
-        <p>
-          I wrote
-          <a href="https://github.com/tbroadley/thomasbroadley.com/blob/35270f4/blog/rss/index.ts">a small TypeScript program</a>
-          to generate the RSS feed. It uses
-          <a href="https://www.npmjs.com/package/htmlparser2"><code>htmlparser2</code></a>
-          to parse the posts and
-          <a href="https://www.npmjs.com/package/rss"><code>rss</code></a> to
-          generate the RSS feed from the contents.
-        </p>
+<p>
+  I wrote
+  <a
+    href="https://github.com/tbroadley/thomasbroadley.com/blob/35270f4/blog/rss/index.ts"
+    >a small TypeScript program</a
+  >
+  to generate the RSS feed. It uses
+  <a href="https://www.npmjs.com/package/htmlparser2"
+    ><code>htmlparser2</code></a
+  >
+  to parse the posts and
+  <a href="https://www.npmjs.com/package/rss"><code>rss</code></a> to
+  generate the RSS feed from the contents.
+</p>
 
-        <h2>The right tool for the job</h2>
+<h2>The right tool for the job</h2>
 
-        <p>
-          I soon realized <code>htmlparser2</code> wasn’t the easiest tool to
-          use. The library uses a callback interface: It lets you provide
-          functions that it then calls when it encounters opening and closing
-          tags, text nodes, and other document features. It’s up to the code
-          using the library to track its location in the parse tree.
-        </p>
+<p>
+  I soon realized <code>htmlparser2</code> wasn’t the easiest tool to
+  use. The library uses a callback interface: It lets you provide
+  functions that it then calls when it encounters opening and closing
+  tags, text nodes, and other document features. It’s up to the code
+  using the library to track its location in the parse tree.
+</p>
 
-        <p>
-          Instead, I could have used a library like
-          <a href="https://www.npmjs.com/package/parse5"><code>parse5</code></a>, which parses the HTML into a JavaScript object and makes it easy to
-          access elements with known locations in the parse tree. It’s a
-          tradeoff, though: If I’d written the script using that approach, small
-          changes in the layout of the HTML would have broken it. In fact, I
-          think it would have been easiest to write this script using browser
-          APIs like <code>Document#querySelector</code>. For that reason, maybe
-          I should have used a DOM implementation like
-          <a href="https://www.npmjs.com/package/jsdom"><code>jsdom</code></a>.
-        </p>
+<p>
+  Instead, I could have used a library like
+  <a href="https://www.npmjs.com/package/parse5"><code>parse5</code></a
+  >, which parses the HTML into a JavaScript object and makes it easy to
+  access elements with known locations in the parse tree. It’s a
+  tradeoff, though: If I’d written the script using that approach, small
+  changes in the layout of the HTML would have broken it. In fact, I
+  think it would have been easiest to write this script using browser
+  APIs like <code>Document#querySelector</code>. For that reason, maybe
+  I should have used a DOM implementation like
+  <a href="https://www.npmjs.com/package/jsdom"><code>jsdom</code></a
+  >.
+</p>
 
-        <h2>Parsing the posts</h2>
+<h2>Parsing the posts</h2>
 
-        <p>
-          In any case, solving this problem with <code>htmlparser2</code> was a
-          fun challenge. I wanted to extract three pieces of information from
-          each post: its title and creation date and the post body. First, I
-          worked on extracting the title.
-        </p>
+<p>
+  In any case, solving this problem with <code>htmlparser2</code> was a
+  fun challenge. I wanted to extract three pieces of information from
+  each post: its title and creation date and the post body. First, I
+  worked on extracting the title.
+</p>
 
-        <p>
-          I added callbacks for opening tags, closing tags, and text nodes.
-          <code>htmlparser2</code> does a pre-order traversal of the parse tree:
-          If you identify the calls to the opening and closing tag callbacks for
-          a given element, any calls to the text node callback in between must
-          be for text nodes inside that element. Each post’s
-          <code>title</code> tag contains the title, so all I had to do was
-          extract the text node inside that tag. Since each post only has one
-          <code>title</code> tag, I did this by setting an
-          <code>inTitle</code> variable to true when I saw an opening
-          <code>title</code> tag, storing the contents of the text node seen
-          when <code>inTitle</code> was true in a second variable, and setting
-          <code>inTitle</code> to false on a closing <code>title</code> tag.
-        </p>
+<p>
+  I added callbacks for opening tags, closing tags, and text nodes.
+  <code>htmlparser2</code> does a pre-order traversal of the parse tree:
+  If you identify the calls to the opening and closing tag callbacks for
+  a given element, any calls to the text node callback in between must
+  be for text nodes inside that element. Each post’s
+  <code>title</code> tag contains the title, so all I had to do was
+  extract the text node inside that tag. Since each post only has one
+  <code>title</code> tag, I did this by setting an
+  <code>inTitle</code> variable to true when I saw an opening
+  <code>title</code> tag, storing the contents of the text node seen
+  when <code>inTitle</code> was true in a second variable, and setting
+  <code>inTitle</code> to false on a closing <code>title</code> tag.
+</p>
 
-        <p>
-          I did something similar to extract the creation date, which is
-          contained in a <code>p</code> tag with the class
-          <code>timestamp</code>. The opening tag callback takes a map of HTML
-          attributes as well as a tag name, so it was easy to recognize this
-          particular <code>p</code> tag by its class. The closing tag callback
-          doesn’t provide the tag’s attributes, but I realized I could set
-          <code>inDate</code> to false on any closing <code>p</code> tag, since
-          the paragraph containing the timestamp doesn’t have any paragraphs
-          inside it.
-        </p>
+<p>
+  I did something similar to extract the creation date, which is
+  contained in a <code>p</code> tag with the class
+  <code>timestamp</code>. The opening tag callback takes a map of HTML
+  attributes as well as a tag name, so it was easy to recognize this
+  particular <code>p</code> tag by its class. The closing tag callback
+  doesn’t provide the tag’s attributes, but I realized I could set
+  <code>inDate</code> to false on any closing <code>p</code> tag, since
+  the paragraph containing the timestamp doesn’t have any paragraphs
+  inside it.
+</p>
 
-        <h2>Getting the post contents</h2>
+<h2>Getting the post contents</h2>
 
-        <p>
-          Extracting the contents of each post was more difficult. The body of
-          each blog post lives in a <code>section</code> tag. It can contain
-          HTML itself—so far I’ve mainly used <code>a</code> and
-          <code>code</code> tags. However, <code>htmlparser2</code> doesn’t let
-          you read the contents of a specific HTML element. It just calls your
-          callback functions when it sees opening tags, closing tags, and text
-          nodes. I needed to rebuild the HTML inside the
-          <code>section</code> tag only using the information from these
-          function calls.
-        </p>
+<p>
+  Extracting the contents of each post was more difficult. The body of
+  each blog post lives in a <code>section</code> tag. It can contain
+  HTML itself—so far I’ve mainly used <code>a</code> and
+  <code>code</code> tags. However, <code>htmlparser2</code> doesn’t let
+  you read the contents of a specific HTML element. It just calls your
+  callback functions when it sees opening tags, closing tags, and text
+  nodes. I needed to rebuild the HTML inside the
+  <code>section</code> tag only using the information from these
+  function calls.
+</p>
 
-        <p>
-          To keep track of whether it’s inside the <code>section</code> tag, the
-          script uses an <code>inSection</code> Boolean variable, similar to how
-          it keeps track of whether it’s inside the <code>title</code> tag. It
-          appends any text it sees inside the <code>section</code> tag to a
-          <code>content</code> string variable that starts off empty. When the
-          script sees an opening tag inside the <code>section</code> tag, it
-          uses the tag name and map of attributes to build a string containing
-          an HTML opening tag, then appends it to <code>content</code>. This
-          logic closes self-closing tags but leaves other tags open. On
-          encountering a closing tag inside the <code>section</code>, the script
-          appends a closing tag to <code>content</code>, as long as the tag
-          isn’t self-closing. The pre-order traversal ensures the script appends
-          tags and text to <code>content</code> in the same order it appears in
-          the original post.
-        </p>
+<p>
+  To keep track of whether it’s inside the <code>section</code> tag, the
+  script uses an <code>inSection</code> Boolean variable, similar to how
+  it keeps track of whether it’s inside the <code>title</code> tag. It
+  appends any text it sees inside the <code>section</code> tag to a
+  <code>content</code> string variable that starts off empty. When the
+  script sees an opening tag inside the <code>section</code> tag, it
+  uses the tag name and map of attributes to build a string containing
+  an HTML opening tag, then appends it to <code>content</code>. This
+  logic closes self-closing tags but leaves other tags open. On
+  encountering a closing tag inside the <code>section</code>, the script
+  appends a closing tag to <code>content</code>, as long as the tag
+  isn’t self-closing. The pre-order traversal ensures the script appends
+  tags and text to <code>content</code> in the same order it appears in
+  the original post.
+</p>
 
-        <h2>Generating the RSS feed</h2>
+<h2>Generating the RSS feed</h2>
 
-        <p>
-          Generating the feed was simpler. Each post lives in its own folder, so
-          the script gets a list of those folders, reads and parses each post,
-          adds an item to the feed for each parsed post, and writes the feed to
-          an XML file. After running the script, I commit the updated file to my
-          website’s Git repository and push to publish.
-        </p>
+<p>
+  Generating the feed was simpler. Each post lives in its own folder, so
+  the script gets a list of those folders, reads and parses each post,
+  adds an item to the feed for each parsed post, and writes the feed to
+  an XML file. After running the script, I commit the updated file to my
+  website’s Git repository and push to publish.
+</p>
 
-        <h2>Why TypeScript?</h2>
+<h2>Why TypeScript?</h2>
 
-        <p>
-          I wrote this script in TypeScript but didn’t benefit much from doing
-          so compared to writing it in JavaScript. Most of the compile errors I
-          encountered would have been runtime errors in JS, but the cause would
-          have been equally obvious. On the other hand, I didn’t waste much time
-          using TS. It didn’t take long to install <code>ts-node</code> and type
-          definitions for the libraries I was using, and I don’t expect
-          <code>ts-node</code> was much slower than Node for such a small
-          script. Plus, I would have benefited more from TS with a different
-          development environment. I wrote this script using Vim, without even
-          TS syntax highlighting. If I’d used an IDE with type-aware code
-          completion and integrated type-checking, or installed Vim plugins for
-          those features, TS would have been an improvement over JS.
-        </p>
+<p>
+  I wrote this script in TypeScript but didn’t benefit much from doing
+  so compared to writing it in JavaScript. Most of the compile errors I
+  encountered would have been runtime errors in JS, but the cause would
+  have been equally obvious. On the other hand, I didn’t waste much time
+  using TS. It didn’t take long to install <code>ts-node</code> and type
+  definitions for the libraries I was using, and I don’t expect
+  <code>ts-node</code> was much slower than Node for such a small
+  script. Plus, I would have benefited more from TS with a different
+  development environment. I wrote this script using Vim, without even
+  TS syntax highlighting. If I’d used an IDE with type-aware code
+  completion and integrated type-checking, or installed Vim plugins for
+  those features, TS would have been an improvement over JS.
+</p>
 
-        <h2>Why RSS?</h2>
+<h2>Why RSS?</h2>
 
-        <p>
-          So why RSS? I’m a big consumer of RSS feeds myself and I know I’m not
-          alone, even if they’re not as popular as they used to be. RSS is a
-          simple way to share new content with people interested in your work.
-          Of course, it’s not the only way. I could share my posts over Twitter
-          or Facebook, but I started using RSS in the first place to get off
-          social media. (A topic for another post.) Substack and Mailchimp make
-          it easy to share content over email, but I like having full control
-          over the distribution of my posts. I’d rather not give that control to
-          a third party, at least for a passion project that I don’t plan to
-          monetize, like this blog. I’d definitely consider using Substack for a
-          paid newsletter to avoid integrating with a payment processor.
-        </p>
+<p>
+  So why RSS? I’m a big consumer of RSS feeds myself and I know I’m not
+  alone, even if they’re not as popular as they used to be. RSS is a
+  simple way to share new content with people interested in your work.
+  Of course, it’s not the only way. I could share my posts over Twitter
+  or Facebook, but I started using RSS in the first place to get off
+  social media. (A topic for another post.) Substack and Mailchimp make
+  it easy to share content over email, but I like having full control
+  over the distribution of my posts. I’d rather not give that control to
+  a third party, at least for a passion project that I don’t plan to
+  monetize, like this blog. I’d definitely consider using Substack for a
+  paid newsletter to avoid integrating with a payment processor.
+</p>
 
-        <h2>P.S.: Why not an SSG or a CMS?</h2>
+<h2>P.S.: Why not an SSG or a CMS?</h2>
 
-        <p>
-          It’s also worth examining why I don’t use a static site generator or a
-          CMS for my blog. I certainly could have built it more quickly using
-          one of those tools. Well, again, I like having full control over my
-          website, both its appearance and its code. A tool like Wordpress
-          doesn’t give you that control without a lot of customization. I also
-          appreciate that my website’s code is simple and human-readable.
-          Finally, I enjoy solving problems and writing software. I don’t see
-          the time spent working on projects like this one as wasted. I even
-          enjoy the process of turning each post into an HTML document. It’s a
-          good Vim exercise and the process somehow makes me feel more proud of
-          my posts.
-        </p>
-      ]]></description>
+<p>
+  It’s also worth examining why I don’t use a static site generator or a
+  CMS for my blog. I certainly could have built it more quickly using
+  one of those tools. Well, again, I like having full control over my
+  website, both its appearance and its code. A tool like Wordpress
+  doesn’t give you that control without a lot of customization. I also
+  appreciate that my website’s code is simple and human-readable.
+  Finally, I enjoy solving problems and writing software. I don’t see
+  the time spent working on projects like this one as wasted. I even
+  enjoy the process of turning each post into an HTML document. It’s a
+  good Vim exercise and the process somehow makes me feel more proud of
+  my posts.
+</p>
+]]></description>
             <link>https://thomasbroadley.com/blog/this-blog-has-an-rss-feed/</link>
             <guid isPermaLink="false">this-blog-has-an-rss-feed</guid>
             <pubDate>Sat, 27 Jun 2020 05:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Project retrospective: EDM Scraper]]></title>
+            <description><![CDATA[<p>
+  In 2016, I got into live music seriously for the first time. At first
+  I found concerts by looking through long lists of ones in Toronto for
+  artists I recognized. At the start of 2017 I decided to automate this
+  process. Thus was born
+  <a href="https://github.com/tbroadley/edm-scraper">EDM Scraper</a>: a
+  service that sends mea daily email containing new concert listings
+  near me.
+</p>
+
+<p>
+  The project is a collection of Ruby scripts that scrape different
+  webpages. To do the scraping, these scripts use the headless browser
+  PhantomJS; the Capybara library, which can simulate interactions with
+  many different browsers and is often used for Rails acceptance
+  testing; and Poltergeist, a library that allows Capybara to interact
+  with PhantomJS. Each script stores the scraped concert listings in a
+  database. Finally, another script reads the database and sends me a
+  digest of new and interesting concerts using the PostageApp
+  email-sending service.
+</p>
+
+<p>
+  My definition of “interesting” was nuanced, which was one reason I
+  wasn’t satisfied with using Spotify or another service that lets you
+  know about concerts for artists you follow. I particularly enjoy EDM
+  shows, even when I don’t know the DJ well. I decided I wanted the
+  service to email me whenever it found a new EDM concert. However, I
+  also wanted an email when specific artists that I really liked, not
+  limited to EDM producers, came to town. I created one scraper for a
+  website with a comprehensive list of EDM shows in Toronto. I then
+  added a second scraper for a website listing all Toronto concerts.
+  This scraper only saves listings for concerts that match a list of
+  artist names I’ve put together by hand.
+</p>
+
+<p>
+  I decided to build EDM Scraper using Ruby because I’d previously used
+  Capybara for end-to-end testing and scraping. I originally decided not
+  to use Rails because I didn’t expect to use most of Rails’s
+  functionality, but I now regret that decision. I did want to store
+  concert listings in a database. I used ActiveRecord for this and found
+  it more difficult than expected to integrate the library into the
+  project. Instead, I should have let Rails handle the integration with
+  ActiveRecord. I was also worried that setting up a Rails application
+  would make it slower to start the project. In retrospect, this doesn’t
+  make sense: the Rails CLI makes it easy to set up new projects.
+</p>
+
+<p>
+  So far, I’ve only written tests for the logic-heavy parts of the
+  project: parsing concert dates, deciding which artists to include in
+  the email, and building the email itself. The scripts that scrape the
+  web pages and send the emails don’t have automated tests. I found it
+  easy enough to test those by running them on my computer. I set up the
+  scripts so that they could either connect to the production PostgreSQL
+  database, a local PostgreSQL database for development, or an instance
+  of NullDB for automated testing. In fact, I often use the NullDB mode
+  when manually testing scripts too. The database logic is centralized
+  in an ActiveRecord model, so I don’t worry about bugs in how a
+  specific script persists concerts.
+</p>
+
+<p>
+  The nature of the project means that, if a script fails, the only
+  symptom is not receiving an email, which I might not notice for a
+  while. To remedy this, I wrapped each script in a function that would
+  run the block passed to it, catching any exceptions thrown by the
+  block and sending me an email if it did catch one. Of course, if the
+  scripts can't email me, I still wouldn’t know that anything had gone
+  wrong, but so far that hasn’t been a problem.
+</p>
+
+<p>
+  Currently EDM Scraper runs on Heroku’s free tier. The free tier makes
+  a lot of sense for this project because it’s mostly implemented using
+  scheduled tasks with soft deadlines. It doesn’t matter if it takes an
+  extra ten seconds for a free dyno to spin up. Eventually I did create
+  <a href="http://edm-scraper.herokuapp.com">a simple webpage</a> that
+  lists all future concert listings , but I don’t access it often enough
+  to be bothered by the ten seconds I have to wait for the page to load.
+</p>
+
+<p>
+  So far, I haven’t needed to put much effort into maintaining the
+  project. A few times, one of my scrapers has balked at some new
+  formatting on the page and I’ve had to adjust it slightly. I also
+  added scrapers for shows in New York when I lived there in the summer
+  of 2018, and more recently a scraper for virtual festivals occurring
+  during the pandemic. Many of the commits in the project’s Git history
+  are just adding more artists to my list. My next step for the project
+  might be to fetch a list of artists I follow from Spotify, instead of
+  maintaining the list by hand.
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/project-retrospective-edm-scraper/</link>
+            <guid isPermaLink="false">project-retrospective-edm-scraper</guid>
+            <pubDate>Sat, 13 Jun 2020 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Learning Workman]]></title>
+            <description><![CDATA[<p>
+  Recently I’ve been learning how to type using the
+  <a href="https://workmanlayout.org/">Workman keyboard layout</a>. I’ve
+  heard many times that QWERTY isn’t very ergonomic. I decided to learn
+  a new keyboard layout to see how it’d affect my typing speed,
+  accuracy, and comfort, and because it seemed like an interesting
+  challenge. I must admit I didn’t do much research into the other
+  alternative layouts. Basically, Workman’s excellent website convinced
+  me to try it.
+</p>
+
+<p>
+  I’ve been practicing around 15 minutes a day for the past two weeks.
+  I’ve considered practicing more, but honestly I don’t find the process
+  that fun. Plus, I already spend a lot of time typing, using my phone,
+  and playing the piano and bass, so I don’t want to put too much more
+  strain on my hands.
+</p>
+
+<p>
+  I’m using <a href="https://keybr.com">Keybr</a> to learn Workman. It
+  teaches you to type using many short lessons, 20 or 25 words each by
+  default, composed of a randomly-generated mix of real and fake words.
+  The fake words are either short, English-like sequences of letters or
+  portmanteaus of two real words. You learn one letter at a time, only
+  moving onto the next letter once you’ve mastered the current one.
+</p>
+
+<p>
+  I started using Keybr to improve my QWERTY typing but found it
+  annoying to use. I think that’s because I have word-level muscle
+  memory for that keyboard layout. The fake words threw me off because
+  they didn't exist in my muscle memory.
+</p>
+
+<p>
+  Keybr works well for learning a new keyboard layout, though. Because
+  of the fake words, the lessons don’t force you to type any one word
+  too often, but are still full of common sequences of two to four keys
+  containing the letter you’re currently learning. My hypothesis is that
+  word-level muscle memory is built on top of muscle memory for these
+  sequences. While learning a new key, I first gain muscle memory for
+  the sequences enabled by introducing that key. For example, I learned
+  I and N before learning G, so the lessons only included words ending
+  in “ing” once I started learning G. Besides these sequences, I also
+  build muscle memory for words of four letters or fewer that contain
+  the new key. I then develop muscle memory for longer words. I looked
+  for studies on motor learning that agreed or disagreed with this
+  observation but couldn’t find any.
+</p>
+
+<p>
+  I noticed a couple of factors that made a given key easier or more
+  difficult to learn. It’s easy to analyze them using this graph from my
+  Keybr profile:
+</p>
+
+<img
+  alt="A graph from my Keybr profile. The x-axis is the typing lesson number, from 1 to 307. Each key has a row on the y-axis, sorted vertically by the lesson I started learning it. Each intersection of a lesson and a key contains a small rectangle, ranging from red for low speed and accuracy to green for high speed and accuracy (or white if I didn't practice that key in that lesson)."
+  src="./keybr-graph.png"
+/>
+
+<p>
+  The graph’s x-axis is the typing lesson number. You can see I’ve done
+  307 Workman lessons so far. Red sections represent lessons with lower
+  speed and accuracy for that key, while green indicates higher speed
+  and accuracy.
+</p>
+
+<p>
+  I found it easy to learn letters that Workman and QWERTY assigned to
+  the same key. Unfortunately, only three of the letter keys I've
+  learned so far are in the same location: A, S, and G. The graph above
+  demonstrates that I quickly learned A and S and haven’t lost that
+  proficiency since. G has been more challenging, perhaps because it
+  doesn’t appear in every lesson.
+</p>
+<p>
+  It was also easier to learn letters that only showed up in short
+  words. For example, in my first lessons for K, the letter appeared
+  almost exclusively in three- or four-letter words like “take” and
+  “ack”. According to the graph, it only took me a few lessons to learn
+  K initially. However, when a later lesson reintroduced it in a longer
+  word, I struggled to remember it.
+</p>
+
+<p>
+  Finally, learning certain keys completely threw off my muscle memory
+  for the keys I’d already learned. It was like my brain had to break
+  down and restructure my existing muscle memory to take into account
+  the new key.
+</p>
+
+<p>
+  Take the R key as an example. It was one of the first six keys I
+  learned. It only took me a few lessons to master it. However, my speed
+  and accuracy for R have fallen several times while learning other keys
+  (e.g. A and M). I’ve gone through a similar process of gaining and
+  losing muscle memory with other keys, most dramatically D, H, and B.
+</p>
+
+<p>
+  It’s frustrating to get less proficient at a key. I wonder whether it
+  would have been faster to learn how to type all the keys at once
+  instead of one at a time. I think I would have abandoned the process
+  because of the steeper learning curve, though.
+</p>
+
+<p>
+  So far, I’ve learned all the letter keys except for Z, X, Q, and J.
+  After learning those, to help me build word-level muscle memory, I
+  might switch from Keybr to a different typing practice tool that
+  emphasizes typing real words and sentences. I might practice with
+  <a href="https://github.com/tbroadley/gpt-2-github">a tool</a> I
+  developed that uses GPT-2 to generate typing lessons based on a GitHub
+  user’s PR comments. The goal of this project is to let me practice
+  typing text that’s as similar to the text I’m typing on a daily basis
+  as possible.
+</p>
+
+<p>
+  I’ll also try out Workman at work and in my personal life. I found it
+  easy to install the layout on Mac OS by following the instructions
+  <a href="https://github.com/workman-layout/Workman/tree/master/mac"
+    >here</a
+  >. Ubuntu is more challenging. The GitHub repository I just linked to
+  contains instructions for four different ways to enable Workman on
+  Ubuntu. I don’t run <code>xfree86</code>, so that method isn’t an
+  option. The <code>linux_console</code> and
+  <code>xorg</code> approaches don’t work on my computer—I think they
+  might only work on an older version of Ubuntu. The
+  <code>xmodmap</code> approach enables Workman in Firefox but not in my
+  terminal. I’ll have to keep investigating.
+</p>
+
+<p>
+  I’ll write another post once I’ve determined if Workman helps me type
+  faster, more accurately, or with less effort. Even if I go back to
+  QWERTY, learning Workman has already paid dividends: The process has
+  improved my QWERTY typing. I’ve started using the “correct” fingers on
+  more distant keys. For example, I now use my right ring finger to type
+  O and P, instead of my middle finger. I’m not sure how to quantify the
+  impact of this, but I think it’ll slightly reduce the strain of
+  typing.
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/learning-workman/</link>
+            <guid isPermaLink="false">learning-workman</guid>
+            <pubDate>Sat, 06 Jun 2020 05:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Unlocking SSH keys using pass]]></title>
-            <description><![CDATA[
-        <p>
-          I use
-          <a href="https://www.passwordstore.org/"><code>pass</code></a> as my
-          password manager. It stores passwords and other secrets as
-          GPG-encrypted files in a Git repository. I host that repo on GitHub
-          and have clones of it on my work and personal computers. I store
-          nearly all of my personal passwords in <code>pass</code>, including
-          passwords for my GitHub SSH keys. I’ve gone through three ways of
-          unlocking these SSH keys.
-        </p>
+            <description><![CDATA[<p>
+  I use
+  <a href="https://www.passwordstore.org/"><code>pass</code></a> as my
+  password manager. It stores passwords and other secrets as
+  GPG-encrypted files in a Git repository. I host that repo on GitHub
+  and have clones of it on my work and personal computers. I store
+  nearly all of my personal passwords in <code>pass</code>, including
+  passwords for my GitHub SSH keys. I’ve gone through three ways of
+  unlocking these SSH keys.
+</p>
 
-        <p>
-          I started by running <code>pass -c SSH/Ubuntu</code> to copy my SSH
-          key’s password to the keyboard, running a Git command like
-          <code>git push</code>, then pasting my password into the prompt. I
-          wasn’t satisfied with how much typing this process required. Plus,
-          sometimes I’d forget to copy the password to my clipboard before
-          running the Git command. I’d have to Ctrl+C that command and rerun it
-          after copying the password. Even though I used
-          <code>ssh-agent</code> and wasn’t unlocking my SSH key that often, I
-          decided to automate this process.
-        </p>
+<p>
+  I started by running <code>pass -c SSH/Ubuntu</code> to copy my SSH
+  key’s password to the keyboard, running a Git command like
+  <code>git push</code>, then pasting my password into the prompt. I
+  wasn’t satisfied with how much typing this process required. Plus,
+  sometimes I’d forget to copy the password to my clipboard before
+  running the Git command. I’d have to Ctrl+C that command and rerun it
+  after copying the password. Even though I used
+  <code>ssh-agent</code> and wasn’t unlocking my SSH key that often, I
+  decided to automate this process.
+</p>
 
-        <p>
-          My second method used a script I called <code>sshpass</code>. Here it
-          is in its entirety:
-        </p>
+<p>
+  My second method used a script I called <code>sshpass</code>. Here it
+  is in its entirety:
+</p>
 
-        <pre><code>#!/usr/bin/expect -f
+<pre><code>#!/usr/bin/expect -f
 set password [exec pass SSH/Ubuntu]
 
 spawn ssh-add
@@ -609,163 +488,292 @@ expect "passphrase"
 send -- "$password\r"
 interact</code></pre>
 
-        <p>
-          This is an <code>expect</code> script. According to
-          <a href="https://linux.die.net/man/1/expect">its man page</a>,
-          <code>expect</code> is “a program that ‘talks’ to other interactive
-          programs according to a script”. In this case, the script instructs
-          <code>expect</code> to store the output of
-          <code>pass SSH/Ubuntu</code> in the variable <code>password</code>,
-          then run <code>ssh-add</code>, wait for it to prompt for a password,
-          and write the password to <code>ssh-add</code>’s stdin. For reasons I
-          don’t totally understand, the <code>interact</code> command, which
-          attaches the terminal’s standard streams to <code>ssh-add</code>’s, is
-          necessary to let <code>ssh-add</code> finish running.
-        </p>
+<p>
+  This is an <code>expect</code> script. According to
+  <a href="https://linux.die.net/man/1/expect">its man page</a>,
+  <code>expect</code> is “a program that ‘talks’ to other interactive
+  programs according to a script”. In this case, the script instructs
+  <code>expect</code> to store the output of
+  <code>pass SSH/Ubuntu</code> in the variable <code>password</code>,
+  then run <code>ssh-add</code>, wait for it to prompt for a password,
+  and write the password to <code>ssh-add</code>’s stdin. For reasons I
+  don’t totally understand, the <code>interact</code> command, which
+  attaches the terminal’s standard streams to <code>ssh-add</code>’s, is
+  necessary to let <code>ssh-add</code> finish running.
+</p>
 
-        <p>
-          Now, all I had to do was run <code>sshpass</code> before running a Git
-          command, but I’d still sometimes forget to run <code>sshpass</code>.
-          Finally, this week, I came across a third solution that addresses this
-          issue on Linux, mainly based on
-          <a href="https://blog.ona.io/technology/2020/03/02/using-password-manager-with-ssh.html">this blog post</a>.
-        </p>
+<p>
+  Now, all I had to do was run <code>sshpass</code> before running a Git
+  command, but I’d still sometimes forget to run <code>sshpass</code>.
+  Finally, this week, I came across a third solution that addresses this
+  issue on Linux, mainly based on
+  <a
+    href="https://blog.ona.io/technology/2020/03/02/using-password-manager-with-ssh.html"
+    >this blog post</a
+  >.
+</p>
 
-        <p>
-          First, I added <code>AddKeysToAgent yes</code> to my SSH configuration
-          at <code>~/.ssh/config</code>. This causes <code>ssh</code> to add
-          keys to <code>ssh-agent</code> when they’re unlocked. This is
-          important because we’ll no longer be explicitly calling
-          <code>ssh-add</code>.
-        </p>
+<p>
+  First, I added <code>AddKeysToAgent yes</code> to my SSH configuration
+  at <code>~/.ssh/config</code>. This causes <code>ssh</code> to add
+  keys to <code>ssh-agent</code> when they’re unlocked. This is
+  important because we’ll no longer be explicitly calling
+  <code>ssh-add</code>.
+</p>
 
-        <p>Then, I added the following to my <code>.zshrc</code>:</p>
+<p>Then, I added the following to my <code>.zshrc</code>:</p>
 
-        <pre><code>eval $(ssh-agent) > /dev/null
+<pre><code>eval $(ssh-agent) > /dev/null
 export SSH_ASKPASS=~/ssh-pass-passphrase.bash
 alias ssh="setsid -w ssh"
 alias git="setsid -w git"</code></pre>
 
-        <p>
-          This starts an instance of <code>ssh-agent</code>, then sets the
-          <code>SSH_ASKPASS</code> environment variable. If this variable is
-          set, when <code>ssh</code> needs a password to unlock an SSH key, it
-          runs the script pointed at by the variable and uses the output as the
-          password. Note that this only works if <code>ssh</code> isn’t run in a
-          terminal. That’s the purpose of the aliases for <code>ssh</code> and
-          <code>git</code>: <code>setsid</code> runs these programs in a new
-          shell session that isn’t associated with the terminal in which I’m
-          running <code>ssh</code> or <code>git</code>. The <code>-w</code> flag
-          causes <code>setsid</code> to wait until <code>ssh</code> or
-          <code>git</code> exits before exiting.
-        </p>
+<p>
+  This starts an instance of <code>ssh-agent</code>, then sets the
+  <code>SSH_ASKPASS</code> environment variable. If this variable is
+  set, when <code>ssh</code> needs a password to unlock an SSH key, it
+  runs the script pointed at by the variable and uses the output as the
+  password. Note that this only works if <code>ssh</code> isn’t run in a
+  terminal. That’s the purpose of the aliases for <code>ssh</code> and
+  <code>git</code>: <code>setsid</code> runs these programs in a new
+  shell session that isn’t associated with the terminal in which I’m
+  running <code>ssh</code> or <code>git</code>. The <code>-w</code> flag
+  causes <code>setsid</code> to wait until <code>ssh</code> or
+  <code>git</code> exits before exiting.
+</p>
 
-        <p>
-          <code>~/ssh-pass-passphrase.bash</code> is a script that writes my SSH
-          key’s password to stdout:
-        </p>
+<p>
+  <code>~/ssh-pass-passphrase.bash</code> is a script that writes my SSH
+  key’s password to stdout:
+</p>
 
-        <pre><code>#!/bin/bash
+<pre><code>#!/bin/bash
 pass SSH/Ubuntu</code></pre>
 
-        <p>
-          Now, I can run Git commands without worrying if my SSH key is unlocked
-          beforehand. If it isn’t, <code>ssh</code> automatically calls
-          <code>pass</code> to get my SSH key’s password and unlocks the key
-          before Git runs the command.
-        </p>
+<p>
+  Now, I can run Git commands without worrying if my SSH key is unlocked
+  beforehand. If it isn’t, <code>ssh</code> automatically calls
+  <code>pass</code> to get my SSH key’s password and unlocks the key
+  before Git runs the command.
+</p>
 
-        <p>
-          So far, this setup only works on Ubuntu on my personal computer. My
-          next step is to get it working on Mac OS, so I can use it on my work
-          computer too. After that, I’d like to look into ways to avoid spawning
-          an instance of <code>ssh-agent</code> in every terminal I run this
-          command in.
-        </p>
-      ]]></description>
+<p>
+  So far, this setup only works on Ubuntu on my personal computer. My
+  next step is to get it working on Mac OS, so I can use it on my work
+  computer too. After that, I’d like to look into ways to avoid spawning
+  an instance of <code>ssh-agent</code> in every terminal I run this
+  command in.
+</p>
+]]></description>
             <link>https://thomasbroadley.com/blog/unlocking-ssh-keys-using-pass/</link>
             <guid isPermaLink="false">unlocking-ssh-keys-using-pass</guid>
             <pubDate>Fri, 29 May 2020 05:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Rate-limit right before allocating]]></title>
+            <description><![CDATA[<p>
+  At work last week, I built an API endpoint that allowed logged-out
+  visitors to our website to create rows in a database table. I wanted
+  to prevent bad actors from adding a bunch of nonsense data to the
+  table, so I added rate-limiting based on the user’s IP address. I
+  implemented the endpoint as follows: First, it checked the rate limit
+  and responded with a 429 if the user had surpassed it. If not, it
+  validated the user-provided request data and responded with a 400 if
+  it found invalid data. If both checks were successful, it saved the
+  valid data to the database.
+</p>
+
+<p>
+  It was only by filling out the HTML form connected to this endpoint
+  that I discovered a design flaw. When I submitted invalid data for the
+  first time, I’d receive a 400. However, after quickly fixing the
+  invalid data and resubmitting it, I’d receive a 429 and wouldn’t be
+  able to submit the now-valid data until the rate limit expired. From a
+  user’s perspective, this was a terrible experience: If they made an
+  error while filling out the form, they’d have to wait several seconds
+  each time they tried to correct it.
+</p>
+
+<p>
+  I realized that I wanted to limit the number of requests per user that
+  would actually create rows in the database, not the total number of
+  requests. Therefore, I changed the endpoint to validate the request
+  data, <i>then</i> check the rate limit. This way, the endpoint only
+  rate-limits valid requests. Now users can submit many invalid requests
+  in a short period of time while trying different ways to fix the
+  invalid data.
+</p>
+
+<p>
+  This problem has a mirror image. Suppose you were implementing an
+  endpoint with a high CPU cost and wanted to prevent each user from
+  making too many requests in a short period of time. Further, suppose
+  you implemented the API endpoint to first construct a response to the
+  user’s request, then check the rate limit. In this case, the rate
+  limit has no effect: A user can still make a large number of requests
+  to the endpoint and consume a lot of CPU, even though they receive
+  429s for most of the requests. The solution is to rate-limit before
+  performing the CPU-intensive operation.
+</p>
+
+<p>
+  These problems point to a general principle. Rate-limiting prevents
+  one user from using too much of a shared resource, e.g. database space
+  or CPU. The principle is this: Rate-limit right before allocating part
+  of that shared resource to a request. If you check the rate limit too
+  late, the rate-limiting won’t effectively protect the resource. If you
+  check it too early, you’ll end up rate-limiting requests that wouldn’t
+  have consumed the resource anyway, which might be a poor experience
+  for users.
+</p>
+
+<p>
+  Edit (2020-05-30): A couple of my coworkers pointed out that this
+  principle has tradeoffs. In the first example in this article, I added
+  a direct call to a rate-limiter method to the endpoint. We wouldn't
+  want to do that for every endpoint that adds rows to the database.
+  Instead, we could implement a configurable database rate-limiting
+  system that allows you to specify different rate limits for insertions
+  to different tables. We might want to implement a similar system for
+  each shared resource. Contrast this with a single system that only
+  allows you to rate-limit the number of requests per endpoint. The
+  former allows you to limit bad behaviour more aggressively without
+  compromising user experience, but it might not be worth the extra
+  complexity.
+</p>
+
+<p>
+  A coworker also mentioned a second use for rate-limiting: preventing
+  dictionary attacks, both on sensitive information, like passwords, and
+  less sensitive information, like tokens that refer to database
+  objects. I think it's possible to treat this as a special case of
+  protecting shared resources by considering the search space as a
+  shared resource, but I haven't fully worked out this metaphor yet.
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/rate-limit-right-before-allocating/</link>
+            <guid isPermaLink="false">rate-limit-right-before-allocating</guid>
+            <pubDate>Tue, 26 May 2020 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A small mindfulness win]]></title>
+            <description><![CDATA[<p>
+  Yesterday I participated in a discussion group over voice chat. It was
+  the first time in a couple of months that I’d had a real conversation
+  with people I hadn’t met before. Making more friends is a goal of
+  mine, but I often feel prevented from achieving that goal by social
+  anxiety. Yesterday was no exception. When I woke up in the morning, I
+  was already thinking about bailing on the discussion group.
+</p>
+
+<p>
+  In the past, I’ve found that doing fulfilling solo activities helps me
+  counteract this anxiety. So yesterday morning I did yoga, meditated,
+  went on a bike ride to a park, cooked lunch, and sang. Even after all
+  that, I was still feeling anxious about ten minutes before the
+  meeting. As the meeting started, I saw the list of people in the voice
+  chat room and felt intimidated by its size. I nearly let myself bail
+  on the discussion group.
+</p>
+
+<p>
+  Luckily, I took the opportunity to practice mindfulness. I took some
+  deep breaths, closed my eyes, and focused on how I was feeling
+  physically. I immediately noticed that my anxiety had manifested as a
+  pit in my stomach. I focused on that sensation as well as I could and
+  after a couple of minutes it mostly went away. I felt much calmer and,
+  after a couple more minutes, I was able to join the voice chat room.
+  I’m so glad I did. The discussion group was the highlight of my week.
+</p>
+
+<p>
+  I hope I’ll remember to use this technique more in the future. I think
+  I can apply it not just to social anxiety but also my tendency to
+  procrastinate.
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/a-small-mindfulness-win/</link>
+            <guid isPermaLink="false">a-small-mindfulness-win</guid>
+            <pubDate>Mon, 25 May 2020 05:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[What would we do if we didn't do code review?]]></title>
-            <description><![CDATA[
-        <p>
-          Every company I’ve worked at enforces peer code review before merging
-          and deploying a pull request. I’ve been thinking about ways to improve
-          this process for a while. Today I asked myself: If developers didn’t
-          do code review, what would they do to achieve the same results?
-        </p>
+            <description><![CDATA[<p>
+  Every company I’ve worked at enforces peer code review before merging
+  and deploying a pull request. I’ve been thinking about ways to improve
+  this process for a while. Today I asked myself: If developers didn’t
+  do code review, what would they do to achieve the same results?
+</p>
 
-        <p>
-          First, we need to ask: What is code review for? I’ll divide its
-          benefits into three categories. The first contains the benefits of
-          using automated code review tools. Type checkers, linters, and code
-          formatters aren’t the only tools in this space. We can also check that
-          pull requests don’t reduce test coverage or introduce untested code
-          paths. To some extent, we can automatically enforce naming and commit
-          message conventions. Tools can flag misuses of language features, the
-          language’s standard library, and other libraries. We can also use
-          static analysis, benchmarking, and profiling to look for performance
-          issues. There’s a lot of room for creativity here. For example, at
-          Faire, we implemented a tool that indicates when a pull request
-          increases the size of our main JavaScript bundle.
-        </p>
+<p>
+  First, we need to ask: What is code review for? I’ll divide its
+  benefits into three categories. The first contains the benefits of
+  using automated code review tools. Type checkers, linters, and code
+  formatters aren’t the only tools in this space. We can also check that
+  pull requests don’t reduce test coverage or introduce untested code
+  paths. To some extent, we can automatically enforce naming and commit
+  message conventions. Tools can flag misuses of language features, the
+  language’s standard library, and other libraries. We can also use
+  static analysis, benchmarking, and profiling to look for performance
+  issues. There’s a lot of room for creativity here. For example, at
+  Faire, we implemented a tool that indicates when a pull request
+  increases the size of our main JavaScript bundle.
+</p>
 
-        <p>
-          The second category includes conventions and checks that require human
-          reasoning. Reviewers check that a pull request satisfies the
-          requirements of the feature it implements, that the code is
-          well-tested, and that the tests correctly describe the expected
-          behaviour. Reviewers also provide feedback on comments and
-          documentation, and ask the author to rewrite or comment unclear code.
-          Finally, I’ve seen reviewers question whether it makes sense to
-          implement the proposed change at all.
-        </p>
+<p>
+  The second category includes conventions and checks that require human
+  reasoning. Reviewers check that a pull request satisfies the
+  requirements of the feature it implements, that the code is
+  well-tested, and that the tests correctly describe the expected
+  behaviour. Reviewers also provide feedback on comments and
+  documentation, and ask the author to rewrite or comment unclear code.
+  Finally, I’ve seen reviewers question whether it makes sense to
+  implement the proposed change at all.
+</p>
 
-        <p>
-          The third category contains the harder-to-quantify benefits of having
-          more than one person look at each pull request. Developers feel
-          ownership for the code they review and responsibility for bugs that it
-          introduces. Code review is a great way to share knowledge, both from
-          reviewer to reviewee and vice versa. It also means that at least two
-          people should be familiar with every line of code in the codebase,
-          reducing the team’s bus factor. Finally, to build a sense of
-          solidarity, it’s important for developers on the same team to work
-          together on a daily basis.
-        </p>
+<p>
+  The third category contains the harder-to-quantify benefits of having
+  more than one person look at each pull request. Developers feel
+  ownership for the code they review and responsibility for bugs that it
+  introduces. Code review is a great way to share knowledge, both from
+  reviewer to reviewee and vice versa. It also means that at least two
+  people should be familiar with every line of code in the codebase,
+  reducing the team’s bus factor. Finally, to build a sense of
+  solidarity, it’s important for developers on the same team to work
+  together on a daily basis.
+</p>
 
-        <p>
-          Looking at the benefits in the second and third categories, I see a
-          common thread: They’re also the benefits of pair programming. While
-          pairing, the observer can give the same kinds of feedback on code
-          quality and functionality that a reviewer does. Even better, the
-          driver gets this feedback as they’re writing the code, making it
-          easier to integrate into the pull request. And pairing might be a
-          better way to achieve the fuzzy goals in the third category, since
-          developers collaborate in-person or over a voice or video call rather
-          than through text.
-        </p>
+<p>
+  Looking at the benefits in the second and third categories, I see a
+  common thread: They’re also the benefits of pair programming. While
+  pairing, the observer can give the same kinds of feedback on code
+  quality and functionality that a reviewer does. Even better, the
+  driver gets this feedback as they’re writing the code, making it
+  easier to integrate into the pull request. And pairing might be a
+  better way to achieve the fuzzy goals in the third category, since
+  developers collaborate in-person or over a voice or video call rather
+  than through text.
+</p>
 
-        <p>
-          I don’t think pairing should completely replace code review. It’s
-          possible that both developers working on a pull request are too close
-          to the code and could benefit from a third opinion. Also, I find
-          pairing more draining than writing code by myself. Some companies
-          enforce constant pair programming—I wouldn’t be happy in that
-          environment and I don’t think I’m alone.
-        </p>
+<p>
+  I don’t think pairing should completely replace code review. It’s
+  possible that both developers working on a pull request are too close
+  to the code and could benefit from a third opinion. Also, I find
+  pairing more draining than writing code by myself. Some companies
+  enforce constant pair programming—I wouldn’t be happy in that
+  environment and I don’t think I’m alone.
+</p>
 
-        <p>
-          In any case, at the companies I’ve worked at, I’ve spent much more
-          time reviewing code than pair programming. For example, this week, I
-          spent about 90 minutes pairing and at least five hours reviewing code.
-          I wonder what’d happen if we changed that balance. Perhaps we could
-          encourage more pairing by waiving the code review requirement for pull
-          requests that were paired on. That’d be an interesting experiment to
-          run someday.
-        </p>
-      ]]></description>
+<p>
+  In any case, at the companies I’ve worked at, I’ve spent much more
+  time reviewing code than pair programming. For example, this week, I
+  spent about 90 minutes pairing and at least five hours reviewing code.
+  I wonder what’d happen if we changed that balance. Perhaps we could
+  encourage more pairing by waiving the code review requirement for pull
+  requests that were paired on. That’d be an interesting experiment to
+  run someday.
+</p>
+]]></description>
             <link>https://thomasbroadley.com/blog/what-would-we-do-if-we-didnt-do-code-review/</link>
             <guid isPermaLink="false">what-would-we-do-if-we-didnt-do-code-review</guid>
             <pubDate>Fri, 24 Apr 2020 05:00:00 GMT</pubDate>
