@@ -12,7 +12,7 @@
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "build": "ts-node index.ts"
+    "build:rss": "ts-node src/build-rss.ts"
   },
   "devDependencies": {
     "husky": "^4.2.5",
