@@ -1,0 +1,80 @@
+title: What would we do if we didn't do code review?
+description: Grouping code review's benefits into three categories and suggesting that another software development practice could partially replace it.
+createdAt: 2020-04-24
+lastModified: 2020-05-09
+body: |
+  <p>
+    Every company I’ve worked at enforces peer code review before merging
+    and deploying a pull request. I’ve been thinking about ways to improve
+    this process for a while. Today I asked myself: If developers didn’t
+    do code review, what would they do to achieve the same results?
+  </p>
+
+  <p>
+    First, we need to ask: What is code review for? I’ll divide its
+    benefits into three categories. The first contains the benefits of
+    using automated code review tools. Type checkers, linters, and code
+    formatters aren’t the only tools in this space. We can also check that
+    pull requests don’t reduce test coverage or introduce untested code
+    paths. To some extent, we can automatically enforce naming and commit
+    message conventions. Tools can flag misuses of language features, the
+    language’s standard library, and other libraries. We can also use
+    static analysis, benchmarking, and profiling to look for performance
+    issues. There’s a lot of room for creativity here. For example, at
+    Faire, we implemented a tool that indicates when a pull request
+    increases the size of our main JavaScript bundle.
+  </p>
+
+  <p>
+    The second category includes conventions and checks that require human
+    reasoning. Reviewers check that a pull request satisfies the
+    requirements of the feature it implements, that the code is
+    well-tested, and that the tests correctly describe the expected
+    behaviour. Reviewers also provide feedback on comments and
+    documentation, and ask the author to rewrite or comment unclear code.
+    Finally, I’ve seen reviewers question whether it makes sense to
+    implement the proposed change at all.
+  </p>
+
+  <p>
+    The third category contains the harder-to-quantify benefits of having
+    more than one person look at each pull request. Developers feel
+    ownership for the code they review and responsibility for bugs that it
+    introduces. Code review is a great way to share knowledge, both from
+    reviewer to reviewee and vice versa. It also means that at least two
+    people should be familiar with every line of code in the codebase,
+    reducing the team’s bus factor. Finally, to build a sense of
+    solidarity, it’s important for developers on the same team to work
+    together on a daily basis.
+  </p>
+
+  <p>
+    Looking at the benefits in the second and third categories, I see a
+    common thread: They’re also the benefits of pair programming. While
+    pairing, the observer can give the same kinds of feedback on code
+    quality and functionality that a reviewer does. Even better, the
+    driver gets this feedback as they’re writing the code, making it
+    easier to integrate into the pull request. And pairing might be a
+    better way to achieve the fuzzy goals in the third category, since
+    developers collaborate in-person or over a voice or video call rather
+    than through text.
+  </p>
+
+  <p>
+    I don’t think pairing should completely replace code review. It’s
+    possible that both developers working on a pull request are too close
+    to the code and could benefit from a third opinion. Also, I find
+    pairing more draining than writing code by myself. Some companies
+    enforce constant pair programming—I wouldn’t be happy in that
+    environment and I don’t think I’m alone.
+  </p>
+
+  <p>
+    In any case, at the companies I’ve worked at, I’ve spent much more
+    time reviewing code than pair programming. For example, this week, I
+    spent about 90 minutes pairing and at least five hours reviewing code.
+    I wonder what’d happen if we changed that balance. Perhaps we could
+    encourage more pairing by waiving the code review requirement for pull
+    requests that were paired on. That’d be an interesting experiment to
+    run someday.
+  </p>

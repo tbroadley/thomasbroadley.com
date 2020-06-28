@@ -1,0 +1,179 @@
+title: This blog has an RSS feed
+description: Detailing the script I wrote to generate an RSS feed for my blog and why I wrote it.
+createdAt: 2020-06-27
+body: |
+  <p>
+    I recently added an
+    <a href="https://thomasbroadley.com/blog/rss.xml">RSS feed</a> to my
+    blog, prompted by a friend asking if I had one. I write these posts in
+    HTML. I don’t use a static site generator. So I assumed I wouldn’t be
+    able to generate a feed using existing software. (Later, I realized
+    there exist tools that build an RSS feed from a given webpage. I
+    looked at one and saw the feed it built didn’t have anywhere near the
+    format I wanted.)
+  </p>
+
+  <p>
+    I wrote
+    <a
+      href="https://github.com/tbroadley/thomasbroadley.com/blob/35270f4/blog/rss/index.ts"
+      >a small TypeScript program</a
+    >
+    to generate the RSS feed. It uses
+    <a href="https://www.npmjs.com/package/htmlparser2"
+      ><code>htmlparser2</code></a
+    >
+    to parse the posts and
+    <a href="https://www.npmjs.com/package/rss"><code>rss</code></a> to
+    generate the RSS feed from the contents.
+  </p>
+
+  <h2>The right tool for the job</h2>
+
+  <p>
+    I soon realized <code>htmlparser2</code> wasn’t the easiest tool to
+    use. The library uses a callback interface: It lets you provide
+    functions that it then calls when it encounters opening and closing
+    tags, text nodes, and other document features. It’s up to the code
+    using the library to track its location in the parse tree.
+  </p>
+
+  <p>
+    Instead, I could have used a library like
+    <a href="https://www.npmjs.com/package/parse5"><code>parse5</code></a
+    >, which parses the HTML into a JavaScript object and makes it easy to
+    access elements with known locations in the parse tree. It’s a
+    tradeoff, though: If I’d written the script using that approach, small
+    changes in the layout of the HTML would have broken it. In fact, I
+    think it would have been easiest to write this script using browser
+    APIs like <code>Document#querySelector</code>. For that reason, maybe
+    I should have used a DOM implementation like
+    <a href="https://www.npmjs.com/package/jsdom"><code>jsdom</code></a
+    >.
+  </p>
+
+  <h2>Parsing the posts</h2>
+
+  <p>
+    In any case, solving this problem with <code>htmlparser2</code> was a
+    fun challenge. I wanted to extract three pieces of information from
+    each post: its title and creation date and the post body. First, I
+    worked on extracting the title.
+  </p>
+
+  <p>
+    I added callbacks for opening tags, closing tags, and text nodes.
+    <code>htmlparser2</code> does a pre-order traversal of the parse tree:
+    If you identify the calls to the opening and closing tag callbacks for
+    a given element, any calls to the text node callback in between must
+    be for text nodes inside that element. Each post’s
+    <code>title</code> tag contains the title, so all I had to do was
+    extract the text node inside that tag. Since each post only has one
+    <code>title</code> tag, I did this by setting an
+    <code>inTitle</code> variable to true when I saw an opening
+    <code>title</code> tag, storing the contents of the text node seen
+    when <code>inTitle</code> was true in a second variable, and setting
+    <code>inTitle</code> to false on a closing <code>title</code> tag.
+  </p>
+
+  <p>
+    I did something similar to extract the creation date, which is
+    contained in a <code>p</code> tag with the class
+    <code>timestamp</code>. The opening tag callback takes a map of HTML
+    attributes as well as a tag name, so it was easy to recognize this
+    particular <code>p</code> tag by its class. The closing tag callback
+    doesn’t provide the tag’s attributes, but I realized I could set
+    <code>inDate</code> to false on any closing <code>p</code> tag, since
+    the paragraph containing the timestamp doesn’t have any paragraphs
+    inside it.
+  </p>
+
+  <h2>Getting the post contents</h2>
+
+  <p>
+    Extracting the contents of each post was more difficult. The body of
+    each blog post lives in a <code>section</code> tag. It can contain
+    HTML itself—so far I’ve mainly used <code>a</code> and
+    <code>code</code> tags. However, <code>htmlparser2</code> doesn’t let
+    you read the contents of a specific HTML element. It just calls your
+    callback functions when it sees opening tags, closing tags, and text
+    nodes. I needed to rebuild the HTML inside the
+    <code>section</code> tag only using the information from these
+    function calls.
+  </p>
+
+  <p>
+    To keep track of whether it’s inside the <code>section</code> tag, the
+    script uses an <code>inSection</code> Boolean variable, similar to how
+    it keeps track of whether it’s inside the <code>title</code> tag. It
+    appends any text it sees inside the <code>section</code> tag to a
+    <code>content</code> string variable that starts off empty. When the
+    script sees an opening tag inside the <code>section</code> tag, it
+    uses the tag name and map of attributes to build a string containing
+    an HTML opening tag, then appends it to <code>content</code>. This
+    logic closes self-closing tags but leaves other tags open. On
+    encountering a closing tag inside the <code>section</code>, the script
+    appends a closing tag to <code>content</code>, as long as the tag
+    isn’t self-closing. The pre-order traversal ensures the script appends
+    tags and text to <code>content</code> in the same order it appears in
+    the original post.
+  </p>
+
+  <h2>Generating the RSS feed</h2>
+
+  <p>
+    Generating the feed was simpler. Each post lives in its own folder, so
+    the script gets a list of those folders, reads and parses each post,
+    adds an item to the feed for each parsed post, and writes the feed to
+    an XML file. After running the script, I commit the updated file to my
+    website’s Git repository and push to publish.
+  </p>
+
+  <h2>Why TypeScript?</h2>
+
+  <p>
+    I wrote this script in TypeScript but didn’t benefit much from doing
+    so compared to writing it in JavaScript. Most of the compile errors I
+    encountered would have been runtime errors in JS, but the cause would
+    have been equally obvious. On the other hand, I didn’t waste much time
+    using TS. It didn’t take long to install <code>ts-node</code> and type
+    definitions for the libraries I was using, and I don’t expect
+    <code>ts-node</code> was much slower than Node for such a small
+    script. Plus, I would have benefited more from TS with a different
+    development environment. I wrote this script using Vim, without even
+    TS syntax highlighting. If I’d used an IDE with type-aware code
+    completion and integrated type-checking, or installed Vim plugins for
+    those features, TS would have been an improvement over JS.
+  </p>
+
+  <h2>Why RSS?</h2>
+
+  <p>
+    So why RSS? I’m a big consumer of RSS feeds myself and I know I’m not
+    alone, even if they’re not as popular as they used to be. RSS is a
+    simple way to share new content with people interested in your work.
+    Of course, it’s not the only way. I could share my posts over Twitter
+    or Facebook, but I started using RSS in the first place to get off
+    social media. (A topic for another post.) Substack and Mailchimp make
+    it easy to share content over email, but I like having full control
+    over the distribution of my posts. I’d rather not give that control to
+    a third party, at least for a passion project that I don’t plan to
+    monetize, like this blog. I’d definitely consider using Substack for a
+    paid newsletter to avoid integrating with a payment processor.
+  </p>
+
+  <h2>P.S.: Why not an SSG or a CMS?</h2>
+
+  <p>
+    It’s also worth examining why I don’t use a static site generator or a
+    CMS for my blog. I certainly could have built it more quickly using
+    one of those tools. Well, again, I like having full control over my
+    website, both its appearance and its code. A tool like Wordpress
+    doesn’t give you that control without a lot of customization. I also
+    appreciate that my website’s code is simple and human-readable.
+    Finally, I enjoy solving problems and writing software. I don’t see
+    the time spent working on projects like this one as wasted. I even
+    enjoy the process of turning each post into an HTML document. It’s a
+    good Vim exercise and the process somehow makes me feel more proud of
+    my posts.
+  </p>
