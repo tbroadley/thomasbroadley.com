@@ -7,8 +7,18 @@
     {{> head}}
 
     <style>
-      td:first-child {
-        padding-right: 1rem;
+      section {
+        display: grid;
+        grid-template-columns: 1fr auto;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      p.timestamp {
+        margin: 1.5rem 0;
+        line-height: 1.5rem;
       }
     </style>
   </head>
@@ -24,35 +34,24 @@
         <h1>Blog</h1>
       </header>
 
+      {{#posts}}
       <section>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Title
-              </th>
-              <th>
-                Posted on
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#posts}}
-            <tr>
-              <td>
-                <a href="{{path}}">
-                  {{#titleHtml}} {{{titleHtml}}} {{/titleHtml}} {{^titleHtml}}
-                  {{title}} {{/titleHtml}}
-                </a>
-              </td>
-              <td>
-                {{createdAt}}
-              </td>
-            </tr>
-            {{/posts}}
-          </tbody>
-        </table>
+        <h2>
+          <a href="{{path}}">
+            {{#titleHtml}} {{{titleHtml}}} {{/titleHtml}} {{^titleHtml}}
+            {{title}} {{/titleHtml}}
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          {{createdAt}}
+        </p>
+
+        <p>
+          {{description}}
+        </p>
       </section>
+      {{/posts}}
     </article>
   </body>
 </html>

@@ -53,8 +53,18 @@
     <link href="/index.css" rel="stylesheet" />
 
     <style>
-      td:first-child {
-        padding-right: 1rem;
+      section {
+        display: grid;
+        grid-template-columns: 1fr auto;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      p.timestamp {
+        margin: 1.5rem 0;
+        line-height: 1.5rem;
       }
     </style>
   </head>
@@ -71,90 +81,118 @@
       </header>
 
       <section>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Title
-              </th>
-              <th>
-                Posted on
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="this-blog-has-an-rss-feed">
-                  This blog has an RSS feed
-                </a>
-              </td>
-              <td>
-                2020-06-27
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="project-retrospective-edm-scraper">
-                  Project retrospective: EDM Scraper
-                </a>
-              </td>
-              <td>
-                2020-06-13
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="learning-workman">
-                  Learning Workman
-                </a>
-              </td>
-              <td>
-                2020-06-06
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="unlocking-ssh-keys-using-pass">
-                  Unlocking SSH keys using <code>pass</code>
-                </a>
-              </td>
-              <td>
-                2020-05-29
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="rate-limit-right-before-allocating">
-                  Rate-limit right before allocating
-                </a>
-              </td>
-              <td>
-                2020-05-26
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="a-small-mindfulness-win">
-                  A small mindfulness win
-                </a>
-              </td>
-              <td>
-                2020-05-25
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="what-would-we-do-if-we-didnt-do-code-review">
-                  What would we do if we didn&#39;t do code review?
-                </a>
-              </td>
-              <td>
-                2020-04-24
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>
+          <a href="this-blog-has-an-rss-feed">
+            This blog has an RSS feed
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-06-27
+        </p>
+
+        <p>
+          Detailing the script I wrote to generate an RSS feed for my blog and
+          why I wrote it.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="project-retrospective-edm-scraper">
+            Project retrospective: EDM Scraper
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-06-13
+        </p>
+
+        <p>
+          Looking back on EDM Scraper, a service that sends me a daily email of
+          nearby concerts.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="learning-workman">
+            Learning Workman
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-06-06
+        </p>
+
+        <p>
+          My experience after two weeks of learning to type using the Workman
+          keyboard layout.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="unlocking-ssh-keys-using-pass">
+            Unlocking SSH keys using <code>pass</code>
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-05-29
+        </p>
+
+        <p>
+          My setup for automatically unlocking SSH keys with passwords stored in
+          pass, the standard Unix password manager.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="rate-limit-right-before-allocating">
+            Rate-limit right before allocating
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-05-26
+        </p>
+
+        <p>
+          A principle for when in a request’s lifecycle to rate-limit, both
+          ensuring the rate limit is effective and preventing poor user
+          experiences.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="a-small-mindfulness-win">
+            A small mindfulness win
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-05-25
+        </p>
+
+        <p>
+          How in one particular situation I used mindfulness to counteract
+          social anxiety about meeting new people.
+        </p>
+      </section>
+      <section>
+        <h2>
+          <a href="what-would-we-do-if-we-didnt-do-code-review">
+            What would we do if we didn&#39;t do code review?
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          2020-04-24
+        </p>
+
+        <p>
+          Grouping code review&#39;s benefits into three categories and
+          suggesting that another software development practice could partially
+          replace it.
+        </p>
       </section>
     </article>
   </body>
