@@ -1,4 +1,4 @@
-import { copyFileSync, readFileSync, writeFileSync } from "fs";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import * as globby from "globby";
 import { basename } from "path";
 
@@ -10,6 +10,12 @@ const template = readFileSync("templates/post.html", "utf8");
 
 for (const { path, ...data } of posts) {
   const renderedPost = render(template, data);
+
+  try {
+    mkdirSync(`docs/blog/${path}`);
+  } catch (e) {
+    // Ignore: folder already exists
+  }
 
   writeFileSync(`docs/blog/${path}/index.html`, renderedPost);
 
