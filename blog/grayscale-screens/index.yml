@@ -1,0 +1,19 @@
+title: Grayscale screens
+description: My experience using grayscale mode on my phone and laptop.
+createdAt: 2020-07-11
+body: |
+  <p>
+    About a year ago I noticed that a coworker of mine had configured his phone’s screen to display everything in grayscale. He told me his goal was to make the screen less interesting to look at, to reduce the temptation to spend a lot of time looking at it. That convinced me to also switch my phone to grayscale.
+  </p>
+
+  <p>
+    A year in, I’m not sure if the change has had much effect. I still spend a lot of time on my phone. I’ve had more success reducing that amount of time by disabling or uninstalling apps I spend a lot of time on. But whenever I disable grayscale mode, I’m shocked by how vibrant and interesting the colours are, so I think it’s had at least a small impact.
+  </p>
+
+  <p>
+    Today I installed <a href="https://github.com/laerne/desaturate_all"><code>desaturate_all</code></a>, a Gnome extension that enables grayscale mode for Ubuntu. I suppose my goal is the same: to make my laptop less interesting to look at. Mainly I hope I’ll interact differently with sites like Reddit. If I make their content less flashy and visually interesting, maybe I’ll spend less time on them.
+  </p>
+
+  <p>
+    I’ve also considered purchasing a phone or a monitor with an e-ink screen. These screens both enforce grayscale (although colour e-ink displays are also available) and don’t strain the eyes as much as LCDs. I considered purchasing a Kingrow K1 e-ink smartphone, but was deterred by the lack of Google Play support and the difficulty of getting it shipped to Canada. Searching again, the Hisense A5 looks like a more promising option that I’ll have to investigate further.
+  </p>
