@@ -41,6 +41,7 @@ pre {
   margin: 0;
   padding: 1rem;
   background-color: #eee;
+  white-space: pre-wrap;
 }
 
 section > img {
