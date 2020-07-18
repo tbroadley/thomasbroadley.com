@@ -52,7 +52,8 @@
         </p>
 
         <p>
-          {{description}}
+          {{#descriptionHtml}} {{{descriptionHtml}}} {{/descriptionHtml}}
+          {{^descriptionHtml}} {{description}} {{/descriptionHtml}}
         </p>
       </section>
       {{/posts}}
