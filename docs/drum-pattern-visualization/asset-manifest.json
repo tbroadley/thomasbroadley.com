@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/drum-pattern-visualization/static/css/main.f9694c0d.chunk.css",
+    "main.js": "/drum-pattern-visualization/static/js/main.7f29252c.chunk.js",
+    "main.js.map": "/drum-pattern-visualization/static/js/main.7f29252c.chunk.js.map",
+    "runtime-main.js": "/drum-pattern-visualization/static/js/runtime-main.28bf3157.js",
+    "runtime-main.js.map": "/drum-pattern-visualization/static/js/runtime-main.28bf3157.js.map",
+    "static/js/2.e91c4815.chunk.js": "/drum-pattern-visualization/static/js/2.e91c4815.chunk.js",
+    "static/js/2.e91c4815.chunk.js.map": "/drum-pattern-visualization/static/js/2.e91c4815.chunk.js.map",
+    "index.html": "/drum-pattern-visualization/index.html",
+    "precache-manifest.c80e8f7b81cd7a2078ff89704da3f4a9.js": "/drum-pattern-visualization/precache-manifest.c80e8f7b81cd7a2078ff89704da3f4a9.js",
+    "service-worker.js": "/drum-pattern-visualization/service-worker.js",
+    "static/css/main.f9694c0d.chunk.css.map": "/drum-pattern-visualization/static/css/main.f9694c0d.chunk.css.map",
+    "static/js/2.e91c4815.chunk.js.LICENSE.txt": "/drum-pattern-visualization/static/js/2.e91c4815.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.28bf3157.js",
+    "static/js/2.e91c4815.chunk.js",
+    "static/css/main.f9694c0d.chunk.css",
+    "static/js/main.7f29252c.chunk.js"
+  ]
+}
