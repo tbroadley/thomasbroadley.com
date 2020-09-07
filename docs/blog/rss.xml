@@ -9,12 +9,30 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 19 Jul 2020 12:46:54 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Sep 2020 16:53:40 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Brushing my teeth]]></title>
+            <description><![CDATA[<p>
+  For a long time, my poor oral health has frustrated me and stressed me out. My attitude has been that, since I brush and floss regularly, it doesn’t make sense that my gums are inflamed and receding.
+</p>
+
+<p>
+  I’ve realized that, when I say it doesn’t make sense, I mean it’s unfair. I put effort into oral hygiene and I don’t get the outcomes that my dentist promised. But fairness doesn’t matter. What matters is whether my teeth are healthy or not.
+</p>
+
+<p>
+  So I’m committing to taking care of my mouth in ways that actually keep it healthy. (For example, I don’t brush my teeth methodically, which likely contributes to tartar build-up. Mindfulness while brushing is the solution.) And I’ll try to avoid this in other areas of my life. No more feeling sorry for myself while forgetting about the reality of the situation!
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/brushing-my-teeth/</link>
+            <guid isPermaLink="false">brushing-my-teeth</guid>
+            <pubDate>Mon, 07 Sep 2020 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[PipedInputStream and PipedOutputStream gotchas]]></title>
             <description><![CDATA[<p>
