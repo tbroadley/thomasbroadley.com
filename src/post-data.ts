@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 import * as YAML from "yaml";
-import { orderBy } from "lodash";
+import { orderBy, uniq } from "lodash";
 import * as globby from "globby";
 
 type PostData = {
@@ -16,8 +16,18 @@ type PostData = {
   lastModified: string;
 };
 
+type Blogchain = {
+  name: string;
+};
+
+type TagData = {
+  name: string;
+  posts: PostData[];
+  blogchain?: Blogchain;
+};
+
 export function getPostData(): PostData[] {
-  const posts = globby.sync("blog/posts/*/*.yml").map((post) => {
+  const posts = globby.sync("blog/posts/*/*.yml").map((post: string) => {
     const path = post
       .replace(/^blog\/posts\//, "")
       .replace(/\/index\.yml$/, "");
@@ -30,4 +40,29 @@ export function getPostData(): PostData[] {
     return { ...data, tags, tagsString, path };
   });
   return orderBy(posts, [({ createdAt }) => createdAt], ["desc"]);
+}
+
+export function getTagData(): TagData[] {
+  const postData = getPostData();
+  const tags = uniq(postData.flatMap((post) => post.tags));
+
+  const blogchains: { [tag: string]: Blogchain } = Object.fromEntries(
+    globby.sync("blog/tags/*.yml").map((post: string) => {
+      const tag = post.replace(/^blog\/tags\//, "").replace(/\.yml$/, "");
+      const dataYaml = readFileSync(post, "utf8");
+      const data = YAML.parse(dataYaml);
+      return [tag, data.blogchain];
+    })
+  );
+
+  console.log(blogchains);
+
+  return tags.map((tag) => ({
+    name: tag,
+    posts: orderBy(
+      postData.filter(({ tags }) => tags.includes(tag)),
+      ({ createdAt }) => createdAt
+    ),
+    blogchain: blogchains[tag],
+  }));
 }
