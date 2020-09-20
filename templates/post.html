@@ -5,6 +5,22 @@
     <meta name="description" content="{{description}}" />
 
     {{> head}}
+
+    <style>
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -24,11 +40,27 @@
           {{lastModified}}){{/lastModified}}
         </p>
 
-        {{ #tagsString }}
+        {{ #blogchains }}
+        <p class="blogchain">
+          {{ #previousPost }}
+          <a href="../{{ path }}">&larr;</a>
+          {{ /previousPost }} {{ ^previousPost }}
+          <span>&larr;</span>
+          {{ /previousPost }}
+
+          <a href="../tags/{{ tag }}">{{ name }}</a>
+
+          {{ #nextPost }}
+          <a href="../{{ path }}">&rarr;</a>
+          {{ /nextPost }} {{ ^nextPost }}
+          <span>&rarr;</span>
+          {{ /nextPost }}
+        </p>
+        {{ /blogchains }} {{ ^blogchains }} {{ #tagsString }}
         <p class="tags">
           Tags: {{{ tagsString }}}
         </p>
-        {{ /tagsString }}
+        {{ /tagsString }} {{ /blogchains }}
       </header>
 
       <section>

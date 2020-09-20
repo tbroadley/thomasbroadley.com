@@ -1,10 +1,10 @@
 import { mkdirSync, readFileSync, writeFileSync } from "fs";
 
-import { getTagData } from "./post-data";
+import { getPostAndTagData } from "./post-data";
 import { render } from "./render";
 
 export function buildTagIndices() {
-  const tagData = getTagData();
+  const [, tagData] = getPostAndTagData();
 
   const tagIndexTemplate = readFileSync("templates/tag-index.html", "utf8");
   const renderedTagIndex = render(tagIndexTemplate, { tags: tagData });

@@ -2,7 +2,7 @@ import { writeFileSync, readFileSync, readdirSync } from "fs";
 import { take } from "lodash";
 import * as RSS from "rss";
 
-import { getPostData } from "./post-data";
+import { getPostAndTagData } from "./post-data";
 
 const WEBSITE_URL = "https://thomasbroadley.com";
 const BLOG_URL = `${WEBSITE_URL}/blog`;
@@ -22,7 +22,7 @@ export function buildRss() {
     image_url: `${BLOG_URL}/rss.png`,
   });
 
-  const posts = take(getPostData(), 20);
+  const posts = take(getPostAndTagData()[0], 20);
 
   for (const { path, title, createdAt, body } of posts) {
     feed.item({

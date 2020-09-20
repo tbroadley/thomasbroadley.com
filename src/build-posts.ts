@@ -2,11 +2,11 @@ import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import * as globby from "globby";
 import { basename } from "path";
 
-import { getPostData } from "./post-data";
+import { getPostAndTagData } from "./post-data";
 import { render } from "./render";
 
 export function buildPosts() {
-  const posts = getPostData();
+  const [posts] = getPostAndTagData();
   const template = readFileSync("templates/post.html", "utf8");
 
   for (const { path, ...data } of posts) {

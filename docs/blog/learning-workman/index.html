@@ -54,6 +54,22 @@
       rel="stylesheet"
     />
     <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -71,7 +87,13 @@
           2020-06-06 (last modified 2020-06-13)
         </p>
 
-        <p class="tags">Tags: <a href="../tags/workman">workman</a></p>
+        <p class="blogchain">
+          <span>&larr;</span>
+
+          <a href="../tags/workman">Workman</a>
+
+          <a href="../using-workman">&rarr;</a>
+        </p>
       </header>
 
       <section>

@@ -14,6 +14,11 @@ type PostData = {
   body: string;
   createdAt: string;
   lastModified: string;
+  blogchains: {
+    name: string;
+    previousPost?: PostData;
+    nextPost?: PostData;
+  }[];
 };
 
 type Blogchain = {
@@ -28,26 +33,7 @@ type TagData = {
   blogchain?: Blogchain;
 };
 
-export function getPostData(): PostData[] {
-  const posts = globby.sync("blog/posts/*/*.yml").map((post: string) => {
-    const path = post
-      .replace(/^blog\/posts\//, "")
-      .replace(/\/index\.yml$/, "");
-    const dataYaml = readFileSync(post, "utf8");
-    const data = YAML.parse(dataYaml);
-
-    const tags = data.tags ?? [];
-    const tagsString = tags
-      .map((tag) => `<a href="../tags/${tag}">${tag}</a>`)
-      .join(", ");
-
-    return { ...data, tags, tagsString, path };
-  });
-  return orderBy(posts, [({ createdAt }) => createdAt], ["desc"]);
-}
-
-export function getTagData(): TagData[] {
-  const postData = getPostData();
+function getTagDataFromPostData(postData: PostData[]): TagData[] {
   const tags = uniq(postData.flatMap((post) => post.tags));
 
   const blogchains: { [tag: string]: Blogchain } = Object.fromEntries(
@@ -76,4 +62,53 @@ export function getTagData(): TagData[] {
   });
 
   return orderBy(unorderedTags, ({ name }) => name);
+}
+export function getPostAndTagData(): [PostData[], TagData[]] {
+  const postsWithoutBlogchains = globby
+    .sync("blog/posts/*/*.yml")
+    .map((post: string) => {
+      const path = post
+        .replace(/^blog\/posts\//, "")
+        .replace(/\/index\.yml$/, "");
+      const dataYaml = readFileSync(post, "utf8");
+      const data = YAML.parse(dataYaml);
+
+      const tags = data.tags ?? [];
+      const tagsString = tags
+        .map((tag) => `<a href="../tags/${tag}">${tag}</a>`)
+        .join(", ");
+
+      return { ...data, tags, tagsString, path };
+    });
+
+  const tags = getTagDataFromPostData(postsWithoutBlogchains);
+
+  const posts = postsWithoutBlogchains.map((post) => {
+    const tagsWithBlogchains = post.tags
+      .map((tag) => tags.find((it) => it.name === tag))
+      .filter((post) => !!post?.blogchain);
+
+    const blogchains = tagsWithBlogchains.map((tag) => {
+      const postIndex = tag.posts.indexOf(post);
+
+      // Remember that posts are in reverse chronological order
+      const previousPost =
+        postIndex === tag.posts.length - 1
+          ? undefined
+          : tag.posts[postIndex + 1];
+      const nextPost = postIndex === 0 ? undefined : tag.posts[postIndex - 1];
+
+      return {
+        tag: tag.name,
+        name: tag.blogchain.name,
+        previousPost,
+        nextPost,
+      };
+    });
+
+    return { ...post, blogchains };
+  });
+
+  const orderedPosts = orderBy(posts, [({ createdAt }) => createdAt], ["desc"]);
+  return [orderedPosts, tags];
 }

@@ -54,6 +54,22 @@
       rel="stylesheet"
     />
     <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -71,8 +87,12 @@
           2020-09-20
         </p>
 
-        <p class="tags">
-          Tags: <a href="../tags/rc-mini-7-2020">rc-mini-7-2020</a>
+        <p class="blogchain">
+          <span>&larr;</span>
+
+          <a href="../tags/rc-mini-7-2020">RC Mini 7, 2020</a>
+
+          <span>&rarr;</span>
         </p>
       </header>
 
