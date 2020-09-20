@@ -5,25 +5,27 @@ import { basename } from "path";
 import { getPostData } from "./post-data";
 import { render } from "./render";
 
-const posts = getPostData();
-const template = readFileSync("templates/post.html", "utf8");
+export function buildPosts() {
+  const posts = getPostData();
+  const template = readFileSync("templates/post.html", "utf8");
 
-for (const { path, ...data } of posts) {
-  const renderedPost = render(template, data);
+  for (const { path, ...data } of posts) {
+    const renderedPost = render(template, data);
 
-  try {
-    mkdirSync(`docs/blog/${path}`);
-  } catch (e) {
-    // Ignore: folder already exists
-  }
+    try {
+      mkdirSync(`docs/blog/${path}`);
+    } catch (e) {
+      // Ignore: folder already exists
+    }
 
-  writeFileSync(`docs/blog/${path}/index.html`, renderedPost);
+    writeFileSync(`docs/blog/${path}/index.html`, renderedPost);
 
-  const files = globby.sync(`blog/${path}/*`);
+    const files = globby.sync(`blog/${path}/*`);
 
-  for (const file of files) {
-    if (file.endsWith("/index.yml")) continue;
+    for (const file of files) {
+      if (file.endsWith("/index.yml")) continue;
 
-    copyFileSync(file, `docs/blog/${path}/${basename(file)}`);
+      copyFileSync(file, `docs/blog/${path}/${basename(file)}`);
+    }
   }
 }
