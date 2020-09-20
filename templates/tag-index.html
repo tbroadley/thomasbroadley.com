@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>Tags—Thomas Broadley</title>
+
+    <meta name="description" content="Tags on blog posts by Thomas Broadley." />
+
+    {{> head}}
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>Tags</h1>
+
+        <p class="post-count">{{ postCountString }}</p>
+      </header>
+
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Posts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ #tags }}
+            <tr>
+              <td>
+                <a href="{{ name }}">{{ name }}</a>
+              </td>
+              <td>
+                {{ postCount }}
+              </td>
+            </tr>
+            {{ /tags }}
+          </tbody>
+        </table>
+      </section>
+    </article>
+  </body>
+</html>
