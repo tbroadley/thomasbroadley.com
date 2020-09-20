@@ -9,12 +9,54 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 07 Sep 2020 16:53:40 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Sep 2020 13:35:57 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[My goals for RC]]></title>
+            <description><![CDATA[<p>
+This week I’m participating in a <a href="https://www.recurse.com">Recurse Center</a> mini-batch. RC had been on my radar for a while, but an old coworker of mine encouraged me to apply recently. Here are my goals for the week.
+</p>
+
+<h2>
+  Blog everyday
+</h2>
+
+<p>
+  I haven’t blogged as much as I’d like to in the past few months. RC is a good opportunity to get back into the habit. I’ll follow the example of a few folks I’ve seen on RC’s <a href="https://blaggregator.recurse.com/about/">Blaggregator</a> and post daily about what I’ve been working on. It seems like a good way to stay accountable to myself, celebrate my progress, and build memories of my time at RC.
+</p>
+
+<h2>
+  Pair everyday
+</h2>
+
+<p>
+  I’ve found out that I prefer coding alone and getting as little feedback as necessary, partly because I don’t take criticism well. I think this is a mistake. I could produce higher-quality work and grow more quickly if I collaborated more. So this week I’m going to do at least one pairing session with another Recurser per day. Maybe if I pair more regularly I’ll internalize that it’s more productive than working alone.
+</p>
+
+<h2>
+  Do a talk
+</h2>
+
+<p>
+  I found out that Recursers give talks on technical subjects every Friday evening. I’m going to give one to practice public speaking and to encourage myself to dive deeply into at least one topic while I’m at RC.
+</p>
+
+<h2>
+  Have fun!
+</h2>
+
+<p>
+  Modulo the goals above, I won’t force myself to do anything I don’t enjoy. Instead I’m going to follow my nose, work on things that interest me, and switch it up if I’m not having fun. This week I want to nurture my curiosity about computer science and my intrinsic motivation to program. If I start something interesting and give up halfway through, I can always pick it back up after RC.
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/my-goals-for-rc/</link>
+            <guid isPermaLink="false">my-goals-for-rc</guid>
+            <pubDate>Sun, 20 Sep 2020 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Brushing my teeth]]></title>
             <description><![CDATA[<p>
