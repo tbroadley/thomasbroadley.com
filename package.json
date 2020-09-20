@@ -19,7 +19,8 @@
   },
   "scripts": {
     "serve": "http-server docs",
-    "build": "ts-node src/build.ts"
+    "build": "ts-node src/build.ts",
+    "watch": "git ls-files | grep --invert-match \"^docs/\" | entr -dc yarn build"
   },
   "devDependencies": {
     "http-server": "^0.12.3",
