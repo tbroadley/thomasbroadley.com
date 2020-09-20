@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Posts tagged {{ name }}—Thomas Broadley</title>
+
+    <meta
+      name="description"
+      content="Posts tagged {{ name }} by Thomas Broadley."
+    />
+
+    {{> head}}
+
+    <style>
+      p.post-count {
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 1rem;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      section:last-child {
+        margin-bottom: 1rem;
+      }
+
+      p.timestamp {
+        margin: 1.5rem 0;
+        line-height: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="..">All tags</a>
+      &middot;
+      <a href="rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>Posts tagged {{ name }}</h1>
+
+        <p class="post-count">{{ postCountString }}</p>
+      </header>
+
+      {{#posts}}
+      <section>
+        <h2>
+          <a href="{{path}}">
+            {{#titleHtml}} {{{titleHtml}}} {{/titleHtml}} {{^titleHtml}}
+            {{title}} {{/titleHtml}}
+          </a>
+        </h2>
+
+        <p class="timestamp">
+          {{createdAt}}
+        </p>
+
+        <p>
+          {{#descriptionHtml}} {{{descriptionHtml}}} {{/descriptionHtml}}
+          {{^descriptionHtml}} {{description}} {{/descriptionHtml}}
+        </p>
+      </section>
+      {{/posts}}
+    </article>
+  </body>
+</html>

@@ -9,3 +9,4 @@ buildPosts();
 buildBlogIndex();
 buildTagIndices();
 buildRss();
+console.log("Done");

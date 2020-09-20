@@ -23,6 +23,7 @@ type Blogchain = {
 type TagData = {
   name: string;
   posts: PostData[];
+  postCountString: string;
   blogchain?: Blogchain;
 };
 
@@ -55,14 +56,18 @@ export function getTagData(): TagData[] {
     })
   );
 
-  console.log(blogchains);
-
-  return tags.map((tag) => ({
-    name: tag,
-    posts: orderBy(
+  return tags.map((tag) => {
+    const posts = orderBy(
       postData.filter(({ tags }) => tags.includes(tag)),
-      ({ createdAt }) => createdAt
-    ),
-    blogchain: blogchains[tag],
-  }));
+      [({ createdAt }) => createdAt],
+      ["desc"]
+    );
+
+    return {
+      name: tag,
+      posts,
+      postCountString: `${posts.length} post${posts.length === 1 ? "" : "s"}`,
+      blogchain: blogchains[tag],
+    };
+  });
 }
