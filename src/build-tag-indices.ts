@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "fs";
+import { mkdirSync, readFileSync, writeFileSync } from "fs";
 
 import { getTagData } from "./post-data";
 import { render } from "./render";
@@ -16,7 +16,13 @@ export function buildTagIndices() {
   );
 
   for (const tag of tagData) {
+    try {
+      mkdirSync(`docs/blog/tags/${tag.name}`);
+    } catch (e) {
+      // Ignore: folder already exists
+    }
+
     const renderedTagPostList = render(tagPostListTemplate, tag);
-    writeFileSync(`docs/blog/tags/${tag.name}.html`, renderedTagPostList);
+    writeFileSync(`docs/blog/tags/${tag.name}/index.html`, renderedTagPostList);
   }
 }
