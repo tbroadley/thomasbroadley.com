@@ -49,3 +49,11 @@ pre {
 section > img {
   width: 100%;
 }
+
+th {
+  text-align: left;
+}
+
+td:not(:last-child) {
+  padding-right: 1rem;
+}
