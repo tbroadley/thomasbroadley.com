@@ -34,7 +34,8 @@ code {
   font-family: "Source Code Pro", monospace;
 }
 
-.timestamp {
+.timestamp,
+.tags {
   font-style: italic;
 }
 

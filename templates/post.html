@@ -23,6 +23,12 @@
           {{createdAt}} {{#lastModified}}(last modified
           {{lastModified}}){{/lastModified}}
         </p>
+
+        {{ #tagsString }}
+        <p class="tags">
+          Tags: {{ tagsString }}
+        </p>
+        {{ /tagsString }}
       </header>
 
       <section>
