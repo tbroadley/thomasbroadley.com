@@ -59,7 +59,7 @@ export function getTagData(): TagData[] {
     })
   );
 
-  return tags.map((tag) => {
+  const unorderedTags = tags.map((tag) => {
     const posts = orderBy(
       postData.filter(({ tags }) => tags.includes(tag)),
       [({ createdAt }) => createdAt],
@@ -74,4 +74,6 @@ export function getTagData(): TagData[] {
       blogchain: blogchains[tag],
     };
   });
+
+  return orderBy(unorderedTags, ({ name }) => name);
 }
