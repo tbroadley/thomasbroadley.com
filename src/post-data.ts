@@ -23,6 +23,7 @@ type Blogchain = {
 type TagData = {
   name: string;
   posts: PostData[];
+  postCount: number;
   postCountString: string;
   blogchain?: Blogchain;
 };
@@ -36,7 +37,9 @@ export function getPostData(): PostData[] {
     const data = YAML.parse(dataYaml);
 
     const tags = data.tags ?? [];
-    const tagsString = tags.join(", ");
+    const tagsString = tags
+      .map((tag) => `<a href="../tags/${tag}">${tag}</a>`)
+      .join(", ");
 
     return { ...data, tags, tagsString, path };
   });
@@ -66,6 +69,7 @@ export function getTagData(): TagData[] {
     return {
       name: tag,
       posts,
+      postCount: posts.length,
       postCountString: `${posts.length} post${posts.length === 1 ? "" : "s"}`,
       blogchain: blogchains[tag],
     };
