@@ -1,0 +1,25 @@
+title: RC day 1
+description: Reflecting on my first day at RC.
+createdAt: 2020-09-21
+tags:
+  - rc-mini-7-2020
+body: |
+  <p>
+    RC began with a tour of <a href="https://www.recurse.com/virtual-rc">Virtual RC</a>, an online space that emulates the physical RC experience with all its serendipitous conversations. Then I attended talks by RC employees about the program and how to get the most out of it. Finally we broke into small groups and I briefly met a few other current attendees.
+  </p>
+
+  <p>
+    I found a study group following <a href="https://cryptopals.com/">Cryptopals</a>, a series of programming challenges that introduce you to real-world cryptography and breaking said crypto. I didn’t attend the group, but I solved the first three challenges using Clojure. I’ve never programmed in that language and haven’t used a Lisp in a while, so it took time to get through them. I might work on the problems more but probably not in Clojure. I like Lispy syntax but missed static types and couldn’t find high-quality documentation for the standard library.
+  </p>
+
+  <p>
+    After that I looked at an old project called <a href="https://github.com/tbroadley/literate-diffs">Literate Diffs</a>. The pitch is literate programming for Git diffs. PR authors should be able to reorder chunks in their PRs and add commentary around them. I think this idea has the potential to make code review a lot easier for reviewers (with a little investment from authors). I might resurrect that project this week or tackle the idea from a different direction (a file format? A browser extension for GitHub and similar sites?).
+  </p>
+
+  <p>
+    Honestly it was a slow day! <a href="../tags/workman">I’m switching from QWERTY to Workman</a> and still don’t have the hang of using Vim with this new layout. I’m using a package called <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to let me use my QWERTY muscle memory in normal mode, which is helping a lot. In fact, this afternoon, I opened a couple of PRs on that repo. One was a documentation improvement, the second a fix for an issue. I filed another issue that I might take a crack at solving tomorrow.
+  </p>
+
+  <p>
+    I didn’t pair with anyone today. To hit that goal for the rest of the week, I’m going to have to put myself out there more than I did today. But working on <code>vim-workman</code> gave me. Maybe I can build some tools to make myself more productive as a programmer, then do a presentation on them at the end of the week. Or even present on my Workman journey and the software I’ve used to get here.
+  </p>
