@@ -63,6 +63,7 @@ function getTagDataFromPostData(postData: PostData[]): TagData[] {
 
   return orderBy(unorderedTags, ({ name }) => name);
 }
+
 export function getPostAndTagData(): [PostData[], TagData[]] {
   const postsWithoutBlogchains = globby
     .sync("blog/posts/*/*.yml")

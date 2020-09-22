@@ -19,7 +19,7 @@
   },
   "scripts": {
     "serve": "http-server docs",
-    "build": "ts-node src/build.ts",
+    "build": "ts-node src/build.ts && pretty-quick",
     "watch": "git ls-files -cdmo --exclude-standard | grep --invert-match \"^docs/\" | entr -dc yarn build"
   },
   "devDependencies": {
