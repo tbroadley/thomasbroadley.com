@@ -1,0 +1,189 @@
+<html lang="en">
+  <head>
+    <title>RC day 2—Thomas Broadley</title>
+
+    <meta name="description" content="Reflecting on my second day at RC." />
+
+    <meta charset="utf-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://thomasbroadley.com/blog/rss.xml"
+    />
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>
+          RC day 2
+        </h1>
+        <p class="timestamp">
+          2020-09-22
+        </p>
+
+        <p class="blogchain">
+          <a href="../rc-day-1">&larr;</a>
+
+          <a href="../tags/rc-mini-7-2020">RC Mini 7, 2020</a>
+
+          <span>&rarr;</span>
+        </p>
+      </header>
+
+      <section>
+        <p>
+          I started the day by adding three new plugins to my Vim setup, after
+          learning about them from a thread on RC’s Zulip:
+        </p>
+
+        <p>
+          That took most of the morning, perhaps more time than I should have
+          spent on it. I did learn about Vimscript and worked around one gotcha
+          that’s good material for another post.
+        </p>
+
+        <p>
+          Late in the morning I caught the end of daily check-ins. Participants
+          take turns briefly explaining what they worked on yesterday and what
+          they’re working on today. I’ll definitely be attending the entire
+          meeting tomorrow: It was a great way to hear about interesting
+          projects that others are working on. I also found it handy to be able
+          to reference my “RC day 1” post while giving my check-in.
+        </p>
+
+        <p>
+          After lunch I attended a workshop on pair programming. I’ve paired
+          quite a bit before but still learned something new. For example, one
+          benefit of pairing I hadn’t considered was that it’s harder to get
+          distracted for minutes by social media when pairing. (I do still find
+          myself getting distracted for 30 seconds at a time by Slack. Something
+          for me to work on.)
+        </p>
+
+        <p>
+          I also picked up a few new pairing tips:
+        </p>
+
+        <p>
+          We then put those tips into practice by pairing with other Recursers
+          to implement the Game of Life.
+        </p>
+
+        <p>
+          After the workshop, I had a coffee chat with someone who’s been at RC
+          for a few weeks already. She gave me some good advice: Even though my
+          time at RC is flying by, the experience doesn’t end along with my
+          batch. I can still attend study groups and other events after this
+          week. And I’m already thinking about coming back for a six- or
+          twelve-week batch.
+        </p>
+
+        <p>
+          Early in the day, I posted on Zulip asking to chat with people about
+          their experiences with code review. I hoped A few people expressed
+          interest and I spoke with a couple of them late this afternoon. One
+          had already noticed the exact problem that
+          <a href="https://github.com/tbroadley/literate-diffs"
+            >Literate Diffs</a
+          >
+          aims to solve. The other had already solved the problem a different
+          way at his company. They found it harder to build systems for
+          determining who should review which PRs. Definitely food for thought.
+        </p>
+
+        <p>
+          Somewhere along the way, I started a Google Doc containing interesting
+          links that others had shared with me or posted on Zulip. Currently it
+          contains Wikipedia articles, blog posts, and Amazon pages for a few
+          books. After this week I’ll run through it and consolidate that
+          knowledge somehow.
+        </p>
+
+        <p>
+          I spent longer than I intended catching up on my RSS feed. I feel bad
+          about the lost productivity, but maybe my brain needed the break. I’ll
+          push myself a little harder tomorrow.
+        </p>
+
+        <p>
+          Speaking of tomorrow! In the morning, I want to come up with a plan of
+          attack for Literate Diffs and start executing against it. Right now,
+          the best strategy seems to be fleshing out my old React prototype,
+          then asking people to play around with it. I also want to pair
+          again—I’ve signed up for a session with a Zulip bot that matches you
+          with other people looking for pairing partners. If there’s time, I’ll
+          try to get vim-workman to play nice with macros.
+        </p>
+
+        <p>
+          P.S. Writing this blog post made me realize how annoying it is to
+          write HTML without macros. Tomorrow I'll also look at adding Markdown
+          support to my blog generator.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

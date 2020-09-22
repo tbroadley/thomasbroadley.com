@@ -9,12 +9,65 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 22 Sep 2020 15:27:24 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 22 Sep 2020 23:14:50 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[RC day 2]]></title>
+            <description><![CDATA[<p>
+  I started the day by adding three new plugins to my Vim setup, after learning about them from a thread on RC’s Zulip:
+</p>
+
+<p>
+  That took most of the morning, perhaps more time than I should have spent on it. I did learn about Vimscript and worked around one gotcha that’s good material for another post.
+</p>
+
+<p>
+  Late in the morning I caught the end of daily check-ins. Participants take turns briefly explaining what they worked on yesterday and what they’re working on today. I’ll definitely be attending the entire meeting tomorrow: It was a great way to hear about interesting projects that others are working on. I also found it handy to be able to reference my “RC day 1” post while giving my check-in.
+</p>
+
+<p>
+  After lunch I attended a workshop on pair programming. I’ve paired quite a bit before but still learned something new. For example, one benefit of pairing I hadn’t considered was that it’s harder to get distracted for minutes by social media when pairing. (I do still find myself getting distracted for 30 seconds at a time by Slack. Something for me to work on.)
+</p>
+
+<p>
+  I also picked up a few new pairing tips:
+</p>
+
+<p>
+  We then put those tips into practice by pairing with other Recursers to implement the Game of Life.
+</p>
+
+<p>
+  After the workshop, I had a coffee chat with someone who’s been at RC for a few weeks already. She gave me some good advice: Even though my time at RC is flying by, the experience doesn’t end along with my batch. I can still attend study groups and other events after this week. And I’m already thinking about coming back for a six- or twelve-week batch.
+
+<p>
+  Early in the day, I posted on Zulip asking to chat with people about their experiences with code review. I hoped  A few people expressed interest and I spoke with a couple of them late this afternoon. One had already noticed the exact problem that <a href="https://github.com/tbroadley/literate-diffs">Literate Diffs</a> aims to solve. The other had already solved the problem a different way at his company. They found it harder to build systems for determining who should review which PRs. Definitely food for thought.
+</p>
+
+<p>
+  Somewhere along the way, I started a Google Doc containing interesting links that others had shared with me or posted on Zulip. Currently it contains Wikipedia articles, blog posts, and Amazon pages for a few books. After this week I’ll run through it and consolidate that knowledge somehow.
+</p>
+
+<p>
+  I spent longer than I intended catching up on my RSS feed. I feel bad about the lost productivity, but maybe my brain needed the break. I’ll push myself a little harder tomorrow.
+</p>
+
+<p>
+  Speaking of tomorrow! In the morning, I want to come up with a plan of attack for Literate Diffs and start executing against it. Right now, the best strategy seems to be fleshing out my old React prototype, then asking people to play around with it. I also want to pair again—I’ve signed up for a session with a Zulip bot that matches you with other people looking for pairing partners. If there’s time, I’ll try to get vim-workman to play nice with macros.
+</p>
+
+<p>
+  P.S. Writing this blog post made me realize how annoying it is to write HTML without macros. Tomorrow I'll also look at adding Markdown support to my blog generator.
+</p>
+]]></description>
+            <link>https://thomasbroadley.com/blog/rc-day-2/</link>
+            <guid isPermaLink="false">rc-day-2</guid>
+            <pubDate>Tue, 22 Sep 2020 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[RC day 1]]></title>
             <description><![CDATA[<p>
