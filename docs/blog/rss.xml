@@ -9,12 +9,24 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 23 Sep 2020 12:42:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Sep 2020 22:01:07 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[RC day 3]]></title>
+            <description><![CDATA[<p>I started the day by (surprise, surprise) fiddling with my <code>.vimrc</code>. I decided to discard <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> and try out a more minimal set of key remappings, but I ran into problems with those too. Eventually I realized I was spending too much time on this and decided to get rid of all rebindings. So far it’s going OK! I’m working much more slowly than usual and making lots of mistakes (although fewer by the end of the day). I’ll try this approach for the rest of the week, with the goal of switching to Workman on my work computer next week.</p>
+<p>I then discussed code review pain points with another current Recurser. He told me about some of the processes his company’s put in place to make sure PRs get reviewed by the right person. He also encouraged me to share the knowledge I’ve gathered from my discussions this week, either in a blog post or in a technical talk on Friday. I’ll likely do both, so watch this space!</p>
+<p>Afterward, I spent some time polishing my <a href="https://github.com/tbroadley/literate-diffs">Literate Diffs</a> prototype, which you can now test out <a href="https://thomasbroadley.com/literate-diffs/">here</a>. Just paste in a Git diff (e.g. <a href="https://patch-diff.githubusercontent.com/raw/tbroadley/spellchecker-cli/pull/59.diff">this one</a>), then annotate and rearrange the chunks to your heart’s content. I also got feedback on the prototype from those I’ve discussed code review with this week.</p>
+<p>Later in the day, I had another coffee chat with a current Recurser. We talked about our lives before RC, swapped our favourite technical articles, and went back and forth over the benefits and disadvantages of type safety in certain contexts. (My coffee chat partner had written some SVG-generating Elixir code and found it clunky to have to wrap an opacity percentage like 0.5 in an <code>Opacity</code> type before passing the result to an <code>opacity</code> function. I think it’s clunky too, for little gain.)</p>
+<p>Finally, I spent a good chunk of the day pairing on changes to <a href="https://github.com/stephen/cssc"><code>cssc</code></a>, a CSS compiler written in Go, with its creator. Specifically, we refactored the code that simplifies <code>calc</code> expressions containing constants (e.g. <code>calc(2px + 2px)</code>) and discussed ways to fix a bug in that code.</p>
+<p>Tomorrow I plan to pair more on <code>cssc</code>, have another coffee chat and a discussion about code review, and digest the notes I’ve taken from those discussions so far. After that I’m not sure! I could see myself working on Literate Diffs more, returning to Cryptopals, or picking up something new.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/rc-day-3/</link>
+            <guid isPermaLink="false">rc-day-3</guid>
+            <pubDate>Wed, 23 Sep 2020 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[RC day 2]]></title>
             <description><![CDATA[<p>
