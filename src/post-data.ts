@@ -2,6 +2,10 @@ import { readFileSync } from "fs";
 import * as YAML from "yaml";
 import { orderBy, uniq } from "lodash";
 import * as globby from "globby";
+import * as markdown from "remark-parse";
+import * as remark2rehype from "remark-rehype";
+import * as html from "rehype-stringify";
+import * as unified from "unified";
 
 type PostData = {
   path: string;
@@ -32,6 +36,8 @@ type TagData = {
   postCountString: string;
   blogchain?: Blogchain;
 };
+
+const htmlFromMd = unified().use(markdown).use(remark2rehype).use(html);
 
 function getTagDataFromPostData(postData: PostData[]): TagData[] {
   const tags = uniq(postData.flatMap((post) => post.tags));
@@ -79,7 +85,11 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
         .map((tag) => `<a href="../tags/${tag}">${tag}</a>`)
         .join(", ");
 
-      return { ...data, tags, tagsString, path };
+      const body = data.bodyMd
+        ? htmlFromMd.processSync(data.bodyMd).contents
+        : data.body;
+
+      return { ...data, tags, tagsString, path, body };
     });
 
   const tags = getTagDataFromPostData(postsWithoutBlogchains);
