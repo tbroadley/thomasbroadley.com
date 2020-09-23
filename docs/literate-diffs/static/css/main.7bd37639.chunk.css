@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+.change {
+  display: flex;
+  padding: 0 0.25rem;
+  line-height: 1.5;
+}
+.change--added {
+  background-color: #d7ffd7;
+}
+.change--deleted {
+  background-color: #ffd7d7;
+}
+.change__addition-or-deletion,
+.change__content,
+.change__line-number {
+  font-family: monospace, monospace;
+}
+.change__addition-or-deletion {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1rem;
+}
+.change__line-number {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 2rem;
+  text-align: right;
+}
+.change__content {
+  margin-left: 1rem;
+  white-space: pre-wrap;
+  flex-grow: 0;
+}
+.chunk {
+  margin: 1rem 0 0;
+}
+.chunk__content {
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  margin: 0 0 1rem;
+  font-family: monospace, monospace;
+  border-bottom: 1px solid #000;
+}
+.file {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #000;
+  background-color: #fff;
+}
+.file__user-text {
+  margin: 0 0 1rem;
+}
+.file__drag-handle {
+  margin: 0 0 1rem;
+  width: 1.5rem;
+}
+.file__description {
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.file__from-name,
+.file__name,
+.file__to-name {
+  display: inline-block;
+  padding: 0 0.25rem;
+  font-family: monospace, monospace;
+  background-color: #d7d7d7;
+}
+/*# sourceMappingURL=main.7bd37639.chunk.css.map */
