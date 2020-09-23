@@ -16,7 +16,7 @@ importScripts(
 );
 
 importScripts(
-  "/literate-diffs/precache-manifest.ea2ebf87f91b076e1147d504fd9718af.js"
+  "/literate-diffs/precache-manifest.4c92ebded1b95d8fb990fd5aaaf603f3.js"
 );
 
 self.addEventListener("message", (event) => {

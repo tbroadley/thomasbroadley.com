@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/literate-diffs/static/css/main.7bd37639.chunk.css",
-    "main.js": "/literate-diffs/static/js/main.aa355599.chunk.js",
-    "main.js.map": "/literate-diffs/static/js/main.aa355599.chunk.js.map",
+    "main.js": "/literate-diffs/static/js/main.f8b9a3db.chunk.js",
+    "main.js.map": "/literate-diffs/static/js/main.f8b9a3db.chunk.js.map",
     "runtime-main.js": "/literate-diffs/static/js/runtime-main.7f82ccdb.js",
     "runtime-main.js.map": "/literate-diffs/static/js/runtime-main.7f82ccdb.js.map",
     "static/css/2.3c515868.chunk.css": "/literate-diffs/static/css/2.3c515868.chunk.css",
     "static/js/2.d944516b.chunk.js": "/literate-diffs/static/js/2.d944516b.chunk.js",
     "static/js/2.d944516b.chunk.js.map": "/literate-diffs/static/js/2.d944516b.chunk.js.map",
     "index.html": "/literate-diffs/index.html",
-    "precache-manifest.ea2ebf87f91b076e1147d504fd9718af.js": "/literate-diffs/precache-manifest.ea2ebf87f91b076e1147d504fd9718af.js",
+    "precache-manifest.4c92ebded1b95d8fb990fd5aaaf603f3.js": "/literate-diffs/precache-manifest.4c92ebded1b95d8fb990fd5aaaf603f3.js",
     "service-worker.js": "/literate-diffs/service-worker.js",
     "static/css/2.3c515868.chunk.css.map": "/literate-diffs/static/css/2.3c515868.chunk.css.map",
     "static/css/main.7bd37639.chunk.css.map": "/literate-diffs/static/css/main.7bd37639.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.3c515868.chunk.css",
     "static/js/2.d944516b.chunk.js",
     "static/css/main.7bd37639.chunk.css",
-    "static/js/main.aa355599.chunk.js"
+    "static/js/main.f8b9a3db.chunk.js"
   ]
 }

@@ -54,7 +54,7 @@
               c.a.createElement(
                 "div",
                 { className: "change__content" },
-                "normal" === n ? r : r.slice(1)
+                r.slice(1)
               )
             );
           }),
@@ -88,16 +88,16 @@
               })
             );
           }),
-        w = (t(195), t(66)),
-        k = t.n(w),
-        N = Object(p.SortableHandle)(function () {
+        k = (t(195), t(66)),
+        w = t.n(k),
+        y = Object(p.SortableHandle)(function () {
           return c.a.createElement("img", {
             className: "file__drag-handle",
-            src: k.a,
+            src: w.a,
             alt: "Drag and drop this file",
           });
         }),
-        y = Object(p.SortableElement)(function (e) {
+        N = Object(p.SortableElement)(function (e) {
           e.index;
           var n,
             t = e.from,
@@ -128,7 +128,7 @@
                     "p",
                     { className: "file__description" },
                     "File ",
-                    c.a.createElement("span", { className: "file__name" }, a),
+                    c.a.createElement("span", { className: "file__name" }, t),
                     " deleted"
                   )
                 : c.a.createElement(
@@ -146,7 +146,7 @@
             c.a.createElement(
               "div",
               { className: "file" },
-              c.a.createElement(N, null),
+              c.a.createElement(y, null),
               c.a.createElement(
                 "div",
                 { className: "file__user-text" },
@@ -180,7 +180,13 @@
             )
           );
         }),
-        j =
+        j = function (e) {
+          var n = ["package-lock.json", "yarn.lock"];
+          return n.includes(e.from) || n.includes(e.to)
+            ? null
+            : c.a.createElement(N, e);
+        },
+        O =
           (t(196),
           Object(p.SortableContainer)(function (e) {
             var n = e.diff,
@@ -194,7 +200,7 @@
                   r = e.chunks,
                   o = e.chunkIndex;
                 return c.a.createElement(
-                  y,
+                  j,
                   Object.assign(
                     {
                       key: "".concat(t, "-").concat(a, "-").concat(o),
@@ -219,7 +225,7 @@
               )
             );
           })),
-        O = (function (e) {
+        S = (function (e) {
           Object(s.a)(t, e);
           var n = Object(f.a)(t);
           function t() {
@@ -269,7 +275,7 @@
             t
           );
         })(a.Component),
-        S = (function (e) {
+        x = (function (e) {
           Object(s.a)(t, e);
           var n = Object(f.a)(t);
           function t() {
@@ -305,26 +311,26 @@
                 value: function () {
                   var e = this.state.diff;
                   return e
-                    ? c.a.createElement(j, {
+                    ? c.a.createElement(O, {
                         diff: e,
                         onSortEnd: this.onSortEnd,
                         useDragHandle: !0,
                       })
-                    : c.a.createElement(O, { setDiff: this.setDiff });
+                    : c.a.createElement(S, { setDiff: this.setDiff });
                 },
               },
             ]),
             t
           );
         })(a.Component),
-        x = Boolean(
+        C = Boolean(
           "localhost" === window.location.hostname ||
             "[::1]" === window.location.hostname ||
             window.location.hostname.match(
               /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
             )
         );
-      function C(e) {
+      function D(e) {
         navigator.serviceWorker
           .register(e)
           .then(function (e) {
@@ -342,7 +348,7 @@
             console.error("Error during service worker registration:", e);
           });
       }
-      o.a.render(c.a.createElement(S, null), document.getElementById("root")),
+      o.a.render(c.a.createElement(x, null), document.getElementById("root")),
         (function () {
           if ("serviceWorker" in navigator) {
             if (
@@ -352,7 +358,7 @@
               return;
             window.addEventListener("load", function () {
               var e = "".concat("/literate-diffs", "/service-worker.js");
-              x
+              C
                 ? (function (e) {
                     fetch(e)
                       .then(function (n) {
@@ -364,7 +370,7 @@
                                 window.location.reload();
                               });
                             })
-                          : C(e);
+                          : D(e);
                       })
                       .catch(function () {
                         console.log(
@@ -372,7 +378,7 @@
                         );
                       });
                   })(e)
-                : C(e);
+                : D(e);
             });
           }
         })();
@@ -387,4 +393,4 @@
   },
   [[68, 1, 2]],
 ]);
-//# sourceMappingURL=main.aa355599.chunk.js.map
+//# sourceMappingURL=main.f8b9a3db.chunk.js.map

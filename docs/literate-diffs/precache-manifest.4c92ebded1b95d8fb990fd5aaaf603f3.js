@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    revision: "eb79970e9582873c31435f49057fe47f",
+    revision: "1b61616e8f0e23a67738b5f80e69015c",
     url: "/literate-diffs/index.html",
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     url: "/literate-diffs/static/css/2.3c515868.chunk.css",
   },
   {
-    revision: "f70665a8a94643945571",
+    revision: "53fd3dfb0dca0fd51007",
     url: "/literate-diffs/static/css/main.7bd37639.chunk.css",
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     url: "/literate-diffs/static/js/2.d944516b.chunk.js.LICENSE.txt",
   },
   {
-    revision: "f70665a8a94643945571",
-    url: "/literate-diffs/static/js/main.aa355599.chunk.js",
+    revision: "53fd3dfb0dca0fd51007",
+    url: "/literate-diffs/static/js/main.f8b9a3db.chunk.js",
   },
   {
     revision: "a283f52044412aa79fc8",
