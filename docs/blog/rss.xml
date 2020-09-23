@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 22 Sep 2020 23:36:04 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Sep 2020 12:04:54 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -77,7 +77,7 @@
   After the workshop, I had a coffee chat with someone who’s been at RC for a few weeks already. She gave me some good advice: Even though my time at RC is flying by, the experience doesn’t end along with my batch. I can still attend study groups and other events after this week. And I’m already thinking about coming back for a six- or twelve-week batch.
 
 <p>
-  Early in the day, I posted on Zulip asking to chat with people about their experiences with code review. I hoped  A few people expressed interest and I spoke with a couple of them late this afternoon. One had already noticed the exact problem that <a href="https://github.com/tbroadley/literate-diffs">Literate Diffs</a> aims to solve. The other had already solved the problem a different way at his company. They found it harder to build systems for determining who should review which PRs. Definitely food for thought.
+  Early in the day, I posted on Zulip asking to chat with people about their experiences with code review. I hoped to figure out whether <a href="https://github.com/tbroadley/literate-diffs">Literate Diffs</a> solves a real problem. A few people expressed interest and I spoke with a couple of them late this afternoon. One had already noticed the exact problem that Literate Diffs aims to solve. The other had already solved the problem a different way at his company. They found it harder to build systems for determining who should review which PRs. Definitely food for thought.
 </p>
 
 <p>
