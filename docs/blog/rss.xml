@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 23 Sep 2020 12:04:54 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 23 Sep 2020 12:42:32 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -89,7 +89,7 @@
 </p>
 
 <p>
-  Speaking of tomorrow! In the morning, I want to come up with a plan of attack for Literate Diffs and start executing against it. Right now, the best strategy seems to be fleshing out my old React prototype, then asking people to play around with it. I also want to pair again—I’ve signed up for a session with a Zulip bot that matches you with other people looking for pairing partners. If there’s time, I’ll try to get vim-workman to play nice with macros.
+  Speaking of tomorrow! In the morning, I want to come up with a plan of attack for Literate Diffs and start executing against it. Right now, the best strategy seems to be fleshing out my old React prototype, then asking people to play around with it. I also want to pair again—I’ve signed up for a session with a Zulip bot that matches you with other people looking for pairing partners. If there’s time, I’ll try to get <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to play nice with macros.
 </p>
 
 <p>
