@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 24 Sep 2020 18:45:30 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 24 Sep 2020 18:49:40 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -311,10 +311,6 @@ PipedInputStream().use { inputStream ->
         <item>
             <title><![CDATA[Using Workman]]></title>
             <description><![CDATA[<p>
-  Previously: <a href="/blog/learning-workman/">Learning Workman</a>
-</p>
-
-<p>
   On May 12, I completed my first lessons using the <a href="https://workmanlayout.org/">Workman keyboard layout</a> on <a href="https://www.keybr.com/">Keybr</a>. On May 25, I started practicing seriously, spending 15 minutes a day each day from then until June 11. By June 9 I’d learned all the new layout’s letter keys.
 </p>
 
