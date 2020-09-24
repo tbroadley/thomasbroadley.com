@@ -4,6 +4,7 @@ import { orderBy, uniq } from "lodash";
 import * as globby from "globby";
 import * as markdown from "remark-parse";
 import * as remark2rehype from "remark-rehype";
+import * as raw from "rehype-raw";
 import * as html from "rehype-stringify";
 import * as unified from "unified";
 
@@ -37,7 +38,11 @@ type TagData = {
   blogchain?: Blogchain;
 };
 
-const htmlFromMd = unified().use(markdown).use(remark2rehype).use(html);
+const htmlFromMd = unified()
+  .use(markdown)
+  .use(remark2rehype, { allowDangerousHtml: true })
+  .use(raw)
+  .use(html);
 
 function getTagDataFromPostData(postData: PostData[]): TagData[] {
   const tags = uniq(postData.flatMap((post) => post.tags));

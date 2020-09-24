@@ -12,6 +12,7 @@
     "globby": "^11.0.1",
     "lodash": "^4.17.19",
     "mustache": "^4.0.1",
+    "rehype-raw": "^4.0.2",
     "rehype-stringify": "^8.0.0",
     "remark-parse": "^8.0.3",
     "remark-rehype": "^7.0.0",
