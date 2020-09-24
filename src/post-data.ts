@@ -111,7 +111,7 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
       tags.find((it) => it.tag === tag)
     );
 
-    const blogchains = tagsForPost.map((tag) => {
+    const unorderedBlogchains = tagsForPost.map((tag) => {
       const postIndex = tag.posts.indexOf(post);
 
       // Remember that posts are in reverse chronological order
@@ -129,6 +129,8 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
         nextPost,
       };
     });
+
+    const blogchains = orderBy(unorderedBlogchains, ({ tag }) => tag);
 
     return { ...post, blogchains };
   });
