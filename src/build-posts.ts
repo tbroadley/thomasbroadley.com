@@ -20,7 +20,7 @@ export function buildPosts() {
 
     writeFileSync(`docs/blog/${path}/index.html`, renderedPost);
 
-    const files = globby.sync(`blog/${path}/*`);
+    const files = globby.sync(`blog/posts/${path}/*`);
 
     for (const file of files) {
       if (file.endsWith("/index.yml")) continue;
