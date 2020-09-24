@@ -69,3 +69,7 @@ td:last-child {
 td:not(:last-child) {
   padding-right: 1rem;
 }
+
+hr {
+  border-color: #ccc;
+}
