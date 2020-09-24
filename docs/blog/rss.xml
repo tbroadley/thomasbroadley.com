@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 24 Sep 2020 21:00:39 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 24 Sep 2020 21:03:54 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -28,7 +28,7 @@
 </p>
 <p>The generated Haskell program has two lines. The first line defines a function called <code>q</code> that takes three arguments. <code>q</code> builds and returns a string that contains its first argument, then a newline, and finally some Ruby code that calls a function called <code>q</code>. This call to <code>q</code> in Ruby takes the same arguments but rotated one position to the left. That is, it takes the second argument to the Haskell <code>q</code>, then the third, then the first.</p>
 <p class="image">
-  <img src="first-line.png" alt="A diagram explaining q&#x27;s implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q(" ,="" then="" a1,="" the="" string="" &#x22;,&#x22;,="" a2,="" a0,="" and="" finally="" &#x22;).="" its="" output="" is="" value="" of="" a0="" on="" first="" line,="" a="" call="" to="" q="" in="" ruby="" with="" arguments="" second="" line.&#x22;="">
+  <img src="first-line.png" alt="A diagram explaining q&#x27;s implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q(&#x22;, then a1, then the string &#x22;,&#x22;, then a2, then the string &#x22;,&#x22;, then a0, and finally the string &#x22;). Its output is the value of a0 on the first line, then a call to q in Ruby with the arguments a1, a2, and a0 on the second line.">
 </p>
 <p>In the actual output, <code>{a0}</code> is replaced with the value of <code>a0</code>. Same goes for the other variables. Also, this isn’t quite the actual code. I simplified it a little for demonstration purposes.</p>
 <p>The generated Haskell program's second line is a main method that calls the function <code>q</code> defined on the first line and prints the result. Each argument passed to <code>q</code> is the source code for a definition of <code>q</code> in a language in the loop. The first argument is a definition of <code>q</code> in Ruby, the second in C, the last in Haskell.</p>
