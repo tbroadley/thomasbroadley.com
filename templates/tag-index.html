@@ -32,7 +32,10 @@
             {{ #tags }}
             <tr>
               <td>
-                <a href="{{ name }}">{{ name }}</a>
+                <a href="{{ tag }}">
+                  {{ #nameHtml }}{{{ nameHtml }}}{{ /nameHtml }} {{ ^nameHtml
+                  }}{{ name }}{{ /nameHtml }}
+                </a>
               </td>
               <td>
                 {{ postCount }}

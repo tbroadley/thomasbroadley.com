@@ -1,0 +1,9 @@
+workman:
+  name: Workman
+rc-mini-7-2020:
+  name: RC Mini 7, 2020
+life:
+  name: Life
+quine-central:
+  name: quine-central
+  nameHtml: <code>quine-central</code>

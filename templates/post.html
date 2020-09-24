@@ -52,7 +52,10 @@
           <span>&larr;</span>
           {{ /previousPost }}
 
-          <a href="../tags/{{ tag }}">{{ name }}</a>
+          <a href="../tags/{{ tag }}">
+            {{ #nameHtml }}{{{ nameHtml }}}{{ /nameHtml }} {{ ^nameHtml }}{{
+            name }}{{ /nameHtml }}
+          </a>
 
           {{ #nextPost }}
           <a href="../{{ path }}">&rarr;</a>

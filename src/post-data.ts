@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 import * as YAML from "yaml";
-import { orderBy, uniq } from "lodash";
+import { orderBy, uniq, difference } from "lodash";
 import * as globby from "globby";
 import * as markdown from "remark-parse";
 import * as remark2rehype from "remark-rehype";
@@ -21,6 +21,7 @@ type PostData = {
   lastModified: string;
   blogchains: {
     name: string;
+    nameHtml?: string;
     previousPost?: PostData;
     nextPost?: PostData;
   }[];
@@ -31,11 +32,12 @@ type Blogchain = {
 };
 
 type TagData = {
+  tag: string;
   name: string;
+  nameHtml?: string;
   posts: PostData[];
   postCount: number;
   postCountString: string;
-  blogchain?: Blogchain;
 };
 
 const htmlFromMd = unified()
@@ -45,16 +47,20 @@ const htmlFromMd = unified()
   .use(html);
 
 function getTagDataFromPostData(postData: PostData[]): TagData[] {
-  const tags = uniq(postData.flatMap((post) => post.tags));
+  const dataYaml = readFileSync("blog/tags.yml", "utf8");
+  const data = YAML.parse(dataYaml);
+  const tags = Object.keys(data);
 
-  const blogchains: { [tag: string]: Blogchain } = Object.fromEntries(
-    globby.sync("blog/tags/*.yml").map((post: string) => {
-      const tag = post.replace(/^blog\/tags\//, "").replace(/\.yml$/, "");
-      const dataYaml = readFileSync(post, "utf8");
-      const data = YAML.parse(dataYaml);
-      return [tag, data.blogchain];
-    })
-  );
+  const tagsInPosts = uniq(postData.flatMap((post) => post.tags));
+  const tagsWithoutNames = difference(tagsInPosts, tags);
+
+  if (tagsWithoutNames.length > 0) {
+    throw new Error(
+      `The following tags are used in posts but aren't declared in blog/tags.yml: ${tagsWithoutNames.join(
+        ", "
+      )}`
+    );
+  }
 
   const unorderedTags = tags.map((tag) => {
     const posts = orderBy(
@@ -64,15 +70,16 @@ function getTagDataFromPostData(postData: PostData[]): TagData[] {
     );
 
     return {
-      name: tag,
+      tag,
+      name: data[tag].name,
+      nameHtml: data[tag].nameHtml,
       posts,
       postCount: posts.length,
       postCountString: `${posts.length} post${posts.length === 1 ? "" : "s"}`,
-      blogchain: blogchains[tag],
     };
   });
 
-  return orderBy(unorderedTags, ({ name }) => name);
+  return orderBy(unorderedTags, ({ tag }) => tag);
 }
 
 export function getPostAndTagData(): [PostData[], TagData[]] {
@@ -100,11 +107,11 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
   const tags = getTagDataFromPostData(postsWithoutBlogchains);
 
   const posts = postsWithoutBlogchains.map((post) => {
-    const tagsWithBlogchains = post.tags
-      .map((tag) => tags.find((it) => it.name === tag))
-      .filter((post) => !!post?.blogchain);
+    const tagsForPost = post.tags.map((tag) =>
+      tags.find((it) => it.tag === tag)
+    );
 
-    const blogchains = tagsWithBlogchains.map((tag) => {
+    const blogchains = tagsForPost.map((tag) => {
       const postIndex = tag.posts.indexOf(post);
 
       // Remember that posts are in reverse chronological order
@@ -115,8 +122,9 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
       const nextPost = postIndex === 0 ? undefined : tag.posts[postIndex - 1];
 
       return {
-        tag: tag.name,
-        name: tag.blogchain.name,
+        tag: tag.tag,
+        name: tag.name,
+        nameHtml: tag.nameHtml,
         previousPost,
         nextPost,
       };

@@ -17,12 +17,12 @@ export function buildTagIndices() {
 
   for (const tag of tagData) {
     try {
-      mkdirSync(`docs/blog/tags/${tag.name}`);
+      mkdirSync(`docs/blog/tags/${tag.tag}`);
     } catch (e) {
       // Ignore: folder already exists
     }
 
     const renderedTagPostList = render(tagPostListTemplate, tag);
-    writeFileSync(`docs/blog/tags/${tag.name}/index.html`, renderedTagPostList);
+    writeFileSync(`docs/blog/tags/${tag.tag}/index.html`, renderedTagPostList);
   }
 }

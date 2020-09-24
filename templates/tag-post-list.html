@@ -44,7 +44,10 @@
 
     <article>
       <header>
-        <h1>Posts tagged {{ name }}</h1>
+        <h1>
+          Posts tagged {{ #nameHtml }}{{{ nameHtml }}}{{ /nameHtml }} {{
+          ^nameHtml }}{{ name }}{{ /nameHtml }}
+        </h1>
 
         <p class="post-count">{{ postCountString }}</p>
       </header>
