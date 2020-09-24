@@ -63,7 +63,7 @@
           {{ #previousPost }}
           <a href="../{{ path }}">&larr;</a>
           {{ /previousPost }} {{ ^previousPost }}
-          <span>&larr;</span>
+          <span style="visibility: hidden;">&larr;</span>
           {{ /previousPost }}
 
           <a href="../tags/{{ tag }}">
@@ -74,7 +74,7 @@
           {{ #nextPost }}
           <a href="../{{ path }}">&rarr;</a>
           {{ /nextPost }} {{ ^nextPost }}
-          <span>&rarr;</span>
+          <span style="visibility: hidden;">&rarr;</span>
           {{ /nextPost }}
         </p>
         {{ /blogchains }} {{ ^blogchains }} {{ #tagsString }}
