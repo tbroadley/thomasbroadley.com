@@ -7,7 +7,21 @@
     {{> head}}
 
     <style>
-      p.image {
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
         text-align: center;
       }
 

@@ -58,7 +58,21 @@
     <link href="/index.css" rel="stylesheet" />
 
     <style>
-      p.image {
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
         text-align: center;
       }
 
@@ -144,7 +158,7 @@
           a Haskell program that prints a Ruby program that prints a C program
           that prints the first Haskell program generated.
         </p>
-        <p class="image">
+        <p class="image image-centered">
           <img
             src="loop.png"
             alt="A loop of languages, going from Haskell to Ruby to C and back to Haskell."
@@ -160,10 +174,40 @@
           is, it takes the second argument to the Haskell <code>q</code>, then
           the third, then the first.
         </p>
-        <p>
+        <p class="image">
           <img
             src="first-line.png"
-            alt="A diagram explaining q&#x27;s implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q(&#x22;, then a1, then the string &#x22;,&#x22;, then a2, then the string &#x22;,&#x22;, then a0, and finally the string &#x22;). Its output is the value of a0 on the first line, then a call to q in Ruby with the arguments a1, a2, and a0 on the second line."
+            alt="A diagram explaining q&#x27;s implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q("
+            ,=""
+            then=""
+            a1,=""
+            the=""
+            string=""
+            &#x22;,&#x22;,=""
+            a2,=""
+            a0,=""
+            and=""
+            finally=""
+            &#x22;).=""
+            its=""
+            output=""
+            is=""
+            value=""
+            of=""
+            a0=""
+            on=""
+            first=""
+            line,=""
+            a=""
+            call=""
+            to=""
+            q=""
+            in=""
+            ruby=""
+            with=""
+            arguments=""
+            second=""
+            line.&#x22;=""
           />
         </p>
         <p>
