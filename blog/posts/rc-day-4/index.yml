@@ -10,6 +10,6 @@ bodyMd: |
 
   In the morning I had another coffee chat and one last discussion about code review, then started synthesizing the feedback from all those discussions. I hope to present my findings at the technical talks at the end of the day tomorrow.
 
-  Finally, I paired again on [`cssc`](https://github.com/stephen/cssc). We added support for reducing one species of multi-term `calc` expression, ones like `calc(100% - 10px - 10px)` that have multiple terms with the same units next to each other. I might pair again tomorrow to get `cssc` to handle expressions like `calc(100px - 10% - 10px)` where the terms with the same units are separated.
+  Finally, I paired again on [`cssc`](https://github.com/stephen/cssc). We added support for reducing one species of multi-term `calc` expression, ones like `calc(100% - 10px - 10px)` that have multiple terms with the same units next to each other. We might pair again tomorrow to get `cssc` to handle expressions like `calc(100px - 10% - 10px)` where the terms with the same units are separated.
 
   Tomorrow I’ll also pair on Literate Diffs, work on a tech talk, and wrap up that second blog post on `quine-central`. It’s hard to believe tomorrow’s the last day of my batch. I’m going to get as much as I can out of my remaining time, then think about how I’d like to continue being a part in the RC community afterwards.
