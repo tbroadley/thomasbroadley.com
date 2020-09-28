@@ -1,4 +1,4 @@
-import { writeFileSync, readFileSync, readdirSync } from "fs";
+import { writeFileSync } from "fs";
 import { take } from "lodash";
 import * as RSS from "rss";
 
@@ -22,7 +22,10 @@ export function buildRss() {
     image_url: `${BLOG_URL}/rss.png`,
   });
 
-  const posts = take(getPostAndTagData()[0], 20);
+  const posts = take(
+    getPostAndTagData()[0].filter(({ isDraft }) => !isDraft),
+    20
+  );
 
   for (const { path, title, createdAt, body } of posts) {
     feed.item({

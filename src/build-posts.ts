@@ -9,23 +9,24 @@ export function buildPosts() {
   const [posts] = getPostAndTagData();
   const template = readFileSync("templates/post.html", "utf8");
 
-  for (const { path, ...data } of posts) {
+  for (const { path, isDraft, ...data } of posts) {
     const renderedPost = render(template, data);
 
+    const folderPath = `docs/blog/${isDraft ? "drafts/" : "/"}${path}`;
     try {
-      mkdirSync(`docs/blog/${path}`);
+      mkdirSync(folderPath);
     } catch (e) {
       // Ignore: folder already exists
     }
 
-    writeFileSync(`docs/blog/${path}/index.html`, renderedPost);
+    writeFileSync(`${folderPath}/index.html`, renderedPost);
 
     const files = globby.sync(`blog/posts/${path}/*`);
 
     for (const file of files) {
       if (file.endsWith("/index.yml")) continue;
 
-      copyFileSync(file, `docs/blog/${path}/${basename(file)}`);
+      copyFileSync(file, `${folderPath}/${basename(file)}`);
     }
   }
 }
