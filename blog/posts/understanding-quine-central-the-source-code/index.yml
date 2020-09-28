@@ -5,7 +5,6 @@ descriptionHtml: An explanation of how <code>quine-central</code> generates quin
 tags:
   - quine-central
 createdAt: 2020-09-27
-isDraft: true
 bodyMd: |
   This is an explanation of the source code of [`quine-central`](https://github.com/dpiponi/quine-central). For simplicity I'll usually only include the code for generating programs in three languages: Haskell, JavaScript, and Racket.
 

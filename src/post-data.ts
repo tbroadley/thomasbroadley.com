@@ -19,7 +19,6 @@ type PostData = {
   body: string;
   createdAt: string;
   lastModified: string;
-  isDraft?: boolean;
   blogchains: {
     name: string;
     nameHtml?: string;
@@ -37,7 +36,6 @@ type TagData = {
   name: string;
   nameHtml?: string;
   posts: PostData[];
-  publishedPosts: PostData[];
   postCount: number;
   postCountString: string;
 };
@@ -71,18 +69,13 @@ function getTagDataFromPostData(postData: PostData[]): TagData[] {
       ["desc"]
     );
 
-    const publishedPosts = posts.filter(({ isDraft }) => !isDraft);
-
     return {
       tag,
       name: data[tag].name,
       nameHtml: data[tag].nameHtml,
       posts,
-      publishedPosts,
-      postCount: publishedPosts.length,
-      postCountString: `${publishedPosts.length} post${
-        publishedPosts.length === 1 ? "" : "s"
-      }`,
+      postCount: posts.length,
+      postCountString: `${posts.length} post${posts.length === 1 ? "" : "s"}`,
     };
   });
 
@@ -119,17 +112,14 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
     );
 
     const unorderedBlogchains = tagsForPost.map((tag) => {
-      const postsToUse = post.isDraft
-        ? tag.posts
-        : tag.posts.filter(({ isDraft }) => !isDraft);
-      const postIndex = postsToUse.indexOf(post);
+      const postIndex = tag.posts.indexOf(post);
 
       // Remember that posts are in reverse chronological order
       const previousPost =
-        postIndex === postsToUse.length - 1
+        postIndex === tag.posts.length - 1
           ? undefined
-          : postsToUse[postIndex + 1];
-      const nextPost = postIndex === 0 ? undefined : postsToUse[postIndex - 1];
+          : tag.posts[postIndex + 1];
+      const nextPost = postIndex === 0 ? undefined : tag.posts[postIndex - 1];
 
       return {
         tag: tag.tag,
