@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 28 Sep 2020 02:08:16 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 28 Sep 2020 11:33:18 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -55,7 +55,7 @@
 </p>
 <p>In the actual output, <code>{a0}</code> is replaced with the value of <code>a0</code>. Same goes for the other variables. Also, this isn’t quite the actual code. I simplified it a little for demonstration purposes.</p>
 <p>The generated Haskell program's second line is a main method that calls the function <code>q</code> defined on the first line and prints the result. Each argument passed to <code>q</code> is the source code for a definition of <code>q</code> in a language in the loop. The first argument is a definition of <code>q</code> in Ruby, the second in C, the last in Haskell.</p>
-<pre><code>main = putStrLn $ q "{Ruby    definition of q}"
+<pre><code class="language-hs">main = putStrLn $ q "{Ruby    definition of q}"
                     "{C       definition of q}"
                     "{Haskell definition of q}"
 </code></pre>
@@ -261,7 +261,7 @@ This week I’m participating in a <a href="https://www.recurse.com">Recurse Cen
   I solved this problem using a <a href="https://docs.oracle.com/javase/7/docs/api/java/io/PipedInputStream.html">PipedInputStream</a> and <a href="https://docs.oracle.com/javase/7/docs/api/java/io/PipedOutputStream.html">PipedOutputStream</a>. Reading from a PipedInputStream returns bytes written to the connected PipedOutputStream. Here was the Kotlin code I ended up with:
 </p>
 
-<code><pre>// Create a PipedInputStream; automatically close it at the end of
+<pre><code class="language-kotlin">// Create a PipedInputStream; automatically close it at the end of
 // the lambda
 PipedInputStream().use { inputStream ->
 
@@ -277,7 +277,7 @@ PipedInputStream().use { inputStream ->
   }
 
   uploadToS3(inputStream)
-}</pre></code>
+}</code></pre>
 
 <p>
   These classes come with a couple of gotchas. First, you should write to the PipedOutputStream and read from the PipedInputStream on separate threads. (Each class’s documentation clearly states this, so this isn’t so much a gotcha as a case of me not reading the docs closely enough.) If you read and write on the same thread, you might encounter a deadlock.
@@ -867,7 +867,7 @@ PipedInputStream().use { inputStream ->
   is in its entirety:
 </p>
 
-<pre><code>#!/usr/bin/expect -f
+<pre><code class="language-shell">#!/usr/bin/expect -f
 set password [exec pass SSH/Ubuntu]
 
 spawn ssh-add
@@ -910,7 +910,7 @@ interact</code></pre>
 
 <p>Then, I added the following to my <code>.zshrc</code>:</p>
 
-<pre><code>eval $(ssh-agent) > /dev/null
+<pre><code class="language-shell">eval $(ssh-agent) > /dev/null
 export SSH_ASKPASS=~/ssh-pass-passphrase.bash
 alias ssh="setsid -w ssh"
 alias git="setsid -w git"</code></pre>
@@ -934,7 +934,7 @@ alias git="setsid -w git"</code></pre>
   key’s password to stdout:
 </p>
 
-<pre><code>#!/bin/bash
+<pre><code class="language-shell">#!/bin/bash
 pass SSH/Ubuntu</code></pre>
 
 <p>

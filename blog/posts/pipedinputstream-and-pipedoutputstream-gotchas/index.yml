@@ -11,7 +11,7 @@ body: |
     I solved this problem using a <a href="https://docs.oracle.com/javase/7/docs/api/java/io/PipedInputStream.html">PipedInputStream</a> and <a href="https://docs.oracle.com/javase/7/docs/api/java/io/PipedOutputStream.html">PipedOutputStream</a>. Reading from a PipedInputStream returns bytes written to the connected PipedOutputStream. Here was the Kotlin code I ended up with:
   </p>
 
-  <code><pre>// Create a PipedInputStream; automatically close it at the end of
+  <pre><code class="language-kotlin">// Create a PipedInputStream; automatically close it at the end of
   // the lambda
   PipedInputStream().use { inputStream ->
 
@@ -27,7 +27,7 @@ body: |
     }
 
     uploadToS3(inputStream)
-  }</pre></code>
+  }</code></pre>
 
   <p>
     These classes come with a couple of gotchas. First, you should write to the PipedOutputStream and read from the PipedInputStream on separate threads. (Each class’s documentation clearly states this, so this isn’t so much a gotcha as a case of me not reading the docs closely enough.) If you read and write on the same thread, you might encounter a deadlock.

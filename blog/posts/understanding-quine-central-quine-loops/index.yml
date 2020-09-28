@@ -30,7 +30,7 @@ bodyMd: |
 
   The generated Haskell program's second line is a main method that calls the function `q` defined on the first line and prints the result. Each argument passed to `q` is the source code for a definition of `q` in a language in the loop. The first argument is a definition of `q` in Ruby, the second in C, the last in Haskell.
 
-  ```
+  ```hs
   main = putStrLn $ q "{Ruby    definition of q}"
                       "{C       definition of q}"
                       "{Haskell definition of q}"

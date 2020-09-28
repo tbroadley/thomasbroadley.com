@@ -31,7 +31,7 @@ body: |
     is in its entirety:
   </p>
 
-  <pre><code>#!/usr/bin/expect -f
+  <pre><code class="language-shell">#!/usr/bin/expect -f
   set password [exec pass SSH/Ubuntu]
 
   spawn ssh-add
@@ -74,7 +74,7 @@ body: |
 
   <p>Then, I added the following to my <code>.zshrc</code>:</p>
 
-  <pre><code>eval $(ssh-agent) > /dev/null
+  <pre><code class="language-shell">eval $(ssh-agent) > /dev/null
   export SSH_ASKPASS=~/ssh-pass-passphrase.bash
   alias ssh="setsid -w ssh"
   alias git="setsid -w git"</code></pre>
@@ -98,7 +98,7 @@ body: |
     key’s password to stdout:
   </p>
 
-  <pre><code>#!/bin/bash
+  <pre><code class="language-shell">#!/bin/bash
   pass SSH/Ubuntu</code></pre>
 
   <p>
