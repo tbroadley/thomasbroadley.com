@@ -8,36 +8,39 @@ import * as raw from "rehype-raw";
 import * as html from "rehype-stringify";
 import * as unified from "unified";
 
-type PostData = {
+type Post = {
   path: string;
   title: string;
   titleHtml?: string;
   description: string;
   descriptionHtml?: string;
   tags: string[];
-  tagsString: string;
-  body: string;
+  body?: string;
+  bodyMd?: string;
   createdAt: string;
   lastModified: string;
   isDraft?: boolean;
+};
+
+type PostPageData = Post & {
+  tagsString: string;
   blogchains: {
     name: string;
     nameHtml?: string;
-    previousPost?: PostData;
-    nextPost?: PostData;
+    previousPost?: Post;
+    nextPost?: Post;
   }[];
 };
 
-type Blogchain = {
-  name: string;
-};
-
-type TagData = {
-  tag: string;
+type Tag = {
   name: string;
   nameHtml?: string;
-  posts: PostData[];
-  publishedPosts: PostData[];
+};
+
+type TagPostListData = Tag & {
+  tag: string;
+  posts: Post[];
+  publishedPosts: Post[];
   postCount: number;
   postCountString: string;
 };
@@ -48,9 +51,9 @@ const htmlFromMd = unified()
   .use(raw)
   .use(html);
 
-function getTagDataFromPostData(postData: PostData[]): TagData[] {
+function getTagDataFromPostData(postData: Post[]): TagPostListData[] {
   const dataYaml = readFileSync("blog/tags.yml", "utf8");
-  const data = YAML.parse(dataYaml);
+  const data = YAML.parse(dataYaml) as { [tag: string]: Tag };
   const tags = Object.keys(data);
 
   const tagsInPosts = uniq(postData.flatMap((post) => post.tags));
@@ -89,7 +92,7 @@ function getTagDataFromPostData(postData: PostData[]): TagData[] {
   return orderBy(unorderedTags, ({ tag }) => tag);
 }
 
-export function getPostAndTagData(): [PostData[], TagData[]] {
+export function getPostAndTagData(): [PostPageData[], TagPostListData[]] {
   const postsWithoutBlogchains = globby
     .sync("blog/posts/*/*.yml")
     .map((post: string) => {
@@ -97,7 +100,7 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
         .replace(/^blog\/posts\//, "")
         .replace(/\/index\.yml$/, "");
       const dataYaml = readFileSync(post, "utf8");
-      const data = YAML.parse(dataYaml);
+      const data = YAML.parse(dataYaml) as Post;
 
       const tags = data.tags ?? [];
       const tagsString = tags
@@ -105,7 +108,7 @@ export function getPostAndTagData(): [PostData[], TagData[]] {
         .join(", ");
 
       const body = data.bodyMd
-        ? htmlFromMd.processSync(data.bodyMd).contents
+        ? (htmlFromMd.processSync(data.bodyMd).contents as string)
         : data.body;
 
       return { ...data, tags, tagsString, path, body };
