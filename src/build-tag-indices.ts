@@ -7,7 +7,9 @@ export function buildTagIndices() {
   const [, tagData] = getPostAndTagData();
 
   const tagIndexTemplate = readFileSync("templates/tag-index.html", "utf8");
-  const renderedTagIndex = render(tagIndexTemplate, { tags: tagData });
+  const renderedTagIndex = render(tagIndexTemplate, {
+    tags: tagData.filter((tag) => tag.postCount > 0),
+  });
   writeFileSync(`docs/blog/tags/index.html`, renderedTagIndex);
 
   const tagPostListTemplate = readFileSync(
