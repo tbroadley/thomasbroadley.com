@@ -7,22 +7,30 @@ import * as remark2rehype from "remark-rehype";
 import * as raw from "rehype-raw";
 import * as html from "rehype-stringify";
 import * as unified from "unified";
+import * as t from "io-ts";
+import { PathReporter } from "io-ts/PathReporter";
+import { isLeft } from "fp-ts/lib/These";
 
-type Post = {
-  path: string;
-  title: string;
-  titleHtml?: string;
-  description: string;
-  descriptionHtml?: string;
-  tags: string[];
-  body?: string;
-  bodyMd?: string;
-  createdAt: string;
-  lastModified: string;
-  isDraft?: boolean;
-};
+const PostRequired = t.type({
+  title: t.string,
+  description: t.string,
+  createdAt: t.string,
+});
+const PostOptional = t.partial({
+  titleHtml: t.string,
+  descriptionHtml: t.string,
+  body: t.string,
+  bodyMd: t.string,
+  tags: t.array(t.string),
+  lastModified: t.string,
+  isDraft: t.boolean,
+});
+const Post = t.intersection([PostRequired, PostOptional]);
 
+type Post = t.TypeOf<typeof Post>;
 type PostPageData = Post & {
+  path: string;
+  tags: string[];
   tagsString: string;
   blogchains: {
     name: string;
@@ -32,11 +40,15 @@ type PostPageData = Post & {
   }[];
 };
 
-type Tag = {
-  name: string;
-  nameHtml?: string;
-};
+const TagRequired = t.type({
+  name: t.string,
+});
+const TagOptional = t.partial({
+  nameHtml: t.string,
+});
+const Tag = t.intersection([TagRequired, TagOptional]);
 
+type Tag = t.TypeOf<typeof Tag>;
 type TagPostListData = Tag & {
   tag: string;
   postsAndDrafts: Post[];
@@ -44,6 +56,9 @@ type TagPostListData = Tag & {
   postCount: number;
   postCountString: string;
 };
+
+const TagFile = t.record(t.string, Tag);
+type TagFile = t.TypeOf<typeof TagFile>;
 
 const htmlFromMd = unified()
   .use(markdown)
@@ -86,7 +101,18 @@ function getTagPostListData(tag: string, tagData: Tag, postData: Post[]) {
 
 function getTagDataFromPostData(postData: Post[]): TagPostListData[] {
   const dataYaml = readFileSync("blog/tags.yml", "utf8");
-  const data = YAML.parse(dataYaml) as { [tag: string]: Tag };
+  const uncheckedData = YAML.parse(dataYaml);
+
+  const result = TagFile.decode(uncheckedData);
+  if (isLeft(result)) {
+    throw new Error(
+      `Error(s) while decoding blog/tags.yml: ${PathReporter.report(
+        result
+      ).join(", ")}`
+    );
+  }
+
+  const data = result.right;
   const tags = Object.keys(data);
 
   checkForUndeclaredTags(tags, postData);
@@ -100,8 +126,18 @@ function getTagDataFromPostData(postData: Post[]): TagPostListData[] {
 function getPostPageData(post: string) {
   const path = post.replace(/^blog\/posts\//, "").replace(/\/index\.yml$/, "");
   const dataYaml = readFileSync(post, "utf8");
-  const data = YAML.parse(dataYaml) as Post;
+  const uncheckedData = YAML.parse(dataYaml);
 
+  const result = Post.decode(uncheckedData);
+  if (isLeft(result)) {
+    throw new Error(
+      `Error(s) while decoding ${post}: ${PathReporter.report(result).join(
+        ", "
+      )}`
+    );
+  }
+
+  const data = result.right;
   const tags = data.tags ?? [];
   const tagsString = tags
     .map((tag) => `<a href="../tags/${tag}">${tag}</a>`)
