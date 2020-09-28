@@ -52,7 +52,7 @@
         <p class="post-count">{{ postCountString }}</p>
       </header>
 
-      {{#posts}}
+      {{#publishedPosts}}
       <section>
         <h2>
           <a href="../../{{path}}">
@@ -70,7 +70,7 @@
           {{^descriptionHtml}} {{description}} {{/descriptionHtml}}
         </p>
       </section>
-      {{/posts}}
+      {{/publishedPosts}}
     </article>
   </body>
 </html>
