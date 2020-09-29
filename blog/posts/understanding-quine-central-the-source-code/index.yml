@@ -5,7 +5,6 @@ descriptionHtml: An explanation of how <code>quine-central</code> generates quin
 tags:
   - quine-central
 createdAt: 2020-09-27
-isDraft: true
 bodyMd: |
   This is an explanation of the source code of [`quine-central`](https://github.com/dpiponi/quine-central), a program that produces quine loops. A quine is a program that prints its own source code. A quine loop is an extension of the same concept to multiple programs. Each program prints the source code of the next program in the loop. If you follow the loop far enough, you get back to the program you started with!
 
