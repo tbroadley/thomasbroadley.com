@@ -153,7 +153,7 @@ bodyMd: |
       map (arg lang1) ([1..n-1] ++ [0])
   ```
 
-  `fromTo` prints the definition of `q` in the first language it's given. This `q` prints `a0`, then the second line of the quine program in the language `l` (`defn l`, then `argList _ l n`, then `endDefn l`. For example, `fromTo 3 Haskell Javascript = "q a0 a1 a2=putStrLn $ a0++map toEnum [10,114,40,34]++a1++map toEnum [34,44,34]++a2++map toEnum [34,44,34]++a0++map toEnum [34,41,59]"`. If we called this definition of `q` on "foo", "bar", and "quux", it would print:
+  `fromTo` prints the definition of `q` in the first language it's given. This `q` prints `a0`, then the second line of the quine program in the language `l` (`defn l`, then `argList _ l n`, then `endDefn l`). For example, `fromTo 3 Haskell Javascript = "q a0 a1 a2=putStrLn $ a0++map toEnum [10,114,40,34]++a1++map toEnum [34,44,34]++a2++map toEnum [34,44,34]++a0++map toEnum [34,41,59]"`. If we called this definition of `q` on "foo", "bar", and "quux", it would print:
 
   ```js
   foo

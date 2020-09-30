@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 30 Sep 2020 00:00:59 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 30 Sep 2020 00:02:53 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -116,7 +116,7 @@ argDivide Racket l  = sequenceFromString Racket (divider l)
 <pre><code class="language-hs">argList lang1 lang2 n = intercalate (argDivide lang1 lang2) $
     map (arg lang1) ([1..n-1] ++ [0])
 </code></pre>
-<p><code>fromTo</code> prints the definition of <code>q</code> in the first language it's given. This <code>q</code> prints <code>a0</code>, then the second line of the quine program in the language <code>l</code> (<code>defn l</code>, then <code>argList _ l n</code>, then <code>endDefn l</code>. For example, <code>fromTo 3 Haskell Javascript = "q a0 a1 a2=putStrLn $ a0++map toEnum [10,114,40,34]++a1++map toEnum [34,44,34]++a2++map toEnum [34,44,34]++a0++map toEnum [34,41,59]"</code>. If we called this definition of <code>q</code> on "foo", "bar", and "quux", it would print:</p>
+<p><code>fromTo</code> prints the definition of <code>q</code> in the first language it's given. This <code>q</code> prints <code>a0</code>, then the second line of the quine program in the language <code>l</code> (<code>defn l</code>, then <code>argList _ l n</code>, then <code>endDefn l</code>). For example, <code>fromTo 3 Haskell Javascript = "q a0 a1 a2=putStrLn $ a0++map toEnum [10,114,40,34]++a1++map toEnum [34,44,34]++a2++map toEnum [34,44,34]++a0++map toEnum [34,41,59]"</code>. If we called this definition of <code>q</code> on "foo", "bar", and "quux", it would print:</p>
 <pre><code class="language-js">foo
 q("bar","quux","foo");
 </code></pre>
