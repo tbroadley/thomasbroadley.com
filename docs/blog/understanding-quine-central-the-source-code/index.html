@@ -234,7 +234,7 @@ paramList' C       = intercalate "," . map (\n -> "char *a" ++ show n)
 ...
 
 -- Generate a list or arguments to a function such as "a0,a1,..."
-paramList Perl    _ = ""
+paramList Perl _ = ""
 paramList lang n = paramList' lang [0..n-1]
 </code></pre>
         <p>

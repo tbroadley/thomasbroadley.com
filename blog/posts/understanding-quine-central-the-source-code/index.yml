@@ -70,7 +70,7 @@ bodyMd: |
   ...
 
   -- Generate a list or arguments to a function such as "a0,a1,..."
-  paramList Perl    _ = ""
+  paramList Perl _ = ""
   paramList lang n = paramList' lang [0..n-1]
   ```
 
