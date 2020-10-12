@@ -1,0 +1,170 @@
+<html lang="en">
+  <head>
+    <title>
+      Misleading with percent changes of percentages—Thomas Broadley
+    </title>
+
+    <meta
+      name="description"
+      content="If I say unemployment increased by 2%, is that a big deal or not?"
+    />
+
+    <meta charset="utf-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://thomasbroadley.com/blog/rss.xml"
+    />
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
+        text-align: center;
+      }
+
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
+
+    <link
+      href="https://unpkg.com/prismjs@1.21.0/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>
+          Misleading with percent changes of percentages
+        </h1>
+        <p class="timestamp">
+          2020-10-12
+        </p>
+
+        <hr />
+      </header>
+
+      <section>
+        <p>Imagine you’re reading the news and see this:</p>
+        <blockquote>
+          <p>This month, the unemployment rate increased by 2%.</p>
+        </blockquote>
+        <p>
+          Assuming the unemployment rate last month was 10%, this has two
+          possible meanings:
+        </p>
+        <ol>
+          <li>The unemployment rate increased from 10% to 12%.</li>
+          <li>
+            The unemployment rate increased from 10% to 10.2% (since 0.2% is 2%
+            of 10%).
+          </li>
+        </ol>
+        <p>That’s a big difference!</p>
+        <p>
+          Authors can either emphasize or downplay the change by choosing one of
+          these options. Say the unemployment rate increased from 10% to 12%
+          because of a government policy. Supporters of the policy can claim it
+          “only increased unemployment by 2%”. Detractors can instead say that
+          “unemployment has gone up by 20%!” And because of filter bubbles,
+          you’ll only hear one framing or the other and won’t notice the
+          discrepancy.
+        </p>
+        <p>
+          I found
+          <a
+            href="https://math.libretexts.org/Courses/College_of_the_Canyons/Math_100%3A_Liberal_Arts_Mathematics_(Gavilan_and_Radtke)/02%3A_Mathematics_and_Numbers/2.03%3A_Deceptive_and_Misleading_Numbers#Percentages_of_Percentages"
+            >one source</a
+          >
+          that recommends describing the change from 10% to 12% as an increase
+          of 2 percentage points, to differentiate between the two cases. But it
+          doesn’t propose another way to express that a percentage increased by
+          2% relative to the previous percentage. “Increased by 2%” still sounds
+          ambiguous to me.
+        </p>
+        <p>
+          To resolve that ambiguity, don’t interpret the change in whichever way
+          confirms your existing beliefs. Go to the source and find the value of
+          the statistic before and after the percent change. “Increased from 10%
+          to 12%” leaves no room for confusion. If the article expresses percent
+          changes of percentages in a different way, it might be trying to
+          mislead you.
+        </p>
+      </section>
+    </article>
+
+    <script src="https://unpkg.com/prismjs@1.21.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
