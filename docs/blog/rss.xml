@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 12 Oct 2020 12:53:10 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 12 Oct 2020 17:07:29 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -29,7 +29,9 @@
 <p>That’s a big difference!</p>
 <p>Authors can either emphasize or downplay the change by choosing one of these options. Say the unemployment rate increased from 10% to 12% because of a government policy. Supporters of the policy can claim it “only increased unemployment by 2%”. Detractors can instead say that “unemployment has gone up by 20%!” And because of filter bubbles, you’ll only hear one framing or the other and won’t notice the discrepancy.</p>
 <p>I found <a href="https://math.libretexts.org/Courses/College_of_the_Canyons/Math_100%3A_Liberal_Arts_Mathematics_(Gavilan_and_Radtke)/02%3A_Mathematics_and_Numbers/2.03%3A_Deceptive_and_Misleading_Numbers#Percentages_of_Percentages">one source</a> that recommends describing the change from 10% to 12% as an increase of 2 percentage points, to differentiate between the two cases. But it doesn’t propose another way to express that a percentage increased by 2% relative to the previous percentage. “Increased by 2%” still sounds ambiguous to me.</p>
-<p>To resolve that ambiguity, don’t interpret the change in whichever way confirms your existing beliefs. Go to the source and find the value of the statistic before and after the percent change. “Increased from 10% to 12%” leaves no room for confusion. If the article expresses percent changes of percentages in a different way, it might be trying to mislead you.</p>]]></description>
+<p>To resolve that ambiguity, don’t interpret the change in whichever way confirms your existing beliefs. Go to the source and find the value of the statistic before and after the percent change. “Increased from 10% to 12%” leaves no room for confusion. If the article expresses percent changes of percentages in a different way, it might be trying to mislead you.</p>
+<hr>
+<p>Edit: Here's <a href="https://twitter.com/justsaysrisks">a Twitter account</a> that adds the percentage-point change to tweets that only mention the relative change. Thanks to Fabian Tamp for pointing this out!</p>]]></description>
             <link>https://thomasbroadley.com/blog/misleading-with-percent-changes-of-percentages/</link>
             <guid isPermaLink="false">misleading-with-percent-changes-of-percentages</guid>
             <pubDate>Mon, 12 Oct 2020 05:00:00 GMT</pubDate>

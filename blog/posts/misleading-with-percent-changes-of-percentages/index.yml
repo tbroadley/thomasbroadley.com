@@ -1,6 +1,7 @@
 title: "Misleading with percent changes of percentages"
 description: If I say unemployment increased by 2%, is that a big deal or not?
 createdAt: "2020-10-12"
+lastModified: "2020-10-12"
 bodyMd: |
   Imagine you’re reading the news and see this:
 
@@ -18,3 +19,7 @@ bodyMd: |
   I found [one source](https://math.libretexts.org/Courses/College_of_the_Canyons/Math_100%3A_Liberal_Arts_Mathematics_(Gavilan_and_Radtke)/02%3A_Mathematics_and_Numbers/2.03%3A_Deceptive_and_Misleading_Numbers#Percentages_of_Percentages) that recommends describing the change from 10% to 12% as an increase of 2 percentage points, to differentiate between the two cases. But it doesn’t propose another way to express that a percentage increased by 2% relative to the previous percentage. “Increased by 2%” still sounds ambiguous to me.
 
   To resolve that ambiguity, don’t interpret the change in whichever way confirms your existing beliefs. Go to the source and find the value of the statistic before and after the percent change. “Increased from 10% to 12%” leaves no room for confusion. If the article expresses percent changes of percentages in a different way, it might be trying to mislead you.
+
+  ---
+
+  Edit: Here's [a Twitter account](https://twitter.com/justsaysrisks) that adds the percentage-point change to tweets that only mention the relative change. Thanks to Fabian Tamp for pointing this out!
