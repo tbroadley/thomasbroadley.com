@@ -71,16 +71,37 @@
     <p>Inspired by <a href="https://tixy.land">tixy.land</a>.</p>
 
     <script>
+      const formulaElement = document.getElementById("formula");
+
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("formula")) {
+        formulaElement.value = decodeURIComponent(params.get("formula"));
+      }
+
+      formulaElement.addEventListener("input", (e) => {
+        history.replaceState(
+          null,
+          "",
+          `${window.location.pathname}?formula=${encodeURIComponent(
+            e.target.value
+          )}`
+        );
+      });
+    </script>
+
+    <script>
       const SIZE = 16;
 
-      const startTime = Date.now();
+      let startTime = Date.now();
+      formulaElement.addEventListener("input", () => {
+        startTime = Date.now();
+      });
 
       const root = document.getElementById("root");
       const context = root.getContext("2d");
 
       const update = () => {
-        const now = Date.now();
-        const t = (now - startTime) / 1_000;
+        const t = (Date.now() - startTime) / 1_000;
 
         context.clearRect(0, 0, 16 * SIZE, 16 * SIZE);
 
@@ -95,9 +116,7 @@
 
             let radius;
             try {
-              const formula = `with(Math) { ${
-                document.getElementById("formula").value
-              } }`;
+              const formula = `with(Math) { ${formulaElement.value} }`;
               radius = eval(formula);
             } catch {
               radius = 0;
