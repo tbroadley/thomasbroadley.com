@@ -37,7 +37,7 @@
     </style>
   </head>
   <body>
-    <canvas width="225" height="225" id="root"></canvas>
+    <canvas width="256" height="256" id="root"></canvas>
 
     <p>
       <label>
@@ -58,7 +58,7 @@
     <p>Inspired by <a href="https://tixy.land">tixy.land</a>.</p>
 
     <script>
-      const SIZE = 15;
+      const SIZE = 16;
 
       const startTime = Date.now();
 
@@ -69,16 +69,14 @@
         const now = Date.now();
         const t = (now - startTime) / 1_000;
 
-        context.clearRect(0, 0, 15 * SIZE, 15 * SIZE);
+        context.clearRect(0, 0, 16 * SIZE, 16 * SIZE);
 
-        for (let y = 0; y < 15; y += 1) {
-          for (let x = 0; x < 15; x += 1) {
-            const r = Math.sqrt((7 - x) ** 2 + (7 - y) ** 2);
+        for (let y = 0; y < 16; y += 1) {
+          for (let x = 0; x < 16; x += 1) {
+            const r = Math.sqrt((7.5 - x) ** 2 + (7.5 - y) ** 2);
 
-            const x1 = x - 7;
-            const y1 = 7 - y;
-
-            if (x1 === 0 && y1 === 0) continue;
+            const x1 = x - 7.5;
+            const y1 = 7.5 - y;
 
             let th = Math.atan2(y1, x1);
 
