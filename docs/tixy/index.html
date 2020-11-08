@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <meta charset="utf8" />
+
+    <style>
+      body {
+        background-color: black;
+
+        font-size: 16px;
+        font-family: monospace;
+        color: white;
+      }
+
+      input {
+        font-size: 16px;
+        font-family: monospace;
+        color: white;
+
+        background-color: black;
+
+        border: 1px solid red;
+        border-radius: 2px;
+      }
+
+      #root {
+        width: 256px;
+        height: 256px;
+      }
+
+      a {
+        color: red;
+      }
+
+      a:visited {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="256" height="256" id="root"></canvas>
+
+    <p>
+      <label>
+        <code>(t, i, x, y) =></code>
+        <input
+          type="text"
+          id="formula"
+          value="Math.sin(y/8 + t)"
+          maxlength="20"
+        />
+      </label>
+    </p>
+
+    <p>A simple clone of <a href="https://tixy.land">tixy.land</a>.</p>
+
+    <script>
+      const SIZE = 16;
+
+      const startTime = Date.now();
+
+      const root = document.getElementById("root");
+      const context = root.getContext("2d");
+
+      const update = () => {
+        const now = Date.now();
+        const t = (now - startTime) / 1_000;
+
+        context.clearRect(0, 0, 16 * SIZE, 16 * SIZE);
+
+        for (let y = 0; y < 16; y += 1) {
+          for (let x = 0; x < 16; x += 1) {
+            const i = 16 * y + x;
+
+            let radius;
+            try {
+              const formula = `with(Math) { ${
+                document.getElementById("formula").value
+              } }`;
+              radius = eval(formula);
+            } catch {
+              radius = 0;
+            }
+            if (radius > 1) radius = 1;
+            if (radius < -1) radius = -1;
+
+            context.beginPath();
+            context.arc(
+              x * SIZE + SIZE / 2,
+              y * SIZE + SIZE / 2,
+              ((0.9 * SIZE) / 2) * Math.abs(radius),
+              0,
+              2 * Math.PI
+            );
+            context.fillStyle = radius >= 0 ? "white" : "red";
+            context.fill();
+          }
+        }
+
+        requestAnimationFrame(update);
+      };
+
+      requestAnimationFrame(update);
+    </script>
+  </body>
+</html>
