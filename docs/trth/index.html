@@ -80,14 +80,7 @@
 
             if (x1 === 0 && y1 === 0) continue;
 
-            let th =
-              x1 === 0
-                ? y1 >= 0
-                  ? Math.PI / 2
-                  : (3 * Math.PI) / 2
-                : x1 < 0
-                ? Math.PI + Math.atan(y1 / x1)
-                : Math.atan(y1 / x1);
+            let th = Math.atan2(y1, x1);
 
             let radius;
             try {
