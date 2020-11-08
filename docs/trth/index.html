@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta charset="utf8" />
+
+    <style>
+      body {
+        background-color: black;
+
+        font-size: 16px;
+        font-family: monospace;
+        color: white;
+      }
+
+      input {
+        font-size: 16px;
+        font-family: monospace;
+        color: white;
+
+        background-color: black;
+
+        border: 1px solid red;
+        border-radius: 2px;
+      }
+
+      #root {
+        width: 225px;
+        height: 225px;
+      }
+
+      a {
+        color: red;
+      }
+
+      a:visited {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas width="225" height="225" id="root"></canvas>
+
+    <p>
+      <label>
+        <code>(t, r, th) =></code>
+        <input
+          type="text"
+          id="formula"
+          value="Math.sin(th + t + r)"
+          maxlength="20"
+        />
+      </label>
+    </p>
+
+    <p>
+      trth (pronounced "truth") is creative code golf with polar coordinates.
+    </p>
+
+    <p>Inspired by <a href="https://tixy.land">tixy.land</a>.</p>
+
+    <script>
+      const SIZE = 15;
+
+      const startTime = Date.now();
+
+      const root = document.getElementById("root");
+      const context = root.getContext("2d");
+
+      const update = () => {
+        const now = Date.now();
+        const t = (now - startTime) / 1_000;
+
+        context.clearRect(0, 0, 15 * SIZE, 15 * SIZE);
+
+        for (let y = 0; y < 15; y += 1) {
+          for (let x = 0; x < 15; x += 1) {
+            const r = Math.sqrt((7 - x) ** 2 + (7 - y) ** 2);
+
+            const x1 = x - 7;
+            const y1 = 7 - y;
+
+            if (x1 === 0 && y1 === 0) continue;
+
+            let th =
+              x1 === 0
+                ? y1 >= 0
+                  ? Math.PI / 2
+                  : (3 * Math.PI) / 2
+                : x1 < 0
+                ? Math.PI + Math.atan(y1 / x1)
+                : Math.atan(y1 / x1);
+
+            let radius;
+            try {
+              const formula = `with(Math) { ${
+                document.getElementById("formula").value
+              } }`;
+              radius = eval(formula);
+            } catch {
+              radius = 0;
+            }
+            if (radius > 1) radius = 1;
+            if (radius < -1) radius = -1;
+
+            context.beginPath();
+            context.arc(
+              x * SIZE + SIZE / 2,
+              y * SIZE + SIZE / 2,
+              ((0.9 * SIZE) / 2) * Math.abs(radius),
+              0,
+              2 * Math.PI
+            );
+            context.fillStyle = radius >= 0 ? "white" : "red";
+            context.fill();
+          }
+        }
+
+        requestAnimationFrame(update);
+      };
+
+      requestAnimationFrame(update);
+    </script>
+  </body>
+</html>
