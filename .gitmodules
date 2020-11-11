@@ -3,4 +3,5 @@
 	url = https://github.com/warriorsband/wb-date-converter.git
 [submodule "docs/trth"]
 	path = docs/trth
-	url = git@github.com:tbroadley/trth
+	url = https://github.com/tbroadley/trth.git
+	branch = main
