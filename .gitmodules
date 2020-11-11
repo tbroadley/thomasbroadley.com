@@ -1,3 +1,6 @@
 [submodule "wb-date-converter"]
 	path = wb-date-converter
 	url = https://github.com/warriorsband/wb-date-converter.git
+[submodule "docs/trth"]
+	path = docs/trth
+	url = git@github.com:tbroadley/trth
