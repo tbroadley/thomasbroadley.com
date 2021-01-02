@@ -9,12 +9,32 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 12 Oct 2020 17:07:29 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 02 Jan 2021 14:39:38 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Subtracting from the blob]]></title>
+            <description><![CDATA[<p>I recently read a blog post called <a href="https://tynan.com/shapes">“What Shape are You?”</a>. It’s helped me understand my manager’s perspective on feedback and growth, and given me a new perspective on how to progress in my career. It has some good ideas that I didn’t fully understand at first, so I’m trying to clarify them here.</p>
+<p>The article’s main premise is that creative work is subtractive: “you start with a mountain of stuff to get done, and by the time you're done, someone will have done all of it.” This metaphor is incomplete: Doing a task from the mountain isn’t the only kind of creative work. In fact, the mountain is more like an amorphous blob called “things that we could do”. It doesn’t only contain stuff that you know has to get done (at least to start with).</p>
+<p>You can subtract from the blob in a few ways. The first step is to remove low-impact work from the blob and leave behind a set of high-impact problems. Then, you subtract from a particular problem to leave behind a clear solution. You erase more work from the solution to break it up into a set of necessary and sufficient tasks. Finally, you subtract each task by completing it. At the end of a project, you’ve subtracted all the work away, either by doing it or by deciding not to.</p>
+<p>Let’s take this up a level or three. I work at a company called Faire. Our product and engineering team is organized into several pillars, each of which contains several cross-functional pods of five to ten people. For example, I’m a member of the Marketplace Success pod, which is part of the Brand pillar. My impression is that the subtraction process follows this structure:</p>
+<p class="image">
+  <img src="diagram.png" alt="The Faire leadership team transforms a blob labelled “things Faire could do” into three smaller blobs and some empty space. At the next level, the Brand pillar leadership team does the same thing to one of the smaller blobs. This continues until we reach a task labelled “homepage banner”, which gets completed by a product manager, designer, or developer.">
+</p>
+<p>(I had a lot of fun drawing these blobs.)</p>
+<p>At each level, a leadership team starts with a blob called “things we could do”. They subtract from that blob, leaving a few smaller blobs. Then the next level of leadership subtracts further from each blob. Eventually we get to the level of individual problems and solutions. My teammates and I work together to break these into atomic tasks for product managers, designers, and developers. Finally, we complete those tasks. And at the end, the company’s subtracted everything away.</p>
+<p>This is a bit simplified. Leadership at each level has some input into the process at other levels. But in general I’m not collaborating with the CTO to decompose a solution into tasks. There’s also a lot of inter-team collaboration that doesn’t show up here, but we can model that as two teams subtracting from the same blob. There might be another level between solutions and tasks, depending on the size of the problem. And this doesn’t account for changing requirements and priorities. I think that looks like adding back work that was previously subtracted.</p>
+<hr>
+<p>The thesis of the article is that employees succeed or fail based on the shape of the work they subtract from the blob. One failure mode is subtracting a weird, unexpected shape. Senior employees’ responsibilities are too complex for their managers to fully define or even understand. It’s up to the employee to figure out what it makes sense for them to work on. If they choose poorly, important work can go undone for a long time without anyone noticing.</p>
+<p>This has a couple of personal implications. I should look for work that I’m not doing, but that I’m uniquely positioned to do or that everyone is expecting me to pick up. I have a strong suspicion such work exists. When I find it, I’ll probably need to give up work I’m currently doing that other people could also do.</p>
+<p>This scares me. I expect it means I’ll spend less time coding and more time scoping, planning, and talking to people. I’m much more confident in my ability to do the former. But I know I can succeed at this challenge.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/subtracting-from-the-blob/</link>
+            <guid isPermaLink="false">subtracting-from-the-blob</guid>
+            <pubDate>Sat, 02 Jan 2021 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Misleading with percent changes of percentages]]></title>
             <description><![CDATA[<p>Imagine you’re reading the news and see this:</p>
@@ -1256,47 +1276,6 @@ pass SSH/Ubuntu</code></pre>
             <link>https://thomasbroadley.com/blog/rate-limit-right-before-allocating/</link>
             <guid isPermaLink="false">rate-limit-right-before-allocating</guid>
             <pubDate>Tue, 26 May 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[A small mindfulness win]]></title>
-            <description><![CDATA[<p>
-  Yesterday I participated in a discussion group over voice chat. It was
-  the first time in a couple of months that I’d had a real conversation
-  with people I hadn’t met before. Making more friends is a goal of
-  mine, but I often feel prevented from achieving that goal by social
-  anxiety. Yesterday was no exception. When I woke up in the morning, I
-  was already thinking about bailing on the discussion group.
-</p>
-
-<p>
-  In the past, I’ve found that doing fulfilling solo activities helps me
-  counteract this anxiety. So yesterday morning I did yoga, meditated,
-  went on a bike ride to a park, cooked lunch, and sang. Even after all
-  that, I was still feeling anxious about ten minutes before the
-  meeting. As the meeting started, I saw the list of people in the voice
-  chat room and felt intimidated by its size. I nearly let myself bail
-  on the discussion group.
-</p>
-
-<p>
-  Luckily, I took the opportunity to practice mindfulness. I took some
-  deep breaths, closed my eyes, and focused on how I was feeling
-  physically. I immediately noticed that my anxiety had manifested as a
-  pit in my stomach. I focused on that sensation as well as I could and
-  after a couple of minutes it mostly went away. I felt much calmer and,
-  after a couple more minutes, I was able to join the voice chat room.
-  I’m so glad I did. The discussion group was the highlight of my week.
-</p>
-
-<p>
-  I hope I’ll remember to use this technique more in the future. I think
-  I can apply it not just to social anxiety but also my tendency to
-  procrastinate.
-</p>
-]]></description>
-            <link>https://thomasbroadley.com/blog/a-small-mindfulness-win/</link>
-            <guid isPermaLink="false">a-small-mindfulness-win</guid>
-            <pubDate>Mon, 25 May 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
