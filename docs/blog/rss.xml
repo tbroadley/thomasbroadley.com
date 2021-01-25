@@ -9,12 +9,30 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 02 Jan 2021 14:39:38 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 25 Jan 2021 12:11:53 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Predictions on Twitch]]></title>
+            <description><![CDATA[<p>Recently, I’ve spent more time than usual watching Twitch streams, partially because of <a href="https://help.twitch.tv/s/article/channel-points-predictions">Predictions</a>. On Twitch, viewers accumulate Channel Points by watching and interacting with a stream. Predictions lets streamers create events with outcomes that viewers can then bet on using Channel Points. For example, you could ask your viewers whether or not they think you’ll reach Grandmaster in League of Legends (LoL) today, or finish the pizza you’re eating.</p>
+<p>Unfortunately, Predictions don’t make great prediction markets. You can’t switch your prediction, or even remove your bet. You can only increase your stake in the side you originally picked. Plus, streamers are meant to close Predictions before the predicted event has started. Finally, Predictions have a known time window for betting, but streamers can also manually close betting before the end of the window, so it’s risky to wait to get a sense of the odds.</p>
+<p>I’m disappointed because Predictions seem liquid. On relatively small streams with a few hundred viewers, I’ve seen hundreds of thousands of channel points bet on each side of a Prediction. On the other hand, I’m not convinced most bets are rational - the odds sometimes swing wildly as longtime viewers bet large amounts of Channel Points.</p>
+<p>So far, I’ve seen Predictions for:</p>
+<ul>
+<li>The outcome of a LoL game</li>
+<li>An over/under on the number of kills a streamer will have in a LoL game</li>
+<li>An over/under on the time required to finish a level in Super Mario Maker 2</li>
+</ul>
+<p>Predictions seem like a fun way to practice predicting the future, but none of these use cases is perfect for that. Optimally, the predicted events would be short but have known starting conditions that affect the outcome. Team composition and lane matchups change the probability of winning a LoL game, but it takes 20-40 minutes to find out the result. By contrast, a bullet chess game takes a couple of minutes to play, but the only starting condition is whether the streamer is playing as white or black. </p>
+<p>One solution is to run multiple Predictions on an event. For example, I could start a LoL game, then run Predictions on whether I’ll get first blood, whether my team will take the first dragon, and so on. I’d need another person to help me run the Predictions during the game, though.</p>
+<p>Perhaps I should start my own Twitch channel with suitable Predictions. As a streamer, I bet I could get some interesting information on my viewers’ under- or overconfidence using this feature.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/predictions-on-twitch/</link>
+            <guid isPermaLink="false">predictions-on-twitch</guid>
+            <pubDate>Mon, 25 Jan 2021 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Subtracting from the blob]]></title>
             <description><![CDATA[<p>I recently read a blog post called <a href="https://tynan.com/shapes">“What Shape are You?”</a>. It’s helped me understand my manager’s perspective on feedback and growth, and given me a new perspective on how to progress in my career. It has some good ideas that I didn’t fully understand at first, so I’m trying to clarify them here.</p>
@@ -1190,92 +1208,6 @@ pass SSH/Ubuntu</code></pre>
             <link>https://thomasbroadley.com/blog/unlocking-ssh-keys-using-pass/</link>
             <guid isPermaLink="false">unlocking-ssh-keys-using-pass</guid>
             <pubDate>Fri, 29 May 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Rate-limit right before allocating]]></title>
-            <description><![CDATA[<p>
-  At work last week, I built an API endpoint that allowed logged-out
-  visitors to our website to create rows in a database table. I wanted
-  to prevent bad actors from adding a bunch of nonsense data to the
-  table, so I added rate-limiting based on the user’s IP address. I
-  implemented the endpoint as follows: First, it checked the rate limit
-  and responded with a 429 if the user had surpassed it. If not, it
-  validated the user-provided request data and responded with a 400 if
-  it found invalid data. If both checks were successful, it saved the
-  valid data to the database.
-</p>
-
-<p>
-  It was only by filling out the HTML form connected to this endpoint
-  that I discovered a design flaw. When I submitted invalid data for the
-  first time, I’d receive a 400. However, after quickly fixing the
-  invalid data and resubmitting it, I’d receive a 429 and wouldn’t be
-  able to submit the now-valid data until the rate limit expired. From a
-  user’s perspective, this was a terrible experience: If they made an
-  error while filling out the form, they’d have to wait several seconds
-  each time they tried to correct it.
-</p>
-
-<p>
-  I realized that I wanted to limit the number of requests per user that
-  would actually create rows in the database, not the total number of
-  requests. Therefore, I changed the endpoint to validate the request
-  data, <i>then</i> check the rate limit. This way, the endpoint only
-  rate-limits valid requests. Now users can submit many invalid requests
-  in a short period of time while trying different ways to fix the
-  invalid data.
-</p>
-
-<p>
-  This problem has a mirror image. Suppose you were implementing an
-  endpoint with a high CPU cost and wanted to prevent each user from
-  making too many requests in a short period of time. Further, suppose
-  you implemented the API endpoint to first construct a response to the
-  user’s request, then check the rate limit. In this case, the rate
-  limit has no effect: A user can still make a large number of requests
-  to the endpoint and consume a lot of CPU, even though they receive
-  429s for most of the requests. The solution is to rate-limit before
-  performing the CPU-intensive operation.
-</p>
-
-<p>
-  These problems point to a general principle. Rate-limiting prevents
-  one user from using too much of a shared resource, e.g. database space
-  or CPU. The principle is this: Rate-limit right before allocating part
-  of that shared resource to a request. If you check the rate limit too
-  late, the rate-limiting won’t effectively protect the resource. If you
-  check it too early, you’ll end up rate-limiting requests that wouldn’t
-  have consumed the resource anyway, which might be a poor experience
-  for users.
-</p>
-
-<p>
-  Edit (2020-05-30): A couple of my coworkers pointed out that this
-  principle has tradeoffs. In the first example in this article, I added
-  a direct call to a rate-limiter method to the endpoint. We wouldn't
-  want to do that for every endpoint that adds rows to the database.
-  Instead, we could implement a configurable database rate-limiting
-  system that allows you to specify different rate limits for insertions
-  to different tables. We might want to implement a similar system for
-  each shared resource. Contrast this with a single system that only
-  allows you to rate-limit the number of requests per endpoint. The
-  former allows you to limit bad behaviour more aggressively without
-  compromising user experience, but it might not be worth the extra
-  complexity.
-</p>
-
-<p>
-  A coworker also mentioned a second use for rate-limiting: preventing
-  dictionary attacks, both on sensitive information, like passwords, and
-  less sensitive information, like tokens that refer to database
-  objects. I think it's possible to treat this as a special case of
-  protecting shared resources by considering the search space as a
-  shared resource, but I haven't fully worked out this metaphor yet.
-</p>
-]]></description>
-            <link>https://thomasbroadley.com/blog/rate-limit-right-before-allocating/</link>
-            <guid isPermaLink="false">rate-limit-right-before-allocating</guid>
-            <pubDate>Tue, 26 May 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
