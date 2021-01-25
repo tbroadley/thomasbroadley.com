@@ -1,5 +1,5 @@
 title: Predictions on Twitch
-description: Recording my initial thoughts on Twitch's new Channel Point Predictions feature
+description: Recording my initial thoughts on Twitch's new Channel Point Predictions feature.
 createdAt: 2021-01-25
 bodyMd: |
   Recently, I’ve spent more time than usual watching Twitch streams, partially because of [Predictions](https://help.twitch.tv/s/article/channel-points-predictions). On Twitch, viewers accumulate Channel Points by watching and interacting with a stream. Predictions lets streamers create events with outcomes that viewers can then bet on using Channel Points. For example, you could ask your viewers whether or not they think you’ll reach Grandmaster in League of Legends (LoL) today, or finish the pizza you’re eating.
