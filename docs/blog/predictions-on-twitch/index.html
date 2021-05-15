@@ -1,0 +1,186 @@
+<html lang="en">
+  <head>
+    <title>Predictions on Twitch—Thomas Broadley</title>
+
+    <meta
+      name="description"
+      content="Recording my initial thoughts on Twitch&#39;s new Channel Point Predictions feature"
+    />
+
+    <meta charset="utf-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://thomasbroadley.com/blog/rss.xml"
+    />
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
+        text-align: center;
+      }
+
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
+
+    <link
+      href="https://unpkg.com/prismjs@1.21.0/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>
+          Predictions on Twitch
+        </h1>
+        <p class="timestamp">
+          2021-01-25
+        </p>
+
+        <hr />
+      </header>
+
+      <section>
+        <p>
+          Recently, I’ve spent more time than usual watching Twitch streams,
+          partially because of
+          <a href="https://help.twitch.tv/s/article/channel-points-predictions"
+            >Predictions</a
+          >. On Twitch, viewers accumulate Channel Points by watching and
+          interacting with a stream. Predictions lets streamers create events
+          with outcomes that viewers can then bet on using Channel Points. For
+          example, you could ask your viewers whether or not they think you’ll
+          reach Grandmaster in League of Legends (LoL) today, or finish the
+          pizza you’re eating.
+        </p>
+        <p>
+          Unfortunately, Predictions don’t make great prediction markets. You
+          can’t switch your prediction, or even remove your bet. You can only
+          increase your stake in the side you originally picked. Plus, streamers
+          are meant to close Predictions before the predicted event has started.
+          Finally, Predictions have a known time window for betting, but
+          streamers can also manually close betting before the end of the
+          window, so it’s risky to wait to get a sense of the odds.
+        </p>
+        <p>
+          I’m disappointed because Predictions seem liquid. On relatively small
+          streams with a few hundred viewers, I’ve seen hundreds of thousands of
+          channel points bet on each side of a Prediction. On the other hand,
+          I’m not convinced most bets are rational - the odds sometimes swing
+          wildly as longtime viewers bet large amounts of Channel Points.
+        </p>
+        <p>So far, I’ve seen Predictions for:</p>
+        <ul>
+          <li>The outcome of a LoL game</li>
+          <li>
+            An over/under on the number of kills a streamer will have in a LoL
+            game
+          </li>
+          <li>
+            An over/under on the time required to finish a level in Super Mario
+            Maker 2
+          </li>
+        </ul>
+        <p>
+          Predictions seem like a fun way to practice predicting the future, but
+          none of these use cases is perfect for that. Optimally, the predicted
+          events would be short but have known starting conditions that affect
+          the outcome. Team composition and lane matchups change the probability
+          of winning a LoL game, but it takes 20-40 minutes to find out the
+          result. By contrast, a bullet chess game takes a couple of minutes to
+          play, but the only starting condition is whether the streamer is
+          playing as white or black.
+        </p>
+        <p>
+          One solution is to run multiple Predictions on an event. For example,
+          I could start a LoL game, then run Predictions on whether I’ll get
+          first blood, whether my team will take the first dragon, and so on.
+          I’d need another person to help me run the Predictions during the
+          game, though.
+        </p>
+        <p>
+          Perhaps I should start my own Twitch channel with suitable
+          Predictions. As a streamer, I bet I could get some interesting
+          information on my viewers’ under- or overconfidence using this
+          feature.
+        </p>
+      </section>
+    </article>
+
+    <script src="https://unpkg.com/prismjs@1.21.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
