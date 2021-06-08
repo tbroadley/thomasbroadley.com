@@ -15,6 +15,7 @@ h4,
 h5,
 h6 {
   font-family: "Roboto Slab", "Times New Roman", Times, serif;
+  font-weight: 400;
   overflow-wrap: break-word;
 }
 
