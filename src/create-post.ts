@@ -2,9 +2,9 @@ import { mkdirSync, readFileSync, writeFileSync } from "fs";
 import { render } from "./render";
 
 const title = process.argv[2];
-if (!!title) {
+if (!title) {
   console.log("yarn new-post [title]");
-  return;
+  process.exit();
 }
 
 const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
