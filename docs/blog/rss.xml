@@ -9,12 +9,27 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 30 Dec 2021 03:03:33 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 12 Jan 2022 02:44:25 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Editing inline code blocks]]></title>
+            <description><![CDATA[<p>Notion's, Slack's, and Jira's WYSIWYG text editors behave differently when the cursor is at the end of an inline code block. A situation like:</p>
+<pre><code>THIS IS A CODE BLOCK and this is not
+                   ^
+                   (cursor is after this character)
+</code></pre>
+<p>Notion's behaviour here is the most confusing. Sometimes, typed text will appear inside the code block. Sometimes, it'll appear outside. It's unclear to me what triggers the switch between these two behaviours.</p>
+<p>Slack is consistent, but consistently hard to use. A cursor at the end of an inline code block is always considered to be inside the code block. If you want to type after the code block, you must move your cursor after the character just after the end of the block. This means, for example, that you can't easily take the text "<code>foo</code> bar" and edit it to "<code>foo</code>'s bar". To do so, you'd need to move your cursor after the space that comes before "bar", type "'s ", then remove the space before the apostrophe.</p>
+<p>In contrast, Jira defines two possible cursor positions, one inside and one outside the inline code block. You can move back and forth between the two positions using the left and right arrow keys. And you can distinguish between the two cursor positions visually. I like this behaviour best because it's always clear where typed text will appear, but you still have flexibility to type inside our outside the code block.</p>
+<p>As a programmer, I spend a small but meaningful amount of time editing inline code blocks in WYSIWYG editors. Doing this in Notion and Slack frustrates me. But whenever I do it in Jira, I'm glad someone at Atlassian thought through this experience.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/editing-inline-code-blocks/</link>
+            <guid isPermaLink="false">editing-inline-code-blocks</guid>
+            <pubDate>Tue, 11 Jan 2022 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Predictions on Twitch]]></title>
             <description><![CDATA[<p>Recently, I’ve spent more time than usual watching Twitch streams, partially because of <a href="https://help.twitch.tv/s/article/channel-points-predictions">Predictions</a>. On Twitch, viewers accumulate Channel Points by watching and interacting with a stream. Predictions lets streamers create events with outcomes that viewers can then bet on using Channel Points. For example, you could ask your viewers whether or not they think you’ll reach Grandmaster in League of Legends (LoL) today, or finish the pizza you’re eating.</p>
@@ -1089,125 +1104,6 @@ PipedInputStream().use { inputStream ->
             <link>https://thomasbroadley.com/blog/learning-workman/</link>
             <guid isPermaLink="false">learning-workman</guid>
             <pubDate>Sat, 06 Jun 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Unlocking SSH keys using pass]]></title>
-            <description><![CDATA[<p>
-  I use
-  <a href="https://www.passwordstore.org/"><code>pass</code></a> as my
-  password manager. It stores passwords and other secrets as
-  GPG-encrypted files in a Git repository. I host that repo on GitHub
-  and have clones of it on my work and personal computers. I store
-  nearly all of my personal passwords in <code>pass</code>, including
-  passwords for my GitHub SSH keys. I’ve gone through three ways of
-  unlocking these SSH keys.
-</p>
-
-<p>
-  I started by running <code>pass -c SSH/Ubuntu</code> to copy my SSH
-  key’s password to the keyboard, running a Git command like
-  <code>git push</code>, then pasting my password into the prompt. I
-  wasn’t satisfied with how much typing this process required. Plus,
-  sometimes I’d forget to copy the password to my clipboard before
-  running the Git command. I’d have to Ctrl+C that command and rerun it
-  after copying the password. Even though I used
-  <code>ssh-agent</code> and wasn’t unlocking my SSH key that often, I
-  decided to automate this process.
-</p>
-
-<p>
-  My second method used a script I called <code>sshpass</code>. Here it
-  is in its entirety:
-</p>
-
-<pre><code class="language-shell">#!/usr/bin/expect -f
-set password [exec pass SSH/Ubuntu]
-
-spawn ssh-add
-expect "passphrase"
-send -- "$password\r"
-interact</code></pre>
-
-<p>
-  This is an <code>expect</code> script. According to
-  <a href="https://linux.die.net/man/1/expect">its man page</a>,
-  <code>expect</code> is “a program that ‘talks’ to other interactive
-  programs according to a script”. In this case, the script instructs
-  <code>expect</code> to store the output of
-  <code>pass SSH/Ubuntu</code> in the variable <code>password</code>,
-  then run <code>ssh-add</code>, wait for it to prompt for a password,
-  and write the password to <code>ssh-add</code>’s stdin. For reasons I
-  don’t totally understand, the <code>interact</code> command, which
-  attaches the terminal’s standard streams to <code>ssh-add</code>’s, is
-  necessary to let <code>ssh-add</code> finish running.
-</p>
-
-<p>
-  Now, all I had to do was run <code>sshpass</code> before running a Git
-  command, but I’d still sometimes forget to run <code>sshpass</code>.
-  Finally, this week, I came across a third solution that addresses this
-  issue on Linux, mainly based on
-  <a
-    href="https://blog.ona.io/technology/2020/03/02/using-password-manager-with-ssh.html"
-    >this blog post</a
-  >.
-</p>
-
-<p>
-  First, I added <code>AddKeysToAgent yes</code> to my SSH configuration
-  at <code>~/.ssh/config</code>. This causes <code>ssh</code> to add
-  keys to <code>ssh-agent</code> when they’re unlocked. This is
-  important because we’ll no longer be explicitly calling
-  <code>ssh-add</code>.
-</p>
-
-<p>Then, I added the following to my <code>.zshrc</code>:</p>
-
-<pre><code class="language-shell">eval $(ssh-agent) > /dev/null
-export SSH_ASKPASS=~/ssh-pass-passphrase.bash
-alias ssh="setsid -w ssh"
-alias git="setsid -w git"</code></pre>
-
-<p>
-  This starts an instance of <code>ssh-agent</code>, then sets the
-  <code>SSH_ASKPASS</code> environment variable. If this variable is
-  set, when <code>ssh</code> needs a password to unlock an SSH key, it
-  runs the script pointed at by the variable and uses the output as the
-  password. Note that this only works if <code>ssh</code> isn’t run in a
-  terminal. That’s the purpose of the aliases for <code>ssh</code> and
-  <code>git</code>: <code>setsid</code> runs these programs in a new
-  shell session that isn’t associated with the terminal in which I’m
-  running <code>ssh</code> or <code>git</code>. The <code>-w</code> flag
-  causes <code>setsid</code> to wait until <code>ssh</code> or
-  <code>git</code> exits before exiting.
-</p>
-
-<p>
-  <code>~/ssh-pass-passphrase.bash</code> is a script that writes my SSH
-  key’s password to stdout:
-</p>
-
-<pre><code class="language-shell">#!/bin/bash
-pass SSH/Ubuntu</code></pre>
-
-<p>
-  Now, I can run Git commands without worrying if my SSH key is unlocked
-  beforehand. If it isn’t, <code>ssh</code> automatically calls
-  <code>pass</code> to get my SSH key’s password and unlocks the key
-  before Git runs the command.
-</p>
-
-<p>
-  So far, this setup only works on Ubuntu on my personal computer. My
-  next step is to get it working on Mac OS, so I can use it on my work
-  computer too. After that, I’d like to look into ways to avoid spawning
-  an instance of <code>ssh-agent</code> in every terminal I run this
-  command in.
-</p>
-]]></description>
-            <link>https://thomasbroadley.com/blog/unlocking-ssh-keys-using-pass/</link>
-            <guid isPermaLink="false">unlocking-ssh-keys-using-pass</guid>
-            <pubDate>Fri, 29 May 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

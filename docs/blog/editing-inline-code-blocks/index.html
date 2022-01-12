@@ -1,0 +1,165 @@
+<html lang="en">
+  <head>
+    <title>Editing inline code blocks—Thomas Broadley</title>
+
+    <meta
+      name="description"
+      content="Why I find it easier in some productivity apps than others."
+    />
+
+    <meta charset="utf-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://thomasbroadley.com/blog/rss.xml"
+    />
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
+        text-align: center;
+      }
+
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+    </style>
+
+    <link
+      href="https://unpkg.com/prismjs@1.21.0/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>
+          Editing inline code blocks
+        </h1>
+        <p class="timestamp">
+          2022-01-11
+        </p>
+
+        <hr />
+      </header>
+
+      <section>
+        <p>
+          Notion's, Slack's, and Jira's WYSIWYG text editors behave differently
+          when the cursor is at the end of an inline code block. A situation
+          like:
+        </p>
+        <pre><code>THIS IS A CODE BLOCK and this is not
+                   ^
+                   (cursor is after this character)
+</code></pre>
+        <p>
+          Notion's behaviour here is the most confusing. Sometimes, typed text
+          will appear inside the code block. Sometimes, it'll appear outside.
+          It's unclear to me what triggers the switch between these two
+          behaviours.
+        </p>
+        <p>
+          Slack is consistent, but consistently hard to use. A cursor at the end
+          of an inline code block is always considered to be inside the code
+          block. If you want to type after the code block, you must move your
+          cursor after the character just after the end of the block. This
+          means, for example, that you can't easily take the text "<code
+            >foo</code
+          >
+          bar" and edit it to "<code>foo</code>'s bar". To do so, you'd need to
+          move your cursor after the space that comes before "bar", type "'s ",
+          then remove the space before the apostrophe.
+        </p>
+        <p>
+          In contrast, Jira defines two possible cursor positions, one inside
+          and one outside the inline code block. You can move back and forth
+          between the two positions using the left and right arrow keys. And you
+          can distinguish between the two cursor positions visually. I like this
+          behaviour best because it's always clear where typed text will appear,
+          but you still have flexibility to type inside our outside the code
+          block.
+        </p>
+        <p>
+          As a programmer, I spend a small but meaningful amount of time editing
+          inline code blocks in WYSIWYG editors. Doing this in Notion and Slack
+          frustrates me. But whenever I do it in Jira, I'm glad someone at
+          Atlassian thought through this experience.
+        </p>
+      </section>
+    </article>
+
+    <script src="https://unpkg.com/prismjs@1.21.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
