@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 12 Feb 2022 23:51:32 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 07 Apr 2022 00:15:46 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -469,7 +469,7 @@ main = q "{definition of `q` in JavaScript}" "{definition of `q` in Racket}" "{d
 </p>
 
 <p>
-  I didn’t pair with anyone today. To hit that goal for the rest of the week, I’m going to have to put myself out there more than I did today. But working on <code>vim-workman</code> gave me. Maybe I can build some tools to make myself more productive as a programmer, then do a presentation on them at the end of the week. Or even present on my Workman journey and the software I’ve used to get here.
+  I didn’t pair with anyone today. To hit that goal for the rest of the week, I’m going to have to put myself out there more than I did today. But working on <code>vim-workman</code> gave me some ideas for what to do this week. Maybe I can build some tools to make myself more productive as a programmer, then do a presentation on them at the end of the week. Or even present on my Workman journey and the software I’ve used to get here.
 </p>
 ]]></description>
             <link>https://thomasbroadley.com/blog/rc-day-1/</link>
