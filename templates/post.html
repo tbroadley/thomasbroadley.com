@@ -59,8 +59,10 @@
           {{/titleHtml}}
         </h1>
         <p class="timestamp">
-          {{createdAt}} {{#lastModified}}(last modified
-          {{lastModified}}){{/lastModified}}
+          <span data-pagefind-meta="created">{{createdAt}}</span>
+          {{#lastModified}}(last modified
+          <span data-pagefind-meta="last modified">{{lastModified}}</span
+          >){{/lastModified}}
         </p>
 
         {{ #blogchains }}
@@ -71,7 +73,7 @@
           <span style="visibility: hidden;">&larr;</span>
           {{ /previousPost }}
 
-          <a href="../tags/{{ tag }}">
+          <a href="../tags/{{ tag }}" data-pagefind-filter="tag">
             {{ #nameHtml }}{{{ nameHtml }}}{{ /nameHtml }} {{ ^nameHtml }}{{
             name }}{{ /nameHtml }}
           </a>
