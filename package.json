@@ -28,7 +28,7 @@
     "new-post": "ts-node src/create-post.ts",
     "serve": "http-server docs",
     "build": "ts-node src/build.ts && yarn build:pagefind && pretty-quick",
-    "build:pagefind": "rm -rf docs/_pagefind && pagefind --source docs",
+    "build:pagefind": "rm -rf docs/pagefind && pagefind --source docs --bundle-dir pagefind",
     "watch": "git ls-files -cdmo --exclude-standard | grep --invert-match \"^docs/\" | entr -dc yarn build"
   },
   "devDependencies": {
