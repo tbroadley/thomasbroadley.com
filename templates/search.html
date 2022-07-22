@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Thomas Broadley&mdash;Search</title>
+
+    <meta
+      name="description"
+      content="Search the website and blog posts of Thomas Broadley."
+    />
+
+    {{> head}}
+
+    <link href="/_pagefind/pagefind-ui.css" rel="stylesheet" />
+    <script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="..">Home</a>
+    </nav>
+
+    <article data-pagefind-ignore>
+      <header>
+        <h1>Search</h1>
+      </header>
+
+      <section>
+        <div id="search" />
+      </section>
+    </article>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        new PagefindUI({ element: "#search" });
+      });
+    </script>
+  </body>
+</html>

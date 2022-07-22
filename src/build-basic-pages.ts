@@ -3,13 +3,14 @@ import { readFileSync, writeFileSync } from "fs";
 import { render } from "./render";
 
 export function buildBasicPages() {
-  const template = readFileSync("templates/index.html", "utf8");
-  const renderedIndex = render(template, {});
+  buildPage("templates/index.html", "docs/index.html");
+  buildPage("templates/404.html", "docs/404.html");
+  buildPage("templates/search.html", "docs/search/index.html");
+}
 
-  writeFileSync(`docs/index.html`, renderedIndex);
+function buildPage(inputPath: string, outputPath: string) {
+  const template = readFileSync(inputPath, "utf8");
+  const rendered = render(template, {});
 
-  const template404 = readFileSync("templates/404.html", "utf8");
-  const rendered404 = render(template404, {});
-
-  writeFileSync(`docs/404.html`, rendered404);
+  writeFileSync(outputPath, rendered);
 }

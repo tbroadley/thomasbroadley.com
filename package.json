@@ -33,6 +33,7 @@
   "devDependencies": {
     "http-server": "^0.12.3",
     "husky": "^4.2.5",
+    "pagefind": "^0.4.1",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
   },
