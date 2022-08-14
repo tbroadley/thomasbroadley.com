@@ -5,3 +5,6 @@
 	path = docs/trth
 	url = https://github.com/tbroadley/trth.git
 	branch = main
+[submodule "docs/js13kGames-2022/death-cursor"]
+	path = docs/js13kGames-2022/death-cursor
+	url = https://github.com/tbroadley/death-cursor
