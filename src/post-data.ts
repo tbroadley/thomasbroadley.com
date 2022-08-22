@@ -20,6 +20,8 @@ const PostOptional = t.partial({
   titleHtml: t.string,
   descriptionHtml: t.string,
   headerImage: t.string,
+  headerImageAltText: t.string,
+  headerImageCaption: t.string,
   body: t.string,
   bodyMd: t.string,
   tags: t.array(t.string),
