@@ -87,6 +87,20 @@
       p.blogchain > *:not(:last-child) {
         margin-right: 1rem;
       }
+
+      #header-image {
+        width: 50%;
+        margin-left: 1rem;
+        float: right;
+      }
+
+      @media (max-width: 399px) {
+        #header-image {
+          width: 100%;
+          margin-left: 0;
+          float: none;
+        }
+      }
     </style>
 
     <link
@@ -114,6 +128,7 @@
       </header>
 
       <section>
+        <img id="header-image" src="header.png" />
         <p>
           I’m working through
           <a href="https://www.lesswrong.com/s/qRxTKm7DAftSuTGvj">Hammertime</a

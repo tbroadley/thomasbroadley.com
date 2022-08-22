@@ -19,6 +19,7 @@ const PostRequired = t.type({
 const PostOptional = t.partial({
   titleHtml: t.string,
   descriptionHtml: t.string,
+  headerImage: t.string,
   body: t.string,
   bodyMd: t.string,
   tags: t.array(t.string),
