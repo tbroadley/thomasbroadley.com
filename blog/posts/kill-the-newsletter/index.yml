@@ -1,6 +1,9 @@
 title: "Kill the Newsletter"
 description: I found a tool that converts email newsletters into RSS feeds.
 createdAt: "2022-04-24"
+headerImage: header.png
+headerImageAltText: a realistic photograph of a man in a suit with a newspaper that is on fire
+headerImageCaption: '"a realistic photograph of a man in a suit with a newspaper that is on fire" by DALL-E'
 bodyMd: |
   I subscribe to about 100 RSS feeds and one email newsletter: Money Stuff. I wanted a way to receive Money Stuff in my RSS reader instead of in my inbox. Unfortunately, Bloomberg doesn't seem to offer an RSS feed for Money Stuff anymore.
 
