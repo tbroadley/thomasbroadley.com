@@ -17,13 +17,13 @@ bodyMd: |
 
 
   <p class="image image-centered">
-    <img src="loop.png" alt="A loop of languages, going from Haskell to Ruby to C and back to Haskell.">
+    <img src="loop.jpg" alt="A loop of languages, going from Haskell to Ruby to C and back to Haskell.">
   </p>
 
   The generated Haskell program has two lines. The first line defines a function called `q` that takes three arguments. `q` builds and returns a string that contains its first argument, then a newline, and finally some Ruby code that calls a function called `q`. This call to `q` in Ruby takes the same arguments but rotated one position to the left. That is, it takes the second argument to the Haskell `q`, then the third, then the first.
 
   <p class="image">
-    <img src="first-line.png" alt="A diagram explaining q's implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q(&quot;, then a1, then the string &quot;,&quot;, then a2, then the string &quot;,&quot;, then a0, and finally the string &quot;). Its output is the value of a0 on the first line, then a call to q in Ruby with the arguments a1, a2, and a0 on the second line.">
+    <img src="first-line.jpg" alt="A diagram explaining q's implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q(&quot;, then a1, then the string &quot;,&quot;, then a2, then the string &quot;,&quot;, then a0, and finally the string &quot;). Its output is the value of a0 on the first line, then a call to q in Ruby with the arguments a1, a2, and a0 on the second line.">
   </p>
 
   In the actual output, `{a0}` is replaced with the value of `a0`. Same goes for the other variables. Also, this isn’t quite the actual code. I simplified it a little for demonstration purposes.
