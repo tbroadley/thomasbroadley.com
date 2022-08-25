@@ -3,30 +3,31 @@
     <title>{{title}}—Thomas Broadley</title>
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SocialMediaPosting",
-        "headline": "{{title}}",
-        "datePublished": "{{createdAt}}",
+       {
+         "@context": "https://schema.org",
+         "@type": "SocialMediaPosting",
+         "headline": "{{title}}",
+         "datePublished": "{{createdAt}}",
 
-        {{#lastModified}}
-        "dateModified": "{{lastModified}}",
-        {{/lastModified}}
+         {{#lastModified}}
+         "dateModified": "{{lastModified}}",
+         {{/lastModified}}
 
-        {{ #headerImage }}
-        "image": [
-          "https://thomasbroadley.com/blog/{{ path }}/{{ headerImage }}"
-        ],
-        "thumbnailUrl": "https://thomasbroadley.com/blog/{{ path }}/{{ headerImage }}",
-        {{ /headerImage }}
+         {{ #headerImage }}
+         "image": [
+           "https://thomasbroadley.com/blog/{{ path }}/{{ headerImage }}"
+         ],
+         "thumbnailUrl": "https://thomasbroadley.com/blog/{{ path }}/{{ headerImage }}",
+         {{ /headerImage }}
 
-        "author": [
-          {
-            "@type": "Person",
-            "name": "Thomas Broadley"
-          }
-        ]
-      }
+         "author": [
+           {
+             "@type": "Person",
+             "name": "Thomas Broadley",
+      "url": "https://thomasbroadley.com"
+           }
+         ]
+       }
     </script>
 
     <meta name="description" content="{{description}}" />
