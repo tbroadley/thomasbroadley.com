@@ -2,6 +2,24 @@
   <head>
     <title>{{title}}—Thomas Broadley</title>
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SocialMediaPosting",
+        "headline": "{{title}}",
+        "datePublished": "{{createdAt}}",
+       {{#lastModified}}
+        "dateModified": "{{lastModified}}",
+        {{/lastModified}}
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Thomas Broadley"
+          }
+        ]
+      }
+    </script>
+
     <meta name="description" content="{{description}}" />
 
     {{> head}}
