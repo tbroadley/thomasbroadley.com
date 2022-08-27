@@ -41,6 +41,8 @@ type PostPageData = Post & {
     previousPost?: Post;
     nextPost?: Post;
   }[];
+  headerImageOg?: string;
+  headerImageThumbnail?: string;
 };
 
 const TagRequired = t.type({
@@ -150,7 +152,21 @@ function getPostPageData(post: string) {
     ? (htmlFromMd.processSync(data.bodyMd).contents as string)
     : data.body;
 
-  return { ...data, tags, tagsString, path, body };
+  const headerImageOg = data.headerImage?.replace(".jpg", ".og.jpg");
+  const headerImageThumbnail = data.headerImage?.replace(
+    ".jpg",
+    ".thumbnail.jpg"
+  );
+
+  return {
+    ...data,
+    tags,
+    tagsString,
+    path,
+    body,
+    headerImageOg,
+    headerImageThumbnail,
+  };
 }
 
 function getBlogchain(tag: TagPostListData, post: Post) {

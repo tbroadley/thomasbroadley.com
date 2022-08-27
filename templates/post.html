@@ -31,9 +31,44 @@
        }
     </script>
 
-    <meta name="description" content="{{description}}" />
+    <meta content="{{title}}—Thomas Broadley" property="og:title" />
+    <meta content="{{title}}—Thomas Broadley" property="twitter:title" />
+    <meta content="en_US" property="og:locale" />
+    <meta content="https://xkcd.pagefind.app/og.png" property="twitter:image" />
+    <meta content="{{description}}" name="description" />
+    <meta content="{{description}}" property="og:description" />
+    <link href="https://thomasbroadley.com/blog/{{path}}/" rel="canonical" />
+    <meta
+      content="https://thomasbroadley.com/blog/{{path}}/"
+      property="og:url"
+    />
+    <meta content="Thomas Broadley" property="og:site_name" />
+    <meta content="article" property="og:type" />
+    <meta content="summary" name="twitter:card" />
 
-    {{> head}}
+    {{ #headerImage }}
+    <meta
+      content="/blog/{{ path }}/{{ headerImageThumbnail }}"
+      data-pagefind-meta="image[content]"
+      property="tbroadley:thumbnail"
+    />
+
+    <meta
+      content="https://thomasbroadley.com/blog/{{ path }}/{{ headerImageOg }}"
+      property="og:image"
+    />
+    <meta
+      content="https://thomasbroadley.com/blog/{{ path }}/{{ headerImageOg }}"
+      property="twitter:image"
+    />
+
+    <meta
+      content="{{ headerImageAltText }}"
+      data-pagefind-meta="image_alt[content]"
+      property="og:image:alt"
+    />
+    <meta content="{{ headerImageAltText }}" property="twitter:image:alt" />
+    {{ /headerImage }} {{> head}}
 
     <style>
       p.image > img {
@@ -153,7 +188,7 @@
         {{ #headerImage }}
         <figure id="header-image-figure">
           <img
-            src="https://thomasbroadley.com/blog/{{ path }}/{{ headerImage }}"
+            src="/blog/{{ path }}/{{ headerImage }}"
             alt="{{ headerImageAltText }}"
           />
 
