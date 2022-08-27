@@ -1,4 +1,3 @@
-/* fakecss:/home/runner/work/pagefind/pagefind/pagefind_ui/svelte/result.esbuild-svelte-fake-css */
 .pagefind-ui__result.svelte-j9e30.svelte-j9e30 {
   list-style-type: none;
   display: flex;
@@ -22,7 +21,7 @@
   display: block;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%);
   font-size: 0;
   width: auto;
   height: auto;
@@ -82,31 +81,29 @@
   border-radius: var(--pagefind-ui-border-radius);
   background-color: var(--pagefind-ui-tag);
 }
-
-/* fakecss:/home/runner/work/pagefind/pagefind/pagefind_ui/svelte/filters.esbuild-svelte-fake-css */
-legend.svelte-1disgtf.svelte-1disgtf {
+legend.svelte-1v2r7ls.svelte-1v2r7ls {
   position: absolute;
   clip: rect(0 0 0 0);
 }
-.pagefind-ui__filter-panel.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-panel.svelte-1v2r7ls.svelte-1v2r7ls {
   min-width: min(calc(260px * var(--pagefind-ui-scale)), 100%);
   flex: 1;
   display: flex;
   flex-direction: column;
   margin-top: calc(20px * var(--pagefind-ui-scale));
 }
-.pagefind-ui__filter-group.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-group.svelte-1v2r7ls.svelte-1v2r7ls {
   border: 0;
   padding: 0;
 }
-.pagefind-ui__filter-block.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-block.svelte-1v2r7ls.svelte-1v2r7ls {
   padding: 0;
   display: block;
   border-bottom: solid calc(2px * var(--pagefind-ui-scale))
     var(--pagefind-ui-border);
   padding: calc(20px * var(--pagefind-ui-scale)) 0;
 }
-.pagefind-ui__filter-name.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-name.svelte-1v2r7ls.svelte-1v2r7ls {
   font-size: calc(16px * var(--pagefind-ui-scale));
   position: relative;
   display: flex;
@@ -116,7 +113,10 @@ legend.svelte-1disgtf.svelte-1disgtf {
   cursor: pointer;
   height: calc(24px * var(--pagefind-ui-scale));
 }
-.pagefind-ui__filter-name.svelte-1disgtf.svelte-1disgtf::after {
+.pagefind-ui__filter-name.svelte-1v2r7ls.svelte-1v2r7ls::-webkit-details-marker {
+  display: none;
+}
+.pagefind-ui__filter-name.svelte-1v2r7ls.svelte-1v2r7ls:after {
   position: absolute;
   content: "";
   right: calc(6px * var(--pagefind-ui-scale));
@@ -126,25 +126,25 @@ legend.svelte-1disgtf.svelte-1disgtf {
   border: solid calc(2px * var(--pagefind-ui-scale)) currentColor;
   border-right: 0;
   border-top: 0;
-  transform: translateY(-70%) rotateZ(-45deg);
+  transform: translateY(-70%) rotate(-45deg);
 }
-.pagefind-ui__filter-block[open].svelte-1disgtf
-  .pagefind-ui__filter-name.svelte-1disgtf::after {
-  transform: translateY(-70%) rotateZ(-225deg);
+.pagefind-ui__filter-block[open].svelte-1v2r7ls
+  .pagefind-ui__filter-name.svelte-1v2r7ls:after {
+  transform: translateY(-70%) rotate(-225deg);
 }
-.pagefind-ui__filter-group.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-group.svelte-1v2r7ls.svelte-1v2r7ls {
   display: flex;
   flex-direction: column;
   gap: calc(20px * var(--pagefind-ui-scale));
   padding-top: calc(30px * var(--pagefind-ui-scale));
 }
-.pagefind-ui__filter-value.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-value.svelte-1v2r7ls.svelte-1v2r7ls {
   position: relative;
   display: flex;
   align-items: center;
   gap: calc(8px * var(--pagefind-ui-scale));
 }
-.pagefind-ui__filter-value.svelte-1disgtf.svelte-1disgtf::before {
+.pagefind-ui__filter-value.svelte-1v2r7ls.svelte-1v2r7ls:before {
   position: absolute;
   content: "";
   top: 50%;
@@ -157,19 +157,19 @@ legend.svelte-1disgtf.svelte-1disgtf {
       calc(4.5px * var(--pagefind-ui-scale) * -1),
       calc(0.8px * var(--pagefind-ui-scale))
     )
-    skewX(-5deg) rotateZ(-45deg);
+    skew(-5deg) rotate(-45deg);
   transform-origin: top left;
   border-top: 0;
   border-right: 0;
   pointer-events: none;
 }
-.pagefind-ui__filter-value.pagefind-ui__filter-value--checked.svelte-1disgtf.svelte-1disgtf::before {
+.pagefind-ui__filter-value.pagefind-ui__filter-value--checked.svelte-1v2r7ls.svelte-1v2r7ls:before {
   opacity: 1;
   width: calc(9px * var(--pagefind-ui-scale));
   height: calc(4px * var(--pagefind-ui-scale));
   transition: width 0.1s ease-out 0.1s, height 0.1s ease-in;
 }
-.pagefind-ui__filter-checkbox.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-checkbox.svelte-1v2r7ls.svelte-1v2r7ls {
   margin: 0;
   width: calc(16px * var(--pagefind-ui-scale));
   height: calc(16px * var(--pagefind-ui-scale));
@@ -180,33 +180,23 @@ legend.svelte-1disgtf.svelte-1disgtf {
   background-color: var(--pagefind-ui-background);
   cursor: pointer;
 }
-.pagefind-ui__filter-checkbox.svelte-1disgtf.svelte-1disgtf:checked {
+.pagefind-ui__filter-checkbox.svelte-1v2r7ls.svelte-1v2r7ls:checked {
   background-color: var(--pagefind-ui-primary);
   border: solid 1px var(--pagefind-ui-primary);
 }
-.pagefind-ui__filter-label.svelte-1disgtf.svelte-1disgtf {
+.pagefind-ui__filter-label.svelte-1v2r7ls.svelte-1v2r7ls {
   cursor: pointer;
   font-size: calc(16px * var(--pagefind-ui-scale));
   font-weight: 400;
 }
-.pagefind-ui__loading.svelte-1disgtf.svelte-1disgtf {
-  height: calc(44px * var(--pagefind-ui-scale));
-  margin: 0;
-  color: var(--pagefind-ui-text);
-  background-color: var(--pagefind-ui-text);
-  opacity: 0.1;
-  pointer-events: none;
-}
-
-/* fakecss:/home/runner/work/pagefind/pagefind/pagefind_ui/svelte/reset.esbuild-svelte-fake-css */
 .pagefind-ui--reset
   *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
   all: unset;
   display: revert;
 }
 .pagefind-ui--reset *,
-.pagefind-ui--reset *::before,
-.pagefind-ui--reset *::after {
+.pagefind-ui--reset *:before,
+.pagefind-ui--reset *:after {
   box-sizing: border-box;
 }
 .pagefind-ui--reset a,
@@ -254,8 +244,6 @@ legend.svelte-1disgtf.svelte-1disgtf {
 .pagefind-ui--reset mark {
   all: revert;
 }
-
-/* fakecss:/home/runner/work/pagefind/pagefind/pagefind_ui/svelte/ui.esbuild-svelte-fake-css */
 :root {
   --pagefind-ui-scale: 0.8;
   --pagefind-ui-primary: #393939;
@@ -271,15 +259,15 @@ legend.svelte-1disgtf.svelte-1disgtf {
     "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande",
     sans-serif;
 }
-.pagefind-ui.svelte-19uh7sf {
+.pagefind-ui.svelte-193m69l {
   width: 100%;
   color: var(--pagefind-ui-text);
   font-family: var(--pagefind-ui-font);
 }
-.pagefind-ui__form.svelte-19uh7sf {
+.pagefind-ui__form.svelte-193m69l {
   position: relative;
 }
-.pagefind-ui__form.svelte-19uh7sf::before {
+.pagefind-ui__form.svelte-193m69l:before {
   background-color: var(--pagefind-ui-text);
   width: calc(18px * var(--pagefind-ui-scale));
   height: calc(18px * var(--pagefind-ui-scale));
@@ -296,7 +284,7 @@ legend.svelte-1disgtf.svelte-1disgtf {
   z-index: 9;
   pointer-events: none;
 }
-.pagefind-ui__search-input.svelte-19uh7sf {
+.pagefind-ui__search-input.svelte-193m69l {
   height: calc(64px * var(--pagefind-ui-scale));
   padding: 0 0 0 calc(54px * var(--pagefind-ui-scale));
   background-color: var(--pagefind-ui-background);
@@ -311,24 +299,27 @@ legend.svelte-1disgtf.svelte-1disgtf {
   box-sizing: border-box;
   font-weight: 700;
 }
-.pagefind-ui__search-input.svelte-19uh7sf::placeholder {
+.pagefind-ui__search-input.svelte-193m69l::placeholder {
   opacity: 0.2;
 }
-.pagefind-ui__drawer.svelte-19uh7sf {
+.pagefind-ui__drawer.svelte-193m69l {
   gap: calc(60px * var(--pagefind-ui-scale));
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.pagefind-ui__results-area.svelte-19uh7sf {
+.pagefind-ui__hidden.svelte-193m69l {
+  display: none;
+}
+.pagefind-ui__results-area.svelte-193m69l {
   min-width: min(calc(400px * var(--pagefind-ui-scale)), 100%);
   flex: 1000;
   margin-top: calc(20px * var(--pagefind-ui-scale));
 }
-.pagefind-ui__results.svelte-19uh7sf {
+.pagefind-ui__results.svelte-193m69l {
   padding: 0;
 }
-.pagefind-ui__message.svelte-19uh7sf {
+.pagefind-ui__message.svelte-193m69l {
   box-sizing: content-box;
   font-size: calc(16px * var(--pagefind-ui-scale));
   height: calc(24px * var(--pagefind-ui-scale));
@@ -338,7 +329,7 @@ legend.svelte-1disgtf.svelte-1disgtf {
   font-weight: 700;
   margin-top: 0;
 }
-.pagefind-ui__button.svelte-19uh7sf {
+.pagefind-ui__button.svelte-193m69l {
   margin-top: calc(40px * var(--pagefind-ui-scale));
   border: var(--pagefind-ui-border-width) solid var(--pagefind-ui-border);
   border-radius: var(--pagefind-ui-border-radius);
@@ -352,7 +343,7 @@ legend.svelte-1disgtf.svelte-1disgtf {
   font-weight: 700;
   cursor: pointer;
 }
-.pagefind-ui__button.svelte-19uh7sf:hover {
+.pagefind-ui__button.svelte-193m69l:hover {
   border-color: var(--pagefind-ui-primary);
   color: var(--pagefind-ui-primary);
   background: var(--pagefind-ui-background);
