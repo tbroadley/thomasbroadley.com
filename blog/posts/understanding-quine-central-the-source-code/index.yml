@@ -237,7 +237,7 @@ bodyMd: |
   q("{definition of `q` in Racket}","{definition of `q` in Haskell}","{definition of `q` in JavaScript}");
   ```
 
-  Recall that `q` is always defined to print its first argument, then a call to `q` with arguments rotated one to the lefLt. Therefore this prints the following Racket program:
+  Recall that `q` is always defined to print its first argument, then a call to `q` with arguments rotated one to the left. Therefore this prints the following Racket program:
 
   ```racket
   {definition of `q` in Racket}
