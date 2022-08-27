@@ -152,7 +152,10 @@
       <section>
         {{ #headerImage }}
         <figure id="header-image-figure">
-          <img src="{{ headerImage }}" alt="{{ headerImageAltText }}" />
+          <img
+            src="https://thomasbroadley.com/blog/{{ path }}/{{ headerImage }}"
+            alt="{{ headerImageAltText }}"
+          />
 
           {{ #headerImageCaption }}
           <figcaption>{{ headerImageCaption }}</figcaption>
