@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 27 Aug 2022 12:04:46 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 27 Aug 2022 12:14:03 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2020 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -68,7 +68,7 @@
                    (cursor is after this character)
 </code></pre>
 <p>Notion's behaviour here is the most confusing. Sometimes, typed text will appear inside the code block. Sometimes, it'll appear outside. It's unclear to me what triggers the switch between these two behaviours.</p>
-<p>Slack is consistent, but consistently hard to use. A cursor at the end of an inline code block is always considered to be inside the code block. If you want to type after the code block, you must move your cursor after the character just after the end of the block. This means, for example, that you can't easily take the text "<code>foo</code> bar" and edit it to "<code>foo</code>'s bar". To do so, you'd need to move your cursor after the space that comes before "bar", type "'s ", then remove the space before the apostrophe.</p>
+<p>Slack is consistent, but consistently hard to use. A cursor at the end of an inline code block is always considered to be inside the code block. If you want to type after the code block, you must move your cursor after the character just after the end of the block. This means, for example, that you can't easily take the text "<code>foo</code> bar" and edit it to "<code>foo</code>'s bar". To do so, you'd need to move your cursor after the space that comes before "bar", type <code>'s </code>, then remove the space before the apostrophe.</p>
 <p>In contrast, Jira defines two possible cursor positions, one inside and one outside the inline code block. You can move back and forth between the two positions using the left and right arrow keys. And you can distinguish between the two cursor positions visually. I like this behaviour best because it's always clear where typed text will appear, but you still have flexibility to type inside our outside the code block.</p>
 <p>As a programmer, I spend a small but meaningful amount of time editing inline code blocks in WYSIWYG editors. Doing this in Notion and Slack frustrates me. But whenever I do it in Jira, I'm glad someone at Atlassian thought through this experience.</p>]]></description>
             <link>https://thomasbroadley.com/blog/editing-inline-code-blocks/</link>
