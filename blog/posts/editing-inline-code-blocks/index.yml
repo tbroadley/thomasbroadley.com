@@ -1,6 +1,9 @@
 title: "Editing inline code blocks"
 description: Why I find it easier in some productivity apps than others.
 createdAt: "2022-01-11"
+headerImage: header.jpg
+headerImageAltText: "a high-quality abstract painting of blocks of letters and words in the style of piet mondrian"
+headerImageCaption: '"a high-quality abstract painting of blocks of letters and words in the style of piet mondrian" by DALL-E'
 bodyMd: |
   Notion's, Slack's, and Jira's WYSIWYG text editors behave differently when the cursor is at the end of an inline code block. A situation like:
 
