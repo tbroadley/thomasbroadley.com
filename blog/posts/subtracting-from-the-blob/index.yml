@@ -14,7 +14,7 @@ bodyMd: |
   Let’s take this up a level or three. I work at a company called Faire. Our product and engineering team is organized into several pillars, each of which contains several cross-functional pods of five to ten people. For example, I’m a member of the Marketplace Success pod, which is part of the Brand pillar. My impression is that the subtraction process follows this structure:
 
   <p class="image">
-    <img src="diagram.jpg" alt="The Faire leadership team transforms a blob labelled &ldquo;things Faire could do&rdquo; into three smaller blobs and some empty space. At the next level, the Brand pillar leadership team does the same thing to one of the smaller blobs. This continues until we reach a task labelled &ldquo;homepage banner&rdquo;, which gets completed by a product manager, designer, or developer.">
+    <img src="/blog/subtracting-from-the-blob/diagram.jpg" alt="The Faire leadership team transforms a blob labelled &ldquo;things Faire could do&rdquo; into three smaller blobs and some empty space. At the next level, the Brand pillar leadership team does the same thing to one of the smaller blobs. This continues until we reach a task labelled &ldquo;homepage banner&rdquo;, which gets completed by a product manager, designer, or developer.">
   </p>
 
   (I had a lot of fun drawing these blobs.)

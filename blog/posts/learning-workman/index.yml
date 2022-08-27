@@ -65,7 +65,7 @@ body: |
   <p class="image">
     <img
       alt="A graph from my Keybr profile. The x-axis is the typing lesson number, from 1 to 307. Each key has a row on the y-axis, sorted vertically by the lesson I started learning it. Each intersection of a lesson and a key contains a small rectangle, ranging from red for low speed and accuracy to green for high speed and accuracy (or white if I didn't practice that key in that lesson)."
-      src="./keybr-graph.jpg"
+      src="/blog/learning-workman/keybr-graph.jpg"
     />
   </p>
 
