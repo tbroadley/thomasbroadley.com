@@ -8,5 +8,6 @@ buildBasicPages();
 buildPosts();
 buildBlogIndex();
 buildTagIndices();
-buildRss();
+buildRss("rss.xml", 20);
+buildRss("rss.all.xml");
 console.log("Done");

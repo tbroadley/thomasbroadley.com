@@ -9,25 +9,23 @@ const BLOG_URL = `${WEBSITE_URL}/blog`;
 
 const BLOG_PATH = "docs/blog";
 
-export function buildRss() {
+export function buildRss(fileName: string, limit?: number) {
   const feed = new RSS({
     title: "Thomas Broadley",
     managingEditor: "Thomas Broadley",
     webMaster: "Thomas Broadley",
-    copyright: "2020 Thomas Broadley",
+    copyright: `${new Date().getFullYear()} Thomas Broadley`,
     language: "en",
     description: "Blog posts by Thomas Broadley.",
-    feed_url: `${BLOG_URL}/rss.xml`,
+    feed_url: `${BLOG_URL}/${fileName}`,
     site_url: WEBSITE_URL,
     image_url: `${BLOG_URL}/rss.png`,
   });
 
-  const posts = take(
-    getPostAndTagData()[0].filter(({ isDraft }) => !isDraft),
-    20
-  );
+  const posts = getPostAndTagData()[0].filter(({ isDraft }) => !isDraft);
+  const limitedPosts = limit ? take(posts, limit) : posts;
 
-  for (const { path, title, createdAt, body } of posts) {
+  for (const { path, title, createdAt, body } of limitedPosts) {
     feed.item({
       title,
       description: body,
@@ -38,5 +36,5 @@ export function buildRss() {
   }
 
   const xml = feed.xml({ indent: true });
-  writeFileSync(`${BLOG_PATH}/rss.xml`, xml);
+  writeFileSync(`${BLOG_PATH}/${fileName}`, xml);
 }
