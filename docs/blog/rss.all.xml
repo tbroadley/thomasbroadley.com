@@ -9,12 +9,59 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 06 Sep 2022 01:13:05 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 Oct 2022 13:44:00 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2022 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Kotlin's in and out keywords]]></title>
+            <description><![CDATA[<p>I’ve written a lot of Kotlin code over the past three years, but I didn’t get Kotlin’s <code>in</code> and <code>out</code> keywords… until yesterday. Here I’ll record my understanding so hopefully I don’t forget how they work. I’m basing this on Kotlin’s documentation on generics.</p>
+<h2><code>in</code> and <code>out</code> on classes</h2>
+<p><code>in</code> and <code>out</code> can appear in two different places and have slightly different meanings depending on the context. First, they can appear on a type variable in a class definition:</p>
+<pre><code class="language-kt">interface Producer&#x3C;out T> {
+  fun produceT(): T
+}
+</code></pre>
+<p>In this case, <code>out T</code> is telling the compiler that methods on Source only return values of type T. Methods on Source are prohibited from taking arguments of type T. The following is a compiler error:</p>
+<pre><code class="language-kt">interface Producer&#x3C;out T> {
+    fun consumeT(t: T) // Type parameter T is declared as 'out' but occurs in 'in' position in type T
+}
+</code></pre>
+<p>(Side note: Why couldn’t the Kotlin compiler figure out that T is only returned from methods on Source and automatically infer out? Maybe there are situations where we explicitly don’t want T to be <code>out</code>.)</p>
+<p>Conversely, <code>in T</code> tells the compiler that methods on Source only take values of type T as arguments:</p>
+<pre><code class="language-kt">interface Consumer&#x3C;in T> {
+    fun consumeT(t: T) // No type error
+
+    fun produceT(): T // Type parameter T is declared as 'in' but occurs in 'out' position in type T
+}
+</code></pre>
+<p>Why do we need <code>in</code> and <code>out</code> in this context? Kotlin’s documentation on generics gives a good set of examples explaining why these keywords are useful. In brief:</p>
+<p>For a class <code>Producer&#x3C;out T></code>, Kotlin will treat <code>Producer&#x3C;Derived></code> as a subclass of <code>Producer&#x3C;Base></code>. For a class <code>Consumer&#x3C;in T></code>, Kotlin will treat <code>Consumer&#x3C;Base></code> as a superclass of <code>Consumer&#x3C;Derived></code>. By default, without the <code>in</code> and <code>out</code> keywords, <code>Producer&#x3C;Base></code> and <code>Producer&#x3C;Derived></code> are unrelated classes.</p>
+<p>This is useful because sometimes we want to treat the return value of a method on <code>Producer&#x3C;Derived></code> as a Base. Or we want to pass a Derived into a method on <code>Consumer&#x3C;Base></code> that takes a Base.</p>
+<h2><code>in</code> and <code>out</code> on variable and argument types</h2>
+<p>Some classes need to have a mix of methods that take arguments of type T and that return a value of type T. An example from Kotlin’s generics documentation:</p>
+<pre><code class="language-kt">class Array&#x3C;T>(vararg elements: T) {
+    operator fun get(index: Int): T { ... }
+    operator fun set(index: Int, value: T) { ... }
+}
+</code></pre>
+<p>This is where it comes in handy that we can use <code>in</code> and <code>out</code> in a second place: on type variables when specifying the type of a method argument or just of a value. We can do something like:</p>
+<pre><code class="language-kt">val array: Array&#x3C;out String> = Array("hello", "world")
+array.get(0) // No type error
+array.set(0, "cool" /* Type mismatch, required: Nothing, found: String */)
+</code></pre>
+<p>Or:</p>
+<pre><code class="language-kt">val array: Array&#x3C;in String> = Array("hello", "world")
+val result = array.get(0) // result has type Any?
+array.set(0, "cool") // No type error
+</code></pre>
+<p>Again this is nice because <code>Array&#x3C;out String></code> is a subtype of <code>Array&#x3C;Any></code>, while <code>Array&#x3C;in String></code> is a supertype of <code>Array&#x3C;SomeHypotheticalSubTypeOfString></code>.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/kotlin-s-in-and-out-keywords/</link>
+            <guid isPermaLink="false">kotlin-s-in-and-out-keywords</guid>
+            <pubDate>Sun, 23 Oct 2022 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Focusing is debugging for the brain]]></title>
             <description><![CDATA[<p>I’m working through <a href="https://www.lesswrong.com/s/qRxTKm7DAftSuTGvj">Hammertime</a>, a 30-day program of instrumental rationality exercises. Hammertime introduced me to a technique called Focusing via a LessWrong post called <a href="https://www.lesswrong.com/posts/PXqQhYEdbdAYCp88m/focusing-for-skeptics">“Focusing, for skeptics”</a>. The post’s version of Focusing involves:</p>

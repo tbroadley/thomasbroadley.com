@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kotlin&#39;s in and out keywords—Thomas Broadley</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SocialMediaPosting",
+        "headline": "Kotlin&#39;s in and out keywords",
+        "datePublished": "2022-10-23",
+
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Thomas Broadley",
+            "url": "https://thomasbroadley.com"
+          }
+        ]
+      }
+    </script>
+
+    <meta
+      content="Kotlin&#39;s in and out keywords—Thomas Broadley"
+      property="og:title"
+    />
+    <meta
+      content="Kotlin&#39;s in and out keywords—Thomas Broadley"
+      property="twitter:title"
+    />
+    <meta content="en_US" property="og:locale" />
+    <meta content="https://xkcd.pagefind.app/og.png" property="twitter:image" />
+    <meta
+      content="Writing down my understanding of these keywords so I don&#39;t forget later."
+      name="description"
+    />
+    <meta
+      content="Writing down my understanding of these keywords so I don&#39;t forget later."
+      property="og:description"
+    />
+    <link
+      href="https://thomasbroadley.com/blog/kotlin-s-in-and-out-keywords/"
+      rel="canonical"
+    />
+    <meta
+      content="https://thomasbroadley.com/blog/kotlin-s-in-and-out-keywords/"
+      property="og:url"
+    />
+    <meta content="Thomas Broadley" property="og:site_name" />
+    <meta content="article" property="og:type" />
+    <meta content="summary" name="twitter:card" />
+
+    <meta charset="utf-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://thomasbroadley.com/blog/rss.xml"
+    />
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
+        text-align: center;
+      }
+
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      #header-image-figure {
+        width: 50%;
+        float: right;
+        margin-top: 0;
+        margin-right: 0;
+      }
+
+      #header-image-figure > img {
+        width: 100%;
+      }
+
+      #header-image-figure > figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-style: italic;
+      }
+
+      @media (max-width: 399px) {
+        #header-image-figure {
+          width: 100%;
+          float: none;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    </style>
+
+    <link
+      href="https://unpkg.com/prismjs@1.21.0/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>Kotlin's <code>in</code> and <code>out</code> keywords</h1>
+        <p class="timestamp">
+          <span data-pagefind-meta="created">2022-10-23</span>
+        </p>
+
+        <hr />
+      </header>
+
+      <section>
+        <p>
+          I’ve written a lot of Kotlin code over the past three years, but I
+          didn’t get Kotlin’s <code>in</code> and <code>out</code> keywords…
+          until yesterday. Here I’ll record my understanding so hopefully I
+          don’t forget how they work. I’m basing this on Kotlin’s documentation
+          on generics.
+        </p>
+        <h2><code>in</code> and <code>out</code> on classes</h2>
+        <p>
+          <code>in</code> and <code>out</code> can appear in two different
+          places and have slightly different meanings depending on the context.
+          First, they can appear on a type variable in a class definition:
+        </p>
+        <pre><code class="language-kt">interface Producer&#x3C;out T> {
+  fun produceT(): T
+}
+</code></pre>
+        <p>
+          In this case, <code>out T</code> is telling the compiler that methods
+          on Source only return values of type T. Methods on Source are
+          prohibited from taking arguments of type T. The following is a
+          compiler error:
+        </p>
+        <pre><code class="language-kt">interface Producer&#x3C;out T> {
+    fun consumeT(t: T) // Type parameter T is declared as 'out' but occurs in 'in' position in type T
+}
+</code></pre>
+        <p>
+          (Side note: Why couldn’t the Kotlin compiler figure out that T is only
+          returned from methods on Source and automatically infer out? Maybe
+          there are situations where we explicitly don’t want T to be
+          <code>out</code>.)
+        </p>
+        <p>
+          Conversely, <code>in T</code> tells the compiler that methods on
+          Source only take values of type T as arguments:
+        </p>
+        <pre><code class="language-kt">interface Consumer&#x3C;in T> {
+    fun consumeT(t: T) // No type error
+
+    fun produceT(): T // Type parameter T is declared as 'in' but occurs in 'out' position in type T
+}
+</code></pre>
+        <p>
+          Why do we need <code>in</code> and <code>out</code> in this context?
+          Kotlin’s documentation on generics gives a good set of examples
+          explaining why these keywords are useful. In brief:
+        </p>
+        <p>
+          For a class <code>Producer&#x3C;out T></code>, Kotlin will treat
+          <code>Producer&#x3C;Derived></code> as a subclass of
+          <code>Producer&#x3C;Base></code>. For a class
+          <code>Consumer&#x3C;in T></code>, Kotlin will treat
+          <code>Consumer&#x3C;Base></code> as a superclass of
+          <code>Consumer&#x3C;Derived></code>. By default, without the
+          <code>in</code> and <code>out</code> keywords,
+          <code>Producer&#x3C;Base></code> and
+          <code>Producer&#x3C;Derived></code> are unrelated classes.
+        </p>
+        <p>
+          This is useful because sometimes we want to treat the return value of
+          a method on <code>Producer&#x3C;Derived></code> as a Base. Or we want
+          to pass a Derived into a method on
+          <code>Consumer&#x3C;Base></code> that takes a Base.
+        </p>
+        <h2>
+          <code>in</code> and <code>out</code> on variable and argument types
+        </h2>
+        <p>
+          Some classes need to have a mix of methods that take arguments of type
+          T and that return a value of type T. An example from Kotlin’s generics
+          documentation:
+        </p>
+        <pre><code class="language-kt">class Array&#x3C;T>(vararg elements: T) {
+    operator fun get(index: Int): T { ... }
+    operator fun set(index: Int, value: T) { ... }
+}
+</code></pre>
+        <p>
+          This is where it comes in handy that we can use <code>in</code> and
+          <code>out</code> in a second place: on type variables when specifying
+          the type of a method argument or just of a value. We can do something
+          like:
+        </p>
+        <pre><code class="language-kt">val array: Array&#x3C;out String> = Array("hello", "world")
+array.get(0) // No type error
+array.set(0, "cool" /* Type mismatch, required: Nothing, found: String */)
+</code></pre>
+        <p>Or:</p>
+        <pre><code class="language-kt">val array: Array&#x3C;in String> = Array("hello", "world")
+val result = array.get(0) // result has type Any?
+array.set(0, "cool") // No type error
+</code></pre>
+        <p>
+          Again this is nice because <code>Array&#x3C;out String></code> is a
+          subtype of <code>Array&#x3C;Any></code>, while
+          <code>Array&#x3C;in String></code> is a supertype of
+          <code>Array&#x3C;SomeHypotheticalSubTypeOfString></code>.
+        </p>
+      </section>
+    </article>
+
+    <script src="https://unpkg.com/prismjs@1.21.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
