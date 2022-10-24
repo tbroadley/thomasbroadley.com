@@ -18,7 +18,7 @@ body: |
   </p>
 
   <p>
-    Honestly it was a slow day! <a href="../tags/workman">I’m switching from QWERTY to Workman</a> and still don’t have the hang of using Vim with this new layout. I’m using a package called <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to let me use my QWERTY muscle memory in normal mode, which is helping a lot. In fact, this afternoon, I opened a couple of PRs on that repo. One was a documentation improvement, the second a fix for an issue. I filed another issue that I might take a crack at solving tomorrow.
+    Honestly it was a slow day! <a href="/blog/tags/workman">I’m switching from QWERTY to Workman</a> and still don’t have the hang of using Vim with this new layout. I’m using a package called <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to let me use my QWERTY muscle memory in normal mode, which is helping a lot. In fact, this afternoon, I opened a couple of PRs on that repo. One was a documentation improvement, the second a fix for an issue. I filed another issue that I might take a crack at solving tomorrow.
   </p>
 
   <p>

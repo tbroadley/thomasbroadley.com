@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 23 Oct 2022 13:44:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Oct 2022 11:54:49 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2022 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -185,7 +185,7 @@ array.set(0, "cool") // No type error
             <title><![CDATA[Jumping in the deep end with Workman]]></title>
             <description><![CDATA[<p>I last documented my experience with the Workman keyboard layout in July. At the time I could type at a little over 50 wpm using it. I’d just made it the main keyboard layout on my personal computer, but hadn’t found a way to apply the layout to all programs. By practicing daily, I hoped to improve to a point where I’d feel comfortable using Workman at work too.</p>
 <p>That didn’t really pan out. I quit regular typing practice a couple of weeks after publishing that post. I kept using Workman on my own computer, but would switch back to QWERTY when coding outside of work. And I never got around to trying it on my work computer. My goal to use Workman everywhere ended up on the back burner for a couple of months.</p>
-<p>Until the end of September. I took a week off to <a href="../tags/rc-mini-7-2020">participate in a Recurse Center mini-batch</a> and decided to use the time to practice Workman. I wouldn’t use QWERTY for anything, not even coding. (Luckily, the weekend before RC, I found out how to enable Workman system-wide on Ubuntu! Note to self: Post the solution. If it was non-obvious to me, it’s non-obvious to someone else.)</p>
+<p>Until the end of September. I took a week off to <a href="/blog/tags/rc-mini-7-2020">participate in a Recurse Center mini-batch</a> and decided to use the time to practice Workman. I wouldn’t use QWERTY for anything, not even coding. (Luckily, the weekend before RC, I found out how to enable Workman system-wide on Ubuntu! Note to self: Post the solution. If it was non-obvious to me, it’s non-obvious to someone else.)</p>
 <p>That week, I spent more time than I would have liked fiddling with my <code>.vimrc</code>. I wanted to set up Vim to use QWERTY key locations in normal mode and Workman locations in insert mode, so my muscle memory wouldn’t immediately become useless. I installed a plugin but found a couple of bugs. I fixed one of them but lost patience with the other, so I started writing my own key mapping. For unknown reasons it didn’t work consistently. At this point, I was pretty tired of writing Vimscript. Plus, I was unconsciously using Workman key locations in normal mode half the time anyway. I decided to get rid of the key mapping and go cold turkey.</p>
 <p>At the start, I made a lot of mistakes while inputting Vim commands and felt like I was coding much more slowly than before. Pairing was especially painful. It’s no fun to feel like you’re slowing down yourself <em>and</em> another person. In hindsight, though, I think I made a great decision! By the end of the week, I felt confident enough to start using Workman at work and haven’t looked back.</p>
 <p>As a side effect, I’m no longer able to touch-type QWERTY. At least I think that’s true: I haven’t tried for more than a minute or two. But I’m not unhappy about it. I can still type 65-70 wpm in a typing test. That’s 20-30 wpm slower than QWERTY, but it’s high enough that it doesn’t seem to have an impact on my programming speed. So much of coding is selecting the right option from the autocomplete dropdown anyway.</p>
@@ -540,7 +540,7 @@ main = q "{definition of `q` in JavaScript}" "{definition of `q` in Racket}" "{d
 </p>
 
 <p>
-  Honestly it was a slow day! <a href="../tags/workman">I’m switching from QWERTY to Workman</a> and still don’t have the hang of using Vim with this new layout. I’m using a package called <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to let me use my QWERTY muscle memory in normal mode, which is helping a lot. In fact, this afternoon, I opened a couple of PRs on that repo. One was a documentation improvement, the second a fix for an issue. I filed another issue that I might take a crack at solving tomorrow.
+  Honestly it was a slow day! <a href="/blog/tags/workman">I’m switching from QWERTY to Workman</a> and still don’t have the hang of using Vim with this new layout. I’m using a package called <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to let me use my QWERTY muscle memory in normal mode, which is helping a lot. In fact, this afternoon, I opened a couple of PRs on that repo. One was a documentation improvement, the second a fix for an issue. I filed another issue that I might take a crack at solving tomorrow.
 </p>
 
 <p>
