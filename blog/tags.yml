@@ -7,3 +7,5 @@ life:
 quine-central:
   name: quine-central
   nameHtml: <code>quine-central</code>
+vietnamese:
+  name: Vietnamese
