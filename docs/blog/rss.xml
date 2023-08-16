@@ -9,12 +9,26 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 22 Jul 2023 19:12:06 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 16 Aug 2023 01:57:38 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2023 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[I’m leaving my job. Next, AI x-risk]]></title>
+            <description><![CDATA[<p>In just over a week, I’m quitting my job as a software developer at Faire. Over my four-and-a-half years at Faire, I’ve seen the company undergo an order of magnitude of growth in both employees and customers. I’ve learned a lot from many excellent mentors and managers. It’s a bittersweet departure.</p>
+<p>Why am I leaving? For one thing, in less than a month, my wife and I are moving to Los Angeles so she can attend music production school. I hoped Faire would sponsor me for a US work visa but they declined to do so.</p>
+<p>But that’s not the only reason that it’s time for me to leave. For a few years, I’ve been concerned about the risk of humanity going extinct because of artificial intelligence. Humanity can probably invent AI that’s much more capable than any human. If we do, I expect it to go poorly for us.</p>
+<p>Until last December, I thought that this kind of AI was decades away. After ChatGPT launched, I realized that there was a real chance I was wrong about that. I started applying to AI safety workshops, programs, grants, and jobs (no acceptances yet). I spoke to an advisor from 80,000 Hours, an organization that helps people have high-impact careers. I attended EA Global: London, a conference that many AI safety researchers attend.</p>
+<p>Eight months later, I’m still very confused about how I can best help reduce AI x-risk. That’s partially because I’ve still spent little time thinking about it. It’s hard to come to grips with my belief that humanity could be extinct within a decade. Also, different people have wildly different opinions on extinction from AI, all the way from “it’s almost impossible” to “it’s almost certain”. It’s hard to sort through everyone’s arguments and approaches for tackling the problem. Finally, I have some sympathy for other people’s arguments that current AI safety research isn’t actually reducing AI x-risk. This has made it hard to find the motivation to become a researcher.</p>
+<p>Still, I believe that this is the most important thing I can work on. I want to make a real effort to have an impact. That’s why I’m not looking for a traditional software developer job right now. I’m planning to spend a few months figuring out how I can most effectively reduce this risk. Nothing is off the table. Maybe I should become a computer security expert and work at Anthropic, Google Deepmind, or OpenAI. Maybe I should learn about policy and help set up AI governance systems. Maybe there isn’t a good way for me to help right now and I’ll try to help with some other major global problem.</p>
+<p>Overall, I’m scared. I suspect my current work habits and intrinsic motivation aren’t up to the task of figuring this out, but it’ll be hard to change them. Also, I need a stronger network of supportive, like-minded individuals. I hope I find this among LA rationalists and effective altruists.</p>
+<p>Wish me luck.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/i-m-leaving-my-job-next-ai-x-risk/</link>
+            <guid isPermaLink="false">i-m-leaving-my-job-next-ai-x-risk</guid>
+            <pubDate>Wed, 16 Aug 2023 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Creating an AI safety chatbot using LangChain and GPT-3]]></title>
             <description><![CDATA[<img src="/blog/creating-an-ai-safety-chatbot-using-langchain-and-gpt-3/demo.png" alt="A demo of the AI safety chatbot. I ask it why I should care about AI alignment. It responds and I ask a follow-up question based on the response." style="max-width: 500px; display: block; margin: auto;">
@@ -626,48 +640,6 @@ main = q "{definition of `q` in JavaScript}" "{definition of `q` in Racket}" "{d
             <link>https://thomasbroadley.com/blog/rc-day-1/</link>
             <guid isPermaLink="false">rc-day-1</guid>
             <pubDate>Mon, 21 Sep 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[My goals for RC]]></title>
-            <description><![CDATA[<p>
-This week I’m participating in a <a href="https://www.recurse.com">Recurse Center</a> mini-batch. RC had been on my radar for a while, but an old coworker of mine encouraged me to apply recently. Here are my goals for the week.
-</p>
-
-<h2>
-  Blog everyday
-</h2>
-
-<p>
-  I haven’t blogged as much as I’d like to in the past few months. RC is a good opportunity to get back into the habit. I’ll follow the example of a few folks I’ve seen on RC’s <a href="https://blaggregator.recurse.com/about/">Blaggregator</a> and post daily about what I’ve been working on. It seems like a good way to stay accountable to myself, celebrate my progress, and build memories of my time at RC.
-</p>
-
-<h2>
-  Pair everyday
-</h2>
-
-<p>
-  I’ve found out that I prefer coding alone and getting as little feedback as necessary, partly because I don’t take criticism well. I think this is a mistake. I could produce higher-quality work and grow more quickly if I collaborated more. So this week I’m going to do at least one pairing session with another Recurser per day. Maybe if I pair more regularly I’ll internalize that it’s more productive than working alone.
-</p>
-
-<h2>
-  Do a talk
-</h2>
-
-<p>
-  I found out that Recursers give talks on technical subjects every Friday evening. I’m going to give one to practice public speaking and to encourage myself to dive deeply into at least one topic while I’m at RC.
-</p>
-
-<h2>
-  Have fun!
-</h2>
-
-<p>
-  Modulo the goals above, I won’t force myself to do anything I don’t enjoy. Instead I’m going to follow my nose, work on things that interest me, and switch it up if I’m not having fun. This week I want to nurture my curiosity about computer science and my intrinsic motivation to program. If I start something interesting and give up halfway through, I can always pick it back up after RC.
-</p>
-]]></description>
-            <link>https://thomasbroadley.com/blog/my-goals-for-rc/</link>
-            <guid isPermaLink="false">my-goals-for-rc</guid>
-            <pubDate>Sun, 20 Sep 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
