@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 01 Sep 2023 16:32:42 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Sep 2023 16:53:32 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2023 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -17,7 +17,8 @@
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
         <item>
             <title><![CDATA[Reproducing ARC Evals' recent report on language model agents]]></title>
-            <description><![CDATA[<p>I reproduced results from <a href="https://evals.alignment.org/">ARC Evals</a>' recent report, <a href="https://evals.alignment.org/Evaluating_LMAs_Realistic_Tasks.pdf"><em>Evaluating Language-Model Agents on Realistic Autonomous Tasks</em></a>. For the report, ARC Evals built a set of language model agents, combining a language model like GPT-4 with scaffolding software that lets the language model execute shell commands and interact with a browser. Then, it asked the agents to complete a set of 12 computer-related tasks, from searching Wikipedia for information to conducting a phishing campaign. The goal is to test how close the agents are to being able to make money, obtain computing power, make copies of themselves, and adapt to changes in their environment.</p>
+            <description><![CDATA[<p><em>Cross-posted to <a href="https://www.lesswrong.com/posts/WhSK9y8apy8mNMFGK/reproducing-arc-evals-recent-report-on-language-model-agents">LessWrong</a>.</em></p>
+<p>I reproduced results from <a href="https://evals.alignment.org/">ARC Evals</a>' recent report, <a href="https://evals.alignment.org/Evaluating_LMAs_Realistic_Tasks.pdf"><em>Evaluating Language-Model Agents on Realistic Autonomous Tasks</em></a>. For the report, ARC Evals built a set of language model agents, combining a language model like GPT-4 with scaffolding software that lets the language model execute shell commands and interact with a browser. Then, it asked the agents to complete a set of 12 computer-related tasks, from searching Wikipedia for information to conducting a phishing campaign. The goal is to test how close the agents are to being able to make money, obtain computing power, make copies of themselves, and adapt to changes in their environment.</p>
 <p>To reproduce these results, I wrote my own language model agent. It's similar to ARC Evals' <code>GPT-4-simple</code> agent. It's also based on GPT-4 and allows the model to run bash commands in a REPL. On top of that, it uses <a href="https://webdriver.io/">WebdriverIO</a> and Google Chrome to let GPT-4 visit webpages and interact with them by typing text into inputs and clicking links and buttons. </p>
 <p>I didn't replicate ARC Evals' experimental setup exactly. I ran the agent on my own laptop instead of on a real server in the cloud. I also didn't bother giving the agent credentials for 2Captcha, LinkedIn, PayPal, or Twitter. Nor did I give it debit card information or an email address. However, I did give the agent access to my AWS and Twilio accounts.</p>
 <p>A language model agent completes tasks by running a think-do loop. At each timestep, GPT-4 thinks about what to do next and calls a function. The scaffolding responds to the function call by executing a bash command or an action in Google Chrome and adds the results to GPT-4's context window. Then, the process repeats.</p>

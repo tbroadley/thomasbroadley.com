@@ -4,6 +4,8 @@ createdAt: 2023-09-01
 tags:
   - ai-x-risk
 bodyMd: |
+  _Cross-posted to [LessWrong](https://www.lesswrong.com/posts/WhSK9y8apy8mNMFGK/reproducing-arc-evals-recent-report-on-language-model-agents)._
+
   I reproduced results from [ARC Evals](https://evals.alignment.org/)' recent report, [_Evaluating Language-Model Agents on Realistic Autonomous Tasks_](https://evals.alignment.org/Evaluating_LMAs_Realistic_Tasks.pdf). For the report, ARC Evals built a set of language model agents, combining a language model like GPT-4 with scaffolding software that lets the language model execute shell commands and interact with a browser. Then, it asked the agents to complete a set of 12 computer-related tasks, from searching Wikipedia for information to conducting a phishing campaign. The goal is to test how close the agents are to being able to make money, obtain computing power, make copies of themselves, and adapt to changes in their environment.
 
   To reproduce these results, I wrote my own language model agent. It's similar to ARC Evals' `GPT-4-simple` agent. It's also based on GPT-4 and allows the model to run bash commands in a REPL. On top of that, it uses [WebdriverIO](https://webdriver.io/) and Google Chrome to let GPT-4 visit webpages and interact with them by typing text into inputs and clicking links and buttons. 
