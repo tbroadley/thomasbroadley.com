@@ -53,19 +53,24 @@ section > p > img {
   max-width: 100%;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 th,
 td {
-  text-align: center;
-}
-
-th:first-child,
-td:first-child {
   text-align: left;
+  vertical-align: top;
 }
 
-th:last-child,
-td:last-child {
-  text-align: right;
+th,
+tr:not(:last-child) > td {
+  padding-bottom: 0.5rem;
+}
+
+td {
+  padding-top: 0.5rem;
+  border-top: 1px #ccc solid;
 }
 
 td:not(:last-child) {

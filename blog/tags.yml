@@ -9,3 +9,5 @@ quine-central:
   nameHtml: <code>quine-central</code>
 vietnamese:
   name: Vietnamese
+ai-x-risk:
+  name: AI x-risk

@@ -1,5 +1,7 @@
 title: "Creating an AI safety chatbot using LangChain and GPT-3"
 description: chat-langchain and ChatGPT made it easy.
+tags:
+  - ai-x-risk
 createdAt: "2023-03-27"
 bodyMd: |
   <img src="/blog/creating-an-ai-safety-chatbot-using-langchain-and-gpt-3/demo.png" alt="A demo of the AI safety chatbot. I ask it why I should care about AI alignment. It responds and I ask a follow-up question based on the response." style="max-width: 500px; display: block; margin: auto;">
