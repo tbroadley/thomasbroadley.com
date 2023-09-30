@@ -9,12 +9,21 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 30 Sep 2023 16:08:26 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 Sep 2023 16:34:26 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2023 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Pharmacies are restricting the Bridge Access Program to those without insurance]]></title>
+            <description><![CDATA[<p>In preparation for moving to the US, I purchased traveller's health insurance for my wife and myself. This insurance doesn't cover preventative medicine, like yearly checkups and vaccines. I was prepared to pay out-of-pocket for the updated COVID vaccine until I heard about the CDC's <a href="https://www.cdc.gov/vaccines/programs/bridge/index.html">Bridge Access Program</a>. The program's website states, "Adults 18 years and older without health insurance and adults whose health insurance does not cover all COVID-19 vaccine costs can get updated COVID-19 vaccines at no cost through the Bridge Access Program." However, it now seems less likely that my wife and I will get free vaccines under the program.</p>
+<p>Yesterday, I spoke with a pharmacist at a local CVS. He told me that he'd received instructions not to bill the Bridge Access Program for vaccines given to people with health insurance, even if their insurance doesn't cover the vaccine. It sounded like CVS corporate had given all pharmacies these instructions. He mentioned that a connection at Rite Aid received similar guidelines. Walgreens also participates in the Bridge Access Program but I don't know if they've implemented the same rule.</p>
+<p>I hope this post helps other people in my situation avoid sticker shock when they go to get vaccinated!</p>]]></description>
+            <link>https://thomasbroadley.com/blog/pharmacies-are-limiting-the-bridge-access-program-to-the-uninsured/</link>
+            <guid isPermaLink="false">pharmacies-are-limiting-the-bridge-access-program-to-the-uninsured</guid>
+            <pubDate>Sun, 08 Oct 2023 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Reproducing ARC Evals' recent report on language model agents]]></title>
             <description><![CDATA[<p><em>Cross-posted to <a href="https://www.lesswrong.com/posts/WhSK9y8apy8mNMFGK/reproducing-arc-evals-recent-report-on-language-model-agents">LessWrong</a>.</em></p>

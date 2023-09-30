@@ -9,12 +9,21 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 30 Sep 2023 16:08:26 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 30 Sep 2023 16:34:26 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2023 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Pharmacies are restricting the Bridge Access Program to those without insurance]]></title>
+            <description><![CDATA[<p>In preparation for moving to the US, I purchased traveller's health insurance for my wife and myself. This insurance doesn't cover preventative medicine, like yearly checkups and vaccines. I was prepared to pay out-of-pocket for the updated COVID vaccine until I heard about the CDC's <a href="https://www.cdc.gov/vaccines/programs/bridge/index.html">Bridge Access Program</a>. The program's website states, "Adults 18 years and older without health insurance and adults whose health insurance does not cover all COVID-19 vaccine costs can get updated COVID-19 vaccines at no cost through the Bridge Access Program." However, it now seems less likely that my wife and I will get free vaccines under the program.</p>
+<p>Yesterday, I spoke with a pharmacist at a local CVS. He told me that he'd received instructions not to bill the Bridge Access Program for vaccines given to people with health insurance, even if their insurance doesn't cover the vaccine. It sounded like CVS corporate had given all pharmacies these instructions. He mentioned that a connection at Rite Aid received similar guidelines. Walgreens also participates in the Bridge Access Program but I don't know if they've implemented the same rule.</p>
+<p>I hope this post helps other people in my situation avoid sticker shock when they go to get vaccinated!</p>]]></description>
+            <link>https://thomasbroadley.com/blog/pharmacies-are-limiting-the-bridge-access-program-to-the-uninsured/</link>
+            <guid isPermaLink="false">pharmacies-are-limiting-the-bridge-access-program-to-the-uninsured</guid>
+            <pubDate>Sun, 08 Oct 2023 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Reproducing ARC Evals' recent report on language model agents]]></title>
             <description><![CDATA[<p><em>Cross-posted to <a href="https://www.lesswrong.com/posts/WhSK9y8apy8mNMFGK/reproducing-arc-evals-recent-report-on-language-model-agents">LessWrong</a>.</em></p>
@@ -629,91 +638,6 @@ main = q "{definition of `q` in JavaScript}" "{definition of `q` in Racket}" "{d
             <link>https://thomasbroadley.com/blog/rc-day-3/</link>
             <guid isPermaLink="false">rc-day-3</guid>
             <pubDate>Wed, 23 Sep 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[RC day 2]]></title>
-            <description><![CDATA[<p>
-  I started the day by adding three new plugins to my Vim setup, after learning about them from a thread on RC’s Zulip:
-</p>
-
-<ol>
-  <li>
-    <a href="https://github.com/neoclide/coc.nvim"><code>coc.nvim</code></a> (language-specific autocomplete and jump to definition)
-  </li>
-
-  <li>
-    <a href="https://github.com/junegunn/fzf.vim"><code>fzf.vim</code></a> (fuzzy search for anything, but I’m only using it to open files right now)
-  </li>
-
-  <li>
-    <a href="https://github.com/tpope/vim-fugitive"><code>fugitive.vim</code></a> (Git commands)
-  </li>
-</ol>
-
-<p>
-  That took most of the morning, perhaps more time than I should have spent on it. I did learn about Vimscript and worked around one gotcha that’s good material for another post.
-</p>
-
-<p>
-  Late in the morning I caught the end of daily check-ins. Participants take turns briefly explaining what they worked on yesterday and what they’re working on today. I’ll definitely be attending the entire meeting tomorrow: It was a great way to hear about interesting projects that others are working on. I also found it handy to be able to reference my “RC day 1” post while giving my check-in.
-</p>
-
-<p>
-  After lunch I attended a workshop on pair programming. I’ve paired quite a bit before but still learned something new. For example, one benefit of pairing I hadn’t considered was that it’s harder to get distracted for minutes by social media when pairing. (I do still find myself getting distracted for 30 seconds at a time by Slack. Something for me to work on.)
-</p>
-
-<p>
-  I also picked up a few new pairing tips:
-</p>
-
-<ul>
-  <li>
-    Swap roles every 8-15 minutes (the driver becomes the navigator and vice versa)
-  </li>
-
-  <li>
-    Take short breaks every so often
-  </li>
-
-  <li>
-    Don’t pair on a task that’s trivial for both people
-  </li>
-
-  <li>
-    Focus on transferring and receiving knowledge instead of achieving a result in a set amount of time
-  </li>
-</ul>
-
-<p>
-  We then put those tips into practice by pairing with other Recursers to implement the Game of Life.
-</p>
-
-<p>
-  After the workshop, I had a coffee chat with someone who’s been at RC for a few weeks already. She gave me some good advice: Even though my time at RC is flying by, the experience doesn’t end along with my batch. I can still attend study groups and other events after this week. And I’m already thinking about coming back for a six- or twelve-week batch.
-
-<p>
-  Early in the day, I posted on Zulip asking to chat with people about their experiences with code review. I hoped to figure out whether <a href="https://github.com/tbroadley/literate-diffs">Literate Diffs</a> solves a real problem. A few people expressed interest and I spoke with a couple of them late this afternoon. One had already noticed the exact problem that Literate Diffs aims to solve. The other had already solved the problem a different way at his company. They found it harder to build systems for determining who should review which PRs. Definitely food for thought.
-</p>
-
-<p>
-  Somewhere along the way, I started a Google Doc containing interesting links that others had shared with me or posted on Zulip. Currently it contains Wikipedia articles, blog posts, and Amazon pages for a few books. After this week I’ll run through it and consolidate that knowledge somehow.
-</p>
-
-<p>
-  I spent longer than I intended catching up on my RSS feed. I feel bad about the lost productivity, but maybe my brain needed the break. I’ll push myself a little harder tomorrow.
-</p>
-
-<p>
-  Speaking of tomorrow! In the morning, I want to come up with a plan of attack for Literate Diffs and start executing against it. Right now, the best strategy seems to be fleshing out my old React prototype, then asking people to play around with it. I also want to pair again—I’ve signed up for a session with a Zulip bot that matches you with other people looking for pairing partners. If there’s time, I’ll try to get <a href="https://github.com/nicwest/vim-workman"><code>vim-workman</code></a> to play nice with macros.
-</p>
-
-<p>
-  P.S. Writing this blog post made me realize how annoying it is to write HTML without macros. Tomorrow I'll also look at adding Markdown support to my blog generator.
-</p>
-]]></description>
-            <link>https://thomasbroadley.com/blog/rc-day-2/</link>
-            <guid isPermaLink="false">rc-day-2</guid>
-            <pubDate>Tue, 22 Sep 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
