@@ -1,0 +1,21 @@
+title: "I'm joining ARC Evals"
+description: "Why I think this role at this organization will let me meaningfully reduce AI x-risk."
+createdAt: 2023-11-03
+tags:
+  - ai-x-risk
+bodyMd: |
+  A little over two months ago, I [left my job at Faire to figure out how I could help reduce existential risk from AI](/blog/i-m-leaving-my-job-next-ai-x-risk/). Today, I'm happy to announce that I've accepted a position as a Member of Technical Staff at [ARC Evals](https://evals.alignment.org/), a project of the [Alignment Research Center](https://evals.alignment.org/). According to its website, the project's goal is to "assess[] whether cutting-edge AI systems could pose catastrophic risks to civilization".
+
+  I first applied to ARC Evals in April of this year. Unfortunately, I wasn't offered a position at the time. However, after I [replicated some of ARC Evals' recent work](/blog/reproducing-arc-evals-recent-report-on-language-model-agents/), my profile came back to the team's attention. The last step of my interview process was a two-week in-person work trial in Berkeley, California. (Getting to Berkeley was a small adventure all by itself. In a single day, I flew from Los Angeles to Vancouver, drove to a library to print documents, drove back to the Vancouver airport, went through US customs to get TN status, and flew on to San Francisco to begin my work trial.)
+
+  ARC Evals' current focus is checking whether AI models can _autonomously replicate_ given the right tools. We explore questions like, "If we give GPT-4 access to a web browser, could it use that to conduct a phishing campaign to gain money or influence? If we create a cloud server for it, can it set up more servers and copy itself to them? Can we fine-tune these models to be better at these tasks?" ARC Evals is also "exploring the idea of developing safety standards that AI companies might voluntarily adhere to, and potentially be certified for".
+
+  I'm hopeful about this work because many smart, sensible people disagree about how likely AI is to cause a catastrophe. Evaluations like those that ARC Evals develops could convince skeptics that future AI models pose a serious risk of catastrophe. Also, if AI labs develop or deploy models powerful enough to pose such a risk, we want to detect that as soon as possible. Of course, if ARC Evals and other evaluators can't develop convincing demonstrations of catastrophic risk, it could be evidence that AI doesn't pose as much danger as we thought. I'd welcome that too!
+
+  More specifically, I see two ways ARC Evals' work could meaningfully reduce AI x-risk. First, maybe ARC Evals's demonstrations of catastrophic risk in controlled environments can convince policymakers to pause AI progress while humanity mitigates this risk. Second, the kinds of evaluations that ARC Evals develops might form an important part of governmental regluation of AI. For example, I'd be very happy to live in a world where governments enforce that every AI lab adopt and follow something like a stronger version of [Anthropic's Responsible Scaling Policy](https://www.anthropic.com/index/anthropics-responsible-scaling-policy).
+
+  So far at ARC Evals, I've focused on improving our internal software used to develop new evaluations and test AI models on them. My web development skills are a great fit for this work. Plus, I have a soft spot for internal tools: I love helping my friends and coworkers be more productive.
+
+  I'm really excited! Until a couple of weeks ago, I was seriously worried that I might not find a way to meaningfully reduce short-term AI x-risk. There aren't that many AI safety organizations or jobs and conducting independent research seemed daunting. Like I said in a previous post, "I suspect my current work habits and intrinsic motivation aren't up to the task of figuring this out". I'm so glad I've found a concrete way to reduce AI x-risk and a team of kind, motivated people to work with on it. Not to say that working at ARC Evals will be a cakewalk. I plan to seriously up my productivity game and evaluate continuously whether I'm [cutting the enemy](https://www.lesswrong.com/tag/twelfth-virtue-the): whether my work is actually reducing AI x-risk.
+
+  I'll let you know how it goes!
