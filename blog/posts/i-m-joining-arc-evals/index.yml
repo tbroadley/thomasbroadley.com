@@ -1,6 +1,7 @@
 title: "I'm joining ARC Evals"
 description: "Why I think this role at this organization will let me meaningfully reduce AI x-risk."
 createdAt: 2023-11-03
+lastModified: 2023-11-05
 tags:
   - ai-x-risk
 bodyMd: |
@@ -12,7 +13,7 @@ bodyMd: |
 
   I'm hopeful about this work because many smart, sensible people disagree about how likely AI is to cause a catastrophe. Evaluations like those that ARC Evals develops could convince skeptics that future AI models pose a serious risk of catastrophe. Also, if AI labs develop or deploy models powerful enough to pose such a risk, we want to detect that as soon as possible. Of course, if ARC Evals and other evaluators can't develop convincing demonstrations of catastrophic risk, it could be evidence that AI doesn't pose as much danger as we thought. I'd welcome that too!
 
-  More specifically, I see two ways ARC Evals' work could meaningfully reduce AI x-risk. First, maybe ARC Evals's demonstrations of catastrophic risk in controlled environments can convince policymakers to pause AI progress while humanity mitigates this risk. Second, the kinds of evaluations that ARC Evals develops might form an important part of governmental regluation of AI. For example, I'd be very happy to live in a world where governments enforce that every AI lab adopt and follow something like a stronger version of [Anthropic's Responsible Scaling Policy](https://www.anthropic.com/index/anthropics-responsible-scaling-policy).
+  More specifically, I see two ways ARC Evals' work could meaningfully reduce AI x-risk. First, maybe ARC Evals's demonstrations of catastrophic risk in controlled environments can convince policymakers to pause AI progress while humanity mitigates this risk. Second, the kinds of evaluations that ARC Evals develops might form an important part of governmental regulation of AI. For example, I'd be very happy to live in a world where governments enforce that every AI lab adopt and follow something like a stronger version of [Anthropic's Responsible Scaling Policy](https://www.anthropic.com/index/anthropics-responsible-scaling-policy).
 
   So far at ARC Evals, I've focused on improving our internal software used to develop new evaluations and test AI models on them. My web development skills are a great fit for this work. Plus, I have a soft spot for internal tools: I love helping my friends and coworkers be more productive.
 
