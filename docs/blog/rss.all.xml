@@ -9,12 +9,45 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 05 Nov 2023 16:02:32 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Nov 2023 00:17:09 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2023 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[SSH multiplexing gotchas]]></title>
+            <description><![CDATA[<p><a href="https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing"><em>OpenSSH</em> (the book) says this about SSH multiplexing:</a></p>
+<blockquote>
+<p>Multiplexing is the ability to send more than one signal over a single line or connection.
+In OpenSSH, multiplexing can re-use an existing outgoing TCP connection for multiple concurrent SSH sessions to a remote SSH server,
+avoiding the overhead of creating a new TCP connection and reauthenticating each time. </p>
+</blockquote>
+<p>For example, maybe you want to use the Docker CLI on <code>jump-host.example.org</code>, against a Docker daemon on <code>docker-host.example.org</code>.
+You follow <a href="https://docs.docker.com/engine/security/protect-access/#ssh-tips">the Docker docs' suggestion</a> for setting up Docker over SSH, including multiplexing:</p>
+<pre><code>Host docker-host.example.org
+  ControlMaster     auto
+  ControlPath       ~/.ssh/control-%C
+  ControlPersist    yes
+</code></pre>
+<p>After using this setup for a while, you notice that SSHing into <code>docker-host</code> fails occasionally with an error message like "Session open refused by peer".
+You Google and discover that, by default, OpenSSH has a limit of 10 multiplexed sessions per TCP connection. Beyond that, <code>sshd</code> on <code>docker-host</code> starts rejecting sessions.</p>
+<p>You resolve this by increasing the <code>MaxSessions</code> setting in <code>/etc/ssh/sshd_config</code> on <code>docker-host</code>, to 100, 1,000, or 2,147,483,647 (the max value for a 32-bit signed integer,
+to disable this limit entirely).</p>
+<p>However, even after bumping <code>MaxSessions</code> and restarting the <code>sshd</code> service, you still see the error message. <code>sshd -T</code> shows that <code>sshd_config</code> is valid
+and you set <code>MaxSessions</code> correctly. What's going on?</p>
+<p>The problem is, restarting <code>sshd</code> doesn't kill existing SSH sessions.
+On <code>docker-host</code>, those existing sessions are supported by existing <code>sshd</code> instances. And those existing processes use the old configuration from <code>sshd_config</code>...
+including <code>MaxSessions 10</code>.</p>
+<p>Fixing the immediate problem is easy. Just delete <code>~/.ssh/control-...</code> from <code>jump-host</code>. But how to avoid this next time you update <code>sshd_config</code>?</p>
+<p>Part of the problem is <code>ControlPersist yes</code>. This means that the master SSH session between <code>jump-host</code> and <code>docker-host</code>, the one that all the
+multiplexed sessions run on, stays open until you close it manually. Even between <code>sshd</code> service restarts.</p>
+<p>So you change ControlPersist to a time, e.g. <code>60m</code>. That way, if the master session lives for more than 60 minutes, it'll close as soon as all its
+multiplexed sessions also close. Which should happen... at some point? Probably? Fingers crossed.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/ssh-multiplexing-gotchas/</link>
+            <guid isPermaLink="false">ssh-multiplexing-gotchas</guid>
+            <pubDate>Thu, 30 Nov 2023 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[I'm joining ARC Evals]]></title>
             <description><![CDATA[<p>A little over two months ago, I <a href="/blog/i-m-leaving-my-job-next-ai-x-risk/">left my job at Faire to figure out how I could help reduce existential risk from AI</a>. Today, I'm happy to announce that I've accepted a position as a Member of Technical Staff at <a href="https://evals.alignment.org/">ARC Evals</a>, a project of the <a href="https://evals.alignment.org/">Alignment Research Center</a>. According to its website, the project's goal is to "assess[] whether cutting-edge AI systems could pose catastrophic risks to civilization".</p>

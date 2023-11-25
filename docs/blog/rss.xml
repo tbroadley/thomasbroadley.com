@@ -9,12 +9,45 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 05 Nov 2023 16:02:32 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 25 Nov 2023 00:17:09 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2023 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[SSH multiplexing gotchas]]></title>
+            <description><![CDATA[<p><a href="https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing"><em>OpenSSH</em> (the book) says this about SSH multiplexing:</a></p>
+<blockquote>
+<p>Multiplexing is the ability to send more than one signal over a single line or connection.
+In OpenSSH, multiplexing can re-use an existing outgoing TCP connection for multiple concurrent SSH sessions to a remote SSH server,
+avoiding the overhead of creating a new TCP connection and reauthenticating each time. </p>
+</blockquote>
+<p>For example, maybe you want to use the Docker CLI on <code>jump-host.example.org</code>, against a Docker daemon on <code>docker-host.example.org</code>.
+You follow <a href="https://docs.docker.com/engine/security/protect-access/#ssh-tips">the Docker docs' suggestion</a> for setting up Docker over SSH, including multiplexing:</p>
+<pre><code>Host docker-host.example.org
+  ControlMaster     auto
+  ControlPath       ~/.ssh/control-%C
+  ControlPersist    yes
+</code></pre>
+<p>After using this setup for a while, you notice that SSHing into <code>docker-host</code> fails occasionally with an error message like "Session open refused by peer".
+You Google and discover that, by default, OpenSSH has a limit of 10 multiplexed sessions per TCP connection. Beyond that, <code>sshd</code> on <code>docker-host</code> starts rejecting sessions.</p>
+<p>You resolve this by increasing the <code>MaxSessions</code> setting in <code>/etc/ssh/sshd_config</code> on <code>docker-host</code>, to 100, 1,000, or 2,147,483,647 (the max value for a 32-bit signed integer,
+to disable this limit entirely).</p>
+<p>However, even after bumping <code>MaxSessions</code> and restarting the <code>sshd</code> service, you still see the error message. <code>sshd -T</code> shows that <code>sshd_config</code> is valid
+and you set <code>MaxSessions</code> correctly. What's going on?</p>
+<p>The problem is, restarting <code>sshd</code> doesn't kill existing SSH sessions.
+On <code>docker-host</code>, those existing sessions are supported by existing <code>sshd</code> instances. And those existing processes use the old configuration from <code>sshd_config</code>...
+including <code>MaxSessions 10</code>.</p>
+<p>Fixing the immediate problem is easy. Just delete <code>~/.ssh/control-...</code> from <code>jump-host</code>. But how to avoid this next time you update <code>sshd_config</code>?</p>
+<p>Part of the problem is <code>ControlPersist yes</code>. This means that the master SSH session between <code>jump-host</code> and <code>docker-host</code>, the one that all the
+multiplexed sessions run on, stays open until you close it manually. Even between <code>sshd</code> service restarts.</p>
+<p>So you change ControlPersist to a time, e.g. <code>60m</code>. That way, if the master session lives for more than 60 minutes, it'll close as soon as all its
+multiplexed sessions also close. Which should happen... at some point? Probably? Fingers crossed.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/ssh-multiplexing-gotchas/</link>
+            <guid isPermaLink="false">ssh-multiplexing-gotchas</guid>
+            <pubDate>Thu, 30 Nov 2023 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[I'm joining ARC Evals]]></title>
             <description><![CDATA[<p>A little over two months ago, I <a href="/blog/i-m-leaving-my-job-next-ai-x-risk/">left my job at Faire to figure out how I could help reduce existential risk from AI</a>. Today, I'm happy to announce that I've accepted a position as a Member of Technical Staff at <a href="https://evals.alignment.org/">ARC Evals</a>, a project of the <a href="https://evals.alignment.org/">Alignment Research Center</a>. According to its website, the project's goal is to "assess[] whether cutting-edge AI systems could pose catastrophic risks to civilization".</p>
@@ -609,36 +642,6 @@ main = q "{definition of `q` in JavaScript}" "{definition of `q` in Racket}" "{d
 <p>Tomorrow I’ll also pair on Literate Diffs, work on a tech talk, and wrap up that second blog post on <code>quine-central</code>. It’s hard to believe tomorrow’s the last day of my batch. I’m going to get as much as I can out of my remaining time, then think about how I’d like to continue being a part in the RC community afterwards.</p>]]></description>
             <link>https://thomasbroadley.com/blog/rc-day-4/</link>
             <guid isPermaLink="false">rc-day-4</guid>
-            <pubDate>Thu, 24 Sep 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Understanding quine-central: how do quine loops work?]]></title>
-            <description><![CDATA[<p>Yesterday another Recurser introduced me to <a href="https://github.com/dpiponi/quine-central"><code>quine-central</code></a>, which is:</p>
-<blockquote>
-<p>[A] Haskell program that generates a Haskell program that prints out a Perl program that prints out a Python program that prints out a Ruby program that prints out a C program that prints out a Java program that prints out a Rust program that prints out an OCaml program that prints out a Swift program that prints out a Racket program that prints out a Javascript program that prints out the first Haskell program generated.</p>
-</blockquote>
-<p>“How the hell does that work?” I thought to myself. Maybe you’re thinking that too, so here’s my attempt at an explanation.</p>
-<p><code>quine-central</code> can produce quine loops of any length, so let’s first think about a loop of three programming languages: Haskell, Ruby, and C. In this case, <code>quine-central</code> prints a Haskell program that prints a Ruby program that prints a C program that prints the first Haskell program generated.</p>
-<p class="image image-centered">
-  <img src="/blog/understanding-quine-central-quine-loops/loop.jpg" alt="A loop of languages, going from Haskell to Ruby to C and back to Haskell.">
-</p>
-<p>The generated Haskell program has two lines. The first line defines a function called <code>q</code> that takes three arguments. <code>q</code> builds and returns a string that contains its first argument, then a newline, and finally some Ruby code that calls a function called <code>q</code>. This call to <code>q</code> in Ruby takes the same arguments but rotated one position to the left. That is, it takes the second argument to the Haskell <code>q</code>, then the third, then the first.</p>
-<p class="image">
-  <img src="/blog/understanding-quine-central-quine-loops/first-line.jpg" alt="A diagram explaining q&#x27;s implementation in Haskell. q takes three arguments: a0, a1, and a2. q returns a0 concatenated with a newline, then the string q(&#x22;, then a1, then the string &#x22;,&#x22;, then a2, then the string &#x22;,&#x22;, then a0, and finally the string &#x22;). Its output is the value of a0 on the first line, then a call to q in Ruby with the arguments a1, a2, and a0 on the second line.">
-</p>
-<p>In the actual output, <code>{a0}</code> is replaced with the value of <code>a0</code>. Same goes for the other variables. Also, this isn’t quite the actual code. I simplified it a little for demonstration purposes.</p>
-<p>The generated Haskell program's second line is a main method that calls the function <code>q</code> defined on the first line and prints the result. Each argument passed to <code>q</code> is the source code for a definition of <code>q</code> in a language in the loop. The first argument is a definition of <code>q</code> in Ruby, the second in C, the last in Haskell.</p>
-<pre><code class="language-hs">main = putStrLn $ q "{Ruby    definition of q}"
-                    "{C       definition of q}"
-                    "{Haskell definition of q}"
-</code></pre>
-<p>In all of these definitions, <code>q</code> does the same thing as it does in the Haskell program. It prints its first argument, then prints a call to a function called <code>q</code>, but in the next language in the loop. It also rotates its arguments one position to the left before printing them.</p>
-<p>When the program is run, <code>q</code> starts by printing its first argument, which is a declaration of <code>q</code> in Ruby. Then, it prints a call to <code>q</code> in Ruby. The arguments to this call are the second, third, and first arguments passed to <code>q</code> in the Haskell program, which are definitions of <code>q</code> in C, Haskell, and Ruby respectively.</p>
-<p>The output of the Haskell program is a Ruby program with a very similar structure. Both have two lines. Both declare a function <code>q</code> on the first line. <code>q</code> does the same thing in both programs. And both call <code>q</code> on the second line, passing in definitions of <code>q</code> for the rest of the loop.</p>
-<p>When this Ruby program is run, it in turn prints a C program with the same structure. And that C program in turn prints a Haskell program with the same structure. In fact, it prints the original Haskell program, closing the loop.</p>
-<p>In the next post, I’ll discuss how <code>quine-central</code> generates these programs in the first place. We’ll also do away with some of the simplifications I made to the programs in this post and look at how <code>quine-central</code> handles the problems posed by string escaping.</p>]]></description>
-            <link>https://thomasbroadley.com/blog/understanding-quine-central-quine-loops/</link>
-            <guid isPermaLink="false">understanding-quine-central-quine-loops</guid>
             <pubDate>Thu, 24 Sep 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
