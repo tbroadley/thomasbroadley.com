@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dangerous capabilities evaluations for AI—Thomas Broadley</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SocialMediaPosting",
+        "headline": "Dangerous capabilities evaluations for AI",
+        "datePublished": "2023-12-02",
+
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Thomas Broadley",
+            "url": "https://thomasbroadley.com"
+          }
+        ]
+      }
+    </script>
+
+    <meta
+      content="Dangerous capabilities evaluations for AI—Thomas Broadley"
+      property="og:title"
+    />
+    <meta
+      content="Dangerous capabilities evaluations for AI—Thomas Broadley"
+      property="twitter:title"
+    />
+    <meta content="en_US" property="og:locale" />
+    <meta
+      content="A talk I gave at meetups of Toronto AI Safety and the Wisconsin AI Safety Initiative."
+      name="description"
+    />
+    <meta
+      content="A talk I gave at meetups of Toronto AI Safety and the Wisconsin AI Safety Initiative."
+      property="og:description"
+    />
+    <link
+      href="https://thomasbroadley.com/blog/talk-on-dangerous-capability-evaluations-for-ai/"
+      rel="canonical"
+    />
+    <meta
+      content="https://thomasbroadley.com/blog/talk-on-dangerous-capability-evaluations-for-ai/"
+      property="og:url"
+    />
+    <meta content="Thomas Broadley" property="og:site_name" />
+    <meta content="article" property="og:type" />
+    <meta content="summary" name="twitter:card" />
+
+    <meta charset="utf-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href="https://thomasbroadley.com/blog/rss.xml"
+    />
+
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
+
+      ga("create", "UA-96230441-1", "auto");
+      ga("send", "pageview");
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto|Source+Code+Pro"
+      rel="stylesheet"
+    />
+    <link href="/index.css" rel="stylesheet" />
+
+    <style>
+      p.image > img {
+        max-width: 100%;
+      }
+
+      @media (max-width: 599px) {
+        p.image {
+          overflow-x: auto;
+        }
+
+        p.image > img {
+          max-width: 200%;
+        }
+      }
+
+      p.image-centered {
+        text-align: center;
+      }
+
+      p.blogchain {
+        display: flex;
+        justify-content: center;
+      }
+
+      p.blogchain > * {
+        display: block;
+        text-align: center;
+      }
+
+      p.blogchain > *:not(:last-child) {
+        margin-right: 1rem;
+      }
+
+      #header-image-figure {
+        width: 50%;
+        float: right;
+        margin-top: 0;
+        margin-right: 0;
+      }
+
+      #header-image-figure > img {
+        width: 100%;
+      }
+
+      #header-image-figure > figcaption {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-style: italic;
+      }
+
+      @media (max-width: 399px) {
+        #header-image-figure {
+          width: 100%;
+          float: none;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    </style>
+
+    <link
+      href="https://unpkg.com/prismjs@1.21.0/themes/prism.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <a href="..">All posts</a>
+      &middot;
+      <a href="../rss.xml">RSS</a>
+    </nav>
+
+    <article>
+      <header>
+        <h1>
+          Dangerous capabilities evaluations for AI
+        </h1>
+        <p class="timestamp">
+          <span data-pagefind-meta="created">2023-12-02</span>
+        </p>
+
+        <p class="blogchain">
+          <a href="../i-m-joining-arc-evals">&larr;</a>
+
+          <a href="../tags/ai-x-risk" data-pagefind-filter="tag">
+            AI x-risk
+          </a>
+
+          <span style="visibility: hidden;">&rarr;</span>
+        </p>
+
+        <hr />
+      </header>
+
+      <section>
+        <p>
+          In the last couple of weeks, I've given two talks on the subject of
+          dangerous capabilities evaluations for AI, one to
+          <a href="https://www.meetup.com/toronto-ai-aligners/"
+            >Toronto AI Safety</a
+          >
+          and the other to the
+          <a href="https://waisi.org/">Wisconsin AI Safety Initiative</a>. Below
+          you'll find a written version of my talk. You can also find the
+          original slides
+          <a
+            href="https://docs.google.com/presentation/d/17UUIOzNguvyza5yn6xPosTNOg3o2xfHzcE7msUx1Arg/edit#slide=id.p"
+            >here</a
+          >.
+        </p>
+        <hr />
+        <p>Test</p>
+      </section>
+    </article>
+
+    <script src="https://unpkg.com/prismjs@1.21.0/components/prism-core.min.js"></script>
+    <script src="https://unpkg.com/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+title: "Dangerous capabilities evaluations for AI"
+description: A talk I gave at meetups of Toronto AI Safety and the Wisconsin AI Safety Initiative.
+createdAt: 2023-12-02
+headerImage: title-slide.jpg
+headerImageAltText: '"The world if we measure AI catastrophic risk", followed by a picture of a futuristic city.'
+headerImageCaption: "The title slide of my talk."
+tags:
+  - ai-x-risk
+bodyMd: |
+  In the last couple of weeks, I've given two talks on the subject of dangerous capabilities evaluations
+  for AI, one to [Toronto AI Safety](https://www.meetup.com/toronto-ai-aligners/) and the other to
+  the [Wisconsin AI Safety Initiative](https://waisi.org/). 
+
+  In both talks, I discussed dangerous capabilities evaluations: tests for AI systems that check whether 
+  they can make it easier for individuals or small groups to develop biological, chemical, or nuclear weapons;
+  make copies of themselves and gather resources; or manipulate humans into helping them. I made a case for 
+  the importance of these evaulations, covered progress on them in the past year (mostly ARC Evals' work), and
+  pointed to future research directions that I'm excited about.
+
+  You can find the presentation slides [here](https://docs.google.com/presentation/d/17UUIOzNguvyza5yn6xPosTNOg3o2xfHzcE7msUx1Arg/edit#slide=id.p).
+  I've included speaker notes with more details and links to resources.
