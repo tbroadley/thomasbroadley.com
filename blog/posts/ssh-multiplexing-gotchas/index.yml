@@ -1,5 +1,6 @@
 title: "SSH multiplexing gotchas"
-description: By default, you can only multiplex so many sessions. And what happens if you change `sshd_config`?
+description: By default, you can only multiplex so many sessions. And what happens if you change sshd_config?
+descriptionHTML: By default, you can only multiplex so many sessions. And what happens if you change <code>sshd_config</code>?
 createdAt: "2023-11-30"
 bodyMd: |
   [_OpenSSH_ (the book) says this about SSH multiplexing:](https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing)
