@@ -9,12 +9,32 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 01 Mar 2024 15:18:18 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Mar 2024 17:51:17 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2024 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[The METR Task Standard]]></title>
+            <description><![CDATA[<p>At METR, I'm trying to reduce existential risk from artificial intelligence by helping to measure the autonomous capabilities of language model agents. For the past two months, I've helped METR develop a standard for tasks that evaluate these agents: the <a href="https://github.com/METR/task-standard">METR Task Standard</a>. The standard formalizes METR's internal task format, now available for other people and organizations to use. Writing good tasks is expensive and time-consuming. The standard makes it easy to share tasks, avoiding duplicated work tasks and <a href="https://www.anthropic.com/news/evaluating-ai-systems">the headache of porting tasks from one organization's evaluations system to another</a>.</p>
+<p>Under the Task Standard, tasks are defined using between two and seven Python functions. Based on these functions, the standard specifies a process for constructing a <em>task environment</em>: a container or virtual machine with which a language model agent interacts to solve the task. The standard and its GitHub repo has a bunch of useful features for task authors:</p>
+<ul>
+<li>The ability to install packages, create files and folders, and start long-running processes in the task environment</li>
+<li>For tasks that can't be run in a container, a way to add an auxiliary virtual machine to the task environment</li>
+<li>Control over the textual task instructions that the agent receives</li>
+<li>Specifying whether the agent should have internet access or not</li>
+<li>Exposing secrets and other bits of configuration to the task Python code and, optionally, to the agent</li>
+<li>Defining a process for automated task scoring</li>
+<li>Automated tests for tasks</li>
+<li>A <a href="https://github.com/METR/task-standard/tree/main/workbench">workbench</a> for task development, allowing task authors to construct task environments and run task tests</li>
+</ul>
+<p>I'm proud of my work on the standard. My colleague <a href="https://www.linkedin.com/in/ted-suzman-62a1241">Ted Suzman</a> and I are the main contributors so far. We extracted code from METR's internal evaluations platform into a TypeScript <a href="https://github.com/METR/task-standard/blob/main/drivers/Driver.ts">Driver interface</a> and <a href="https://github.com/METR/task-standard/blob/main/drivers/DriverImpl.ts">implementation</a>. Our platform and the Task Standard workbench share this code. As the standard changes, it'll be easy to keep both codebases in sync.</p>
+<p>If you're using the standard, I'm eager to talk to you! Please email me at the address on <a href="/">this website's homepage</a>.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/the-metr-task-standard/</link>
+            <guid isPermaLink="false">the-metr-task-standard</guid>
+            <pubDate>Sat, 02 Mar 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Dangerous capabilities evaluations for AI]]></title>
             <description><![CDATA[<p>In the last couple of weeks, I've given two talks on the subject of dangerous capabilities evaluations
@@ -636,18 +656,6 @@ main = q "{definition of `q` in JavaScript}" "{definition of `q` in Racket}" "{d
             <link>https://thomasbroadley.com/blog/understanding-quine-central-the-source-code/</link>
             <guid isPermaLink="false">understanding-quine-central-the-source-code</guid>
             <pubDate>Sun, 27 Sep 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[RC day 5]]></title>
-            <description><![CDATA[<p>Yesterday went so well I forgot to post about it! I started early, spending an hour trying to explain how <a href="https://github.com/dpiponi/quine-central"><code>quine-central</code></a> handles character escaping. Then I paired with a batchmate on <a href="https://github.com/tbroadley/narrated-diffs">Narrated Diffs</a> (fka Literate Diffs), which was extremely helpful. Together we had a brainstorm for improvements to the project, selected the ones necessary for an MLP (minimum loveable product), then implemented a feature (the ability to build a narrated diff from a GitHub PR URL).</p>
-<p>Without that session I don’t think Narrated Diffs would be where it is now: <a href="https://narrated-diffs.thomasbroadley.com">a tool that you can actually use!</a> Paste a Git diff or a GitHub PR URL, then click “Narrate that diff!”. You can then reorder the diff’s chunks and add comments to them. When you’re done, copy the URL and send it to your reviewers. Tell a story with your PR and hopefully they’ll find it easier to review.</p>
-<p>After that pairing session, I spent the rest of the day getting Narrated Diffs to an MLP. I created a Postgres database on my computer and got the backend to store diffs in it. Then I hosted the frontend and backend on a VPS, which took a while. I’ll post soon explaining in more depth the tech stack the project uses.</p>
-<p>I wrapped up the day with technical talks. These are five-minute presentations by Recursers about projects they’ve been working on. First, a few RC staff members gave a presentation on <a href="https://www.recurse.com/manual#sub-sec-social-rules">RC’s four social rules</a>, complete with demonstrations and audience participation. Then I talked about what I’d learned about code review pain points this week and gave a demo of Narrative Diffs. I wish I’d spent more time preparing for my talk, oh well!</p>
-<p>I really enjoyed the talks that others gave. One Recurser used Python’s <code>html.parser</code> module to solve FizzBuzz by scraping Answers.com for questions like, “Is 17 divisible by 5?” Another added tail recursion to a Python program by modifying its bytecode (as the presenter said, “Python has bytecode??”). The highlight was when an alumni used computer voice control software called <a href="https://talonvoice.com/">Talon</a> to live-code FizzBuzz right in front of us!</p>
-<p>It’s been a really good week. I’m quite put out that it’s over. I’ll publish a return statement (RC’s cute term for a reflection on your time there) in the next few days.</p>]]></description>
-            <link>https://thomasbroadley.com/blog/rc-day-5/</link>
-            <guid isPermaLink="false">rc-day-5</guid>
-            <pubDate>Sat, 26 Sep 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

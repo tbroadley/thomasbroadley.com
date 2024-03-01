@@ -9,12 +9,32 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 01 Mar 2024 15:18:18 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 01 Mar 2024 17:51:17 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2024 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[The METR Task Standard]]></title>
+            <description><![CDATA[<p>At METR, I'm trying to reduce existential risk from artificial intelligence by helping to measure the autonomous capabilities of language model agents. For the past two months, I've helped METR develop a standard for tasks that evaluate these agents: the <a href="https://github.com/METR/task-standard">METR Task Standard</a>. The standard formalizes METR's internal task format, now available for other people and organizations to use. Writing good tasks is expensive and time-consuming. The standard makes it easy to share tasks, avoiding duplicated work tasks and <a href="https://www.anthropic.com/news/evaluating-ai-systems">the headache of porting tasks from one organization's evaluations system to another</a>.</p>
+<p>Under the Task Standard, tasks are defined using between two and seven Python functions. Based on these functions, the standard specifies a process for constructing a <em>task environment</em>: a container or virtual machine with which a language model agent interacts to solve the task. The standard and its GitHub repo has a bunch of useful features for task authors:</p>
+<ul>
+<li>The ability to install packages, create files and folders, and start long-running processes in the task environment</li>
+<li>For tasks that can't be run in a container, a way to add an auxiliary virtual machine to the task environment</li>
+<li>Control over the textual task instructions that the agent receives</li>
+<li>Specifying whether the agent should have internet access or not</li>
+<li>Exposing secrets and other bits of configuration to the task Python code and, optionally, to the agent</li>
+<li>Defining a process for automated task scoring</li>
+<li>Automated tests for tasks</li>
+<li>A <a href="https://github.com/METR/task-standard/tree/main/workbench">workbench</a> for task development, allowing task authors to construct task environments and run task tests</li>
+</ul>
+<p>I'm proud of my work on the standard. My colleague <a href="https://www.linkedin.com/in/ted-suzman-62a1241">Ted Suzman</a> and I are the main contributors so far. We extracted code from METR's internal evaluations platform into a TypeScript <a href="https://github.com/METR/task-standard/blob/main/drivers/Driver.ts">Driver interface</a> and <a href="https://github.com/METR/task-standard/blob/main/drivers/DriverImpl.ts">implementation</a>. Our platform and the Task Standard workbench share this code. As the standard changes, it'll be easy to keep both codebases in sync.</p>
+<p>If you're using the standard, I'm eager to talk to you! Please email me at the address on <a href="/">this website's homepage</a>.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/the-metr-task-standard/</link>
+            <guid isPermaLink="false">the-metr-task-standard</guid>
+            <pubDate>Sat, 02 Mar 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Dangerous capabilities evaluations for AI]]></title>
             <description><![CDATA[<p>In the last couple of weeks, I've given two talks on the subject of dangerous capabilities evaluations
