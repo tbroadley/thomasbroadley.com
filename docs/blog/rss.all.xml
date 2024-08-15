@@ -9,12 +9,20 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 01 Mar 2024 17:53:03 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 15 Aug 2024 03:08:37 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2024 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[Vivaria: METR's platform for evaluating AI agents]]></title>
+            <description><![CDATA[<p>METR just open-sourced <a href="https://github.com/METR/vivaria">Vivaria</a>, our platform for writing AI evals and running agents on them. Over the last ten months at METR, Vivaria is the software project to which I've contributed the most. I'm surprised how happy I am that it's public. I think it's because I'll find it much easier to talk about my work, now that I'm mostly working in public!</p>
+<p>If you have questions about Vivaria or are interested in using it, I'm happy to talk. You can find my email on <a href="https://thomasbroadley.com">this website's homepage</a>.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/vivaria-metr-s-platform-for-evaluating-ai-agents/</link>
+            <guid isPermaLink="false">vivaria-metr-s-platform-for-evaluating-ai-agents</guid>
+            <pubDate>Wed, 14 Aug 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[The METR Task Standard]]></title>
             <description><![CDATA[<p>At METR, I'm trying to reduce existential risk from artificial intelligence by helping to measure the autonomous capabilities of language model agents. For the past two months, I've helped METR develop a standard for tasks that evaluate these agents: the <a href="https://github.com/METR/task-standard">METR Task Standard</a>. The standard formalizes METR's internal task format, now available for other people and organizations to use. Writing good tasks is expensive and time-consuming. The standard makes it easy to share tasks, avoiding duplicated work tasks and <a href="https://www.anthropic.com/news/evaluating-ai-systems">the headache of porting tasks from one organization's evaluations system to another</a>.</p>
