@@ -9,12 +9,19 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 01 Oct 2024 14:13:59 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Oct 2024 16:07:45 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2024 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[I've moved to Berkeley]]></title>
+            <description><![CDATA[<p>My wife and I just moved to Berkeley, California. If you live in or visit the Bay Area, please let me know! You can contact me through the email on this website's <a href="/">main page</a>.</p>]]></description>
+            <link>https://thomasbroadley.com/blog/i-ve-moved-to-berkeley/</link>
+            <guid isPermaLink="false">i-ve-moved-to-berkeley</guid>
+            <pubDate>Sun, 20 Oct 2024 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Vivaria: METR's platform for evaluating AI agents]]></title>
             <description><![CDATA[<p>METR just open-sourced <a href="https://github.com/METR/vivaria">Vivaria</a>, our platform for writing AI evals and running agents on them. Over the last ten months at METR, Vivaria is the software project to which I've contributed the most. I'm surprised how happy I am that it's public. I think it's because I'll find it much easier to talk about my work, now that I'm mostly working in public!</p>
@@ -470,20 +477,6 @@ array.set(0, "cool") // No type error
             <link>https://thomasbroadley.com/blog/misleading-with-percent-changes-of-percentages/</link>
             <guid isPermaLink="false">misleading-with-percent-changes-of-percentages</guid>
             <pubDate>Mon, 12 Oct 2020 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jumping in the deep end with Workman]]></title>
-            <description><![CDATA[<p>I last documented my experience with the Workman keyboard layout in July. At the time I could type at a little over 50 wpm using it. I’d just made it the main keyboard layout on my personal computer, but hadn’t found a way to apply the layout to all programs. By practicing daily, I hoped to improve to a point where I’d feel comfortable using Workman at work too.</p>
-<p>That didn’t really pan out. I quit regular typing practice a couple of weeks after publishing that post. I kept using Workman on my own computer, but would switch back to QWERTY when coding outside of work. And I never got around to trying it on my work computer. My goal to use Workman everywhere ended up on the back burner for a couple of months.</p>
-<p>Until the end of September. I took a week off to <a href="/blog/tags/rc-mini-7-2020">participate in a Recurse Center mini-batch</a> and decided to use the time to practice Workman. I wouldn’t use QWERTY for anything, not even coding. (Luckily, the weekend before RC, I found out how to enable Workman system-wide on Ubuntu! Note to self: Post the solution. If it was non-obvious to me, it’s non-obvious to someone else.)</p>
-<p>That week, I spent more time than I would have liked fiddling with my <code>.vimrc</code>. I wanted to set up Vim to use QWERTY key locations in normal mode and Workman locations in insert mode, so my muscle memory wouldn’t immediately become useless. I installed a plugin but found a couple of bugs. I fixed one of them but lost patience with the other, so I started writing my own key mapping. For unknown reasons it didn’t work consistently. At this point, I was pretty tired of writing Vimscript. Plus, I was unconsciously using Workman key locations in normal mode half the time anyway. I decided to get rid of the key mapping and go cold turkey.</p>
-<p>At the start, I made a lot of mistakes while inputting Vim commands and felt like I was coding much more slowly than before. Pairing was especially painful. It’s no fun to feel like you’re slowing down yourself <em>and</em> another person. In hindsight, though, I think I made a great decision! By the end of the week, I felt confident enough to start using Workman at work and haven’t looked back.</p>
-<p>As a side effect, I’m no longer able to touch-type QWERTY. At least I think that’s true: I haven’t tried for more than a minute or two. But I’m not unhappy about it. I can still type 65-70 wpm in a typing test. That’s 20-30 wpm slower than QWERTY, but it’s high enough that it doesn’t seem to have an impact on my programming speed. So much of coding is selecting the right option from the autocomplete dropdown anyway.</p>
-<p>I do miss the extra speed when writing a blog post or messaging someone, though. I don’t quite feel like I type at the speed of thought (although I don’t think I ever did). But with daily real-world practice I expect to eventually reach a typing speed I’m happy with.</p>
-<p>I intended to title this post “Mastering Workman”, but I don't think I’ve reached mastery yet. Hopefully next time I report back I’ll feel that way!</p>]]></description>
-            <link>https://thomasbroadley.com/blog/jumping-in-the-deep-end-with-workman/</link>
-            <guid isPermaLink="false">jumping-in-the-deep-end-with-workman</guid>
-            <pubDate>Fri, 09 Oct 2020 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
