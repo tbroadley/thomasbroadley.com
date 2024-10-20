@@ -9,7 +9,7 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 20 Oct 2024 16:07:45 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Oct 2024 16:09:54 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.all.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2024 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
@@ -17,7 +17,8 @@
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
         <item>
             <title><![CDATA[I've moved to Berkeley]]></title>
-            <description><![CDATA[<p>My wife and I just moved to Berkeley, California. If you live in or visit the Bay Area, please let me know! You can contact me through the email on this website's <a href="/">main page</a>.</p>]]></description>
+            <description><![CDATA[<p>My wife and I just moved to Berkeley, California. I'm working in-person at METR while my wife creates music and online content. We'll be here for a year.</p>
+<p>If you live in or visit the Bay Area, please let me know! You can contact me through the email on this website's <a href="/">main page</a>.</p>]]></description>
             <link>https://thomasbroadley.com/blog/i-ve-moved-to-berkeley/</link>
             <guid isPermaLink="false">i-ve-moved-to-berkeley</guid>
             <pubDate>Sun, 20 Oct 2024 05:00:00 GMT</pubDate>
