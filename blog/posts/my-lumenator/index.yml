@@ -29,7 +29,7 @@ bodyMd: |
 
   My friend Jenn [recommended](https://jenn.site/2022/11/lumenators-theyre-really-good/) using a mix of 5000k (white) and 2700k (yellow) bulbs. The bulbs I bought claim to have a CRI (colour rendering index) of 90 or greater. I’m not sure. Compared to direct sunlight, colours seem muted under the lumenator.
 
-  The setup cost 210.10 USD up-front and uses about 117 kWh/month (25 bulbs * 13 W/bulb * 12 hours-in-use/day * 30 days/month), which costs about $45/month in Berkeley.
+  The setup cost 210.10 USD up-front and uses about 117 kWh/month (`25 bulbs * 13 W/bulb * 12 hours-in-use/day * 30 days/month`), which costs about $45/month in Berkeley.
 
   I didn’t go for dimmable bulbs or a dimmer. Usually, I turn the lumenator on when the sun rises and leave it on until 8pm. Then, I wind down for bed.
 
@@ -51,7 +51,7 @@ bodyMd: |
 
   I’m happy to have my lumenator, but I wish it were brighter.
 
-  The lumenator outputs a lot of lumens, 25 * 1,500 = 37,500 to be exact. But a lot of lumens do not a lot of lux make. (Lumens measure light output; lux measures light received at a particular distance.) Because I'm sitting three or four metres from the bulbs and the paper lanterns absorb a lot of the light, I only receive about 1,000 lux. This is the same as the light from the sun on a cloudy day ([Wikipedia](https://en.wikipedia.org/wiki/Lux#Illuminance)).
+  The lumenator outputs a lot of lumens, `25 * 1,500 = 37,500` to be exact. But a lot of lumens do not a lot of lux make. (Lumens measure light output; lux measures light received at a particular distance.) Because I'm sitting three or four metres from the bulbs and the paper lanterns absorb a lot of the light, I only receive about 1,000 lux. This is the same as the light from the sun on a cloudy day ([Wikipedia](https://en.wikipedia.org/wiki/Lux#Illuminance)).
 
   (I measured lux with [this Android app](https://play.google.com/store/apps/details?id=com.doggoapps.luxlight&hl=en_US), which uses my phone’s light sensor. I checked the sensor’s calibration by measuring the lux of a bulb with known brightness at a fixed distance. Surprisingly, the calibration was almost perfect!)
 
