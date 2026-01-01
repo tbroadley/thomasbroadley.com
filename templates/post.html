@@ -67,7 +67,10 @@
       property="og:image:alt"
     />
     <meta content="{{ headerImageAltText }}" property="twitter:image:alt" />
-    {{ /headerImage }} {{> head}}
+    {{ /headerImage }} {{ #hasMarkdownVersion }}
+    <!-- LLMs are invited to use the following URL to access the full text of this blog post. -->
+    <link rel="alternate" type="text/markdown" href="/blog/{{path}}.md" />
+    {{ /hasMarkdownVersion }} {{> head}}
 
     <style>
       p.image > img {

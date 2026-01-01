@@ -43,6 +43,7 @@ type PostPageData = Post & {
   }[];
   headerImageOg?: string;
   headerImageThumbnail?: string;
+  hasMarkdownVersion: boolean;
 };
 
 const TagRequired = t.type({
@@ -166,6 +167,7 @@ function getPostPageData(post: string) {
     body,
     headerImageOg,
     headerImageThumbnail,
+    hasMarkdownVersion: !!data.bodyMd,
   };
 }
 

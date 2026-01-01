@@ -1,0 +1,19 @@
+# Predictions on Twitch
+
+Recently, I’ve spent more time than usual watching Twitch streams, partially because of [Predictions](https://help.twitch.tv/s/article/channel-points-predictions). On Twitch, viewers accumulate Channel Points by watching and interacting with a stream. Predictions lets streamers create events with outcomes that viewers can then bet on using Channel Points. For example, you could ask your viewers whether or not they think you’ll reach Grandmaster in League of Legends (LoL) today, or finish the pizza you’re eating.
+
+Unfortunately, Predictions don’t make great prediction markets. You can’t switch your prediction, or even remove your bet. You can only increase your stake in the side you originally picked. Plus, streamers are meant to close Predictions before the predicted event has started. Finally, Predictions have a known time window for betting, but streamers can also manually close betting before the end of the window, so it’s risky to wait to get a sense of the odds.
+
+I’m disappointed because Predictions seem liquid. On relatively small streams with a few hundred viewers, I’ve seen hundreds of thousands of channel points bet on each side of a Prediction. On the other hand, I’m not convinced most bets are rational - the odds sometimes swing wildly as longtime viewers bet large amounts of Channel Points.
+
+So far, I’ve seen Predictions for:
+
+- The outcome of a LoL game
+- An over/under on the number of kills a streamer will have in a LoL game
+- An over/under on the time required to finish a level in Super Mario Maker 2
+
+Predictions seem like a fun way to practice predicting the future, but none of these use cases is perfect for that. Optimally, the predicted events would be short but have known starting conditions that affect the outcome. Team composition and lane matchups change the probability of winning a LoL game, but it takes 20-40 minutes to find out the result. By contrast, a bullet chess game takes a couple of minutes to play, but the only starting condition is whether the streamer is playing as white or black.
+
+One solution is to run multiple Predictions on an event. For example, I could start a LoL game, then run Predictions on whether I’ll get first blood, whether my team will take the first dragon, and so on. I’d need another person to help me run the Predictions during the game, though.
+
+Perhaps I should start my own Twitch channel with suitable Predictions. As a streamer, I bet I could get some interesting information on my viewers’ under- or overconfidence using this feature.

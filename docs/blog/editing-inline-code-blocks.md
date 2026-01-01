@@ -1,0 +1,17 @@
+# Editing inline code blocks
+
+Notion's, Slack's, and Jira's WYSIWYG text editors behave differently when the cursor is at the end of an inline code block. A situation like:
+
+```
+THIS IS A CODE BLOCK and this is not
+                   ^
+                   (cursor is after this character)
+```
+
+Notion's behaviour here is the most confusing. Sometimes, typed text will appear inside the code block. Sometimes, it'll appear outside. It's unclear to me what triggers the switch between these two behaviours.
+
+Slack is consistent, but consistently hard to use. A cursor at the end of an inline code block is always considered to be inside the code block. If you want to type after the code block, you must move your cursor after the character just after the end of the block. This means, for example, that you can't easily take the text "`foo` bar" and edit it to "`foo`'s bar". To do so, you'd need to move your cursor after the space that comes before "bar", type `'s`, then remove the space before the apostrophe.
+
+In contrast, Jira defines two possible cursor positions, one inside and one outside the inline code block. You can move back and forth between the two positions using the left and right arrow keys. And you can distinguish between the two cursor positions visually. I like this behaviour best because it's always clear where typed text will appear, but you still have flexibility to type inside our outside the code block.
+
+As a programmer, I spend a small but meaningful amount of time editing inline code blocks in WYSIWYG editors. Doing this in Notion and Slack frustrates me. But whenever I do it in Jira, I'm glad someone at Atlassian thought through this experience.

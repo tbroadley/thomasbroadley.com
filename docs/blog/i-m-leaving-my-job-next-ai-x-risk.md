@@ -1,0 +1,17 @@
+# I’m leaving my job. Next, AI x-risk
+
+In just over a week, I’m quitting my job as a software developer at Faire. Over my four-and-a-half years at Faire, I’ve seen the company undergo an order of magnitude of growth in both employees and customers. I’ve learned a lot from many excellent mentors and managers. It’s a bittersweet departure.
+
+Why am I leaving? For one thing, in less than a month, my wife and I are moving to Los Angeles so she can attend music production school. I hoped Faire would sponsor me for a US work visa but they declined to do so.
+
+But that’s not the only reason that it’s time for me to leave. For a few years, I’ve been concerned about the risk of humanity going extinct because of artificial intelligence. Humanity can probably invent AI that’s much more capable than any human. If we do, I expect it to go poorly for us.
+
+Until last December, I thought that this kind of AI was decades away. After ChatGPT launched, I realized that there was a real chance I was wrong about that. I started applying to AI safety workshops, programs, grants, and jobs (no acceptances yet). I spoke to an advisor from 80,000 Hours, an organization that helps people have high-impact careers. I attended EA Global: London, a conference that many AI safety researchers attend.
+
+Eight months later, I’m still very confused about how I can best help reduce AI x-risk. That’s partially because I’ve still spent little time thinking about it. It’s hard to come to grips with my belief that humanity could be extinct within a decade. Also, different people have wildly different opinions on extinction from AI, all the way from “it’s almost impossible” to “it’s almost certain”. It’s hard to sort through everyone’s arguments and approaches for tackling the problem. Finally, I have some sympathy for other people’s arguments that current AI safety research isn’t actually reducing AI x-risk. This has made it hard to find the motivation to become a researcher.
+
+Still, I believe that this is the most important thing I can work on. I want to make a real effort to have an impact. That’s why I’m not looking for a traditional software developer job right now. I’m planning to spend a few months figuring out how I can most effectively reduce this risk. Nothing is off the table. Maybe I should do independent study to become a computer security expert. Maybe I should learn about AI policy and governance. Maybe there isn’t a good way for me to help right now and I’ll try to help with some other major global problem.
+
+Overall, I’m scared. I suspect my current work habits and intrinsic motivation aren’t up to the task of figuring this out, but it’ll be hard to change them. Also, I need a stronger network of supportive, like-minded individuals. I hope I find this among LA rationalists and effective altruists.
+
+Wish me luck.

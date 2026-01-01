@@ -23,6 +23,12 @@ export function buildPosts() {
 
     writeFileSync(`${folderPath}/index.html`, renderedPost);
 
+    // Write Markdown version if bodyMd exists
+    if (data.bodyMd) {
+      const markdownContent = `# ${data.title}\n\n${data.bodyMd}`;
+      writeFileSync(`docs/blog/${path}.md`, markdownContent);
+    }
+
     const files = globby.sync(`blog/posts/${path}/*`);
 
     for (const file of files) {

@@ -1,0 +1,69 @@
+# Practicing for systems design interviews with ChatGPT
+
+A few days ago, a coworker and I played around with [ChatGPT](https://chat.openai.com) for 10 minutes. We discovered that it isn't half-bad at helping you practice for systems design interviews. Here's part of a conversation I just had that demonstrates this:
+
+> **Thomas:** Can you help me practice for a systems design interview? You pretend to be the interviewer, I'll be the candidate. The interview question is, "design a messenger app".
+>
+> **ChatGPT:** Sure, I'd be happy to help you practice for your systems design interview. To start, can you tell me a little bit more about the requirements for this messenger app you're designing? For example, what features do you think it should have, and who do you envision using it?
+>
+> **Thomas:** Let's say that it's an app geared towards letting senior citizens easily communicate with their families. I think users should have the ability to add people to their contacts, send messages to their contacts, view messages they've received, block other people, archive conversations, and receive notifications when they get a new message.
+>
+> Can you ask me a follow-up question based on what I just said, as if you were an interviewer?
+>
+> **ChatGPT:** Sure, here's a follow-up question: how would you handle the case where two users have the same name in their contacts list? For example, if a user named "Jane" has two contacts named "Jane", how would the app differentiate between the two when displaying the contacts list or when allowing the user to select a recipient for a message?
+>
+> **Thomas:** Well, the app could require each user to select a globally unique handle when they sign up. Something like a Twitter handle. Or it could require users to provide a phone number when they sign up, like Whatsapp does. The app could display that handle or phone number in the contacts list to let users differentiate between two users with the same name. How does that sound?
+>
+> **ChatGPT:** That sounds like a good solution. Another option would be to automatically generate a unique identifier for each user when they sign up, and display that identifier in the contacts list. This would eliminate the need for users to select their own handle, and would ensure that all identifiers are unique.
+>
+> **Thomas:** Yes, good point. However, it wouldn't be as easy to remember as a phone number or a user-selected handle.
+>
+> **ChatGPT:** That's true. It's important to strike a balance between uniqueness and ease of use when designing this kind of system. One way to do that would be to use a combination of the user's phone number and a randomly generated identifier, so that each user has a unique identifier that is still relatively easy to remember. This would also allow users to find each other easily by searching for their phone number in the contacts list.
+
+Discord does combine each user's handle with a random four-digit number, but I don't know about doing this with a phone number.
+
+> **Thomas:** Hmm fair enough. Do you have any other follow-up questions for me?
+>
+> **ChatGPT:** Sure, here's another question: how would your app handle messages that are sent to users who are offline? For example, if a user sends a message to another user who is not currently using the app, how would the app ensure that the recipient receives the message when they come back online?
+>
+> **Thomas:** Hmm, good question. Well, let's say that this is a centralized messenger app, with a backend that my company runs. My company would have a database that stores all messages between users. That way, we aren't relying on the user's messenger app to be running for a message to be received and stored.
+>
+> When a user comes online, the messenger app could call an API endpoint on the backend to check if the user has any unread messages in any of their conversations. Then the app could display that information to the user.
+>
+> Does this seem like a good answer for a systems design interview?
+>
+> **ChatGPT:** Yes, that sounds like a good approach to handling messages that are sent to users who are offline. Storing messages in a centralized database on the backend ensures that they will be available for users to retrieve when they come back online, and using an API to check for unread messages allows the app to stay up to date with the latest messages.
+>
+> In general, a systems design interview is looking for you to demonstrate your ability to think through the design of a complex system in a clear and logical way. Your answer covers the key points of how your messenger app would handle messages for offline users, and shows that you have considered the different components that would be involved in the design.
+>
+> Good luck with your interview!
+
+OK, let's see what happens if I answer a question poorly.
+
+> **Thomas:** Thanks! Could we keep going? Mind asking me another follow-up question?
+>
+> **ChatGPT:** Sure, here's another question: how would your app handle sending notifications to users when they receive a new message? For example, how would the app ensure that users receive notifications even if they are not currently using the app, and how would it prevent users from being overwhelmed by too many notifications?
+>
+> **Thomas:** Well, I don't know much about the specifics of how to send notifications one smartphones. And I don't think users get overwhelmed by notifications. I get a few notifications a minute and I don't feel overwhelmed.
+>
+> Is this a good answer to the question?
+>
+> **ChatGPT:** Sending notifications to users when they receive a new message is an important part of a messenger app, so it's worth thinking about how you would handle this in your design. However, your answer doesn't really address the question of how the app would handle sending notifications to users who are not currently using the app, or how it would prevent users from being overwhelmed by too many notifications.
+>
+> To address these issues, one approach could be to allow users to customize their notification settings, so that they can control how and when they receive notifications. For example, users could choose to receive notifications only when they are mentioned by name in a conversation, or they could choose to receive notifications only when they are using the app. This would allow users to control the number and frequency of notifications they receive, and prevent them from being overwhelmed.
+>
+> Additionally, the app could use a push notification service provided by the operating system to send notifications to users who are not currently using the app. This would ensure that users receive notifications even if they are not currently using the app, and would allow the app to keep users informed of new messages in real time.
+>
+> Overall, it's important to consider the user experience when designing this kind of system, and to think about how to provide users with the right amount of information and control over their notifications.
+>
+> **Thomas:** That's useful feedback, thank you!
+>
+> **ChatGPT:** You're welcome. I'm happy to help you practice for your systems design interview. Let me know if you have any other questions or if you'd like to go over any other design scenarios.
+
+As always, ChatGPT is polite (unless you tell it to be mean in a hypothetical scenario).
+
+It's important to tell ChatGPT to ask follow-up questions. Otherwise, it tends to start solving the problem for you. Otherwise, it's easy to get reasonable results.
+
+If I didn't know much about systems design, I'd worry about ChatGPT misleading me or giving me incorrect information. It isn't a substitute for studying for your systems design interview. Just a way to practice!
+
+(Side note: I wish ChatGPT had an easier way to export transcripts than Ctrl+A and Ctrl+C.)

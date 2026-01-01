@@ -1,0 +1,5 @@
+# Vivaria: METR's platform for evaluating AI agents
+
+METR just open-sourced [Vivaria](https://github.com/METR/vivaria), our platform for writing AI evals and running agents on them. Over the last ten months at METR, Vivaria is the software project to which I've contributed the most. I'm surprised how happy I am that it's public. I think it's because I'll find it much easier to talk about my work, now that I'm mostly working in public!
+
+If you have questions about Vivaria or are interested in using it, I'm happy to talk. You can find my email on [this website's homepage](https://thomasbroadley.com).

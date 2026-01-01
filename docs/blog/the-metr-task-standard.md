@@ -1,0 +1,18 @@
+# The METR Task Standard
+
+At METR, I'm trying to reduce existential risk from artificial intelligence by helping to measure the autonomous capabilities of language model agents. For the past two months, I've helped METR develop a standard for tasks that evaluate these agents: the [METR Task Standard](https://github.com/METR/task-standard). The standard formalizes METR's internal task format, now available for other people and organizations to use. Writing good tasks is expensive and time-consuming. The standard makes it easy to share tasks, avoiding duplicated work tasks and [the headache of porting tasks from one organization's evaluations system to another](https://www.anthropic.com/news/evaluating-ai-systems).
+
+Under the Task Standard, tasks are defined using between two and seven Python functions. Based on these functions, the standard specifies a process for constructing a _task environment_: a container or virtual machine with which a language model agent interacts to solve the task. The standard and its GitHub repo has a bunch of useful features for task authors:
+
+- The ability to install packages, create files and folders, and start long-running processes in the task environment
+- For tasks that can't be run in a container, a way to add an auxiliary virtual machine to the task environment
+- Control over the textual task instructions that the agent receives
+- Specifying whether the agent should have internet access or not
+- Exposing secrets and other bits of configuration to the task Python code and, optionally, to the agent
+- Defining a process for automated task scoring
+- Automated tests for tasks
+- A [workbench](https://github.com/METR/task-standard/tree/main/workbench) for task development, allowing task authors to construct task environments and run task tests
+
+I'm proud of my work on the standard. My colleague [Ted Suzman](https://www.linkedin.com/in/ted-suzman-62a1241) and I are the main contributors so far. We extracted code from METR's internal evaluations platform into a TypeScript [Driver interface](https://github.com/METR/task-standard/blob/main/drivers/Driver.ts) and [implementation](https://github.com/METR/task-standard/blob/main/drivers/DriverImpl.ts). Our platform and the Task Standard workbench share this code. As the standard changes, it'll be easy to keep both codebases in sync.
+
+If you're using the standard, I'm eager to talk to you! Please email me at the address on [this website's homepage](/).

@@ -1,0 +1,19 @@
+# Mastering Workman
+
+In ["Jumping in the deep end with Workman"](../jumping-in-the-deep-end-with-workman), I concluded:
+
+> I intended to title this post "Mastering Workman", but I don't think I've reached mastery yet. Hopefully next time I report back I'll feel that way!
+
+I'm happy to say that I feel that way now! I just typed at 90 wpm in a typing test. Based on the previous post, that's just below or the same as my QWERTY typing speed in 2020. I'm close to typing at the speed of thought. Plus, my Vim skills are back to the same level.
+
+I don't remember when my typing speed improved. Based on my progression when I started using Workman, it probably took a month or more to go from 70 wpm to 90.
+
+Using Workman hasn't changed my life. My hands feel slightly less strained compared to using QWERTY, but that might be in my head. And my typing speed hasn't changed much.
+
+While learning Workman, I successfully built a habit of capitalizing letters using the hand not typing the letter. For example, when typing a capital L, I use the left Shift key. For Q, I use right Shift. I also tried and failed to switch fingers for a few letters. For example, I started using my left pinky for Q, but reverted to my left ring finger.
+
+I can no longer touch type using QWERTY. If I look at the keyboard while typing, I reach 60 wpm in a typing test. I might type faster in a real situation, though. In a typing test, it's more important to look at the screen, to see what to type next. In real life, I usually type my own ideas, not a set text.
+
+Learning Workman wasn't worth the investment. I spent 15 minutes a day for 15 days practicing Workman using [Keybr](https://www.keybr.com) and 15 minutes a day for roughly 30 days using [TypingClub](https://www.typingclub.com). That's only 11 hours. But my typing speed was slower for at least a month after starting to use Workman at work. That's a lot of lost productivity.
+
+Now that I've mastered the Workman layout, though, I'll stick with it!

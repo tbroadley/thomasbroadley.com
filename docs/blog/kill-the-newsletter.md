@@ -1,0 +1,9 @@
+# Kill the Newsletter
+
+I subscribe to about 100 RSS feeds and one email newsletter: Money Stuff. I wanted a way to receive Money Stuff in my RSS reader instead of in my inbox. Unfortunately, Bloomberg doesn't seem to offer an RSS feed for Money Stuff anymore.
+
+I found a website called [Kill the Newsletter](https://kill-the-newsletter.com/) that converts email newsletters into RSS feeds. For each newsletter you want to subscribe to, Kill the Newsletter gives you a brand-new, unique email address and Atom feed URL. You subscribe to the newsletter using the email address and add the feed to your RSS reader. When Kill the Newsletter receives a newsletter email, it converts the email into a post and adds it to the feed, so that it shows up in your reader.
+
+One disadvantage is that my RSS reader doesn't refetch feeds very often. There's some delay between the newsletter being sent out and me receiving it, whereas I get a notification about the email version as soon as it lands in my inbox. My RSS reader does give me the ability to manually refresh a certain feed, which mostly addresses this issue.
+
+Overall, Kill the Newsletter has worked well for me. I plan to use it for more newsletters in the future.

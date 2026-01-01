@@ -1,0 +1,17 @@
+# 100 days of learning Vietnamese
+
+I started learning Vietnamese on Duolingo three months ago. My goals are simple: to speak Vietnamese with my girlfriend's family, to communicate with locals on our future trips to Vietnam, and to teach Vietnamese to any children we might have.
+
+Duolingo offers exercises to learn vocabulary, translate sentences between English and Vietnamese, and transcribe spoken Vietnamese. I've already learned basic words for fruits, vegetables, and clothing, plus some useful verbs. Today, I practiced question words like "who" and "what."
+
+Vietnamese pronunciation doesn't depend on context. In this area, it's easier to learn Vietnamese than English. For example, in English, the "a" in "mat" is pronounced differently than the "a" in "mate". In Vietnamese, "a" has the same pronunciation in every word.
+
+To compensate for this, Vietnamese has 12 vowels ("a", "ă", "â", "e", "ê", "i", "y", "o", "ô", "ơ", "u", and "ư") and an extra consonant letter, "đ". I'm still practicing the pronunciations of some of these. In particular, "ư"—a nasal "u" sound—was tough.
+
+Vietnamese also has multiple dialects with different pronunciation. My girlfriend's family is from South Vietnam, but Duolingo's speech samples have a Northern accent and include Northern-only vocabulary. Thankfully, my girlfriend is teaching me Southern pronunciation.
+
+Vietnamese is the first tonal language I've learned. A single combination of consonant and vowel sounds (e.g., "ma") can have up to six different meanings depending on inflection. For example, "ma" (said with the same pitch all the way through) means "ghost", while "mà" (said with a falling pitch) means "but". It's a challenge to distinguish between these tones. However, my girlfriend tells me she often figures out words' tones from context.
+
+For me, learning any language's vocabulary is tough. On top of this, Vietnamese has few cognates with other languages I know. (This does save me from false cognates, something I struggle with in French and Spanish.) Vietnamese does have many loan words from both English and French. For example, the French word "café" influenced "cà phê" (Vietnamese for "coffee").
+
+I didn't expect that Vietnamese would have so many words that are fun to say. Two of my favourites so far are "thịt nướng" (meaning "grilled meat") and "xe đạp" (meaning "bicycle").
