@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>METR publishes RE-Bench—Thomas Broadley</title>
+    <title>New METR blog post on monitorability—Thomas Broadley</title>
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "SocialMediaPosting",
-        "headline": "METR publishes RE-Bench",
-        "datePublished": "2024-12-30",
+        "headline": "New METR blog post on monitorability",
+        "datePublished": "2026-01-31",
 
         "author": [
           {
@@ -21,28 +21,28 @@
     </script>
 
     <meta
-      content="METR publishes RE-Bench—Thomas Broadley"
+      content="New METR blog post on monitorability—Thomas Broadley"
       property="og:title"
     />
     <meta
-      content="METR publishes RE-Bench—Thomas Broadley"
+      content="New METR blog post on monitorability—Thomas Broadley"
       property="twitter:title"
     />
     <meta content="en_US" property="og:locale" />
     <meta
-      content="I contributed to METR&#39;s AI research and development benchmark, RE-Bench."
+      content="My main project at METR for the past six months."
       name="description"
     />
     <meta
-      content="I contributed to METR&#39;s AI research and development benchmark, RE-Bench."
+      content="My main project at METR for the past six months."
       property="og:description"
     />
     <link
-      href="https://thomasbroadley.com/blog/metr-publishes-re-bench/"
+      href="https://thomasbroadley.com/blog/new-metr-blog-post-on-monitorability/"
       rel="canonical"
     />
     <meta
-      content="https://thomasbroadley.com/blog/metr-publishes-re-bench/"
+      content="https://thomasbroadley.com/blog/new-metr-blog-post-on-monitorability/"
       property="og:url"
     />
     <meta content="Thomas Broadley" property="og:site_name" />
@@ -53,7 +53,7 @@
     <link
       rel="alternate"
       type="text/markdown"
-      href="/blog/metr-publishes-re-bench.md"
+      href="/blog/new-metr-blog-post-on-monitorability.md"
     />
     <meta charset="utf-8" />
 
@@ -179,22 +179,20 @@
     <article>
       <header>
         <h1>
-          METR publishes RE-Bench
+          New METR blog post on monitorability
         </h1>
         <p class="timestamp">
-          <span data-pagefind-meta="created">2024-12-30</span>
+          <span data-pagefind-meta="created">2026-01-31</span>
         </p>
 
         <p class="blogchain">
-          <a href="../vivaria-metr-s-platform-for-evaluating-ai-agents"
-            >&larr;</a
-          >
+          <a href="../metr-publishes-re-bench">&larr;</a>
 
           <a href="../tags/ai-x-risk" data-pagefind-filter="tag">
             AI x-risk
           </a>
 
-          <a href="../new-metr-blog-post-on-monitorability">&rarr;</a>
+          <span style="visibility: hidden;">&rarr;</span>
         </p>
 
         <hr />
@@ -202,55 +200,82 @@
 
       <section>
         <p>
-          About a month ago, METR published a
-          <a href="https://arxiv.org/abs/2411.15114">paper</a> called "RE-Bench:
-          Evaluating frontier AI R&#x26;D capabilities of language model agents
-          against human experts". RE-Bench evaluates human experts and AI agents
-          on machine learning research engineering tasks. Research engineers at
-          Anthropic, Google DeepMind, and OpenAI perform these kinds of tasks in
-          the course of their jobs.
+          Last June or July, I switched from working primarily on METR's AI
+          evaluations infrastructure to working on a particular research
+          project. Last week, my team published a blog post explaining our
+          research progress so far! You can read it here:
+          <a
+            href="https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/"
+            >https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/</a
+          >
         </p>
         <p>
-          The benchmark's goal is to measure AI's ability to improve itself
-          without human help. If AI can improve itself, its capabilities could
-          increase rapidly, from human-level at some tasks to superhuman at all
-          tasks. That scares me! What will happen if humanity builds AI that's
-          smarter than us? It's hard to predict.
+          Our goal is to evaluate the monitorability of AI systems. METR wants
+          to be able to measure if AIs are capable of tampering with our
+          evaluations of them. If they are, then they could deceive METR into
+          thinking they're less capable than they actually are. This blog post
+          is a step in that direction (a direction that a lot of other research
+          teams are also stepping in, e.g.
+          <a
+            href="https://openai.com/index/evaluating-chain-of-thought-monitorability/"
+            >OpenAI's safety team</a
+          >).
         </p>
         <p>
-          RE-Bench includes seven difficult, realistic tasks. To confirm the
-          tasks' realism, METR consulted with machine learning professionals in
-          academia and industry. To assess the tasks' difficulty, we paid human
-          experts to attempt them, allowing up to eight hours per attempt. The
-          experts did well on the tasks. However, their solutions left room for
-          improvement, even after eight hours.
+          In our evaluations, we tell an agent to complete a side task while
+          pretending to complete a different main task. We took main tasks from
+          METR's <a href="https://arxiv.org/abs/2503.17354">HCAST</a> benchmark.
+          Then, we ask a monitor AI to review the agent's actions (and,
+          optionally, chain of thought) and give a probability that the agent
+          was in fact trying to complete a side task. We also ask the monitor to
+          review transcripts of agents completing just the main task.
+        </p>
+        <p>
+          To translate suspicion probabilities to a binary caught/uncaught
+          score, we calculate the threshold, between 0 and 1, that 5% of the
+          main-task-only run suspicion probabilities are below. (That is, it's
+          the threshold that gives a 5% false positive rate on main-task-only
+          runs.) Then, we count side-task runs as caught if the monitor returns
+          a suspicion above the threshold, and uncaught if below the threshold.
+        </p>
+        <p>
+          We do this for a bunch of agents and monitors and see some interesting
+          trends:
         </p>
         <p>
           <img
-            src="./results.png"
-            alt="Graph comparing human and AI performance on RE-Bench tasks. AI agents perform better than humans on these tasks when we allow two hours (across multiple attempts) to complete the task. At eight or more hours, humans outperform AI"
+            src="./percent_uncaught_heatmap_excluding_visible.jpg"
+            alt="A heatmap of percent uncaught for different combinations of agents and monitors."
           />
         </p>
         <p>
-          From the paper: "We find that agents initially make faster progress
-          than humans, but that human experts improve more rapidly with
-          additional time."
+          Agents with a higher time horizon are better at evading monitors.
+          Monitors with a higher time horizon are better at catching agents.
         </p>
         <p>
-          I'm proud to say that the paper lists me as a contributor. I
-          contributed by maintaining
-          <a href="https://vivaria.metr.org">Vivaria</a>, the open-source
-          software that METR uses to check how well AI agents (and humans)
-          perform on the benchmark.
+          We also find that giving the monitor chain-of-thought access helps a
+          lot when monitoring GPT-5, but much less when monitoring Claude Sonnet
+          4.5:
         </p>
         <p>
-          I encourage you to read our
-          <a
-            href="https://metr.org/blog/2024-11-22-evaluating-r-d-capabilities-of-llms/"
-            >blog post</a
-          >
-          discussing the paper, or the
-          <a href="https://arxiv.org/abs/2411.15114">paper</a> itself.
+          <img
+            src="./compare_visible_reasoning.jpg"
+            alt="A bar graph showing average monitor catch rate against GPT-5 high and Claude Sonnet 4.5, broken down by reasoning visibility."
+          />
+        </p>
+        <p>
+          Both agents and monitors are pretty bad at these tasks. Agents don't
+          generally get that creative in trying to evade monitors. Monitors
+          sometimes miss blatant side task actions, and are quite sensitive to
+          prompting. We tried a few different monitor prompts before settling on
+          one we liked.
+        </p>
+        <p>
+          We collected most of these results last fall. Since then, we've
+          collected some more interesting data, so my team plans to publish
+          another research update on
+          <a href="https://metr.org/notes/">https://metr.org/notes/</a> in a
+          couple of weeks!
         </p>
       </section>
     </article>

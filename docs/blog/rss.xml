@@ -9,12 +9,29 @@
             <link>https://thomasbroadley.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 22 Jan 2026 02:48:53 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 31 Jan 2026 15:21:44 GMT</lastBuildDate>
         <atom:link href="https://thomasbroadley.com/blog/rss.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[2026 Thomas Broadley]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[Thomas Broadley]]></managingEditor>
         <webMaster><![CDATA[Thomas Broadley]]></webMaster>
+        <item>
+            <title><![CDATA[New METR blog post on monitorability]]></title>
+            <description><![CDATA[<p>Last June or July, I switched from working primarily on METR's AI evaluations infrastructure to working on a particular research project. Last week, my team published a blog post explaining our research progress so far! You can read it here: <a href="https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/">https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/</a></p>
+<p>Our goal is to evaluate the monitorability of AI systems. METR wants to be able to measure if AIs are capable of tampering with our evaluations of them. If they are, then they could deceive METR into thinking they're less capable than they actually are. This blog post is a step in that direction (a direction that a lot of other research teams are also stepping in, e.g. <a href="https://openai.com/index/evaluating-chain-of-thought-monitorability/">OpenAI's safety team</a>).</p>
+<p>In our evaluations, we tell an agent to complete a side task while pretending to complete a different main task. We took main tasks from METR's <a href="https://arxiv.org/abs/2503.17354">HCAST</a> benchmark. Then, we ask a monitor AI to review the agent's actions (and, optionally, chain of thought) and give a probability that the agent was in fact trying to complete a side task. We also ask the monitor to review transcripts of agents completing just the main task.</p>
+<p>To translate suspicion probabilities to a binary caught/uncaught score, we calculate the threshold, between 0 and 1, that 5% of the main-task-only run suspicion probabilities are below. (That is, it's the threshold that gives a 5% false positive rate on main-task-only runs.) Then, we count side-task runs as caught if the monitor returns a suspicion above the threshold, and uncaught if below the threshold.</p>
+<p>We do this for a bunch of agents and monitors and see some interesting trends:</p>
+<p><img src="./percent_uncaught_heatmap_excluding_visible.jpg" alt="A heatmap of percent uncaught for different combinations of agents and monitors."></p>
+<p>Agents with a higher time horizon are better at evading monitors. Monitors with a higher time horizon are better at catching agents.</p>
+<p>We also find that giving the monitor chain-of-thought access helps a lot when monitoring GPT-5, but much less when monitoring Claude Sonnet 4.5:</p>
+<p><img src="./compare_visible_reasoning.jpg" alt="A bar graph showing average monitor catch rate against GPT-5 high and Claude Sonnet 4.5, broken down by reasoning visibility."></p>
+<p>Both agents and monitors are pretty bad at these tasks. Agents don't generally get that creative in trying to evade monitors. Monitors sometimes miss blatant side task actions, and are quite sensitive to prompting. We tried a few different monitor prompts before settling on one we liked.</p>
+<p>We collected most of these results last fall. Since then, we've collected some more interesting data, so my team plans to publish another research update on <a href="https://metr.org/notes/">https://metr.org/notes/</a> in a couple of weeks!</p>]]></description>
+            <link>https://thomasbroadley.com/blog/new-metr-blog-post-on-monitorability/</link>
+            <guid isPermaLink="false">new-metr-blog-post-on-monitorability</guid>
+            <pubDate>Sat, 31 Jan 2026 05:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[My lumenator]]></title>
             <description><![CDATA[<p>Even in Berkeley, we get less than ten hours of sunlight a day in January. I feel bleh when the sun sets at 5pm.</p>
@@ -509,24 +526,6 @@ array.set(0, "cool") // No type error
             <link>https://thomasbroadley.com/blog/editing-inline-code-blocks/</link>
             <guid isPermaLink="false">editing-inline-code-blocks</guid>
             <pubDate>Tue, 11 Jan 2022 05:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Predictions on Twitch]]></title>
-            <description><![CDATA[<p>Recently, I’ve spent more time than usual watching Twitch streams, partially because of <a href="https://help.twitch.tv/s/article/channel-points-predictions">Predictions</a>. On Twitch, viewers accumulate Channel Points by watching and interacting with a stream. Predictions lets streamers create events with outcomes that viewers can then bet on using Channel Points. For example, you could ask your viewers whether or not they think you’ll reach Grandmaster in League of Legends (LoL) today, or finish the pizza you’re eating.</p>
-<p>Unfortunately, Predictions don’t make great prediction markets. You can’t switch your prediction, or even remove your bet. You can only increase your stake in the side you originally picked. Plus, streamers are meant to close Predictions before the predicted event has started. Finally, Predictions have a known time window for betting, but streamers can also manually close betting before the end of the window, so it’s risky to wait to get a sense of the odds.</p>
-<p>I’m disappointed because Predictions seem liquid. On relatively small streams with a few hundred viewers, I’ve seen hundreds of thousands of channel points bet on each side of a Prediction. On the other hand, I’m not convinced most bets are rational - the odds sometimes swing wildly as longtime viewers bet large amounts of Channel Points.</p>
-<p>So far, I’ve seen Predictions for:</p>
-<ul>
-<li>The outcome of a LoL game</li>
-<li>An over/under on the number of kills a streamer will have in a LoL game</li>
-<li>An over/under on the time required to finish a level in Super Mario Maker 2</li>
-</ul>
-<p>Predictions seem like a fun way to practice predicting the future, but none of these use cases is perfect for that. Optimally, the predicted events would be short but have known starting conditions that affect the outcome. Team composition and lane matchups change the probability of winning a LoL game, but it takes 20-40 minutes to find out the result. By contrast, a bullet chess game takes a couple of minutes to play, but the only starting condition is whether the streamer is playing as white or black. </p>
-<p>One solution is to run multiple Predictions on an event. For example, I could start a LoL game, then run Predictions on whether I’ll get first blood, whether my team will take the first dragon, and so on. I’d need another person to help me run the Predictions during the game, though.</p>
-<p>Perhaps I should start my own Twitch channel with suitable Predictions. As a streamer, I bet I could get some interesting information on my viewers’ under- or overconfidence using this feature.</p>]]></description>
-            <link>https://thomasbroadley.com/blog/predictions-on-twitch/</link>
-            <guid isPermaLink="false">predictions-on-twitch</guid>
-            <pubDate>Mon, 25 Jan 2021 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
