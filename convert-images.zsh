@@ -2,18 +2,43 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-mogrify -format jpg blog/**/*.png
+# Process PNG files
+echo "Converting PNGs to JPG..."
+for file in blog/**/*.png; do
+  [[ -f "$file" ]] || continue
+  base="${file%.png}"
+  
+  # Create original-size JPG
+  convert "$file" "${base}.jpg"
+  
+  # Create thumbnail (64x64)
+  convert "$file" -resize 64x64 "${base}.thumbnail.jpg"
+  
+  # Create OG image (512x512)
+  convert "$file" -resize 512x512 "${base}.og.jpg"
+  
+  echo "Processed: $file"
+done
 
-for file in blog/**/*.jpg; do cp $file $file.original; done
+# Process JPG files (but skip our generated thumbnails and og images)
+echo "Processing source JPGs..."
+for file in blog/**/*.jpg; do
+  [[ -f "$file" ]] || continue
+  
+  # Skip if this is a generated thumbnail or og image
+  [[ "$file" == *.thumbnail.jpg ]] && continue
+  [[ "$file" == *.og.jpg ]] && continue
+  
+  base="${file%.jpg}"
+  
+  # Create thumbnail (64x64)
+  convert "$file" -resize 64x64 "${base}.thumbnail.jpg"
+  
+  # Create OG image (512x512)
+  convert "$file" -resize 512x512 "${base}.og.jpg"
+  
+  echo "Processed: $file"
+done
 
-mogrify -format jpg -resize 64x64 blog/**/*.png
-for file in blog/**/*.jpg; do mv $file $(echo $file | sed s/.jpg//).jpg.thumbnail; done
-
-mogrify -format jpg -resize 512x512 blog/**/*.png
-for file in blog/**/*.jpg; do mv $file $(echo $file | sed s/.jpg//).jpg.og; done
-
-for file in blog/**/*.jpg.original; do mv $file $(echo $file | sed s/.original//); done
-for file in blog/**/*.jpg.thumbnail; do mv $file $(echo $file | sed s/.jpg.thumbnail//).thumbnail.jpg; done
-for file in blog/**/*.jpg.og; do mv $file $(echo $file | sed s/.jpg.og//).og.jpg; done
-
+echo "Image processing complete!"
 yarn build
