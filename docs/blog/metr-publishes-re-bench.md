@@ -6,7 +6,7 @@ The benchmark's goal is to measure AI's ability to improve itself without human 
 
 RE-Bench includes seven difficult, realistic tasks. To confirm the tasks' realism, METR consulted with machine learning professionals in academia and industry. To assess the tasks' difficulty, we paid human experts to attempt them, allowing up to eight hours per attempt. The experts did well on the tasks. However, their solutions left room for improvement, even after eight hours.
 
-![Graph comparing human and AI performance on RE-Bench tasks. AI agents perform better than humans on these tasks when we allow two hours (across multiple attempts) to complete the task. At eight or more hours, humans outperform AI](./results.png)
+![Graph comparing human and AI performance on RE-Bench tasks. AI agents perform better than humans on these tasks when we allow two hours (across multiple attempts) to complete the task. At eight or more hours, humans outperform AI](/blog/metr-publishes-re-bench/results.jpg)
 
 From the paper: "We find that agents initially make faster progress than humans, but that human experts improve more rapidly with additional time."
 

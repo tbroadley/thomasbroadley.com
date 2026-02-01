@@ -6,7 +6,7 @@ So, last year, I built a lumenator! It's a string of 25 13-watt (100-watt-equiva
 
 Look how dark my living room is compared to the lumenator!
 
-![My living room at dusk with the blinds closed and the lumenator on.](./lumenator.jpg)
+![My living room at dusk with the blinds closed and the lumenator on.](/blog/my-lumenator/lumenator.jpg)
 
 ## Supplies
 
