@@ -10,13 +10,13 @@ To translate suspicion probabilities to a binary caught/uncaught score, we calcu
 
 We do this for a bunch of agents and monitors and see some interesting trends:
 
-![A heatmap of percent uncaught for different combinations of agents and monitors.](/posts/new-metr-blog-post-on-monitorability/percent_uncaught_heatmap_excluding_visible.jpg)
+![A heatmap of percent uncaught for different combinations of agents and monitors.](/blog/new-metr-blog-post-on-monitorability/percent_uncaught_heatmap_excluding_visible.jpg)
 
 Agents with a higher time horizon are better at evading monitors. Monitors with a higher time horizon are better at catching agents.
 
 We also find that giving the monitor chain-of-thought access helps a lot when monitoring GPT-5, but much less when monitoring Claude Sonnet 4.5:
 
-![A bar graph showing average monitor catch rate against GPT-5 high and Claude Sonnet 4.5, broken down by reasoning visibility.](/posts/new-metr-blog-post-on-monitorability/compare_visible_reasoning.jpg)
+![A bar graph showing average monitor catch rate against GPT-5 high and Claude Sonnet 4.5, broken down by reasoning visibility.](/blog/new-metr-blog-post-on-monitorability/compare_visible_reasoning.jpg)
 
 Both agents and monitors are pretty bad at these tasks. Agents don't generally get that creative in trying to evade monitors. Monitors sometimes miss blatant side task actions, and are quite sensitive to prompting. We tried a few different monitor prompts before settling on one we liked.
 

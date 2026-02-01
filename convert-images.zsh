@@ -2,9 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-rm blog/**/*.jpg || true
-rm docs/blog/**/*.jpg || true
-
 mogrify -format jpg blog/**/*.png
 
 for file in blog/**/*.jpg; do cp $file $file.original; done
