@@ -1,6 +1,6 @@
 # Book review: Already Free
 
-# I.
+## I.
 
 Like most people, my teens and twenties have been confusing and not always the most fun. I’ve struggled to make friends. In high school and university, I didn’t have as many romantic relationships as I wanted. When I was 24, I met a beautiful, wonderful woman who became my wife, but I still feel like I have a lot of room to be a better husband. I lucked into a relatively stable and interesting career, but my day-to-day experience with work has involved a lot of emotional swings and occasional disillusionment. In general, I’ve struggled to feel consistently happy.
 
@@ -16,7 +16,7 @@ I’m really glad Ben recommended the book, and that I read it. I feel like it�
 - When I become a parent, how can I be a good one?
 - Are the postrats onto something?
 
-# II.
+## II.
 
 [Bruce Tift](https://www.brucetift.com/) is a therapist who’s also practiced Vajrayana Buddhism for 40 years. At the time of writing, he lived with his wife in Boulder, Colorado.
 
@@ -28,7 +28,7 @@ I’m not sure what to make of this. I didn’t know about it until after I fini
 
 > [I]f we want to live in society—if we’re going to be a parent, a partner, a teacher, or somebody trying to be of benefit to others—it’s very important to do the developmental work to process our “characterological” issues. Because even though we might not feel identified with those issues anymore, the people we relate to may still be profoundly affected by our unresolved reenactment behaviors. (125)
 
-# III.
+## III.
 
 Many of Tift’s clients complain that something is missing from what, on the surface, seems like a happy life. To him, it seems like they’re describing a missing sense of freedom. They want to achieve a mental state of “embodied presence, spontaneity, openheartedness, alertness, humor, courage, clarity, resilience, equanimity, confidence.” (292)
 
@@ -48,7 +48,7 @@ Tift’s major claim is that, even in moments of very strong emotion, you should
 
 Tift suggests first using the fruitional view to build a base of personal responsibility for our thoughts and feelings, and acceptance of both the positive and negative. Then, we can use the developmental view to look for concrete ways to improve our life circumstances: to have more positive thoughts and feelings, and fewer negative ones.
 
-# IV.
+## IV.
 
 Tift spends two chapters applying these ideas to romantic relationships.
 
@@ -60,7 +60,7 @@ Tift says that relationships tend to be composed of one person who wants to conn
 
 I’ve noticed this in my own relationships. With one exception, I believe I’ve been the distancer, and my partner’s been the pursuer. During the honeymoon phase, this is exciting! The other person brings a fresh, new energy to your life. But, as the relationship goes on, you start to feel angry at the other person, just like you feel angry at that disowned part of yourself. Your “fundamental aggression toward that energy start[s] to come out” (234). If you don’t address the aggression, it can damage or kill the relationship.
 
-# V.
+## V.
 
 What does Tift say to do about this?
 
@@ -76,7 +76,7 @@ He also gives a couple of developmental-view techniques for handling relationshi
 
 But, Tift’s description of unconditional practices stuck with me the most. Instead of, or in addition to, meditation and other timeboxed spiritual practices, Tift suggests building three habits that you can apply many times a day, and that you try to apply all the time. The first two are unconditional immediacy and kindness: paying attention to our immediate experience, no matter whether it’s positive or negative, and having an attitude of “kindness or even love” (90) towards it.
 
-# VI.
+## VI.
 
 The third unconditional practice is unconditional embodiment.
 
@@ -104,7 +104,7 @@ These sensations might give rise to anxiety and even panic. It takes discipline 
 
 And, wouldn’t you know it, he does one better and basically suggests installing a [TAP](https://www.lesswrong.com/posts/ESnzpoCJrAfwAzpMB/hammertime-day-3-taps). In fact, it sounds a lot like [summoning sapience](https://www.lesswrong.com/w/summoning-sapience), with a trigger of noticing strong sensations in our body. “[W]e may find that our habitual patterns may actually serve as a reminder to direct our attention to the experience of openness.” (166) “Why not just train ourselves to use our disturbance as a signal to wake up and pay attention?” (184)
 
-# VII.
+## VII.
 
 I love how _Already Free_ emphasizes the value of working with the thoughts, feelings, and sensations that are already there, instead of wishing they were different:
 
@@ -126,7 +126,7 @@ Another concern is that, by paying attention to sensation, I might accidentally 
 
 My biggest source of frustration with _Already Free_ is Tift saying that the developmental and fruitional views “create a rich friction that’s never resolvable”, and how, similarly, you can’t resolve two concepts like connection and separateness, or have one without the other. These parts of the book feel like [mysterious answers to mysterious questions](https://www.lesswrong.com/posts/6i3zToomS86oj9bS6/mysterious-answers-to-mysterious-questions).
 
-# VIII.
+## VIII.
 
 In 2020, I blogged about [“a small mindfulness win”](https://thomasbroadley.com/blog/a-small-mindfulness-win/). Unfortunately, I think that was the only situation in the past six years where I successfully applied embodied immediacy. In 2026, I’m going to change that.
 
