@@ -94,7 +94,7 @@ Tift sees emotions and thoughts as layers of interpretation on top of raw sensat
 
 > “While perhaps less-literate societies would do well to take on a corrective practice of applying more interpretation to their experience, we in the Western world might want to do the corrective practice of embodied immediacy” (187)
 
-(Not everyone, though. E.g. [here](https://hollyelmore.substack.com/p/i-believed-the-hype-and-did-mindfulness-meditation-for-dumb-reasons-now-im-trying-to-reverse-the-damage) and [here](https://www.cheetahhouse.org/).)
+(Not everyone, though. E.g. (note that I found this one disturbed me somewhat) [here](https://hollyelmore.substack.com/p/i-believed-the-hype-and-did-mindfulness-meditation-for-dumb-reasons-now-im-trying-to-reverse-the-damage) and [here](https://www.cheetahhouse.org/).)
 
 I’m very much a typical Western dude here. Probably since I was a preteen, I’ve lived mostly on the level of thoughts. High school, university, knowledge work, and reading thousands of words a day from Twitter and my RSS reader all require a lot of shape rotation and wordcellery. My other hobbies, like watching YouTube videos, are often a way to dissociate. I haven’t spent much time paying attention to raw sensation.
 
