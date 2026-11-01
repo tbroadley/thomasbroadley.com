@@ -200,6 +200,23 @@
 
       <section>
         <p>
+          <em
+            >Erratum (2026-11-01): METR has since
+            <a
+              href="https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/#errata"
+              >corrected</a
+            >
+            the bar graph comparing hidden and visible reasoning. With the fix,
+            the averaged monitor catch rate against GPT-5 high is 52% with
+            hidden reasoning (was 30%) and 80% with visible reasoning (was 88%).
+            Against Claude Sonnet 4.5, it's 72% with hidden reasoning (was 80%)
+            and 78% with visible reasoning (was 85%). I've updated both graphs
+            in this post to match METR's current versions and revised the text
+            below. I also fixed a mistake in my description of how we set the
+            monitor threshold.</em
+          >
+        </p>
+        <p>
           Last June or July, I switched from working primarily on METR's AI
           evaluations infrastructure to working on a particular research
           project. Last week, my team published a blog post explaining our
@@ -232,7 +249,7 @@
         </p>
         <p>
           To translate suspicion probabilities to a binary caught/uncaught
-          score, we calculate the threshold, between 0 and 1, that 5% of the
+          score, we calculate the threshold, between 0 and 1, that 95% of the
           main-task-only run suspicion probabilities are below. (That is, it's
           the threshold that gives a 5% false positive rate on main-task-only
           runs.) Then, we count side-task runs as caught if the monitor returns
@@ -254,8 +271,10 @@
         </p>
         <p>
           We also find that giving the monitor chain-of-thought access helps a
-          lot when monitoring GPT-5, but much less when monitoring Claude Sonnet
-          4.5:
+          lot when monitoring GPT-5 (raising the averaged catch rate by about 28
+          percentage points), but much less when monitoring Claude Sonnet 4.5
+          (about 6 percentage points). This could be because Claude Sonnet 4.5's
+          reasoning traces were summarized, whereas GPT-5's weren't:
         </p>
         <p>
           <img

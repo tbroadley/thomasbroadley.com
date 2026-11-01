@@ -1,12 +1,14 @@
 # New METR blog post on monitorability
 
+_Erratum (2026-11-01): METR has since [corrected](https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/#errata) the bar graph comparing hidden and visible reasoning. With the fix, the averaged monitor catch rate against GPT-5 high is 52% with hidden reasoning (was 30%) and 80% with visible reasoning (was 88%). Against Claude Sonnet 4.5, it's 72% with hidden reasoning (was 80%) and 78% with visible reasoning (was 85%). I've updated both graphs in this post to match METR's current versions and revised the text below. I also fixed a mistake in my description of how we set the monitor threshold._
+
 Last June or July, I switched from working primarily on METR's AI evaluations infrastructure to working on a particular research project. Last week, my team published a blog post explaining our research progress so far! You can read it here: https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/
 
 Our goal is to evaluate the monitorability of AI systems. METR wants to be able to measure if AIs are capable of tampering with our evaluations of them. If they are, then they could deceive METR into thinking they're less capable than they actually are. This blog post is a step in that direction (a direction that a lot of other research teams are also stepping in, e.g. [OpenAI's safety team](https://openai.com/index/evaluating-chain-of-thought-monitorability/)).
 
 In our evaluations, we tell an agent to complete a side task while pretending to complete a different main task. We took main tasks from METR's [HCAST](https://arxiv.org/abs/2503.17354) benchmark. Then, we ask a monitor AI to review the agent's actions (and, optionally, chain of thought) and give a probability that the agent was in fact trying to complete a side task. We also ask the monitor to review transcripts of agents completing just the main task.
 
-To translate suspicion probabilities to a binary caught/uncaught score, we calculate the threshold, between 0 and 1, that 5% of the main-task-only run suspicion probabilities are below. (That is, it's the threshold that gives a 5% false positive rate on main-task-only runs.) Then, we count side-task runs as caught if the monitor returns a suspicion above the threshold, and uncaught if below the threshold.
+To translate suspicion probabilities to a binary caught/uncaught score, we calculate the threshold, between 0 and 1, that 95% of the main-task-only run suspicion probabilities are below. (That is, it's the threshold that gives a 5% false positive rate on main-task-only runs.) Then, we count side-task runs as caught if the monitor returns a suspicion above the threshold, and uncaught if below the threshold.
 
 We do this for a bunch of agents and monitors and see some interesting trends:
 
@@ -14,7 +16,7 @@ We do this for a bunch of agents and monitors and see some interesting trends:
 
 Agents with a higher time horizon are better at evading monitors. Monitors with a higher time horizon are better at catching agents.
 
-We also find that giving the monitor chain-of-thought access helps a lot when monitoring GPT-5, but much less when monitoring Claude Sonnet 4.5:
+We also find that giving the monitor chain-of-thought access helps a lot when monitoring GPT-5 (raising the averaged catch rate by about 28 percentage points), but much less when monitoring Claude Sonnet 4.5 (about 6 percentage points). This could be because Claude Sonnet 4.5's reasoning traces were summarized, whereas GPT-5's weren't:
 
 ![A bar graph showing average monitor catch rate against GPT-5 high and Claude Sonnet 4.5, broken down by reasoning visibility.](/blog/new-metr-blog-post-on-monitorability/compare_visible_reasoning.jpg)
 
