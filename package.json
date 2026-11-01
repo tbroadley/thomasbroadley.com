@@ -26,7 +26,7 @@
   },
   "scripts": {
     "new-post": "ts-node src/create-post.ts",
-    "serve": "http-server docs",
+    "serve": "http-server docs -a 127.0.0.1",
     "build": "ts-node src/build.ts && yarn build:pagefind && pretty-quick",
     "build:pagefind": "rm -rf docs/pagefind && pagefind --site docs --output-subdir pagefind --force-language en",
     "watch": "git ls-files -cdmo --exclude-standard | grep --invert-match \"^docs/\" | entr -dc yarn build",
